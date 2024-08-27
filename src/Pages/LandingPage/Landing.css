@@ -1,0 +1,398 @@
+.landingPage{
+    width: 100%;
+    height: max-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 10px;
+    background-color: rgb(238, 229, 229);
+}
+
+.landingWrap{
+    width: 100%;
+    gap: 20px;
+    height: max-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+}
+
+.intro{
+    width: 100%;
+    height: 55vh;
+    background-color: grey;
+    display: flex;
+    align-items: end;
+
+    .introText{
+        width: 100%;
+        height: 50%;
+        gap: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        h3{
+            font-size: 30px;
+            color: orange;
+        }
+        span{
+            font-size: 20px;
+            color: orange;
+        }
+        button{
+            width: 15%;
+            height: 30%;
+            background-color: green;
+            border: none;
+            color: white;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;  
+            
+            a{
+                text-decoration: none;
+                color: white;
+            }
+        }
+    }
+}
+
+.whyEduTrack{
+    width: 80%;
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+
+    h2{
+        color: green;
+        
+    }
+
+    .info{
+        width: 100%;
+        height: 90%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .infoText{
+            width: 50%;
+            height: 100%;
+            font-size: 18px;
+        }
+
+
+        .infoImage{
+            width: 40%;
+            height: 100%;
+            background-color: grey;
+
+            img{
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+            }
+        }
+    }
+}
+
+.Feature1{
+    width: 100%;
+    height: 50vh;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(246, 238, 238);
+
+    .f1Textarea{
+        width: 40%;
+        height: 90%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        .top{
+            width: 100%;
+            height: 40%;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+
+            h3{
+                color: orange;
+                font-size: 28px;
+            }
+            span{
+                width: 65%;
+                font-size: 18px;
+                color: green;
+            }
+        }
+
+        .bottom{
+            width: 70%;
+            height: 25%;
+            display: flex;
+            gap: 5px;
+            flex-direction: column;
+            /* align-items: center; */
+
+            span{
+                font-size: 18px;
+                color: green;
+            }
+
+            button{
+                width: 40%;
+                height: 90%;
+                background-color: green;
+                border-radius: 5px;
+                border: none;
+                color: white;
+                font-size: 15px;
+                cursor: pointer;
+            }
+            button:hover{
+                background-color: rgb(17, 180, 17);
+            }
+        }
+    }
+
+    .f1Boxholder{
+        width: 55%;
+        height: 100%;
+        display: flex;
+        gap: 20px;
+    
+
+        section{
+            width: 35%;
+            height: 95%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border-radius: 10px;
+            box-shadow: rgba(0, 0, 0, 0.1) 4px 18px 25px -2px; 
+
+            .iconHolder{
+                width: 100%;
+                height: 30%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            .textArea{
+                width: 100%;
+                height: 40%;
+                padding: 5px;
+                gap: 10px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                
+                h3{
+                    font-size: 22px;
+                    color: green;
+                }
+                span{
+                    color: green;
+                    font-size: 16px;
+                    align-self: center;
+                }
+            }
+         }
+}
+
+
+}
+
+.Feature2{
+    width: 100%;
+    height: 65vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .f2Wrap{
+        width: 70%;
+        height: 100%;
+        gap: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+
+        h3{
+            color: green;
+            font-size: 21px ;
+        }
+
+        .f2BoxHolder{
+            width: 100%;
+            height: 85%;
+            gap: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            section{
+                width: 30%;
+                height: 100%;
+                gap: 20px;
+                padding-top: 10px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                border-radius: 10px;
+                box-shadow: rgba(0, 0, 0, 0.1) 4px 18px 25px -2px; 
+                background-color: rgb(246, 238, 238);
+
+
+                .iconHolder{
+                    width: 30%;
+                    height: 25%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    border-radius: 100%;
+                    background-color: white;
+                }
+
+               .textArea{
+                width: 100%;
+                height: 40%;
+                gap: 10px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+
+                h3{
+                    text-align: center;
+                    width: 85%;
+                }
+                span{
+                    width: 90%;
+                    font-size: 16px;
+                    color: green;
+                }
+               }
+            }
+        }
+    }
+}
+
+.starBoxes{
+    width: 100%;
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+
+    h3{
+        color: green;
+        font-size: 21px;
+    }
+
+    .boxHolder{
+        width: 100%;
+        height: 80%;
+        gap: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .starBox{
+            width: 25%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            .firstCircle{
+                width: 80%;
+                height: 80%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border-radius: 100%;
+                background-color: rgba(252, 231, 231, 0.435) ;
+
+                .secondCircle{
+                    width: 80%;
+                    height: 80%;
+                    gap: 10px;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    border-radius: 100%;
+                    background-color: rgb(246, 223, 223);
+
+                    .iconHolder{
+                        width: 30%;
+                        height: 30%;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                    }
+
+                    .textArea{
+                        width: 100%;
+                        color: green;
+                        font-size: 18px;
+                        text-align: center;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.miniSignUpBox{
+    width: 50%;
+    height: 30vh;
+    /* gap: 20px; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    .miniSBwrap{
+        width: 100%;
+        height: 40%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        
+
+        h3{
+            color: green;
+            text-align: center;
+            font-size: 21px;
+            
+        }
+        span{
+            text-align: center;
+            font-size: 16px;
+            color: green;
+        }
+    }
+
+    button{
+        width: 30%;
+        height: 25%;
+        border: none;
+        background-color: green;
+        color: white;
+        border-radius: 10px;
+        cursor: pointer;
+    }
+}
