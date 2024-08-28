@@ -4,6 +4,7 @@ import { NavLink } from 'react-router-dom'
 import { LuCalendarClock } from "react-icons/lu";
 import { FaPeopleRoof } from "react-icons/fa6";
 import { LiaStar } from "react-icons/lia";
+import SignModal from './SignModal';
 const Landing = () => {
   return (
     <div className='landingPage'>
@@ -134,14 +135,7 @@ const Landing = () => {
             </div>
           </div>
       </div>
-
-      <div className="miniSignUpBox">
-       <div className="miniSBwrap">
-       <h3>Get started with Edutrack today </h3>
-       <span>Join our Amazing users to enjoy the best that we offer</span>
-       </div>
-       <button>Sign up - it’s free!</button>
-      </div>
+      <SignModal/>
     </div>
   )
 }

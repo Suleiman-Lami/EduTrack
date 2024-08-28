@@ -4,8 +4,6 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-bottom: 10px;
-    background-color: rgb(238, 229, 229);
 }
 
 .landingWrap{
@@ -356,18 +354,21 @@
     }
 }
 
+
 .miniSignUpBox{
-    width: 50%;
+    width: 100%;
     height: 30vh;
-    /* gap: 20px; */
     display: flex;
     flex-direction: column;
+    margin-top: 50px;
     align-items: center;
     justify-content: center;
+    background-color: #ebebeb;
+
 
     .miniSBwrap{
-        width: 100%;
-        height: 40%;
+        width: 50%;
+        height: 60%;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -387,12 +388,14 @@
     }
 
     button{
-        width: 30%;
-        height: 25%;
+        width: 25%;
+        height: 40%;
         border: none;
         background-color: green;
         color: white;
+        margin-top: 15px;
         border-radius: 10px;
         cursor: pointer;
     }
 }
+

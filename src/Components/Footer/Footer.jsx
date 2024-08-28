@@ -1,11 +1,13 @@
 import React from 'react'
 import './Footer.css'
+import { useNavigate } from 'react-router-dom';
 
 const Footer = () => {
+  const Nav = useNavigate()
     const currentDate = new Date();
     const currentYear = currentDate.getFullYear();
   
-  return (
+  return ( 
     <div className='Footer'>
       <div className="footerWrap">
         <div className="footerTop">
@@ -21,6 +23,7 @@ const Footer = () => {
         </div>
       </div>
     </div>
+  
   )
 }
 

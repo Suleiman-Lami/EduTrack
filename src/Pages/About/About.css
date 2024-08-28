@@ -1,0 +1,101 @@
+.About-Componnt{
+    width: 100%;
+    gap: 20px;
+    height: max-content;
+    display: flex;
+    flex-direction: column;
+
+    .aboutIntro{
+        width: 100%;
+        height: 50vh;
+        background-color: grey;
+        display: flex;
+        align-items: center;
+
+        .textArea{
+            width: 50%;
+            height: 70%;
+            gap: 20px;
+            color: orange;
+            margin-left: 70px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            span{
+                font-size: 18px;
+            }
+
+            button{
+                width: 25%;
+                height: 20%;
+                background-color: green;
+                color: white;
+                border-radius: 5px;
+                border: none;
+                font-size: 16px;
+            }
+        }
+    }
+
+    .signBox{
+        width: 100%;
+        height: 40vh;
+        background-color: #ebebeb;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .wrap{
+            width: 80%;
+            height: 90%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            .signHead{
+                width: 50%;
+                height: 30%;
+                gap: 10px;
+                color: green;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+                span{
+                    font-size: 18px;
+                    color: green;
+                }
+            }
+
+            .btnHolder{
+                width: 60%;
+                height: 25%;
+                display: flex;
+                gap: 20px;
+                align-items: center;
+
+                input{
+                    width: 70%;
+                    height: 80%;
+                    background-color: white;
+                    border-radius: 10px;
+                    padding: 20px;
+                    outline: none;
+                    border: none;
+                }
+                button{
+                    width: 30%;
+                    height: 80%;
+                    background-color: green;
+                    border: none;
+                    color: white;
+                    font-size: 16px;
+                    border-radius: 10px;
+
+                }
+            }
+
+        }
+    }
+}
