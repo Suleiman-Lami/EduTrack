@@ -5,7 +5,7 @@ const Leadership = () => {
   return (
     <div className='Leadership-component'>
         <div className="LeadershipHead">
-            <h2>The Leadership Team</h2>
+            <h1>The Leadership Team</h1>
             <span>Know the people who leads team Edutrack to achieve the vision & goals</span>
         </div>
         <div className="Executive">

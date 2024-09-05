@@ -1,0 +1,197 @@
+.studentSignup {
+    width: 100%;
+    height: max-content;
+    min-height: 100vh;
+    gap: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.studentSignup aside {
+    width: 100%;
+    height: 50px;
+    gap: 10px;
+    display: flex;
+    align-items: center;
+    padding-left: 60px;
+}
+
+.studentSignup aside .logo, .SignUp aside .icon {
+    width: 100px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.studentSignup main {
+    width: 80%;
+    padding-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding-bottom: 20px;
+    min-height: 70vh;
+}
+
+.studentSignup main article {
+    width: 40%;
+    height: 90vh; 
+    border-top-left-radius: 80px;
+    background-color: #003B31B2;
+}
+
+.studentSignup main form {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    color: #000000;
+    height: auto; 
+}
+
+.studentSignup main form section {
+    width: 100%;
+    gap: 5px;
+    display: flex;
+    flex-direction: column;
+}
+
+.studentSignup main form section label {
+    font-size: 18px;
+    font-weight: 400;
+    color: #2E2E2EE5;
+}
+
+.studentSignup main form section input {
+    width: 100%;
+    height: 40px; 
+    border-radius: 5px;
+    padding: 10px; 
+    outline: none;
+    border: 1px solid #2E2E2E;
+    background-color: white;
+}
+
+.studentSignup main form .terms {
+    width: 100%;
+    gap: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.studentSignup main form .terms span {
+    color: #003B31;
+}
+
+.studentSignup main form .terms input {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    border: none;
+    border-radius: 100%;
+    background-color: transparent;
+
+    &:checked {
+        background-color: #003B31;
+    }
+
+    &:focus {
+        outline: none;
+        box-shadow: none;
+    }
+}
+
+.studentSignup main form button {
+    width: 100%;
+    height: 50px;
+    border: none;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    background-color: #003B31;
+}
+
+form footer {
+    width: 100%;
+    color: #003B31;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+form footer span {
+    display: flex;
+    gap: 5px;
+}
+
+form footer span p {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+
+@media (min-width: 768px) and (max-width: 1024px) {
+
+    .studentSignup aside {
+        height: 40px;
+        padding-left: 30px; 
+    }
+
+    .studentSignup main {
+        width: 100%;
+        height: auto;
+        display: flex;
+        gap: 20px;
+        justify-content: space-around;
+        align-items: center;
+        padding-bottom: 40px;
+    }
+
+   .studentSignup main article {
+        width: 50%;
+        height: 70vh;
+    }
+
+    .studentSignup main form {
+        width: 40%;
+        gap: 20px;
+    }
+
+    .studentSignup main form section input {
+        height: 40px; 
+    }
+
+    .studentSignup main form button {
+        height: 60px; 
+    }
+}
+
+@media (min-width: 320px) and (max-width: 768px) {
+    .studentSignup{
+        padding: 10px;
+    }
+
+    .studentSignup aside {
+        height: 30px; 
+        padding: 0%;
+        justify-content: flex-start;
+    }
+
+    .studentSignup main form {
+        width: 100%; 
+    }
+
+    .studentSignup main article{
+        display: none;
+    }
+
+    .studentSignup main form button {
+        height: 55px; 
+    }
+
+}

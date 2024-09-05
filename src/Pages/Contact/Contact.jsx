@@ -1,10 +1,12 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './Contact.css'
 import SignModal from '../LandingPage/SignModal'
 import Form from './Form'
 import Dev from './Dev'
+import Thanks from './Thanks'
 
 const Contact = () => {
+  // const [showThanks, setShowThanks]=useState(true)
   return (
     <div className='Contact-Component'>
       <div className="wrap">
@@ -15,8 +17,10 @@ const Contact = () => {
         <div className="contactBody">
           <Form/>
           <Dev/>
+
         </div>
       </div>
+      {/* { showThanks ? <Thanks/> : null} */}
       <SignModal/>
     </div>
   )

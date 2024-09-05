@@ -1,16 +1,23 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './Contact.css'
+import { useNavigate } from 'react-router-dom'
 
 const Form = () => {
+  const [show, setShow]=useState(false)
+  const nav = useNavigate()
   return (
-    <form>
+    <>
+{  
+  show === false?
+  
+  <form>
        <div className="formHold">
         <label>Name</label>
         <input type="Name" placeholder=' Your full Name' />
         <label>Emaill</label>
         <input type="email" placeholder='Email@gmail.com' />
         <label>Contact Number</label>
-        <input type="Number" placeholder='Number with country code' />
+        <input type="number" placeholder='Number with country code' />
         <label>Location</label>
         <input type="place" placeholder='City Name' />
        </div>
@@ -25,8 +32,31 @@ const Form = () => {
 
        <label>Message</label>
        <input type="text" placeholder='if you have a specific message about Edutrack'/>
-        
-    </form>
+       <button onClick={()=>setShow(true)}>Next</button>
+    </form>:
+        <form>
+          <div className="formHead">
+            <div className="iconHolder"></div>
+            <div className="textArea">
+              <h1> You're almost done </h1>
+              <span>Kindly,fill in the below details </span>
+            </div>
+          </div>
+
+          <div className="formHold">
+            <label>Name of institution</label>
+            <input type="school" placeholder='Name of  Institution' />
+            <label>Institution Type</label>
+            <input type="school" />
+            <label>Your Role in the Institution</label>
+            <input type="school" placeholder='Your role in the Institution' />
+            <label>Website Link</label>
+            <input type="school" placeholder='Website Link' />
+          </div>
+          <button onClick={()=>nav('/Thanks')}>Submit</button>
+        </form>
+  }
+  </>
   )
 }
 

@@ -5,7 +5,10 @@ import About from './Pages/About/About'
 import {createBrowserRouter} from 'react-router-dom'
 import Contact from './Pages/Contact/Contact'
 import Login from './Components/Auth/Login/Login'
-import SignUp from './Components/Auth/SignUp/SignUp'
+import SignUp from './Components/Auth/SignUp/adminSignUp/AdminsignUp'
+import Thanks from './Pages/Contact/Thanks'
+import TeacherSignUp from './Components/Auth/SignUp/Teacher/TeacherSignUp'
+import StudentOnboard from './Components/Auth/SignUp/Student/StudentOnboard'
 
 const Routes =createBrowserRouter([
     
@@ -24,6 +27,18 @@ const Routes =createBrowserRouter([
             {
                 path: 'Contact',
                 element: <Contact/>
+            },
+            {
+                path: 'Thanks',
+                element: <Thanks/>
+            },
+            {
+                path: 'staffOnboarding',
+                element: <TeacherSignUp/>
+            },
+            {
+                path: 'studentOnboarding',
+                element: <StudentOnboard/>
             },
         ]
     },

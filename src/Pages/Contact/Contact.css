@@ -1,6 +1,7 @@
 .Contact-Component{
     width: 100%;
     height: max-content;
+    min-height: 50vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -36,8 +37,6 @@
                 padding: 20px;
                 display: flex;
                 flex-direction: column;
-                /* align-items: center; */
-
 
                 .formHold{
                     width: 100%;
@@ -46,7 +45,7 @@
                     flex-direction: column;
                     
                     label{
-                        margin-top: 20px;
+                        margin-top: 25px;
                         font-size: 18px;
                         color: green;
                     }
@@ -111,6 +110,51 @@
                     border: none;
                     border-radius: 5px;
                     background-color: #ebebeb;
+                }
+
+                button{
+                    width: 50%;
+                    height: 50px;
+                    border: none;
+                    color: white;
+                    font-size: 18px;
+                    cursor: pointer;
+                    border-radius: 5px;
+                    margin-top: 20px;
+                    background-color: green;
+                }
+
+                .formHead{
+                    width: 100%;
+                    height: 30%;
+                    margin-bottom: 30px;
+                    display: flex;
+                    align-items: center;
+
+                    .iconHolder{
+                        width: 30%;
+                        height: 100%;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                    }
+
+                    .textArea{
+                        width: 70%;
+                        height: 100%;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+
+                        h1{
+                            color: orange;
+                        }
+                        span{
+                            color: green;
+                            font-size: 18px;
+                        }
+                    }
+
                 }
 
             }

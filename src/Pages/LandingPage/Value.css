@@ -1,0 +1,203 @@
+.Values{
+    width: 100%;
+    height: max-content;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    padding-left: 100px;
+}
+
+.Values article{
+    width: 75%;
+    height: 500px;
+    gap: 20px;
+    margin-right: -10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.Values article .top{
+    width: 60%;
+    gap: 10px;
+    display: flex;
+    flex-direction: column;
+
+    h2{
+        color: #003B31;
+        font-weight: 700;
+    }
+
+    span{
+        width: 90%;
+        color: #2E2E2E;
+    }
+}
+
+.Values article .bottom{
+    width: 100%;
+    height: max-content;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.Values article .bottom .SectionsB{
+    width: 90%;
+    display: flex;
+    gap: 20px;
+
+    .icon{
+        width: 30px;
+    height: 30px;
+    background-color: yellow;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    }
+    
+}
+
+.Values article .bottom .Sections{
+    width: 60%;
+    height: 120px;
+    display: flex;
+    gap: 20px;
+}
+
+.Values article .Sections .icon{
+    width: 30px;
+    height: 30px;
+    background-color: yellow;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Values article .bottom section{
+    width: 80%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    font-family: Nunito Sans;
+
+    h3{
+        font-weight: 600;
+        color: #2E2E2E;
+        font-size: 20px;
+    }
+    span{
+        color: #2E2E2E;
+        line-height: 28.1px;
+        font-size: 18px;
+    }
+}
+
+.Values aside{
+    width: 500px;
+    height: 400px;
+    background-color: #fff;
+    border-radius: 25px;
+    margin-left: -30%;
+    padding: 20px;
+}
+
+.Values aside .icon{
+    width: 30%;
+    height: 30%;
+    background-color: red;
+    border-radius: 10px;
+    align-self: flex-start;
+}
+
+.Values aside .imageHolder{
+    width: 55%;
+    height: 60%;
+    background-color: grey;
+    border-radius: 10px;
+   margin-top: -15%;
+   margin-left: 15%;
+
+    image{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+.Values aside .chart{
+    width: 35%;
+    height: 30%;
+    background-color: rgb(246, 240, 240);
+    border-radius: 5px;
+    margin-left: 45%;
+    margin-top: -15%;
+}
+
+
+@media (min-width: 320px) and (max-width: 932px){
+    .Values{
+        flex-direction: column;
+        gap: 40px;
+        padding: 20px;
+    }
+
+    .Values article{
+        width: 100%;
+        margin: 0%;
+        height: max-content;
+    }
+
+    .Values article .top{
+        width: 100%;
+
+        span{
+            width: 100%;
+        }
+    }
+
+    .Values article .bottom{
+        gap: 70px;
+    }
+
+    .Values article .bottom .Sections{
+        width: 100%;
+    }
+
+    .Values article .bottom .Sections section{
+        width: 90%;
+    }
+
+    .Values aside{
+        width: 100%;
+        margin: -0%;
+
+        .icon{
+            width: 40%;
+        }
+
+        .imageHolder{
+            width: 70%;
+        }
+
+        .chart{
+          width: 45%;
+          margin-left: 55%;
+        }
+    }
+}
+
+@media (min-width: 768px)  and (max-width: 1024px){
+
+    .Values{
+        align-items: center;
+    }
+
+    .Values article .bottom{
+        gap: 10px;
+    }
+
+    .Values aside{
+        width: 60%;
+    }
+}

@@ -1,15 +1,22 @@
 import React from 'react'
-import './Landing.css'
+import './SignModal.css'
 
 const SignModal = () => {
   return (
-    <div className="miniSignUpBox">
-    <div className="miniSBwrap">
-      <h3>Get started with EduTrack today</h3>
-      <span>Join our Amazing to enjoy the best we Offer</span>
-      <button onClick={()=>Nav('signUp')}>Sign up - it’s free!</button>
+    <div className='signModal'>
+     <main>
+     <div className="infoBox">
+        <h2>Transform your school with Edutrack.</h2>
+        <span>Empower your school with smarter attendance tracking, improved student safety, and seamless communication, all in one easy-to-use platform.</span>
+        <button>Sign up- it’s free!</button>
+      </div>
+     </main>
+      <div className="boxHolder">
+        <section></section>
+        <section className='green'></section>
+        <section className='orange'></section>
+      </div>
     </div>
-  </div>
   )
 }
 
