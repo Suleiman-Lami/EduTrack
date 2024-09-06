@@ -1,0 +1,296 @@
+.forgot-component{
+    width: 100%;
+    height: max-content;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.forgot-component aside {
+    width: 100%;
+    height: 50px;
+    gap: 10px;
+    display: flex;
+    align-items: center;
+    padding-left: 60px;
+}
+
+.forgot-component aside .logo, .SignUp aside .icon {
+    width: 100px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.forgot-component main {
+    width: 80%;
+    height: 80vh;
+    padding-top: 20px;
+    gap: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.forgot-component main article {
+    width: 35%;
+    height: 100%; 
+    border-top-left-radius: 100px;
+    background-color: #003B31B2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    image{
+        width: 70%;
+        height: 70%;
+    }
+}
+
+.forgot-component main form {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    color: #000000;
+    height: auto; 
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+}
+
+.forgot-component main form header{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    text-align: center;
+
+
+    span{
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 24.55px;
+    }
+}
+
+.forgot-component main form header .Icon{
+    width: 60px;
+    height: 60px;
+    background-color: grey;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100%;
+}
+
+.forgot-component main form section {
+    width: 100%;
+    gap: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.forgot-component main form section label {
+    font-size: 18px;
+    font-weight: 400;
+    color: #2E2E2EE5;
+}
+
+.forgot-component main form section .Forgot{
+    color: #003B31;
+    cursor: pointer;
+}
+
+.forgot-component main form section input {
+    width: 100%;
+    height: 40px; 
+    border-radius: 5px;
+    padding: 10px; 
+    outline: none;
+    border: 1px solid #2E2E2E;
+}
+
+.forgot-component main form button {
+    width: 100%;
+    height: 50px;
+    border: none;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    background-color: #003B31;
+}
+
+.Reset-Component{
+    width: 100vw;
+    height: 100vh;
+    top: 0%;
+    left: 0%;
+    background-color: rgba(255, 255, 255, 0.457);
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Reset-Component .form {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    color: #000000;
+    height: auto; 
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.Reset-Component .form header{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    text-align: center;
+
+
+    span{
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 24.55px;
+    }
+}
+
+.Reset-Component .form .resetSection {
+    width: 100%;
+    gap: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.Reset-Componentform .resetSection label {
+    font-size: 18px;
+    font-weight: 400;
+    color: #2E2E2EE5;
+}
+
+.Reset-Component .form .resetSection .inputPasswordDiv {
+    width: 100%;
+    height: 40px; 
+    border-radius: 5px;
+    padding: 10px;
+    outline: none;
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid #2E2E2E;
+}
+
+.Reset-Component .form .resetSection .inputPasswordDiv input{
+    width: 80%;
+    height: 100%;
+    border: none;
+    outline: none;
+    background-color: white;
+}
+
+.Reset-Component .form button {
+    width: 100%;
+    height: 50px;
+    border: none;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    background-color: #003B31;
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+
+    .forgot-component{
+        padding: 30px;
+    }
+
+    .forgot-component aside {
+        height: 15px;
+        padding-left: 30px;
+    }
+
+    .forgot-component main {
+        width: 100%;
+        height: auto;
+        display: flex;
+        gap: 20px;
+        justify-content: center;
+        align-items: center;
+        padding-bottom: 40px;
+    }
+
+   .forgot-component main article {
+        width: 50%;
+        height: 70vh;
+    }
+
+    .forgot-component main form {
+        width: 40%;
+        gap: 20px;
+    }
+
+    .forgot-component main form section .inputPasswordDiv {
+        height: 40px; 
+    }
+
+    .forgot-componentmain form button {
+        height: 60px; 
+    }
+
+    .Reset-Component .form {
+        width: 50%;
+        height: 40%;
+        justify-content: center;
+    }
+
+    
+}
+
+@media (min-width: 320px) and (max-width: 768px) {
+    .forgot-component{
+        padding-top: 20px;
+    }
+
+    .forgot-component aside {
+        height: 20px; 
+        padding: 20px;
+        justify-content: flex-start;
+    }
+
+    .forgot-component main form {
+        width: 100%; 
+        padding-top: 0%;
+        padding: 20px;
+        gap: 30px;
+
+    }
+
+    .forgot-component main article{
+        display: none;
+    }
+
+    .forgot-component main form button {
+        height: 55px; 
+    }
+
+    .Reset-Component .form {
+        width: 80%;
+    }
+
+}

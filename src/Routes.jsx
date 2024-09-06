@@ -9,6 +9,7 @@ import SignUp from './Components/Auth/SignUp/adminSignUp/AdminsignUp'
 import Thanks from './Pages/Contact/Thanks'
 import TeacherSignUp from './Components/Auth/SignUp/Teacher/TeacherSignUp'
 import StudentOnboard from './Components/Auth/SignUp/Student/StudentOnboard'
+import Forgot from './Components/Auth/Login/Forgotpassword/Forgot'
 
 const Routes =createBrowserRouter([
     
@@ -45,6 +46,10 @@ const Routes =createBrowserRouter([
     {
         path: 'Login',
         element: <Login/>
+    },
+    {
+        path: 'Forgottenpassword',
+        element: <Forgot/>
     },
     {
         path: 'signUp',

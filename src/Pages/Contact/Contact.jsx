@@ -6,7 +6,6 @@ import Dev from './Dev'
 import Thanks from './Thanks'
 
 const Contact = () => {
-  // const [showThanks, setShowThanks]=useState(true)
   return (
     <div className='Contact-Component'>
       <div className="wrap">
@@ -17,10 +16,8 @@ const Contact = () => {
         <div className="contactBody">
           <Form/>
           <Dev/>
-
         </div>
       </div>
-      {/* { showThanks ? <Thanks/> : null} */}
       <SignModal/>
     </div>
   )

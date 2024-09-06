@@ -1,0 +1,237 @@
+.Login {
+    width: 100%;
+    height: max-content;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.Login aside {
+    width: 100%;
+    height: 50px;
+    gap: 10px;
+    display: flex;
+    align-items: center;
+    padding-left: 60px;
+}
+
+.Login aside .logo, .SignUp aside .icon {
+    width: 100px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.Login main {
+    width: 80%;
+    height: 80vh;
+    padding-top: 20px;
+    gap: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.Login main article {
+    width: 40%;
+    height: 100%; 
+    border-top-left-radius: 100px;
+    background-color: #003B31B2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    image{
+        width: 70%;
+        height: 70%;
+    }
+}
+
+.Login main form {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    color: #000000;
+    height: auto; 
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+}
+
+.Login main form section {
+    width: 100%;
+    gap: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.Login main form section label {
+    font-size: 18px;
+    font-weight: 400;
+    color: #2E2E2EE5;
+}
+
+.Login main form section .Forgot{
+    color: #003B31;
+    cursor: pointer;
+}
+
+.Login main form section input {
+    width: 100%;
+    height: 40px !important; 
+    border-radius: 5px;
+    padding: 10px; 
+    outline: none;
+    border: 1px solid #2E2E2E;
+    background-color: white !important;
+}
+
+.Login main form section .inputPasswordDiv  {
+    width: 100%;
+    height: 40px; 
+    border-radius: 5px;
+    padding: 10px; 
+    outline: none;
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid #2E2E2E;
+}
+
+.Login main form section .inputPasswordDiv .loginInput{
+    width: 80%;
+    height: 100% !important;
+    border: none;
+    outline: none;
+    background-color: white;
+}
+
+.Login main form .terms {
+    width: 100%;
+    gap: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.Login main form .terms span {
+    color: #003B31;
+}
+
+.Login main form .terms input {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    border: none;
+    border-radius: 100%;
+
+    &:checked {
+        background-color: #003B31;
+    }
+
+    &:focus {
+        outline: none;
+        box-shadow: none;
+    }
+}
+
+.Login main form button {
+    width: 100%;
+    height: 50px;
+    border: none;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    background-color: #003B31;
+}
+
+form footer {
+    width: 100%;
+    color: #003B31;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+form footer span {
+    display: flex;
+    gap: 5px;
+}
+
+form footer span p {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+
+@media (min-width: 768px) and (max-width: 1024px) {
+
+    .Login{
+        padding: 30px;
+    }
+
+    .Login aside {
+        height: 15px;
+        padding-left: 30px;
+    }
+
+    .Login main {
+        width: 100%;
+        height: auto;
+        display: flex;
+        gap: 20px;
+        justify-content: center;
+        align-items: center;
+        padding-bottom: 40px;
+    }
+
+   .Login main article {
+        width: 50%;
+        height: 70vh;
+    }
+
+    .Login main form {
+        width: 40%;
+        gap: 20px;
+    }
+
+    .Login main form section input {
+        height: 40px; 
+    }
+
+    .Login main form button {
+        height: 60px; 
+    }
+}
+
+@media (min-width: 320px) and (max-width: 768px) {
+    .Login{
+        padding-top: 20px;
+    }
+
+    .Login aside {
+        height: 20px; 
+        padding: 20px;
+        justify-content: flex-start;
+    }
+
+    .Login main form {
+        width: 100%; 
+        padding-top: 0%;
+        padding: 20px;
+
+    }
+
+    .Login main article{
+        display: none;
+    }
+
+    .Login main form button {
+        height: 55px; 
+    }
+
+}

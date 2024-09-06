@@ -1,4 +1,4 @@
-.Contact-Component{
+.Contact-Component {
     width: 100%;
     height: max-content;
     min-height: 50vh;
@@ -6,242 +6,310 @@
     flex-direction: column;
     align-items: center;
     background-color: white;
+}
 
-    .wrap{
-        width: 80%;
-        height: max-content;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 30px;
-        margin-top: 90px;
+.Contact-Component .wrap {
+    width: 70%;
+    height: max-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    margin-top: 90px;
+}
 
-        .contactHead{
-            width: 70%;
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-            align-items: center;
-        }
+.Contact-Component .wrap .contactHead {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    text-align: center;
+}
 
-        .contactBody{
-            width: 100%;
-            height: max-content;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+.Contact-Component .wrap .contactBody {
+    width: 100%;
+    height: max-content;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 
-            form{
-                width: 40%;
-                height: max-content;
-                padding: 20px;
-                display: flex;
-                flex-direction: column;
+.Contact-Component .wrap .contactBody form {
+    width: 40%;
+    height: max-content;
+    padding: 20px;
+    gap: 20px;
+    display: flex;
+    flex-direction: column;
+}
 
-                .formHold{
-                    width: 100%;
-                    height: max-content;
-                    display: flex;
-                    flex-direction: column;
-                    
-                    label{
-                        margin-top: 25px;
-                        font-size: 18px;
-                        color: green;
-                    }
+.Contact-Component .wrap .contactBody form .formHold {
+    width: 100%;
+    height: max-content;
+    display: flex;
+    flex-direction: column;
+}
 
-                    input{
-                        width: 100%;
-                        height: 25%;
-                        outline: none;
-                        border: none;
-                        padding: 20px;
-                        border-radius: 5px;
-                        background-color: #ebebeb;
-                    }
-                }
+.Contact-Component .wrap .contactBody form .formHold label {
+    margin-top: 25px;
+    font-size: 18px;
+    color:#003B31B2;
+}
 
-                article{
-                    width: 100%;
-                    height: 18vh;
-                    gap: 5px;
-                    display: flex;
-                    flex-direction: column;
+.Contact-Component .wrap .contactBody form .formHold input {
+    width: 100%;
+    height: 40px;
+    outline: none;
+    border: none;
+    padding: 20px;
+    border-radius: 5px;
+    background-color: #ebebeb;
+}
 
-                    label{
-                        color: green;
-                        font-size: 18px;
-                    }
+.Contact-Component .wrap .contactBody form article {
+    width: 100%;
+    height: 12vh;
+    gap: 5px;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 40px;
+}
 
-                    .Options{
-                        width: 100%;
-                        height: 90%;
-                        display: flex;
-                        align-items: center;
-                        justify-content: space-between;
+.Contact-Component .wrap .contactBody form article label {
+    color:#003B31B2;
+    font-size: 18px;
+}
 
-                        .box{
-                            width: 45%;
-                            height: 100%;
-                            display: flex;
-                            align-items: center;
-                            border: 1px solid black;
-                            padding: 10px;
-                            border-radius: 10px;
-                            cursor: pointer;
-                        }
-                        .box:hover{
-                            border: 2px solid green;
-                        }
-                    }
-                }
+.Contact-Component .wrap .contactBody form article .Options {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
 
-                label{
-                 color: green;
-                 margin-top: 20px;
-                 font-size: 18px;
-                }
+.Contact-Component .wrap .contactBody form article .Options .box {
+    width: 45%;
+    height: 90px;
+    display: flex;
+    align-items: center;
+    border: 1px solid black;
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+}
 
-                input{
-                    width: 100%;
-                    height: 8vh;
-                    padding: 20px;
-                    outline: none;
-                    border: none;
-                    border-radius: 5px;
-                    background-color: #ebebeb;
-                }
+.Contact-Component .wrap .contactBody form article .Options .box:hover {
+    border: 2px solid #003B31B2;
+}
 
-                button{
-                    width: 50%;
-                    height: 50px;
-                    border: none;
-                    color: white;
-                    font-size: 18px;
-                    cursor: pointer;
-                    border-radius: 5px;
-                    margin-top: 20px;
-                    background-color: green;
-                }
+.Contact-Component .wrap .contactBody form label {
+    color: #003B31B2;
+    margin-top: 20px;
+    font-size: 18px;
+}
 
-                .formHead{
-                    width: 100%;
-                    height: 30%;
-                    margin-bottom: 30px;
-                    display: flex;
-                    align-items: center;
+.Contact-Component .wrap .contactBody form input {
+    width: 100%;
+    height: 50px;
+    padding: 20px;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    background-color: #ebebeb;
+}
 
-                    .iconHolder{
-                        width: 30%;
-                        height: 100%;
-                        display: flex;
-                        justify-content: center;
-                        align-items: center;
-                    }
+.Contact-Component .wrap .contactBody form button {
+    width: 50%;
+    height: 50px;
+    border: none;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 5px;
+    background-color:#003B31B2;
+}
 
-                    .textArea{
-                        width: 70%;
-                        height: 100%;
-                        display: flex;
-                        flex-direction: column;
-                        align-items: center;
+.Contact-Component .wrap .contactBody form .formHead {
+    width: 100%;
+    height: 30%;
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+}
 
-                        h1{
-                            color: orange;
-                        }
-                        span{
-                            color: green;
-                            font-size: 18px;
-                        }
-                    }
+.Contact-Component .wrap .contactBody form .formHead .iconHolder {
+    width: 30%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: yellow;
+}
 
-                }
+.Contact-Component .wrap .contactBody form .formHead .textArea {
+    width: 70%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
-            }
-            .Dev{
-                width: 35%;
-                height: 90vh;
-                padding: 20px;
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                border-radius: 10px;
-                box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+.Contact-Component .wrap .contactBody form .formHead .textArea h1 {
+    color: orange;
+}
 
-                .DevHeader{
-                    width: 100%;
-                    height: 25vh;
-                    gap: 5px;
-                    display: flex;
-                    flex-direction: column;
-                    padding: 20px;
+.Contact-Component .wrap .contactBody form .formHead .textArea span {
+    color: #003B31B2;
+    font-size: 18px;
+}
 
+.Contact-Component .wrap .contactBody .Dev {
+    width: 35%;
+    height: 90vh;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
 
-                    h2{
-                        color: green;
-                        text-transform: uppercase;
-                    }
-                    span{
-                        color: orange;
-                        font-size: 18px;
-                    }
-                }
-                hr{
-                    width: 100%;
-                    border: 1px solid grey;
-                }
+.Contact-Component .wrap .contactBody .Dev .DevHeader {
+    width: 100%;
+    height: max-content;
+    gap: 5px;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
 
-                .keyContact{
-                    width: 100%;
-                    height: 50%;
-                    gap: 20px;
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: center;
-                    padding: 20px;
+.Contact-Component .wrap .contactBody .Dev .DevHeader h2 {
+    color: #003B31B2;
+    text-transform: uppercase;
+}
 
-                    h2{
-                        color: green;
-                        text-transform: uppercase;
-                    }
+.Contact-Component .wrap .contactBody .Dev .DevHeader span {
+    color: orange;
+    font-size: 18px;
+}
 
-                    section{
-                        width: 100%;
-                        height: 40%;
-                        display: flex;
-                        align-items: center;
-                        gap: 30px;
+.Contact-Component .wrap .contactBody .Dev hr {
+    width: 100%;
+    border: 1px solid grey;
+}
 
-                        .profile{
-                            width: 90px;
-                            height: 90px;
-                            border-radius: 100%;
-                            background-color: grey;
-                        }
+.Contact-Component .wrap .contactBody .Dev .keyContact {
+    width: 100%;
+    height: 50%;
+    gap: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px;
+}
 
-                        span{
-                            color: orange;
-                            font-size: 20px;
-                        }
-                    }
+.Contact-Component .wrap .contactBody .Dev .keyContact h2 {
+    color:#003B31B2;
+    text-transform: uppercase;
+}
 
-                }
+.Contact-Component .wrap .contactBody .Dev .keyContact section {
+    width: 100%;
+    height: 40%;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
 
-                .Address{
-                    width: 100%;
-                    height: 25%;
-                    padding: 20px;
+.Contact-Component .wrap .contactBody .Dev .keyContact section .profile {
+    width: 90px;
+    height: 90px;
+    border-radius: 100%;
+    background-color: grey;
+}
 
-                    h2{
-                        text-transform: uppercase;
-                        color: green;
-                    }
+.Contact-Component .wrap .contactBody .Dev .keyContact section span {
+    color: orange;
+    font-size: 20px;
+}
 
+.Contact-Component .wrap .contactBody .Dev .Address {
+    width: 100%;
+    height: 25%;
+    padding: 20px;
+}
 
-                }
+.Contact-Component .wrap .contactBody .Dev .Address h2 {
+    text-transform: uppercase;
+    color:#003B31B2;
+}
 
-            }
-        }
+@media (min-width: 320px) and (max-width: 768px) {
+    .Contact-Component .wrap {
+        width: 100%;
     }
-    
+
+    .Contact-Component .wrap .contactHead {
+        width: 100%;
+        text-align: center;
+    }
+
+    .Contact-Component .wrap .contactBody {
+        gap: 50px;
+        flex-direction: column;
+    }
+
+    .Contact-Component .wrap .contactBody form {
+        width: 90%;
+        padding: 10px;
+    }
+
+    .Contact-Component .wrap .contactBody form .formHead .iconHolder {
+        width: 20%;
+    }
+
+    .Contact-Component .wrap .contactBody form .formHead .textArea {
+        width: 80%;
+    }
+
+    .Contact-Component .wrap .contactBody form article{
+        height: max-content;
+        margin-bottom: 0%;
+    }
+
+    .Contact-Component .wrap .contactBody form label{
+        margin-top: 10px;
+    }
+
+    .Contact-Component .wrap .contactBody .Dev {
+        width: 90%;
+        height: max-content;
+        padding: 0%;
+    }
+
+    .Contact-Component .wrap .contactBody .Dev .DevHeader {
+        height: max-content;
+        padding-bottom: 20px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    .Contact-Component .wrap .contactBody form {
+        width: 50%;
+    }
+
+    .Contact-Component .wrap .contactBody form article{
+        margin-bottom: 0%;
+    }
+
+    .Contact-Component .wrap{
+        width: 95%;
+    }
+
+    .Contact-Component .wrap .contactBody .Dev {
+        width: 45%;
+        height: max-content;
+    }
 }
