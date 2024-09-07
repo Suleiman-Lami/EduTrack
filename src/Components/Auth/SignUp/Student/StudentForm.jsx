@@ -27,7 +27,7 @@ const StudentForm = () => {
       }
   return (
     <form onSubmit={handleSubmit(Onsubmit)}>
-    <h2>Onboard your student</h2>
+    <h3>Onboard your student</h3>
     <section>
         <label>Student's Full name</label>
         <input type="name" placeholder='Asake Anuoluwa joy' className='studentInput' {...register("Name")}/>

@@ -1,0 +1,57 @@
+.allStudent{
+    width: 100%;
+    height: auto;
+    max-height: 91vh;
+    min-height: 91vh;
+    background-color: #FFFFFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    
+}
+
+.allStudent .emptyModal{
+    width: 30%;
+    height: 30vh;
+    padding: 20px;
+    gap: 10px;
+    color:  #003B31;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #FFFFFF;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+
+    span{
+        text-align: center;
+    }
+}
+
+.allStudent .emptyModal button{
+    width: 40%;
+    height: 35px;
+    border-radius: 5px;
+    margin-top: 20px;
+    border: none;
+    color: white;
+    cursor: pointer;
+    background-color: #003B31;
+}
+
+@media (min-width: 320px)and (max-width: 768px){
+    .allStudent .emptyModal{
+        width: 80%;
+        height: auto;
+        padding: 0%;
+        padding-top: 20px;
+        padding-bottom: 20px;
+
+        h2{
+            text-align: center;
+        }
+    }
+    .allStudent .emptyModal button{
+        width: 45%;
+    }
+}

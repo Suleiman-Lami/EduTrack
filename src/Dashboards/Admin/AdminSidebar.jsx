@@ -1,0 +1,38 @@
+import React from 'react';
+import './Admin.css';
+import { IoHomeOutline } from "react-icons/io5";
+import { BsPersonRolodex } from "react-icons/bs";
+import { PiStudent } from "react-icons/pi";
+import { CiLogout } from "react-icons/ci";
+import { NavLink } from 'react-router-dom';
+
+const AdminSidebar = () => {
+  return (
+    <div className='adminSideBar'>
+      <div className="box"></div>
+      
+        <li>
+        <NavLink to='/admin' style={({isActive})=> ({color: isActive ? 'white' : '#ebebeb'})}>
+          <IoHomeOutline /> Dashboard
+        </NavLink>
+        </li>
+        <li>
+        <NavLink to='/admin/teachers' style={({isActive})=> ({color: isActive ? 'white' : '#ebebeb'})}>
+          <BsPersonRolodex /> Staffs
+        </NavLink>
+        </li>
+        <li>
+        <NavLink to='/admin/students' style={({isActive})=> ({color: isActive ? 'white' : '#ebebeb'})}>
+          <PiStudent /> Students
+        </NavLink>
+        </li>
+       <li> <NavLink to='/' style={({isActive})=> ({color: isActive ? 'white' : '#ebebeb'})}>
+        Home
+        </NavLink></li>
+      
+      <li className='logout'><CiLogout /> Log Out</li>
+    </div>
+  );
+}
+
+export default AdminSidebar;

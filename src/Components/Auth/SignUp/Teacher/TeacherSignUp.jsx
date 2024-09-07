@@ -8,9 +8,7 @@ const TeacherSignUp = () => {
   const Nav = useNavigate()
   return (
     <div className='teacherSignup'>
-    <aside> <div className="icon"><MdOutlineKeyboardBackspace size={30} onClick={() => Nav('/')}/></div> <div className="logo"></div> </aside>
     <main>
-      <article></article>
       <Teacherform/>
     </main>
   </div>
