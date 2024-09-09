@@ -49,7 +49,8 @@
     .icon{
         width: 30px;
     height: 30px;
-    background-color: yellow;
+    background-color: #F4B400;
+    border-radius: 100%;
     display: flex;
     justify-content: center;
     align-items: center; 
@@ -67,7 +68,8 @@
 .Values article .Sections .icon{
     width: 30px;
     height: 30px;
-    background-color: yellow;
+    background-color: #F4B400;
+    border-radius: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -96,13 +98,24 @@
 .Values aside{
     width: 500px;
     height: 400px;
-    background-color: #fff;
     border-radius: 25px;
     margin-left: -30%;
     padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img{
+        height: 90%;
+        width: 90%;
+        background-size: cover;
+    background-position: center;   
+    background-repeat: no-repeat; 
+    }
+        
 }
 
-.Values aside .icon{
+/* .Values aside .icon{
     width: 30%;
     height: 30%;
     background-color: red;
@@ -132,7 +145,7 @@
     border-radius: 5px;
     margin-left: 45%;
     margin-top: -15%;
-}
+} */
 
 
 @media (min-width: 320px) and (max-width: 932px){

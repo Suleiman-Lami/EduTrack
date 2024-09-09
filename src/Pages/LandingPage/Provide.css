@@ -22,18 +22,15 @@
     justify-content: space-around;
     background-color: #006F5D14;
 }
-
-.whatWeProvide aside{
+.whatWeProvide aside {
     width: 500px;
     height: 400px;
     border-radius: 25px;
-    background-color: grey;
-}
-
-.whatWeProvide aside image{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+    background-image: url(../../assets/WEPROVIDE.png);
+    background-size: cover;
+    background-position: center;   
+    background-repeat: no-repeat; 
+        
 }
 
 .whatWeProvide article{
@@ -73,7 +70,14 @@
     width: 58px;
     height: 58px;
     border-radius: 5px;
-    background-color: grey;
+    background-color: #003B31;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.whatWeProvide article .boxHolder .coloredBox .icon{
+    background-color: #F4B400;
 }
 
 .whatWeProvide article .boxHolder section .sectionInfo{

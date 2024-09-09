@@ -14,8 +14,28 @@
     width: 100%;
     height: max-content;
     min-height:50vh; 
-    background-color: lightgrey;
-}
+    background-size: cover;
+    background-position: center;
+    animation: changeImages 15s ease-in-out infinite; 
+  }
+  
+  @keyframes changeImages {
+    0% {
+      background-image: url(../../assets/WOMAN_TEACHING.png);
+    }
+    25% {
+      background-image: url(../../assets/WOMAN_WRITING.png);
+    }
+    50% {
+      background-image: url(../../assets/WOMAN_TEACHING.png);
+    }
+    75% {
+      background-image: url(../../assets/WEPROVIDE.png);
+    }
+    100% {
+      background-image: url(../../assets/WOMAN_TEACHING.png); 
+    }
+  }
 
 .landing-Component .Intro .textArea{
     width: 50%;
@@ -89,6 +109,12 @@
 }
 
 @media (min-width: 320px) and (max-width: 932px){
+
+    
+.landing-Component .Intro{
+    background-repeat: no-repeat;
+    background-size: cover;
+}
 
     .landing-Component .whyEdutrack{
         width: 100%;

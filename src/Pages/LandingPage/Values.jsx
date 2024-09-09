@@ -1,5 +1,7 @@
 import React from 'react'
 import './Value.css'
+import VALUES from '../../assets/VALUES.png'
+import { CiCircleCheck } from "react-icons/ci";
 
 const Values = () => {
   return (
@@ -11,21 +13,21 @@ const Values = () => {
             </div>
             <div className="bottom">
                <div className="Sections">
-               <div className="icon"></div>
+               <div className="icon"><CiCircleCheck  color='white' size={20} /></div>
                 <section>
                     <h3>For Teachers:</h3>
                     <span>No more struggling with manual attendance. Our app makes it easy to track attendance accurately, giving teachers more time to focus on teaching.</span>
                 </section>
                </div>
                <div className="Sections">
-               <div className="icon"></div>
+               <div className="icon"><CiCircleCheck  color='white' size={20}/></div>
                 <section>
                     <h3>For Schools:</h3>
                     <span>No more struggling with manual attendance. Our app makes it easy to track attendance accurately, giving teachers more time to focus on teaching.</span>
                 </section>
                </div>
                <div className="SectionsB">
-               <div className="icon"></div>
+               <div className="icon"><CiCircleCheck color='white' size={20}/></div>
                 <section>
                     <h3>For parents:</h3>
                     <span>No more struggling with manual attendance. Our app makes it easy to track attendance accurately, giving teachers more time to focus on teaching.</span>
@@ -34,9 +36,10 @@ const Values = () => {
             </div>
         </article>
         <aside>
-            <div className="icon"></div>
+            <img src={VALUES} alt="" />
+            {/* <div className="icon"></div>
             <div className="imageHolder"></div>
-            <div className="chart"></div>
+            <div className="chart"></div> */}
         </aside>
     </div>
   )
