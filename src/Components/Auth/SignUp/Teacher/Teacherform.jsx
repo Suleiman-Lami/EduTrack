@@ -3,14 +3,15 @@ import './TeacherSignUp.css'
 import {z} from 'zod'
 import {useForm} from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
+import { useNavigate } from 'react-router-dom'
 
 const Teacherform = () => {
-         
+  const Nav = useNavigate();       
   const User = z.object({
     Name: z.string(),
     email: z.string().email({message: 'must be a valid email'}),
     place: z.string(),
-    Image: z.instanceof(File, { message: "Please upload a valid file" }),
+    // Image: z.instanceof(File, { message: "Please upload a valid file" }),
     status: z.string(),
     gender: z.string()
   });
@@ -21,7 +22,7 @@ const Teacherform = () => {
 
   const Onsubmit = async(data)=>{
     console.log("SuCCESS", data);
-    Nav('/')
+    Nav('/admin/teachers')
   }
   return (
     <form onSubmit={handleSubmit (Onsubmit)} >

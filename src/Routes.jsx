@@ -15,87 +15,56 @@ import Allteachers from './Pages/adminPages/allTeachers/Allteachers'
 import Allstudent from './Pages/adminPages/allStudent/Allstudent'
 import Teacher from './Dashboards/Teacher/Teacher'
 import Staffdashboard from './Dashboards/Teacher/staffDashboard/Staffdashboard'
+import AdminPage from './Dashboards/Admin/AdminPage'
 
 const Routes = createBrowserRouter([
   {
     path: '/',
     element: <Layout />,
     children: [
-      {
-        path: '/',
-        element: <Landing />
-      },
-      {
-        path: 'About',
-        element: <About />
-      },
-      {
-        path: 'Contact',
-        element: <Contact />
-      },
-      {
-        path: 'Thanks',
-        element: <Thanks />
-      },
+      { path: '/', element: <Landing /> },
+      { path: 'about', element: <About /> },
+      { path: 'contact', element: <Contact /> },
+      { path: 'thanks', element: <Thanks /> },
     ]
   },
   {
-    // path: 'dashboard',
+    // element: <React.Fragment />,
     children: [
       {
         path: 'admin',
         element: <Admin />, 
         children: [
-          {
-            path: 'teachers',
-            element: <Allteachers />
-          },
-          {
-            path: 'staffs',
-            element: <TeacherSignUp /> 
-          },
-          {
-            path: 'students',
-            element: <Allstudent />
-          },
-          {
-            path: 'Student',
-            element: <StudentOnboard /> 
-          }
+          { path: '', element: <AdminPage /> },
+          { path: 'teachers', element: <Allteachers /> },
+          { path: 'staffs', element: <TeacherSignUp /> },
+          { path: 'students', element: <Allstudent /> },
+          { path: 'student-onboard', element: <StudentOnboard /> },
         ]
       },
       {
-        // path: 'teacher',
+        path: 'teacher',
         element: <Teacher />, 
         children: [
-          {
-            path: 'teacher',
-            element: <Staffdashboard/>
-          },
-            {
-            path: 'students',
-            element: <Allstudent />
-          },
-          {
-            path: 'Student',
-            element: <StudentOnboard /> 
-          }
+          { path: 'dashboard', element: <Staffdashboard /> },
+          { path: 'students', element: <Allstudent /> },
+          { path: 'student-onboard', element: <StudentOnboard /> },
         ]
       }
     ]
   },
   {
-    path: 'login',
+    path: '/login',
     element: <Login />
   },
   {
-    path: 'forgottenpassword',
+    path: '/forgottenpassword',
     element: <Forgot />
   },
   {
-    path: 'signup',
+    path: '/signup',
     element: <SignUp />
-  },
+  }
 ])
 
 export default Routes

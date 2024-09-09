@@ -1,0 +1,207 @@
+.AdminPage{
+    width: 90%;
+    height: auto;
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+    /* background-color: green; */
+}
+
+.AdminPage .boxHolder{
+    width: 100%;
+    height: 20vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.AdminPage .boxHolder section{
+    width: 30%;
+    height: 90%;
+    background-color: white;
+    display: flex;
+    gap: 20px;
+    border-radius: 10px;
+}
+
+.AdminPage .boxHolder section .color{
+    width: 20px;
+    height: 100%;
+    background-color: #F4B400;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+
+}
+
+.AdminPage .boxHolder .TeacherResult .color{
+    background-color: #003B31;
+}
+
+.AdminPage .boxHolder section .textArea{
+    width: 70%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.AdminPage .boxHolder section .iconHolder{
+    width: 20%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.AdminPage .boxHolder section .calc{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-transform: capitalize;
+    color: #003B31;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.AdminPage .AnnouncementBox{
+    width: 100%;
+    height: 30vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.AdminPage .AnnouncementBox article{
+    width: 65%;
+    height: 90%;
+    gap: 20px;
+    display: flex;
+    flex-direction: column;
+
+    .articleHeading{
+        width: 100%;
+        height: 50px;
+        color: #003B31;
+        display: flex;
+        justify-content: space-between;
+
+        h3{
+            font-size: 25px;
+        }
+    }
+
+    input{
+        width: 100%;
+        height: 80%;
+        border: none;
+        outline: none;
+        background-color: rgb(249, 246, 243);
+       padding: 40px;
+       border-radius: 5px;
+    }
+}
+
+.AdminPage .AnnouncementBox .articleHeading button{
+    width: 30%;
+    height: 50px;
+    background-color: #003B31;
+    border-radius: 5px;
+    color: white;
+    border: none;
+}
+
+.AdminPage .AnnouncementBox .Adminaside{
+    width: 25%;
+    height: 90%;
+    background-color: white;
+    border-radius: 5px;
+    text-align: center;
+    display: flex;
+    font-size: 18px;
+    flex-direction: column;
+    line-height: 18px;
+
+    h4{
+        color: #003B31;
+        font-size: 20px;
+        font-weight: 400;
+
+    }
+
+    h5{
+        color: orange;
+        font-size: 20px;
+        font-weight: 400;
+    }
+}
+
+.AdminPage .Chart{
+    width: 100%;
+    height: 50vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.AdminPage .Chart .Chartbox{
+    width: 65%;
+    height: 90%;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+}
+
+
+@media (min-width: 320px) and (max-width: 768px) {
+    
+    .AdminPage .boxHolder{
+        height: auto;
+        gap: 20px;
+        padding-top: 20px;
+        flex-direction: column;
+
+        section{
+            width: 100%;
+            height: 160px;
+
+            .color{
+                width: 30px;
+            }
+        }
+    }
+
+    .AdminPage .boxHolder section .calc{
+        gap: 10px;
+    }
+
+    .AdminPage .AnnouncementBox{
+        height: auto;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+
+    .AdminPage .AnnouncementBox article{
+        width: 100%;
+
+        input{
+            height: 50%;
+        }
+    }
+
+    .AdminPage .AnnouncementBox .Adminaside{
+        height: 25vh;
+        width: 80%;
+        padding: 20px;
+    }
+
+    .AdminPage .Chart{
+        flex-direction: column;
+        height: auto;
+
+        .Chartbox{
+            width: 100%;
+            height: 220px;
+        }
+    }
+
+}

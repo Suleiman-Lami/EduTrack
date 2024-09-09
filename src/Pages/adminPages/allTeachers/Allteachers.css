@@ -10,6 +10,150 @@
     padding: 20px;
 }
 
+.teachersBox{
+    width: 100%;
+    height: auto;
+    min-height: 85vh;
+    max-height: 85vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.allTeachers .teachersBox-Header{
+    width: 100%;
+    height: 20%;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    margin-bottom: 10px;
+
+
+    button{
+        width: 15%;
+        height: 50px;
+        background-color: #003B31;
+        color: white;
+        font-size: 18px;
+        border: none;
+        border-radius: 5px;
+    }
+}
+
+.TeacherList{
+    width: 100%;
+    height: auto;
+    min-height: 80%;
+    max-height: 80%;
+    display: flex;
+    flex-direction: column;
+}
+
+.TeacherList-Footer{
+    width: 100%;
+    height: 40px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    background-color: #003B31;
+}
+
+.TeacherList .teacherList-Header{
+    width: 100%;
+    height: 40px;
+    display: flex;
+    color: white;
+    align-items: center;
+    text-transform: uppercase;
+    justify-content: space-between;
+    background-color: #003B31;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    padding-left: 20px;
+    padding-right: 10px;
+    position: sticky;
+    top: 0%;
+
+    
+    h5{
+        display: none;
+    }
+
+    h4{
+        display: flex;
+    }
+}
+
+.TeacherList main{
+    width: 100%;
+    height: auto;
+    min-height: 60vh;
+    max-height: 300px;
+    padding-bottom: 30px;
+    display: flex;
+    gap: 5px;
+    padding: 5px;
+    flex-direction: column;
+    align-items: center;
+    background-color: #fbfbfb;
+    overflow-y: scroll;
+    -ms-overflow-style: none;  
+    scrollbar-width: none; 
+}
+
+.TeacherList main section{
+    width: 100%;
+    height: 60px;
+    border-radius: 5px;
+    padding-left: 20px;
+    padding-right: 5px;
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    span{
+        display: none;
+    }
+}
+
+.TeacherList main section .sectionInfo{
+    display: flex;
+}
+
+.TeacherList main section .sectionInfoP{
+    height: 90%;
+    gap: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    button{
+        width: 100px;
+        height: 90%;
+        background-color: #003B31;
+        color: white;
+        font-size: 16px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+}
+
+.TeacherList main section .sectionInfoP .profile{
+    width: 50px;
+    height: 90%;
+    border-radius: 100%;
+    background-color: grey;
+
+    image{
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.TeacherList main section .sectionInfoG{
+    width: 10%;
+}
+
 .allTeachers .emptyModal{
     width: 30%;
     height: 30vh;
@@ -39,6 +183,59 @@
 }
 
 @media (min-width: 320px)and (max-width: 768px){
+
+    .allTeachers{
+        padding: 10px;
+    }
+
+    .allTeachers .teachersBox-Header{
+        button{
+            width: 38%;
+            height: 40px;
+        }
+    }
+
+    .TeacherList main section{
+        padding: 10px;
+
+        span{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+
+    .TeacherList main section .sectionInfo{
+        display: none;
+       
+    }
+
+    .TeacherList main section .sectionInfoP{
+        button{
+            width: 60px;
+        }
+
+        .profile{
+            width: 40px;
+            height: 40px;
+        }
+    }
+
+    .TeacherList .teacherList-Header{
+        padding: 15px;
+        gap: 20px;
+        font-size: 16px;
+        text-transform: lowercase;
+
+        h5{
+            display: flex;
+        }
+
+        h4{
+            display: none;
+        }
+    }
+
     .allTeachers .emptyModal{
         width: 80%;
         height: auto;

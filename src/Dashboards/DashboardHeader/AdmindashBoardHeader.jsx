@@ -13,7 +13,7 @@ const DashBoardHeader = () => {
   const { pathname } = useLocation(); 
 
   useEffect(() => {
-    const title = pathname.slice(1); 
+    const title = pathname.slice(7); 
     setPath(title);
     console.log(title);
   }, [pathname]);

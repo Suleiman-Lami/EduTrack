@@ -69,9 +69,8 @@
     scrollbar-width: none; 
     display: flex;
     flex-direction: column;
-    padding-bottom: 30px;
+    /* padding-bottom: 30px; */
     align-items: center;
-    background-color: white;
 }
 
 @media (min-width: 320px) and (max-width: 768px){
@@ -87,7 +86,7 @@
         width: 90%;
     }
 
-    .admin-Dashboard article{
+    .teacher-dashBoard article{
         width: 100%;
     }
 }
@@ -97,4 +96,5 @@
     .teacher-dashBoard aside{
         width: 25%;
     }
+    
 }

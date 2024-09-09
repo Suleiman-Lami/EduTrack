@@ -3,13 +3,15 @@ import './StudentOnboard.css'
 import {z} from 'zod'
 import {useForm} from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
+import { useNavigate } from 'react-router-dom'
 
 const StudentForm = () => {
+    const Nav = useNavigate();
     const User = z.object({
         Name: z.string(),
         email: z.string().email({message: 'must be a valid email'}),
         place: z.string(),
-        Image: z.instanceof(File, { message: "Please upload a valid file" }),
+        // Image: z.instanceof(File, { message: "Please upload a valid file" }),
         gender: z.string(),
         class: z.union([
             z.string().min(1, { message: "Class cannot be an empty string" }),
@@ -23,7 +25,7 @@ const StudentForm = () => {
     
       const Onsubmit = async(data)=>{
         console.log("SuCCESS", data);
-        Nav('/')
+        Nav('/students')
       }
   return (
     <form onSubmit={handleSubmit(Onsubmit)}>
