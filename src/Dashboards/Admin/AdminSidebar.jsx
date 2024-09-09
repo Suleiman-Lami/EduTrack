@@ -12,23 +12,21 @@ const AdminSidebar = () => {
       <div className="box"></div>
       
         <li>
-        <NavLink to='/admin' style={({isActive})=> ({color: isActive ? 'white' : '#ebebeb'})}>
+        <NavLink to='/admin' style={({isActive})=> ({color: isActive ? '003B31' : '#ebebeb'})}>
           <IoHomeOutline /> Dashboard
         </NavLink>
         </li>
         <li>
-        <NavLink to='/admin/teachers' style={({isActive})=> ({color: isActive ? 'white' : '#ebebeb'})}>
+        <NavLink to='/admin/teachers' style={({isActive})=> ({color: isActive ? '003B31' : '#ebebeb'})}>
           <BsPersonRolodex /> Staffs
         </NavLink>
         </li>
         <li>
-        <NavLink to='/admin/students' style={({isActive})=> ({color: isActive ? 'white' : '#ebebeb'})}>
+        <NavLink to='/admin/students' style={({isActive})=> ({color: isActive ? '003B31' : '#ebebeb'})}>
           <PiStudent /> Students
         </NavLink>
         </li>
-       <li> <NavLink to='/' style={({isActive})=> ({color: isActive ? 'white' : '#ebebeb'})}>
-        Home
-        </NavLink></li>
+      
       
       <li className='logout'><CiLogout /> Log Out</li>
     </div>

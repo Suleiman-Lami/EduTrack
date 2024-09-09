@@ -10,8 +10,8 @@ const AdminPage = () => {
           <div className="textArea">
             <div className="iconHolder"></div>
             <div className="calc">
-              <h3>students</h3>
-              <span>0</span>
+              <span>students</span>
+              <h3>0</h3>
             </div>
           </div>
         </section>
@@ -20,8 +20,8 @@ const AdminPage = () => {
           <div className="textArea">
             <div className="iconHolder"></div>
             <div className="calc">
-              <h3>Teachers</h3>
-              <span>0</span>
+              <span>Teachers</span>
+              <h3>0</h3>
             </div>
           </div>
         </section>
@@ -30,8 +30,8 @@ const AdminPage = () => {
           <div className="textArea">
             <div className="iconHolder"></div>
             <div className="calc">
-              <h3>Classes</h3>
-              <span>0</span>
+              <span>Classes</span>
+              <h3>0</h3>
             </div>
           </div>
         </section>

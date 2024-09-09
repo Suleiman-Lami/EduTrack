@@ -16,6 +16,9 @@ import Allstudent from './Pages/adminPages/allStudent/Allstudent'
 import Teacher from './Dashboards/Teacher/Teacher'
 import Staffdashboard from './Dashboards/Teacher/staffDashboard/Staffdashboard'
 import AdminPage from './Dashboards/Admin/AdminPage'
+import Teacherprofile from './Dashboards/Teacher/teacherProfile/Teacherprofile'
+import Adminprofile from './Dashboards/Admin/adminProfile/Adminprofile'
+import Notify from './Dashboards/Notifications/Notify'
 
 const Routes = createBrowserRouter([
   {
@@ -37,18 +40,22 @@ const Routes = createBrowserRouter([
         children: [
           { path: '', element: <AdminPage /> },
           { path: 'teachers', element: <Allteachers /> },
+          { path: 'adProfile', element: < Adminprofile/> },
           { path: 'staffs', element: <TeacherSignUp /> },
           { path: 'students', element: <Allstudent /> },
           { path: 'student-onboard', element: <StudentOnboard /> },
+          { path: 'notifications', element: <Notify /> }
         ]
       },
+     
       {
-        path: 'teacher',
         element: <Teacher />, 
         children: [
-          { path: 'dashboard', element: <Staffdashboard /> },
+          { path: 'teacher', element: <Staffdashboard /> },
+          { path: 'profile', element: <Teacherprofile /> },
           { path: 'students', element: <Allstudent /> },
           { path: 'student-onboard', element: <StudentOnboard /> },
+          { path: 'notifications', element: <Notify /> }
         ]
       }
     ]

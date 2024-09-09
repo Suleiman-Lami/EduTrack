@@ -12,7 +12,6 @@ const TeacherSideBar = () => {
     <div className="box"></div>
         <li><NavLink   to='/teacher' style={({isActive})=> ({color: isActive ? 'white' : '#ebebeb'})}><IoHomeOutline/>Dashboard</NavLink></li>
         <li><NavLink  to='/students' style={({isActive})=> ({color: isActive ? 'white' : '#ebebeb'})}><PiStudent />Students</NavLink></li>
-        <li><NavLink  to='/' style={({isActive})=> ({color: isActive ? 'white' : '#ebebeb'})}>Home</NavLink></li>
         <li className='logout'><CiLogout /> Log Out</li>
 </div>
 )

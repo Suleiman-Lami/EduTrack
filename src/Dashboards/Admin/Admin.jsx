@@ -7,9 +7,9 @@ import AdminSidebar from './AdminSidebar'
 const Admin = () => {
   return (
     <div className='admin-Dashboard'>
-        <aside>
+        <div className='adminAside'>
           <AdminSidebar/>
-        </aside>
+        </div>
         <article>
           <DashBoardHeader/>
           <Outlet/>
