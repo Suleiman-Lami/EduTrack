@@ -2,8 +2,7 @@ import React from 'react'
 import './About.css'
 import Story from './Story'
 import Leadership from './Leadership'
-import SIgnBox from './SIgnBox'
-
+import SignModal from '../LandingPage/SignModal'
 const About = () => {
   return (
     <div className='About-Componnt'>
@@ -16,7 +15,7 @@ const About = () => {
       </div>
         <Story/>
         <Leadership/>
-        <SIgnBox/>
+        <SignModal/>
     </div>
   )
 }

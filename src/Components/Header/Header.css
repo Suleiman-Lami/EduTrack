@@ -67,8 +67,8 @@
 
 .headerWrap .auth button {
     width: 35%;
-    height: 70%;
-    color: #003B31;
+    height: 50px;
+    /* color: #003B31; */
     font-family:'Times New Roman', Times, serif;
     font-weight: 600;
     font-size: 20px;
@@ -84,7 +84,7 @@
 
 .headerWrap .auth .signUpBtn {
     width: 60%;
-    height: 80%;
+    height: 50px;
     border: none;
     color: white;
     border-radius: 5px;

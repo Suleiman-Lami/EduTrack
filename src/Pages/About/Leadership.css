@@ -1,120 +1,69 @@
 .Leadership-component{
     width: 100%;
-    gap: 90px;
-    height: max-content;
+    height: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 30px;
+    padding: 20px;
+    gap: 20px;
 
+    h2{
+        color: #003B31;
+    }
+}
 
-    .LeadershipHead{
-        width: 60%;
-        gap: 10px;
+.Leadership-component .text{
+    width: 60%;
+    text-align: center;
+    line-height: 18px;
+}
+
+.Leadership-component .boxHolder{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.Leadership-component .boxHolder section{
+    width: 20%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+
+    .imageHolder{
+        width: 100px;
+        height:100px;
+        background-image: url(../../assets/WEPROVIDE.png);
+        background-size: cover;
+        background-position: center;   
+        background-repeat: no-repeat; 
+        border-radius: 100%;
+    }
+
+    .textArea{
+        width: 100%;
         display: flex;
         flex-direction: column;
         align-items: center;
-
-        span{
-            font-size: 18px;
-        }
-        
+        text-align: center;
+        color: #2E2E2E;
     }
+}
 
-    .Executive{
+@media (min-width: 320px)  and (max-width: 768px){
+    .Leadership-component .text{
         width: 100%;
-        height: max-content;
-        display: flex;
-        justify-content: space-between;
-
-        .textArea{
-            width: 20%;
-            height: 100%;
-            color: orange;
-            text-decoration: underline;
-        }
-
-        .boxHolder{
-            width: 80%;
-            height: max-content;
-            display: flex;
-            flex-direction: column;
-            gap: 40px;
-
-            .executiveBox{
-                width: 100%;
-                height: 40vh;
-                background-color: #ebebeb;
-                border-radius: 10px;
-                box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-
-                .imgHolder{
-                    width: 30%;
-                    height: 100%;
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-
-                    .imgBox{
-                        width: 50%;
-                        height: 60%;
-                        background-color: white;
-                        border-radius: 10px;
-                        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-                    }
-                }
-                .textArea{
-                    width: 70%;
-                    height: 100%;
-                    display: flex;
-                    flex-direction: column;
-                }
-            }
-        }
     }
 
-    .LeadershipFooter{
-        width: 100%;
-        height: 40vh;
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-
-        .boxHolder{
-            width: 25%;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            padding: 20px;
-            gap: 20px;
-            
-
-            .imgHolder{
-                width: 100%;
-                height: 40%;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-
-                .imgBox{
-                    width: 50%;
-                    height: 100%;
-                    margin-left: 30px;
-                    border-radius: 10px;
-                    background-color: white;
-                    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-                }
-            }
-
-            .textArea{
-                width: 100%;
-                height: 60%;
-                display: flex;
-                flex-direction: column;
-                border-radius: 10px;
-                background-color: green;
-            }
-        }
+    .Leadership-component .boxHolder{
+        flex-wrap: wrap;
     }
 
+    .Leadership-component .boxHolder section{
+        width: 40%;
+    }
 }

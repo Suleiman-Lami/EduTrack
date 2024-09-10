@@ -134,7 +134,6 @@
     background-color: #003B31;
     position: sticky;
     margin-top: 0%;
-    z-index: 10;
     color: white;
     display: flex;
     justify-content: space-around; 

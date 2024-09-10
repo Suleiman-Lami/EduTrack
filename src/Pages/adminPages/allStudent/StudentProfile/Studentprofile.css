@@ -1,0 +1,192 @@
+.Studentprofile {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    padding: 40px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    gap: 20px;
+}
+
+.Studentprofile h3 {
+    font-size: 25px;
+    color: #003B31; /* Dark green color for the heading */
+}
+
+.Studentprofile .btnHolder {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    button {
+        width: 120px;
+        height: 40px;
+        color: white;
+        font-size: 18px;
+        border: none;
+        cursor: pointer;
+        border-radius: 5px;
+        background-color: #F4B400; /* Button color */
+    }
+}
+
+.Studentprofile .profileBody {
+    width: 100%;
+    padding: 15px;
+    display: flex;
+    height: auto;
+    gap: 20px;
+    border-radius: 10px;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+
+    hr {
+        height: 100%;
+        border: 1px solid #ddd; 
+    }
+}
+
+.Studentprofile .profileBody .imgHolder {
+    width: 30%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+
+    .imgBox {
+        width: 150px;
+        height: 150px;
+        background-color: grey;
+        border-radius: 50%; 
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+    }
+}
+
+.Studentprofile .profileBody .imgHolder section {
+    width: 100%;
+    height: auto;
+    gap: 5px;
+    display: flex;
+    flex-direction: column;
+
+    label {
+        font-weight: 550;
+        font-size: 18px;
+        text-transform: capitalize;
+    }
+
+    span {
+        font-size: 16px;
+    }
+
+    h4 {
+        font-weight: 500;
+    }
+}
+
+.Studentprofile .profileBody .Report {
+    width: 60%;
+    background-color: #F2F8F7; 
+    color: white; 
+    border-radius: 10px; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.Studentprofile .profileBody .Report .Header{
+    width: 100%;
+    height: 30px;
+    background-color: #003B31; 
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.Studentprofile .profileBody .Report .body{
+    width: 100%;
+    height: auto;
+    min-height: 70px;
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+      overflow-y: scroll;
+    -ms-overflow-style: none;  
+    scrollbar-width: none; 
+
+}
+
+.Studentprofile .profileBody .Report .body section{
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 5px;
+
+    h3{
+        color: black;
+        font-size: 20px;
+        font-weight: 400;
+    }
+    h4{
+        color: #003B31;
+        font-size: 20px;
+        font-weight: 700;  
+    }
+}
+
+@media (min-width: 320px) and (max-width: 768px) {
+    .Studentprofile{
+        padding: 0%;
+        gap: 0%;
+        h3{
+            padding: 20px;
+        }
+    }
+
+    .Studentprofile .btnHolder {
+        padding: 20px;
+    }
+
+    .Studentprofile .profileBody {
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+        min-height: 90vh;
+        padding: 20px;
+
+        hr{
+            width: 100%;
+        }
+    }
+
+    .Studentprofile .profileBody .imgHolder{
+        width: 100%;
+    }
+
+    .Studentprofile .profileBody .Report {
+        width: 100%;
+    }
+
+    .Studentprofile .profileBody .Report .body{
+        padding: 0%;
+    }
+}

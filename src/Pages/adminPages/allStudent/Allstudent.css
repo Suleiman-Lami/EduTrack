@@ -39,6 +39,7 @@
         border: none;
         border-radius: 5px;
     }
+
 }
 
  .StudentList{
@@ -96,40 +97,72 @@
     scrollbar-width: none; 
 }
 
-.StudentList main section{
+.StudentList main section {
     width: 100%;
-    height: 20vh;
+    height: 60px; 
     border-radius: 5px;
     padding-left: 20px;
-    padding-right: 5px;
+    padding-right: 20px; 
     background-color: white;
     display: flex;
     justify-content: space-between;
     align-items: center;
-
-    span{
-        display: none;
-    }
+    position: relative; 
+    margin-bottom: 40px; 
 }
 
-.StudentList main section .sectionInfo{
-    height: 90%;
+.StudentList main section .sectionInfo {
+    height: 100%;
     gap: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
-
-    button{
-        width: 100px;
-        height: 100%;
-        background-color: #F4B400;
-        color: white;
-        font-size: 16px;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-    }
 }
+
+.StudentList main section .sectionInfo button {
+    width: 100px;
+    height: 40px; 
+    background-color: #F4B400;
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    position: relative; 
+}
+
+.dropdown {
+    position: absolute;
+    top: 25px; 
+    left: 950px; 
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    margin-bottom: 40px; 
+    width: 100px; 
+    height: 55px;
+    gap: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.dropdown div {
+    width: 90%;
+    gap: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f1f1f1;
+
+}
+
+.dropdown div:hover {
+    background-color: #d5ede9;
+}
+
 
 .StudentList main section .sectionInfo .profile{
     width: 25px;
@@ -137,15 +170,14 @@
     border-radius: 100%;
     background-color: grey;
 
-    image{
+    img{
         width: 100%;
         height: 100%;
+        object-fit: cover;
+        border-radius: 360px;
+        cursor: pointer;
     }
 }
-
-/* .StudentList main section .sectionInfoG{
-    width: 10%;
-} */
 
 .allStudent .emptyModal{
     width: 30%;

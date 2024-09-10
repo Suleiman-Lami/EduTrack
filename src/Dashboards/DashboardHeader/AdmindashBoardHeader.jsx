@@ -14,7 +14,7 @@ const DashBoardHeader = () => {
   const Nav = useNavigate();
 
   useEffect(() => {
-    const title = pathname.slice(7); 
+    const title = pathname.slice(1); 
     setPath(title);
     console.log(title);
   }, [pathname]);

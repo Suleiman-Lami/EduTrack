@@ -1,10 +1,12 @@
 .AdminPage{
-    width: 90%;
+    width: 100%;
     height: auto;
     display: flex;
     gap: 20px;
+    padding-right: 40px ;
+    padding-left: 40px ;
     flex-direction: column;
-    /* background-color: green; */
+    background-color: #Ebebeb;
 }
 
 .AdminPage .boxHolder{
@@ -71,12 +73,13 @@
     align-items: center;
 }
 
-.AdminPage .AnnouncementBox article{
+.AdminPage .AnnouncementBox .AnnounceArticle{
     width: 65%;
     height: 90%;
     gap: 20px;
     display: flex;
     flex-direction: column;
+    overflow: hidden;
 
     .articleHeading{
         width: 100%;
@@ -111,12 +114,14 @@
 }
 
 .AdminPage .AnnouncementBox .Adminaside{
-    width: 25%;
-    height: 90%;
+    width: 30%;
+    height: 80%;
     background-color: white;
     border-radius: 5px;
     text-align: center;
     display: flex;
+    gap: 5px;
+    justify-content: center;
     font-size: 18px;
     flex-direction: column;
     line-height: 18px;
@@ -135,20 +140,69 @@
     }
 }
 
-.AdminPage .Chart{
+.AdminPage .Chart {
     width: 100%;
-    height: 50vh;
+    height: auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.AdminPage .Chart .Chartbox{
-    width: 65%;
-    height: 90%;
-    padding: 20px;
+.AdminPage .Chart .Chartbox {
+    width: 65%;                   
+    height: 300px;              
+    padding: 10px;
     background-color: white;
     border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.AdminPage .Chart .Chartbox canvas {
+    width: 100% !important;       
+    height: 100% !important; 
+    color:#003B31 !important;
+    cursor: pointer;
+}
+
+.AdminPage .Chart h3 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+    color:#003B31;
+}
+
+.upGrade{
+    width: 30%;
+    height: 250px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+    gap: 20px;
+
+    h3{
+        color: #003B31;
+    }
+    span{
+        margin-top: -30px;
+    }
+
+   button{
+    width: 150px;
+    height: 40px;
+    color: white;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    background-color: #F4B400;
+   }
 }
 
 
@@ -177,19 +231,19 @@
     .AdminPage .AnnouncementBox{
         height: auto;
         flex-direction: column;
-        justify-content: space-around;
+        justify-content: center;
     }
 
-    .AdminPage .AnnouncementBox article{
+    .AdminPage .AnnouncementBox .AnnounceArticle{
         width: 100%;
-
+        height: 50vh;
         input{
             height: 50%;
         }
     }
 
     .AdminPage .AnnouncementBox .Adminaside{
-        height: 25vh;
+        height: auto;
         width: 80%;
         padding: 20px;
     }
@@ -197,11 +251,16 @@
     .AdminPage .Chart{
         flex-direction: column;
         height: auto;
+        gap: 30px;
 
         .Chartbox{
             width: 100%;
             height: 220px;
         }
+    }
+
+    .AdminPage .upGrade{
+        width: 90%;
     }
 
 }

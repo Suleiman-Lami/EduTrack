@@ -1,0 +1,56 @@
+.StudentsideBar{
+    width: 100%;
+    height: max-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    background-color: #003B31;
+}
+
+.StudentsideBar .box{
+    width: 100%;
+    height: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: grey;
+}
+
+.StudentsideBar li{
+    width: 70%;
+    height: 30px;
+    gap: 10px;
+    border: none;
+    font-size: 16px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    list-style-type: none;
+
+    a{
+        gap: 10px;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+    }
+
+}
+
+.StudentsideBar .logout{
+    margin-top: 40px;
+}
+
+@media (min-width: 320px)  and (max-width: 768px){
+    .StudentsideBar{
+        align-self: flex-start;
+    }
+
+    .StudentsideBar li{
+        width: 90%;
+    }
+}

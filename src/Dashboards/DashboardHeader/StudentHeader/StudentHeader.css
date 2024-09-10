@@ -1,0 +1,121 @@
+.student-dashBoardHeader{
+    width: 100% ;
+    height: 60px;
+    gap: 20px;
+    padding-left: 20px;
+    color: white;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #003B31;
+    position: sticky;
+    top: 0%;
+    z-index: 10;
+
+    span{
+        width: 30%;
+    }
+}
+
+.student-dashBoardHeader .Menu{
+    width: 15%;
+    height: 90%;
+    display: none;
+    position: relative;
+
+    .icon{
+        width: 100%;
+        height: 70%;
+    }
+}
+
+.student-dashBoardHeader .profile{
+    width: 30%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: center;
+
+    .profileIcon{
+        width: 50px;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+    }
+
+    .icon{
+        width: 80%;
+        height: 80%;
+    }
+
+    .user{
+        width: 50px;
+        height: 50px;
+        border-radius: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        image{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+}
+
+@media (min-width: 320px) and (max-width: 768px){
+
+    .student-dashBoardHeader{
+        padding-left: 0%;
+    }
+
+    .student-dashBoardHeader .Menu{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-left: 10px;
+    }
+    .student-dashBoardHeader .Menu .sideBar{
+        width: 40vw;
+        height: 100vh;
+        background-color: #003B31;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+       margin-left: 0%;
+        top: 45px;
+        position: absolute;
+    }
+
+    .student-dashBoardHeader span{
+        width: 10%;
+    }
+
+    .student-dashBoardHeader .searchBar{
+        width: 50%;
+
+        input{
+            width: 75%;
+        }
+
+        .searchIcon{
+            width: 25%;
+        }
+    }
+
+    .student-dashBoardHeader .profile{
+        width: 15%;
+        gap: 0%;
+        padding-right: 10px;
+    }
+}
+
+@media (min-width: 768px)  and (max-width: 1024px){
+    .student-dashBoardHeader .Menu .sideBar{
+        width: 25vw;
+    }
+}

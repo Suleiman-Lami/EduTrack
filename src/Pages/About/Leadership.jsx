@@ -4,52 +4,48 @@ import './Leadership.css'
 const Leadership = () => {
   return (
     <div className='Leadership-component'>
-        <div className="LeadershipHead">
-            <h1>The Leadership Team</h1>
-            <span>Know the people who leads team Edutrack to achieve the vision & goals</span>
+        <h2>Meet the team</h2>
+        <div className="text">
+        Our success is rooted in building teams of outstanding individuals with diverse backgrounds and perspectives. 
+We believe we are a better company when all of us are able to bring our full authentic selves to work. 
+Together, we’re committed to building a team and culture that’s diverse, equitable and inclusive.
         </div>
-        <div className="Executive">
-            <div className="textArea"><h2>Executive Team</h2></div>
-            <div className="boxHolder">
-                <div className="executiveBox">
-                    <div className="imgHolder">
-                        <div className="imgBox"></div>
-                    </div>
-                    <div className="textArea"></div>
+        <div className="boxHolder">
+            <section>
+                <div className="imageHolder"></div>
+                <div className="textArea">
+                    <h3>Sueliman R lami</h3>
+                    <span>Frontend</span>
                 </div>
-                <div className="executiveBox">
-                    <div className="imgHolder">
-                        <div className="imgBox"></div>
-                    </div>
-                    <div className="textArea"></div>
+            </section>
+            <section>
+                <div className="imageHolder"></div>
+                <div className="textArea">
+                    <h3>Sueliman R lami</h3>
+                    <span>Frontend</span>
                 </div>
-            </div>
-        </div>
-        <div className="LeadershipFooter">
-            <div className="boxHolder">
-                <div className="imgHolder">
-                    <div className="imgBox"></div>
+            </section>
+            <section>
+                <div className="imageHolder"></div>
+                <div className="textArea">
+                    <h3>Sueliman R lami</h3>
+                    <span>Frontend</span>
                 </div>
-                <div className="textArea"></div>
-            </div>
-            <div className="boxHolder">
-                <div className="imgHolder">
-                    <div className="imgBox"></div>
+            </section>
+            <section>
+                <div className="imageHolder"></div>
+                <div className="textArea">
+                    <h3>Sueliman R lami</h3>
+                    <span>Frontend</span>
                 </div>
-                <div className="textArea"></div>
-            </div>
-            <div className="boxHolder">
-                <div className="imgHolder">
-                    <div className="imgBox"></div>
+            </section>
+            <section>
+                <div className="imageHolder"></div>
+                <div className="textArea">
+                    <h3>Sueliman R lami</h3>
+                    <span>Frontend</span>
                 </div>
-                <div className="textArea"></div>
-            </div>
-            <div className="boxHolder">
-                <div className="imgHolder">
-                    <div className="imgBox"></div>
-                </div>
-                <div className="textArea"></div>
-            </div>
+            </section>
         </div>
     </div>
   )

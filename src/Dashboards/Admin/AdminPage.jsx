@@ -1,7 +1,60 @@
-import React from 'react'
-import './AdminPage.css'
+import React, { useState, useEffect } from 'react';
+import './AdminPage.css';
+import { Bar } from 'react-chartjs-2';
+import { Chart as ChartJS, BarElement, CategoryScale, LinearScale, Tooltip, Legend } from 'chart.js';
+
+ChartJS.register(BarElement, CategoryScale, LinearScale, Tooltip, Legend);
 
 const AdminPage = () => {
+  const [attendanceData, setAttendanceData] = useState({
+    labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec'],
+    datasets: [
+      {
+        label: 'Checkout Attendance Monthly update'
+      },
+      {
+        label: 'Present',
+        data: [30, 25, 40, 45, 50, 55, 60, 70, 65, 60, 55, 50],
+        backgroundColor: '#003B31',
+      },
+      {
+        label: 'Absent',
+        data: [10, 5, 15, 5, 20, 15, 10, 5, 20, 25, 30, 40],
+        backgroundColor: '#F4B400',
+      },
+    ],
+  });
+
+  useEffect(() => {
+    // Fetch the data from your API
+    const fetchAttendanceData = async () => {
+      try {
+        const response = await fetch('/api/attendance'); // Example API endpoint
+        const data = await response.json();
+        // Assuming data contains an array with monthly data for "present" and "absent"
+        const { present, absent } = data;
+
+        setAttendanceData((prevData) => ({
+          ...prevData,
+          datasets: [
+            {
+              ...prevData.datasets[0],
+              data: present, // Update present data from API
+            },
+            {
+              ...prevData.datasets[1],
+              data: absent, // Update absent data from API
+            },
+          ],
+        }));
+      } catch (error) {
+        console.error('Error fetching attendance data:', error);
+      }
+    };
+
+    fetchAttendanceData();
+  }, []);
+
   return (
     <div className='AdminPage'>
       <div className="boxHolder">
@@ -37,13 +90,13 @@ const AdminPage = () => {
         </section>
       </div>
       <div className="AnnouncementBox">
-        <article>
+        <div className='AnnounceArticle'>
           <div className="articleHeading">
             <h3>Announcement</h3>
             <button>Send</button>
           </div>
           <input type="text" placeholder='What would like to announce today?'/>
-        </article>
+        </div>
         <aside className='Adminaside'>
         You're on the <h4> freemium</h4> plan! 
         add up to <h4> 3 teachers</h4>, 
@@ -52,11 +105,50 @@ const AdminPage = () => {
         </aside>
       </div>
       <div className="Chart">
-        <div className="Chartbox">chartbox</div>
-        
-      </div>
-    </div>
-  )
-}
+        <div className="Chartbox">
+          <Bar
+            data={attendanceData}
+            options={{
+              responsive: true,
+              plugins: {
+                legend: { position: 'top' },
+                tooltip: {
+                  callbacks: {
+                    label: (context) => `${context.dataset.label}: ${context.raw}`,
+                  },
+                },
+              },
+              scales: {
+                y: {
+                  beginAtZero: true,
+                  title: {
+                    display: true,
+                    text: 'Number of Students',
+                  },
+                },
+                x: {
+                  title: {
+                    display: true,
+                    text: 'Months',
+                  },
+                },
+              },
+            }}
+          />
+        </div>
 
-export default AdminPage
+        <div className="upGrade">
+        <h3>Want unlimitted access?</h3>
+        <span>
+      Upgrade now to unlock all features 
+        and enjoy a better experience. 
+        Tap the button to upgrade!</span>
+            <button>Upgrade</button>
+      </div>
+      </div>
+      
+    </div>
+  );
+};
+
+export default AdminPage;

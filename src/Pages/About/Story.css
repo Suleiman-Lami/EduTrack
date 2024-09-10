@@ -1,123 +1,85 @@
 .storyComponent{
-    width: 100%;
-    height: max-content;
-    padding: 20px;
+    width: 90%;
+    height: auto;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
+    gap: 30px;
+    margin-top: 30px;
+}
 
-    .wrap{
-        width: 50%;
-        height: max-content;
-        display: flex;
-        gap: 20px;
-        flex-direction: column;
-        align-items: center;
+.storyComponent .storyHead{
+    width: 100%;
+    height: 24vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    color: #2E2E2E;
+    line-height: 23px;
+    text-align: center;
 
-        .storyHead{
-            width: 100%;
-            gap: 5px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-
-            h2{
-                text-transform: uppercase;
-                color: green;
-            }
-    
-            span{
-                color: green;
-                font-size: 18px;
-            }
-        }
-
-        .storyBoxholder{
-            width: 100%;
-            height: max-content;
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-
-            .rightStoryBox{
-                width: 45%;
-                height: max-content;
-                gap: 60px;
-                display: flex;
-                flex-direction: column;
-
-                .storyBox{
-                    width: 100%;
-                    height: 70vh;
-                    gap: 20px;
-                    background-color: #ebebeb;
-                    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-                    border-radius: 20px;
-                    display: flex;
-                    flex-direction: column;
-
-                    .imgHolder{
-                        width: 100%;
-                        height: 30%;
-                        display: flex;
-                        justify-content: center;
-                        align-items: center;
-
-                        .imgBox{
-                            width: 50%;
-                            height: 60%;
-                            border-radius: 10px;
-                            background-color: white;
-                        }
-                    }
-
-                    .textArea{
-                        width: 80%;
-                    }
-                }
-            }
-
-            .leftStoryBox{
-                margin-top: 20%;
-                width: 45%;
-                height: max-content;
-                gap: 60px;
-                display: flex;
-                flex-direction: column;
-
-                .storyBox{
-                    width: 100%;
-                    height: 70vh;
-                    gap: 20px;
-                    background-color: #ebebeb;
-                    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-                    border-radius: 20px;
-                    display: flex;
-                    flex-direction: column;
-
-                    .imgHolder{
-                        width: 100%;
-                        height: 30%;
-                        display: flex;
-                        justify-content: center;
-                        align-items: center;
-
-
-                        .imgBox{
-                            width: 50%;
-                            height: 60%;
-                            border-radius: 10px;
-                            background-color: white;
-                        }
-                    }
-
-                    .textArea{
-                        width: 80%;
-                      }
-
-        }
-
+    h3{
+        font-size: 25px;
+        color: #003B31;
     }
-        }
+}
+
+.storyComponent .storyBody{
+    width: 100%;
+    height: auto;
+    display: flex;
+    margin-top: 50px;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.storyComponent .storyBody article{
+    width: 50%;
+    height: auto;
+    gap: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.storyComponent .storyBody article .Head{
+    font-size: 25px;
+    color: #003B31;
+}
+
+.storyComponent .storyBody article .body{
+    width: 60%;
+    height: 40vh;
+    background-image: url(../../assets/WEPROVIDE.png);
+    background-size: cover;
+    background-position: center;   
+    background-repeat: no-repeat;
+    border-radius: 10px;
+}
+
+.storyComponent .storyBody article .text{
+    width: 90%;
+    line-height: 20px;
+    text-align: center;
+}
+
+@media (min-width: 320px)  and (max-width: 768px){
+    .storyComponent{
+        margin-top: 10px;
+    }
+    .storyComponent .storyHead{
+        height: auto;
+    }
+    .storyComponent .storyBody{
+        flex-direction: column;
+    }
+    .storyComponent .storyBody article{
+        width: 100%;
+    }
+
+    .storyComponent .storyBody article .body{
+        width: 80%;
     }
 }

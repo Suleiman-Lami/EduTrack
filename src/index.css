@@ -3,6 +3,11 @@
     margin: 0%;
     box-sizing: border-box;
     font-family: Nunito Sans;
+
+    span{
+        font-weight: 400;
+        font-size: 18px;
+    }
      /* overflow-y: scroll;
     -ms-overflow-style: none;  
     scrollbar-width: none;  */
