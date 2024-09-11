@@ -14,25 +14,25 @@ const Provide = () => {
     <div className='whatWeProvide'>
         <h2>See How EduTrack Makes Attendance Easy</h2>
         <main>
-            <aside data-aos="fade-right"></aside>
+            <aside data-aos="fade-right" data-aos-duration="3000"></aside>
             <article>
                 <h2>We provide: </h2>
-                <div className="boxHolder" data-aos="fade-left">
-                    <section>
+                <div className="boxHolder">
+                    <section  data-aos="fade-left" data-aos-duration="3000">
                         <div className="icon"><MdCircleNotifications size={40} color='white'/></div>
                         <div className="sectionInfo">
                             <h2>Automated notifications:</h2>
                             <span>Parents get automated alerts every time their child is absent in the school. So you never have to worry about their peace of mind.</span>
                         </div>
                     </section>
-                    <section className='coloredBox'>
+                    <section className='coloredBox'  data-aos="fade-left" data-aos-duration="3000">
                     <div className="icon"><MdConnectWithoutContact size={40} color='white'/></div>
                         <div className="sectionInfo">
                             <h2>Contactless Check-in:</h2>
                             <span>Go paperless and save time with ourattendance app by streamlining check-in and check-out processes.</span>
                         </div>
                     </section>
-                    <section className='lightgreen'>
+                    <section className='lightgreen'  data-aos="fade-left" data-aos-duration="3000">
                     <div className="icon"><FaPeopleGroup  size={40} color='white'/></div>
                         <div className="sectionInfo">
                             <h2>Real-time Ratio:</h2>

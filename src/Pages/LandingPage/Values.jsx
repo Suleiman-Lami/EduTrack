@@ -41,7 +41,7 @@ const Values = () => {
                </div>
             </div>
         </article>
-        <aside data-aos="fade-left">
+        <aside data-aos="fade-left" data-aos-duration="3000">
             <img src={VALUES} alt="" />
         </aside>
     </div>
