@@ -1,9 +1,15 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import './Contact.css'
+import Aos from 'aos';
+import "aos/dist/aos.css"
 
 const Dev = () => {
+
+    useEffect(()=>{
+        Aos.init();
+      },[])
   return (
-    <div className='Dev'>
+    <div className='Dev' data-aos="fade-left" data-aos-duration="3000">
         <div className="DevHeader">
             <h2>Quick Contact</h2>
                 <span>+2349029523034</span>

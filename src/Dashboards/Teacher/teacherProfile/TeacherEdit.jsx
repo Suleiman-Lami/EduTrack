@@ -1,9 +1,11 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import './TeacherEdit.css'
 import { IoCameraOutline } from "react-icons/io5";
 import values from '../../../assets/WOMAN_WRITING.png'
 import { FaRegEye, FaRegEyeSlash } from "react-icons/fa6";
 import {z} from 'zod'
+import Aos from 'aos';
+import "aos/dist/aos.css"
 import {useForm} from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useNavigate } from 'react-router-dom'
@@ -31,12 +33,16 @@ const Teacherprofile = () => {
     Nav('/profile')
   }
 
+  useEffect(()=>{
+    Aos.init();
+  },[])
+
   return (
     <div className='TeacherEdit'>
       <h3>Profile settings</h3>
       <div className="profileBody">
        <ImageUploader/>
-        <form onSubmit={ handleSubmit(Onsubmit)}>
+        <form onSubmit={ handleSubmit(Onsubmit)} data-aos="fade-left" data-aos-duration="3000">
          <section>
           <label>Teacher's fullName</label>
           <input type="name" />

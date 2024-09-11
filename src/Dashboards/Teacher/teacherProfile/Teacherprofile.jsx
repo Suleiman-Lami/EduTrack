@@ -1,5 +1,7 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import './Teacherprofile.css'
+import Aos from 'aos';
+import "aos/dist/aos.css"
 import { useNavigate } from 'react-router-dom'
 import values from '../../../assets/WOMAN_WRITING.png'
 import { IoCameraOutline } from "react-icons/io5";
@@ -7,6 +9,11 @@ import { IoCameraOutline } from "react-icons/io5";
 
 const Teacherprofile = () => {
     const Nav = useNavigate();
+
+    
+    useEffect(()=>{
+      Aos.init();
+    },[])
   return (
     <div className='Teacherprofile'>
     <h3>Profile info</h3>
@@ -16,7 +23,7 @@ const Teacherprofile = () => {
           <img src={values}/>
         </div>
       </div>
-      <form>
+      <form data-aos="fade-left" data-aos-duration="3000">
        <section>
         <label>fullName:</label>
         <span>Suleiman Ramotu Lami Omoroh</span>

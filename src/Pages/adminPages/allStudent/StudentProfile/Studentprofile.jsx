@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import './Studentprofile.css'
+import Aos from 'aos';
+import "aos/dist/aos.css"
 import { useNavigate } from 'react-router-dom'
 import values from '../../../../assets/WOMAN_WRITING.png'
 
@@ -30,6 +32,9 @@ const Studentprofile = ({ role,}) => {
       Nav(-1); 
     }
   };
+  useEffect(()=>{
+    Aos.init();
+  },[])
 
   return (
     <div className='Studentprofile'>
@@ -71,7 +76,7 @@ const Studentprofile = ({ role,}) => {
               </section> : null }
         </div>
         <hr />
-        <div className="Report">
+        <div className="Report" data-aos="fade-left" data-aos-duration="3000">
             <div className="Header">
                 <h4>Week</h4>
                 <h4>Mon</h4>
@@ -87,7 +92,7 @@ const Studentprofile = ({ role,}) => {
               {weeklyPercentages.map((percentage, index) => (
                 <h3 key={index}>{percentage}%</h3>
               ))}
-              <h4>{totalPercentage}%</h4> {/* Display the calculated total */}
+              <h4>{totalPercentage}%</h4> 
                 </section>
             </div>
         </div>

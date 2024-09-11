@@ -1,10 +1,17 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import './Story.css'
+import Aos from 'aos';
+import "aos/dist/aos.css"
+
 
 const Story = () => {
+  
+useEffect(()=>{
+  Aos.init();
+},[])
   return (
     <div className='storyComponent'>
-       <div className="storyHead">
+       <div className="storyHead" data-aos="fade-left">
         <h3>Our story</h3>
         <span> We’ve seen firsthand the challenges schools face in getting students back into classrooms.
  It’s a problem that many districts have struggled with, and it’s affecting the quality of education. 
@@ -17,7 +24,7 @@ That’s why we created EduTrack, an app designed to tackle this issue head-on b
 more efficient solution to track attendance and keep students on the path to success.</span>
        </div>
        <div className="storyBody">
-        <article>
+        <article data-aos="fade-right">
             <div className="Head">Our mission</div>
             <div className="body"></div>
             <div className="text">
@@ -26,7 +33,7 @@ of students and help them stay engaged. We use technology to make communication 
 for everyone.
             </div>
         </article>
-        <article>
+        <article data-aos="fade-left">
             <div className="Head">Our vision</div>
             <div className="body"></div>
             <div className="text">

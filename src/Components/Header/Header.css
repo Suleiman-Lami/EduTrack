@@ -31,7 +31,13 @@
 .headerWrap .logoNav aside {
     width: 20%;
     height: 100%;
-    background-color: grey;
+    display: flex;
+    align-items: center;
+
+    img{
+        width: 50%;
+        height: 80%;
+    }
 }
 
 .headerWrap .logoNav article {

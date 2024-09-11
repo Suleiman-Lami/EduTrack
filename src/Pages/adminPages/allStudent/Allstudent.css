@@ -249,7 +249,7 @@
       display: none;
     }
   
-    .StudentList .emptyModal {
+    .allStudent .emptyModal {
       width: 80%;
       height: auto;
       padding: 0%;
@@ -257,11 +257,11 @@
       padding-bottom: 20px;
     }
   
-    .StudentList .emptyModal h2 {
+    .allStudent .emptyModal h2 {
       text-align: center;
     }
   
-    .StudentList .emptyModal button {
+    .allStudent .emptyModal button {
       width: 45%;
     }
   }

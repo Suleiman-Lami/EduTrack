@@ -1,18 +1,23 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import './Provide.css'
 import { MdCircleNotifications } from "react-icons/md";
 import { MdConnectWithoutContact } from "react-icons/md";
 import { FaPeopleGroup } from "react-icons/fa6";
+import Aos from 'aos';
+import "aos/dist/aos.css"
 
 const Provide = () => {
+    useEffect(()=>{
+        Aos.init();
+      },[]) 
   return (
     <div className='whatWeProvide'>
         <h2>See How EduTrack Makes Attendance Easy</h2>
         <main>
-            <aside></aside>
+            <aside data-aos="fade-right"></aside>
             <article>
                 <h2>We provide: </h2>
-                <div className="boxHolder">
+                <div className="boxHolder" data-aos="fade-left">
                     <section>
                         <div className="icon"><MdCircleNotifications size={40} color='white'/></div>
                         <div className="sectionInfo">

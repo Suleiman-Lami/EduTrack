@@ -49,6 +49,7 @@
     .icon{
         width: 80%;
         height: 80%;
+        cursor: pointer;
     }
 
     .user{
@@ -58,6 +59,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        cursor: pointer;
 
         image{
             width: 100%;

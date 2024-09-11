@@ -184,6 +184,7 @@
 
     .Studentprofile .profileBody .Report {
         width: 100%;
+        height: auto;
     }
 
     .Studentprofile .profileBody .Report .body{

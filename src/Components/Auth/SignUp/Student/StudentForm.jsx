@@ -1,6 +1,8 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import './StudentOnboard.css'
 import {z} from 'zod'
+import Aos from 'aos';
+import "aos/dist/aos.css"
 import {useForm} from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useLocation, useNavigate } from 'react-router-dom'
@@ -32,14 +34,15 @@ const StudentForm = () => {
 
   const Onsubmit = async (data) => {
     console.log("SUCCESS", data);
-    
-    // If there is a location from where the user came, redirect back
-    // const from = location.state?.from?.pathname // Default to '/students' if no previous page is found
-    Nav(-1);
+        Nav(-1);
   }
 
+  useEffect(()=>{
+    Aos.init();
+  },[])
+
   return (
-    <form onSubmit={handleSubmit(Onsubmit)}>
+    <form onSubmit={handleSubmit(Onsubmit)} data-aos="fade-left" data-aos-duration="3000">
     <h3>Onboard your student</h3>
     <section>
         <label>Student's Full name</label>

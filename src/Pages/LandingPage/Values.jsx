@@ -1,9 +1,15 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import './Value.css'
 import VALUES from '../../assets/VALUES.png'
 import { CiCircleCheck } from "react-icons/ci";
+import Aos from 'aos';
+import "aos/dist/aos.css"
 
 const Values = () => {
+
+    useEffect(()=>{
+        Aos.init();
+      },[])
   return (
     <div className='Values'>
         <article>
@@ -35,11 +41,8 @@ const Values = () => {
                </div>
             </div>
         </article>
-        <aside>
+        <aside data-aos="fade-left">
             <img src={VALUES} alt="" />
-            {/* <div className="icon"></div>
-            <div className="imageHolder"></div>
-            <div className="chart"></div> */}
         </aside>
     </div>
   )

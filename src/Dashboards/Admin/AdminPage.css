@@ -116,6 +116,7 @@
     border-radius: 5px;
     color: white;
     border: none;
+    cursor: pointer;
 }
 
 .AdminPage .AnnouncementBox .Adminaside{
@@ -220,6 +221,11 @@
 
 
 @media (min-width: 320px) and (max-width: 768px) {
+
+    .AdminPage{
+        padding: 20px;
+        padding-bottom: 40px;
+    }
     
     .AdminPage .boxHolder{
         height: auto;
@@ -250,8 +256,18 @@
     .AdminPage .AnnouncementBox .AnnounceArticle{
         width: 100%;
         height: 50vh;
+        gap: 0px;
+
         input{
             height: 50%;
+        }
+    }
+
+    .AdminPage .AnnouncementBox .articleHeading{
+        gap: 20px;
+
+        button{
+            width: 120px;
         }
     }
 

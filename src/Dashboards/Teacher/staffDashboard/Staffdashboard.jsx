@@ -1,5 +1,7 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './Staffdashboard.css';
+import Aos from 'aos';
+import "aos/dist/aos.css"
 import { useNavigate } from 'react-router-dom';
 import values from '../../../assets/WEPROVIDE.png'
 
@@ -20,12 +22,14 @@ const Staffdashboard = () => {
     return `${date}`;
   };
   
-  
+  useEffect(()=>{
+    Aos.init();
+  },[])
 
   return (
     <div className='Staffdashboard'>
       <div className="Staffdashboard-Header">
-        <div className='staffArticle'>
+        <div className='staffArticle'  data-aos="fade-right" data-aos-duration="3000">
           <div className="textArea">
             <h3>Welcome Back, Inspiring Educator!</h3>
             <span>Empower your students today—every 
@@ -36,7 +40,7 @@ const Staffdashboard = () => {
             <img src={values} />
           </div>
         </div>
-        <div className="box">
+        <div className="box" data-aos="fade-left" data-aos-duration="3000">
           <div className="icon"></div>
           <div className="calcStudent">
             <h4>Students</h4>
@@ -55,7 +59,7 @@ const Staffdashboard = () => {
       </div>
       {
         student.length === 0 ? 
-        <div className="emptyModal">
+        <div className="emptyModal" data-aos="zoom-in" data-aos-duration="3000">
           <h2>No student added yet</h2>
           <span>Click to enroll your first student!</span>
           <button onClick={() => Nav('/onboard')}>Add a Student</button>

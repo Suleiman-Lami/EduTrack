@@ -4,6 +4,8 @@ import { NavLink } from 'react-router-dom';
 import { RiMenuUnfold2Fill, RiMenuUnfoldFill } from "react-icons/ri";
 import Dropdown from './Dropdown';
 import AOS from 'aos'
+import "aos/dist/aos.css"
+import Logo from '../../assets/Frame 101424.svg'
 
 const Header = () => {
   const [showMenu, setShowMenu] = useState(0)
@@ -27,7 +29,9 @@ const Header = () => {
     <div className='Header'>
       <div className="headerWrap">
         <div className="logoNav">
-          <aside></aside>
+          <aside>
+            <img src= {Logo}/>
+          </aside>
           <article>
             <li> <NavLink to={'/'} style={({isActive}) =>({color: isActive? '#F4B400': '#003B31'})} > Home </NavLink> </li>
             <li><NavLink to={'/About'} style={({isActive})=>({color: isActive? '#F4B400': '#003B31'})}>Features</NavLink></li>
@@ -42,7 +46,7 @@ const Header = () => {
         </div>
       <div className="menuHolder">
          { showMenu === 0 ?  <RiMenuUnfold2Fill size={35} onClick={handleMenu} />: showMenu == 1? <RiMenuUnfoldFill size={35} onClick={handleMenuOut}/>: null }
-         { dropDown ? <div className='dropDown' data-aos="fade-left"> <Dropdown/> </div> : null }
+         { dropDown ? <div className='dropDown' data-aos="fade-left"> <Dropdown setDropDown={setDropDown}/> </div> : null }
       </div>
       </div>
     </div>

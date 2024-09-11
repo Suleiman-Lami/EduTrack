@@ -1,9 +1,11 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import './SignUp.css'
 import { useNavigate } from 'react-router-dom'
 import { FaRegEye, FaRegEyeSlash } from "react-icons/fa6";
 import {z} from 'zod'
 import axios from 'axios'
+import Aos from 'aos';
+import "aos/dist/aos.css"
 import {useForm} from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import {toast, Toaster} from 'react-hot-toast';
@@ -38,6 +40,10 @@ const AdminForm = () => {
     resolver: zodResolver(User),
   });
 
+  useEffect(()=>{
+    Aos.init();
+  },[])
+
   const onSubmit = async(data, e) => {
     e.preventDefault();
     const formData = new FormData();
@@ -70,7 +76,7 @@ const AdminForm = () => {
   }
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} >
+    <form onSubmit={handleSubmit(onSubmit)} data-aos="fade-left" data-aos-duration="3000" >
     <h2>Sign up</h2>
     <section>
         <label>Institute name</label>

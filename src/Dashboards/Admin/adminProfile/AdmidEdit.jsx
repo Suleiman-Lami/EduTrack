@@ -1,15 +1,15 @@
 import React, { useEffect, useState } from 'react'
-import './StudentEdit.css'
+import './AdminEdit.css'
+import { useNavigate } from 'react-router-dom';
 import { FaRegEye, FaRegEyeSlash } from "react-icons/fa6";
 import {z} from 'zod'
+import {useForm} from 'react-hook-form'
 import Aos from 'aos';
 import "aos/dist/aos.css"
-import {useForm} from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
-import { useNavigate } from 'react-router-dom'
-import ImageUploader from '../../../../Dashboards/Teacher/teacherProfile/ImageUploader';
+import ImageUploader from '../../Teacher/teacherProfile/ImageUploader';
 
-const StudentEdit = () => {
+const AdmidEdit = () => {
     const [showPassword, setShowPassword] = useState(true)
     const Nav = useNavigate();
     const MyshowPassword = ()=> {
@@ -28,34 +28,33 @@ const StudentEdit = () => {
 
   const Onsubmit = async(data)=>{
     console.log("SuCCESS", data);
-    Nav('/Student')
+    Nav('/profile')
   }
 
-  
   useEffect(()=>{
     Aos.init();
   },[])
   return (
-    <div className='studentEdit'>
-      <h3>Profile settings</h3>
+    <div className='AdmidEdit'>
+              <h3>Profile settings</h3>
       <div className="profileBody">
        <ImageUploader/>
         <form onSubmit={ handleSubmit(Onsubmit)} data-aos="fade-left" data-aos-duration="3000">
          <section>
-          <label> fullName</label>
+          <label>School's Name</label>
           <input type="name" />
           {errors.Name && <span style={{color: 'red'}}>{errors.Name.message}</span>}
           </section> 
          <section>
-          <label>Email</label>
+          <label>School's Email</label>
           <input type="email" placeholder='Example@gmail.com'/>
           {errors.email && <span style={{color: 'red'}}>{errors.email.message}</span>}
           </section> 
          <section>
-          <label> address</label>
+          <label>School's address</label>
           <input type="text" />
           {errors.place && <span style={{color: 'red'}}>{errors.place.message}</span>}
-          </section>
+          </section> 
          <section>
           <label>Change password</label>
           <div className='inputPasswordDiv'>
@@ -75,4 +74,4 @@ const StudentEdit = () => {
   )
 }
 
-export default StudentEdit
+export default AdmidEdit

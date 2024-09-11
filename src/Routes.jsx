@@ -23,6 +23,7 @@ import Notify from './Dashboards/Notifications/Notify'
 import Studentprofile from './Pages/adminPages/allStudent/StudentProfile/Studentprofile'
 import StudentEdit from './Pages/adminPages/allStudent/StudentProfile/StudentEdit'
 import Student from './Dashboards/Student/Student'
+import AdmidEdit from './Dashboards/Admin/adminProfile/AdmidEdit'
 
 const Routes = createBrowserRouter([
   {
@@ -41,6 +42,7 @@ const Routes = createBrowserRouter([
     children: [
       { path: 'admin', element: <AdminPage /> },
       { path: 'teachers', element: <Allteachers /> },
+      { path: 'adminEdit', element: <AdmidEdit /> },
       { path: 'AdminProfile', element: <Adminprofile /> },
       { path: 'staffs', element: <TeacherSignUp /> },
       { path: 'students', element: <Allstudent /> },

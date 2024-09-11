@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import './AdminPage.css';
 import { Bar } from 'react-chartjs-2';
+import Aos from 'aos';
+import "aos/dist/aos.css"
 import { Chart as ChartJS, BarElement, CategoryScale, LinearScale, Tooltip, Legend } from 'chart.js';
 
 ChartJS.register(BarElement, CategoryScale, LinearScale, Tooltip, Legend);
@@ -26,6 +28,7 @@ const AdminPage = () => {
   });
 
   useEffect(() => {
+    Aos.init();
     const fetchAttendanceData = async () => {
       try {
         const response = await fetch('/api/attendance');
@@ -55,7 +58,7 @@ const AdminPage = () => {
 
   return (
     <div className='AdminPage'>
-      <div className="boxHolder">
+      <div className="boxHolder" data-aos="fade-up" data-aos-duration="2000">
         <section>
           <div className="color"></div>
           <div className="textArea">
@@ -95,7 +98,7 @@ const AdminPage = () => {
           </div>
           <input type="text" placeholder='What would like to announce today?'/>
         </div>
-        <aside className='Adminaside'>
+        <aside className='Adminaside' data-aos="fade-left" data-aos-duration="3000">
       <span>  You're on the <h4> freemium</h4> plan! </span>
       <span>  add up to <h4> 3 teachers,</h4> </span>
          <span> and each can add</span>
@@ -103,7 +106,7 @@ const AdminPage = () => {
         </aside>
       </div>
       <div className="Chart">
-        <div className="Chartbox">
+        <div className="Chartbox" data-aos="fade-up-right" data-aos-duration="3000">
           <Bar
             data={attendanceData}
             options={{
@@ -135,7 +138,7 @@ const AdminPage = () => {
           />
         </div>
 
-        <div className="upGrade">
+        <div className="upGrade" data-aos="fade-left" data-aos-duration="3000">
         <h3>Want unlimitted access?</h3>
         <span>
       Upgrade now to unlock all features 

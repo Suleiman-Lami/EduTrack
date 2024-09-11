@@ -10,7 +10,7 @@
     overflow-y: scroll;
     -ms-overflow-style: none;  
     scrollbar-width: none; 
-    background-color: white;
+    background-color: #F5F5F5;
 }
 
 .Staffdashboard .Staffdashboard-Header{
@@ -138,7 +138,7 @@
             width: 50%;
             height: 100%;
             color: #003B31;
-            background-color: #ffffff;
+            /* background-color: #ffffff; */
             border: none;
             font-size: 15px;
             border-radius: 2px;
@@ -382,8 +382,9 @@
 @media (min-width: 320px)and (max-width: 768px){
 
     .Staffdashboard{
-        width: 95%;
+        width: 100%;
         height: auto;
+        padding: 10px;
         padding-bottom: 10px;
     }
 
@@ -396,6 +397,7 @@
         flex-direction: column;
         align-items: center;
         gap: 20px;
+        padding: 0%;
     }
 
     .Staffdashboard .Staffdashboard-Header .staffArticle{
@@ -434,79 +436,22 @@
     }
 
     .Staffdashboard-Header .box{
-        width: 50%;
-        height: 80px;
+        width: 60%;
+        height: 130px;
         padding: 10px;
     }
 
 
     .Staffdashboard .staffAside{
+        width: 100%;
+
         section{
             width: 100%;
             padding: 20px;
         }
     }
 
-    .Staffdashboard main .mainHeader {
-        gap: 0%;
-        justify-content: space-around;
-
-        .serial{
-            display: none;
-        }
-
-        h4{
-
-             p{
-                display: none;
-             }
-
-             .smallScreen{
-                display: flex;
-             }
-        }
-    }
-
-    .Staffdashboard main .mainBody section{
-        gap: 15px;
-        padding-right: 10px;
-        padding-left: 10px;
-        justify-content: space-around;
-    }
-
-    .Staffdashboard main .mainBody section .sectionInfo{
-        display: none;
-        width: 19%;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        text-wrap: nowrap;
-    }
-
-    .Staffdashboard main .mainBody section .sectionInfoG{
-        padding-left: 0%;
-    }
-
-    .Staffdashboard main .mainBody section .sectionInfoP p{
-        display: none;
-    }
-
-    .Staffdashboard main .mainBody section .sectionInfoP .smallScreen{
-        display: flex;
-    }
-    
-    .Staffdashboard main .mainBody section .sectionInfos{
-        padding-left: 0%;
-        font-size: 14px;
-    }
-
-    .Staffdashboard main .mainBody section .sectionInfoS{
-        padding-left: 0%;
-        margin-left: -10px;
-        gap: 5px;
-    }
-    
-
-    .mainBody .emptyModal{
+    .Staffdashboard .emptyModal{
         width: 80%;
         height: auto;
         padding: 0%;
@@ -517,7 +462,7 @@
             text-align: center;
         }
     }
-    .allTeachers .emptyModal button{
+    .Staffdashboard .emptyModal button{
         width: 45%;
     }
 }

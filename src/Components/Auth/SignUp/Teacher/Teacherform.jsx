@@ -1,6 +1,8 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import './TeacherSignUp.css'
 import {z} from 'zod'
+import Aos from 'aos';
+import "aos/dist/aos.css"
 import {useForm} from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useNavigate } from 'react-router-dom'
@@ -32,8 +34,13 @@ const Teacherform = () => {
     Nav('/admin/teachers')
     setLoading(false)
   }
+
+  useEffect(()=>{
+    Aos.init();
+  },[])
+
   return (
-    <form onSubmit={handleSubmit (Onsubmit)} >
+    <form onSubmit={handleSubmit (Onsubmit)} data-aos="fade-left" data-aos-duration="3000">
     <h3>Onboard your staff</h3>
     <section>
         <label>Teacher's Full name</label>

@@ -3,6 +3,7 @@ import './SignUp.css'
 import Adminform from './Adminform'
 import { MdOutlineKeyboardBackspace } from "react-icons/md";
 import { useNavigate } from 'react-router-dom';
+import Logo from '../../../../assets/Frame 101424.svg'
 
 const SignUp = () => {
   const Nav = useNavigate();
@@ -11,9 +12,11 @@ const SignUp = () => {
     <div className='SignUp'>
       <aside>
         <div className="icon">
-          <MdOutlineKeyboardBackspace size={30} onClick={() => Nav('/')} /> 
+          <MdOutlineKeyboardBackspace size={30} onClick={() => Nav(-1)} /> 
         </div>
-        <div className="logo"></div>
+        <div className="logo">
+          <img src={Logo}/>
+        </div>
       </aside>
       <main>
         <article></article>

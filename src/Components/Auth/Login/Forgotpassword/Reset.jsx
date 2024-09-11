@@ -1,16 +1,22 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './Forgot.css';
+import Aos from 'aos';
+import "aos/dist/aos.css"
 import { useNavigate } from 'react-router-dom';
 import { FaRegEye, FaRegEyeSlash } from "react-icons/fa6";
+import {ClipLoader} from 'react-spinners'
+
 
 const Reset = () => {
     const [showPassword, setShowPassword] = useState(true)
+    const [loading , setLoading] = useState(false)
+
     const Nav = useNavigate();
 
     const handleContinue = (e) => {
         e.preventDefault(); 
         setTimeout(() => {
-            Nav('/');
+            Nav('/Login');
         }, 1000);
     };
 
@@ -18,8 +24,12 @@ const Reset = () => {
         setShowPassword(false)
      }
 
+     useEffect(()=>{
+        Aos.init();
+      },[])
+
     return (
-        <form onSubmit={handleContinue} className='form'>
+        <form onSubmit={handleContinue} className='form' data-aos="zoom-in-down">
             <header>
                 <h2>Reset Password</h2>
                 <span> 
@@ -37,7 +47,9 @@ const Reset = () => {
                   }
                 </div>
                 </section>
-            <button type="submit">Submit</button>
+            <button type="submit">
+            { loading ? <ClipLoader color='#ffffff'/> : 'Submit'}
+                </button>
         </form>
     );
 };

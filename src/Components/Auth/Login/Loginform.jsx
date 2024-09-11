@@ -1,13 +1,19 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './Login.css';
 import { useNavigate } from 'react-router-dom';
 import { FaRegEye, FaRegEyeSlash } from "react-icons/fa6";
 import { z } from 'zod';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
+import Aos from 'aos';
+import "aos/dist/aos.css"
+import {ClipLoader} from 'react-spinners'
+
 
 const Loginform = () => {
   const [showPassword, setShowPassword] = useState(true);
+  const [loading , setLoading] = useState(false)
+
   const Nav = useNavigate();
 
   const MyshowPassword = () => {
@@ -28,8 +34,12 @@ const Loginform = () => {
     Nav('/admin');
   };
 
+  useEffect(()=>{
+    Aos.init();
+  },[])
+
   return (
-    <form onSubmit={handleSubmit(Onsubmit)}>
+    <form onSubmit={handleSubmit(Onsubmit)} data-aos="fade-left" data-aos-duration="3000">
       <h2>Log in</h2>
       <section>
         <label>Email Address</label>
@@ -49,7 +59,9 @@ const Loginform = () => {
         {errors.password && <span style={{ color: 'red' }}>{errors.password.message}</span>}
         <label className='Forgot' onClick={() => Nav('/Forgottenpassword')}>Forgot password ?</label>
       </section>
-      <button type='submit'>Sign up</button>
+      <button type='submit'>
+      { loading ? <ClipLoader color='#ffffff'/> : 'SIgn in'}
+      </button>
       <footer>
         <span>Do not have an account? <h4 onClick={() => Nav('/signUp')}>Signup</h4></span>
       </footer>

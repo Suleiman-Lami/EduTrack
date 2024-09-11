@@ -9,7 +9,7 @@
 }
 
 .forgot-component aside {
-    width: 100%;
+    width: 70%;
     height: 50px;
     gap: 10px;
     display: flex;
@@ -24,6 +24,11 @@
     justify-content: center;
     align-items: center;
     cursor: pointer;
+
+    img{
+        width: 50%;
+        height: 80%;
+    }
 }
 
 .forgot-component main {
@@ -257,7 +262,7 @@
         width: 50%;
         height: 40%;
         justify-content: center;
-    }
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;    }
 
     
 }
@@ -268,6 +273,7 @@
     }
 
     .forgot-component aside {
+        width: 90%;
         height: 20px; 
         padding: 20px;
         justify-content: flex-start;
