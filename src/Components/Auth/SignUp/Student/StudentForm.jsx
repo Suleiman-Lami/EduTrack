@@ -1,18 +1,24 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './StudentOnboard.css'
 import {z} from 'zod'
 import {useForm} from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
-import { useNavigate } from 'react-router-dom'
+import { useLocation, useNavigate } from 'react-router-dom'
+import { ClipLoader } from 'react-spinners'
 
 const StudentForm = () => {
+    const [loading, setloading]=useState();
     const Nav = useNavigate();
     const User = z.object({
         Name: z.string(),
         email: z.string().email({message: 'must be a valid email'}),
         place: z.string(),
-        // Image: z.instanceof(File, { message: "Please upload a valid file" }),
-        gender: z.string(),
+        schoolProfile: z.custom((val) => {
+            if (val && val.length > 0 && val[0] instanceof File) {
+              return true;
+            }
+            return false;
+          }, { message: "Please upload a valid file" }),         gender: z.string(),
         class: z.union([
             z.string().min(1, { message: "Class cannot be an empty string" }),
             z.number({ message: "Class must be a valid number" })
@@ -22,11 +28,16 @@ const StudentForm = () => {
       const {register, handleSubmit, formState: {errors}, setError} = useForm({
         resolver: zodResolver(User),
       });
+      const location = useLocation();
+
+  const Onsubmit = async (data) => {
+    console.log("SUCCESS", data);
     
-      const Onsubmit = async(data)=>{
-        console.log("SuCCESS", data);
-        Nav('/students')
-      }
+    // If there is a location from where the user came, redirect back
+    // const from = location.state?.from?.pathname // Default to '/students' if no previous page is found
+    Nav(-1);
+  }
+
   return (
     <form onSubmit={handleSubmit(Onsubmit)}>
     <h3>Onboard your student</h3>
@@ -66,7 +77,9 @@ const StudentForm = () => {
         <span>I agree to terms and conditions</span>
     </div>
     
-    <button type='submit'>Sign up</button>
+    <button type='submit'>
+    { loading ? <ClipLoader color='#ffffff'/> : 'Onboard'}
+    </button>
     </form>
   )
 }

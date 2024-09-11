@@ -5,7 +5,7 @@ import StudentList from './StudentList';
 
 const Allstudent = () => {
   const Nav = useNavigate();
-  const student = [1, 2, 4, 5, 6, 7, 5, 6, 5, 0, 8, 8];
+  const student = [];
 
   return (
     <div className='allStudent'>

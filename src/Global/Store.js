@@ -22,7 +22,7 @@ const persistedReducer = persistReducer(persistConfig, counterReducer)
 
 const store = configureStore({
   reducer: {
-    cart: persistedReducer,
+    eduTrack: persistedReducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({

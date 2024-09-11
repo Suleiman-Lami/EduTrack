@@ -26,12 +26,10 @@ const AdminPage = () => {
   });
 
   useEffect(() => {
-    // Fetch the data from your API
     const fetchAttendanceData = async () => {
       try {
-        const response = await fetch('/api/attendance'); // Example API endpoint
+        const response = await fetch('/api/attendance');
         const data = await response.json();
-        // Assuming data contains an array with monthly data for "present" and "absent"
         const { present, absent } = data;
 
         setAttendanceData((prevData) => ({
@@ -39,11 +37,11 @@ const AdminPage = () => {
           datasets: [
             {
               ...prevData.datasets[0],
-              data: present, // Update present data from API
+              data: present, 
             },
             {
               ...prevData.datasets[1],
-              data: absent, // Update absent data from API
+              data: absent, 
             },
           ],
         }));
@@ -98,9 +96,9 @@ const AdminPage = () => {
           <input type="text" placeholder='What would like to announce today?'/>
         </div>
         <aside className='Adminaside'>
-        You're on the <h4> freemium</h4> plan! 
-        add up to <h4> 3 teachers</h4>, 
-        and each can add
+      <span>  You're on the <h4> freemium</h4> plan! </span>
+      <span>  add up to <h4> 3 teachers,</h4> </span>
+         <span> and each can add</span>
           <h5> 5 students.</h5>
         </aside>
       </div>

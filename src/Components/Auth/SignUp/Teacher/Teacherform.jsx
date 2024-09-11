@@ -1,18 +1,24 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './TeacherSignUp.css'
 import {z} from 'zod'
 import {useForm} from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useNavigate } from 'react-router-dom'
+import { ClipLoader } from 'react-spinners'
 
 const Teacherform = () => {
+  const [loading, setLoading]= useState();
   const Nav = useNavigate();       
   const User = z.object({
     Name: z.string(),
     email: z.string().email({message: 'must be a valid email'}),
     place: z.string(),
-    // Image: z.instanceof(File, { message: "Please upload a valid file" }),
-    status: z.string(),
+    schoolProfile: z.custom((val) => {
+      if (val && val.length > 0 && val[0] instanceof File) {
+        return true;
+      }
+      return false;
+    }, { message: "Please upload a valid file" }),     status: z.string(),
     gender: z.string()
   });
 
@@ -21,8 +27,10 @@ const Teacherform = () => {
   });
 
   const Onsubmit = async(data)=>{
+    setLoading(true)
     console.log("SuCCESS", data);
     Nav('/admin/teachers')
+    setLoading(false)
   }
   return (
     <form onSubmit={handleSubmit (Onsubmit)} >
@@ -63,7 +71,9 @@ const Teacherform = () => {
         <span>I agree to terms and conditions</span>
     </div>
     
-    <button type='submit'> Sign up</button>
+    <button type='submit'>
+    { loading ? <ClipLoader color='#ffffff'/> : 'Onboard'}
+    </button>
 
    </form>
   )

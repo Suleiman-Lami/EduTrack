@@ -39,6 +39,7 @@
     display: flex;
     gap: 20px;
     flex-direction: column;
+    align-items: flex-start;
 }
 
 .whatWeProvide article h2{
@@ -86,7 +87,7 @@
     gap: 10px;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
 
     h2{
         color: #003B31;
@@ -122,6 +123,10 @@
 }
 
 @media (min-width: 320px) and (max-width: 932px){
+
+    .whatWeProvide{
+        align-items: flex-start;
+    }
     .whatWeProvide main{
         flex-direction: column;
         gap: 20px;
@@ -134,6 +139,7 @@
     .whatWeProvide article{
         width: 98%;
         padding: 0%;
+        align-items: flex-start;
     }
     .whatWeProvide article .boxHolder section .sectionInfo{
         align-items: flex-start;

@@ -4,7 +4,9 @@
     max-height: 100%;
     min-height: 100%;
     padding: 50px;
-    /* margin-bottom: 30px; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     overflow-y: scroll;
     -ms-overflow-style: none;  
     scrollbar-width: none; 
@@ -20,7 +22,7 @@
 }
 
 .Staffdashboard .Staffdashboard-Header .staffArticle{
-    width: 55%;
+    width: 65%;
     height: 100%;
     display: flex;
     justify-content: space-around;
@@ -65,10 +67,12 @@
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
 
-    image{
+    img{
         width: 100%;
         height: 100%;
         object-fit: cover;
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 10px;
     }
 }
 
@@ -79,7 +83,9 @@
     justify-content: space-around;
     align-items: center;
     background-color: white;
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;}
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+
+}
 
 .Staffdashboard-Header .box .icon{
     width: 40%;
@@ -101,136 +107,148 @@
 
 .Staffdashboard .staffAside{
     width: 100%;
-    height: 10%;
+    height: auto;
     display: flex;
+    gap: 10px;
     flex-direction: column;
     justify-content: center;
 
+    h3{
+        font-size: 32px;
+        color: #003B31;
+    }
+
     section{
-        width: 70%;
-        height: 80%;
-        background-color: white;
-        box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;        border-radius: 5px;
+        width: 50%;
+        height: 50px;
         padding-left: 5px;
         display: flex;
         align-items: center;
+        justify-content:space-between;
         text-transform: uppercase;
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;        border-radius: 5px;
+
+
+        hr{
+            height: 100%;
+            border: 1px solid lightgrey;
+        }
+
+        button{
+            width: 50%;
+            height: 100%;
+            color: #003B31;
+            background-color: #ffffff;
+            border: none;
+            font-size: 15px;
+            border-radius: 2px;
+        }
+        button:hover{
+            background-color: #F4B400;
+            cursor: pointer;
+        }
     }
 }
 
-.Staffdashboard main{
+.Staffdashboard table {
     width: 100%;
-    height: 52%;
-    margin-top: 20px;
-    border-radius: 5px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    /* background-color: black; */
-}
-.Staffdashboard main .mainHeader {
-    width: 100%;
-    height: 30px;
-    background-color: #003B31;
-    position: sticky;
-    margin-top: 0%;
-    color: white;
-    display: flex;
-    justify-content: space-around; 
-    align-items: center;
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
-    /* gap: 131px; */
-}
+    height: 490px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    margin-top: 30px;
+    /* border-collapse: collapse; */
+  }
 
-
-.Staffdashboard main .mainBody{
-    width: 100%;
-    height: auto;
-    gap: 5px;
-    padding: 5px;
-    min-height: 65%;
-    max-height: 65%;
-     overflow-y: scroll;
+  /* overflow-y: scroll;
     -ms-overflow-style: none;  
-    scrollbar-width: none; 
-    padding-bottom: 10px;
+    scrollbar-width: none;  */
+  
+  .Staffdashboard th, .StudentList td {
+    padding: 10px;
+    text-align: left;
+    font-size: 14px;
     display: flex;
-    flex-direction: column;
-    background-color: #fbfbfb;
-}
-
-.Staffdashboard main .mainBody section{
-    width: 100%;
-    height: 50px;
-    gap: 52px;
-    display: flex;
-    align-items: center;
     justify-content: center;
-    /* border-bottom: 1px solid black; */
-    background-color: white;
-    border-radius: 5px;
-}
-
-.Staffdashboard main .mainBody section .sectionInfo {
-    width: max-content;
-    height: 100%;
-    padding: 20px;
-    display: flex;
     align-items: center;
-    justify-content: center;
-}
+    gap: 15px;
+  }
 
-.Staffdashboard main .mainBody section .sectionInfoS{
-    padding-left: 20px;
-    gap: 10px;
-    display: flex;
-    align-items: center;
-
-    span{
-        text-transform: uppercase;
-        font-size: 12px;
-    }
-}
-.Staffdashboard main .mainBody section .sectionInfo .studentProfile,
-.Staffdashboard main .mainBody section .sectionInfoS .studentProfile {
-    width: 40px;
-    height: 40px;
-    border-radius: 100%;
-    background-color: grey;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.Staffdashboard main .mainBody section .sectionInfo p{
-    font-size: 12px;
-    text-align: center;
-}
-.Staffdashboard main .mainBody section .sectionInfoP .smallScreen{
-    display: none;
-    font-size: 12px;
-    text-align: center;
-}
-
-.Staffdashboard main .mainFoot{
-    width: 100%;
-    height: 40px;
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
-    /* box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px; */
+  .Staffdashboard thead{
     background-color: #003B31;
     display: flex;
     justify-content: space-around;
-    align-items: center;
-}
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  }
 
-.mainBody .emptyModal{
+  .Staffdashboard tr{
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #ffffff;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    border-radius: 5px;
+    position: relative;
+
+  }
+  
+  .Staffdashboard th {
+    color: white;
+  }
+
+  .Staffdashboard tbody{
+    width: 100%;
+    height: auto;
+    min-height: 450px;
+    max-height: 450px;
+    gap: 10px;
+    /* padding: 5px; */
+    overflow-y: scroll;
+    -ms-overflow-style: none;  
+    scrollbar-width: none; 
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff;
+  }
+
+  .Staffdashboard td {
+    padding: 10px;
+    text-align: left;
+    font-size: 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+
+    button{
+        width: 72px;
+        height: 30px;
+        border: none;
+        color: white;
+        background-color: #F4B400;
+        border-radius: 2px;
+        position: relative;
+        cursor: pointer;
+    }
+  }
+
+  
+  .Staffdashboard td img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+
+.Staffdashboard .emptyModal{
     width: 30%;
     height: 30vh;
     padding: 20px;
     gap: 10px;
     color:  #003B31;
+    margin-top: 30px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -242,7 +260,7 @@
     }
 }
 
-.mainBody .emptyModal button{
+.Staffdashboard .emptyModal button{
     width: 40%;
     height: 35px;
     border-radius: 5px;

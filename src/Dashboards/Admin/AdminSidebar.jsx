@@ -12,17 +12,17 @@ const AdminSidebar = () => {
       <div className="box"></div>
       
         <li>
-        <NavLink to='/admin' style={({isActive})=> ({color: isActive ? '003B31' : '#ebebeb'})}>
+        <NavLink to='/admin' style={({isActive})=> ({color: isActive ? '#003B31' : '#ffffff',backgroundColor: isActive? '#ffffff': '#003B31'})}>
           <IoHomeOutline /> Dashboard
         </NavLink>
         </li>
         <li>
-        <NavLink to='/teachers' style={({isActive})=> ({color: isActive ? '003B31' : '#ebebeb'})}>
-          <BsPersonRolodex /> Staffs
+        <NavLink to='/teachers' style={({isActive})=> ({color: isActive ? '#003B31' : '#ffffff',backgroundColor: isActive? '#ffffff': '#003B31'}) }>
+          <BsPersonRolodex  className='staffColor' /> Staffs
         </NavLink>
         </li>
         <li>
-        <NavLink to='/students' style={({isActive})=> ({color: isActive ? '003B31' : '#ebebeb'})}>
+        <NavLink to='/students' style={({isActive})=> ({color: isActive ? '#003B31' : '#ebebeb',backgroundColor: isActive? '#ffffff': '#003B31'})}>
           <PiStudent /> Students
         </NavLink>
         </li>

@@ -13,7 +13,9 @@
 .landing-Component .Intro{
     width: 100%;
     height: max-content;
-    min-height:50vh; 
+    min-height:75vh; 
+    display: flex;
+    align-items: center;
     background-size: cover;
     background-position: center;
     animation: changeImages 15s ease-in-out infinite; 
@@ -74,6 +76,7 @@
     color: #fff;
     font-size: 16px;
     cursor: pointer;
+    margin-top: 20px;
     background-color: #F4B400;
 
     a{

@@ -10,8 +10,8 @@ const TeacherSideBar = () => {
   return (
     <div className='teacherSideBar'>
     <div className="box"></div>
-        <li><NavLink   to='/teacher' style={({isActive})=> ({color: isActive ? 'white' : '#ebebeb'})}><IoHomeOutline/>Dashboard</NavLink></li>
-        <li><NavLink  to='/students' style={({isActive})=> ({color: isActive ? 'white' : '#ebebeb'})}><PiStudent />Students</NavLink></li>
+        <li><NavLink   to='/teacher' style={({isActive})=> ({color: isActive ? '#003B31' : '#ffffff',backgroundColor: isActive? '#ffffff': '#003B31'})}><IoHomeOutline/>Dashboard</NavLink></li>
+        <li><NavLink  to='/Allstudent' style={({isActive})=> ({color: isActive ? '#003B31' : '#ffffff',backgroundColor: isActive? '#ffffff': '#003B31'})}><PiStudent />Students</NavLink></li>
         <li className='logout'><CiLogout /> Log Out</li>
 </div>
 )

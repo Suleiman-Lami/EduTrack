@@ -49,13 +49,14 @@ const Routes = createBrowserRouter([
     ]
   },
   {
+
     // path: '/teacher',
     element: <Teacher />, 
     children: [
       { path: 'teacher', element: <Staffdashboard /> },
       { path: 'profile', element: <Teacherprofile /> },
       { path: 'Editprofile', element: <TeacherEdit /> },
-      { path: 'students', element: <Allstudent /> },
+      { path: 'Allstudent', element: <Allstudent /> },
       { path: 'onboard', element: <StudentOnboard /> },
       { path: 'notifications', element: <Notify /> }
     ]

@@ -2,11 +2,11 @@ import React, { useState } from 'react';
 import './Allstudent.css';
 import { FaCheckCircle } from "react-icons/fa";
 import { MdCancel } from "react-icons/md";
-import values from '../../../assets/WOMAN_WRITING.png'
+import values from '../../../assets/WOMAN_WRITING.png';
 import { useNavigate } from 'react-router-dom';
 
 const StudentList = ({ student }) => {
-  const [selectedAttendance, setSelectedAttendance] = useState({}); 
+  const [selectedAttendance, setSelectedAttendance] = useState({});
   const [showDropdown, setShowDropdown] = useState(null);
   
   const Nav = useNavigate();
@@ -18,43 +18,48 @@ const StudentList = ({ student }) => {
 
   return (
     <div className='StudentList'>
-      <div className="studentList-Header">
-        <h4>S/N</h4>
-        <h4>Student id</h4>
-        <h4>Full name</h4>
-        <h4>Gender</h4>
-        <h4>Attendance</h4>
-      </div>
-
-      <main>
-        {student.map((e, index) => (
-          <section key={index}>
-            <div className="sectionInfo">{index + 1}</div>
-            <div className="sectionInfo">
-              <div className="profile">
-                <img src={values} onClick={ () => Nav('/StudentProfile')} />
-              </div>
-              <p>edu{35 + index}</p>
-            </div>
-         
-            <div className="sectionInfoG">{e.fullName || 'Full Name'}</div>
-            <div className="sectionInfoG">{e.gender || 'Unknown'}</div>
-
-            <div className="sectionInfo">
-              <button onClick={() => setShowDropdown(showDropdown === index ? null : index)}>
-                Action
-              </button>
-
-              {showDropdown === index && (
-                <div className="dropdown">
-                  <div onClick={() => handleAttendance(index, 'Present')}><FaCheckCircle color='#003B31'/>Present</div>
-                  <div onClick={() => handleAttendance(index, 'Absent')}><MdCancel color='#F4B400'/>Absent</div>
+      <table>
+        <thead>
+          {/* <tr> */}
+            <th>S/N</th>
+            <th>Student ID</th>
+            <th>Full Name</th>
+            <th>Gender</th>
+            <th>Attendance</th>
+          {/* </tr> */}
+        </thead>
+        <tbody>
+          {student.map((e, index) => (
+            <tr key={index}>
+              <td>{index + 1}</td>
+              <td>
+                <div className="profile">
+                  <img src={values} onClick={() => Nav('/StudentProfile')} alt="profile"/>
                 </div>
-              )}
-            </div>
-          </section>
-        ))}
-      </main>
+                edu{35 + index}
+              </td>
+              <td>{e.fullName || 'Full Name'}</td>
+              <td>{e.gender || 'Unknown'}</td>
+              <td>
+                <button onClick={() => setShowDropdown(showDropdown === index ? null : index)}>
+                  Action
+                </button>
+
+                {showDropdown === index && (
+                  <div className="dropdown">
+                    <div onClick={() => handleAttendance(index, 'Present')}>
+                      <FaCheckCircle color='#003B31'/> Present
+                    </div>
+                    <div onClick={() => handleAttendance(index, 'Absent')}>
+                      <MdCancel color='#F4B400'/> Absent
+                    </div>
+                  </div>
+                )}
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
 
       <div className="studentList-Footer"></div>
     </div>

@@ -29,11 +29,11 @@ const Header = () => {
         <div className="logoNav">
           <aside></aside>
           <article>
-            <li> <NavLink to={'/'} style={({isActive}) =>({color: isActive? '#07b598': '#003B31'})} > Home </NavLink> </li>
-            <li><NavLink to={'/About'} style={({isActive})=>({color: isActive? '#07b598': '#003B31'})}>Features</NavLink></li>
-            <li><NavLink to={'/About'} style={({isActive})=>({color: isActive? '#07b598': '#003B31'})}>Pricing</NavLink></li>
-            <li><NavLink to={'/About'} style={({isActive})=>({color: isActive? '#07b598': '#003B31'})}>About us</NavLink></li>
-            <li><NavLink to={'/Contact'} style={({isActive})=>({color: isActive? '#07b598': '#003B31'})}>Contact us</NavLink></li>
+            <li> <NavLink to={'/'} style={({isActive}) =>({color: isActive? '#F4B400': '#003B31'})} > Home </NavLink> </li>
+            <li><NavLink to={'/About'} style={({isActive})=>({color: isActive? '#F4B400': '#003B31'})}>Features</NavLink></li>
+            <li><NavLink to={'/About'} style={({isActive})=>({color: isActive? '#F4B400': '#003B31'})}>Pricing</NavLink></li>
+            <li><NavLink to={'/About'} style={({isActive})=>({color: isActive? '#F4B400': '#003B31'})}>About us</NavLink></li>
+            <li><NavLink to={'/Contact'} style={({isActive})=>({color: isActive? '#F4B400': '#003B31'})}>Contact us</NavLink></li>
           </article>
         </div>
         <div className="auth">

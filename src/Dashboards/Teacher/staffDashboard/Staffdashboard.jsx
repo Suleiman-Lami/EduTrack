@@ -1,9 +1,10 @@
 import React from 'react';
 import './Staffdashboard.css';
 import { useNavigate } from 'react-router-dom';
+import values from '../../../assets/WEPROVIDE.png'
 
 const Staffdashboard = () => {
-  const student = [1, 2, 3, 4, 5, 5, 5];
+  const student = [];
   const Nav = useNavigate();
 
   const getCurrentDateTime = () => {
@@ -29,9 +30,11 @@ const Staffdashboard = () => {
             <h3>Welcome Back, Inspiring Educator!</h3>
             <span>Empower your students today—every 
               lesson is a chance to make a difference.</span>
-            <button>View Profile</button>
+            <button onClick={()=>Nav('/profile')}>View Profile</button>
           </div>
-          <div className="imageHolder"></div>
+          <div className="imageHolder">
+            <img src={values} />
+          </div>
         </div>
         <div className="box">
           <div className="icon"></div>
@@ -44,47 +47,44 @@ const Staffdashboard = () => {
 
       <div className='staffAside'>
         <h3>Classes</h3>
-        <section>School name</section>
+        <section>
+          <button>Junior secondary school</button>
+          <hr />
+          <button>Senior Secondary school</button>
+        </section>
       </div>
-
-      <main>
-        <div className="mainHeader">
-          <h4 className='serial'>S/N</h4>
-          <h4>Student ID</h4>
-          <h4>Full Name</h4>
-          <h4>Gender</h4>
-          <h4><p>Date & Time</p> <p className='smallScreen'>Date</p></h4>
+      {
+        student.length === 0 ? 
+        <div className="emptyModal">
+          <h2>No student added yet</h2>
+          <span>Click to enroll your first student!</span>
+          <button onClick={() => Nav('/onboard')}>Add a Student</button>
         </div>
-
-        <div className="mainBody">
-          {
-            student.length === 0 ? 
-            <div className="emptyModal">
-              <h2>No student added yet</h2>
-              <span>Click to enroll your first student!</span>
-              <button onClick={() => Nav('/dashboard/teacher/Student')}>Add a Student</button>
-            </div> 
-            : student.map((e, index) => (
-              <section key={index}>
-                <div className="sectionInfo">{index + 1}</div>
-                <div className="sectionInfoS">
-                  <div className="studentProfile"></div>
-                  <span>edu{35 + index}</span> 
+       :<table>
+        <thead>
+            <th>S/N</th>
+            <th>Student ID</th>
+            <th>Full Name</th>
+            <th>Gender</th>
+            <th>Date & Time</th>
+        </thead>
+        <tbody>
+          {student.map((e, index) => (
+            <tr key={index}>
+              <td>{index + 1}</td>
+              <td>
+                <div className="profile">
+                  <img src={values} onClick={() => Nav('/StudentProfile')} alt="profile"/>
                 </div>
-                <div className="sectionInfos">Suleiman Ramotu </div>
-                <div className="sectionInfoG">Female</div>
-                <div className="sectionInfoP"><p>{getCurrentDateTime()}</p> <p className='smallScreen'>{getDate()}</p></div>
-              </section>
-            ))
-          }
-        </div>
-        <div className="mainFoot">
-          <h5>Classess</h5>
-          <div className="numbers">
-            
-          </div>
-        </div>
-      </main>
+                edu{35 + index}
+              </td>
+              <td>{e.fullName || 'Full Name'}</td>
+              <td>{e.gender || 'Unknown'}</td>
+              <td>{getCurrentDateTime()} </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>}
     </div>
   );
 }
