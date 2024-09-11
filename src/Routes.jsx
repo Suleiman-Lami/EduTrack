@@ -41,7 +41,7 @@ const Routes = createBrowserRouter([
     children: [
       { path: 'admin', element: <AdminPage /> },
       { path: 'teachers', element: <Allteachers /> },
-      { path: 'adProfile', element: <Adminprofile /> },
+      { path: 'AdminProfile', element: <Adminprofile /> },
       { path: 'staffs', element: <TeacherSignUp /> },
       { path: 'students', element: <Allstudent /> },
       { path: 'student-onboard', element: <StudentOnboard /> },

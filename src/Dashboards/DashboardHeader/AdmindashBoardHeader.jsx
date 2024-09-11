@@ -38,7 +38,7 @@ const DashBoardHeader = () => {
       </div>
       <div className="profile">
         <div className="profileIcon"><IoIosNotifications className='icon' onClick={()=>Nav('/notifications')}/></div>
-        <div className="user"><FaUserCircle size={50} className='icon' onClick={()=>Nav('/admin/adProfile')}/></div>
+        <div className="user"><FaUserCircle size={50} className='icon' onClick={()=>Nav('/AdminProfile')}/></div>
       </div>
     </div>
   );
