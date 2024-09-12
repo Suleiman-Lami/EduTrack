@@ -33,9 +33,9 @@
     }
 
     span{
-        width: 52%;
+        width: 70%;
         font-weight: 400;
-        font-size: 20px;
+        font-size: 25px;
     }
 }
 
@@ -44,7 +44,7 @@
     height: 50px;
     border-radius: 5px;
     color: white;
-    font-size: 18px;
+    font-size: 20px;
     background-color: #F4B400;
     border: none;
 }
@@ -71,16 +71,18 @@
     flex-direction: column;
     align-items: center;
     gap: 10px;
+    margin-bottom: 20px;
 
     h2{
         color: #003B31;
         font-weight: 700;
+        font-size: 30px;
     }
 
     span{
-        width: 70%;
+        width: 90%;
         text-align: center;
-        font-size: 20px;
+        font-size: 25px;
         line-height: 20px;
     }
 }
@@ -92,7 +94,7 @@
     gap: 20px;
     align-items: center;
     justify-content: center;
-    margin-top: 40px;
+    margin-top: 60px;
 
     .imgHolder{
         width: 45%;
@@ -121,9 +123,11 @@
         h2{
             color: #003B31;
             font-weight: 700;
+            font-size: 30px;
         }
         span{
             width: 100%;
+            font-size: 25px;
         }
     }
 
@@ -163,9 +167,11 @@
         h2{
             color: #003B31;
             font-weight: 700;
+            font-size: 30px;
         }
         span{
             width: 100%;
+            font-size: 25px;
         }
     }
 

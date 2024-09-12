@@ -25,11 +25,14 @@
     h2{
         color: #003B31;
         font-weight: 700;
+        font-size: 30px;
     }
 
     span{
         width: 90%;
         color: #2E2E2E;
+        font-size: 20px;
+        font-weight: 400;
     }
 }
 
@@ -63,6 +66,7 @@
     height: 120px;
     display: flex;
     gap: 20px;
+    align-items: flex-start;
 }
 
 .Values article .Sections .icon{
@@ -91,8 +95,8 @@
     span{
         color: #2E2E2E;
         line-height: 28.1px;
-        font-size: 18px;
-    }
+        font-size: 20px;
+        font-weight: 400;    }
 }
 
 .Values aside{

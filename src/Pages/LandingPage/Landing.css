@@ -53,17 +53,17 @@
 .landing-Component .Intro .textArea p{
     font-family: Nunito Sans;
     font-weight: 100;
-    font-size: 20px;
+    font-size: 25px;
 }
 
 .landing-Component .Intro .textArea h1{
-    font-size: 40px;
+    font-size: 45px;
     font-weight: 400;
     font-family: Nunito Sans;
 }
 
 .landing-Component .Intro .textArea span{
-    font-size: 24px;
+    font-size: 25px;
     font-family: Nunito Sans;
     font-weight: 300;
 }
@@ -74,7 +74,7 @@
     border-radius: 5px;
     border: none;
     color: #fff;
-    font-size: 16px;
+    font-size: 20px;
     cursor: pointer;
     margin-top: 20px;
     background-color: #F4B400;
@@ -86,7 +86,7 @@
 }
 
 .landing-Component .whyEdutrack{
-    width: 60%;
+    width: 80%;
     height: max-content;
     gap: 20px;
     display: flex;
@@ -102,13 +102,13 @@
 }
 
 .landing-Component .whyEdutrack span{
-    width: 80%;
+    width: 100%;
     text-align: center;
     font-family: Nunito Sans;
     font-weight: 400;
-    font-size: 16px;
+    font-size: 20px;
     color: #2E2E2E ;
-    line-height: 25.9px;
+    line-height: 30px;
 }
 
 @media (min-width: 320px) and (max-width: 932px){

@@ -28,7 +28,7 @@ const StudentList = ({ student }) => {
             <th>Attendance</th>
           {/* </tr> */}
         </thead>
-        <tbody>
+        <tbody>j
           {student.map((e, index) => (
             <tr key={index}>
               <td>{index + 1}</td>

@@ -10,6 +10,7 @@
 .whatWeProvide h2{
     color: #003B31;
     font-weight: 700;
+    font-size: 30px;
     text-align: center;
 }
 
@@ -45,6 +46,7 @@
 .whatWeProvide article h2{
     color: #003B31;
     font-weight: 700;
+    font-size: 30px;
 }
 
 .whatWeProvide article .boxHolder{
@@ -92,11 +94,14 @@
     h2{
         color: #003B31;
         font-weight: 700;
+        font-size: 25px;
     }
 
     span{
         font-family: Nunito Sans ;
         color: #2E2E2E;
+        /* font-size: 23px; */
+        font-weight: 400;
     }
 }
 
