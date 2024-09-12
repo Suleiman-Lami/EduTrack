@@ -24,6 +24,7 @@ import Studentprofile from './Pages/adminPages/allStudent/StudentProfile/Student
 import StudentEdit from './Pages/adminPages/allStudent/StudentProfile/StudentEdit'
 import Student from './Dashboards/Student/Student'
 import AdmidEdit from './Dashboards/Admin/adminProfile/AdmidEdit'
+import Features from './Pages/Features/Features'
 
 const Routes = createBrowserRouter([
   {
@@ -34,6 +35,7 @@ const Routes = createBrowserRouter([
       { path: 'about', element: <About /> },
       { path: 'contact', element: <Contact /> },
       { path: 'thanks', element: <Thanks /> },
+      { path: 'Features', element: <Features/> },
     ]
   },
   {

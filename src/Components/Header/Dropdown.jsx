@@ -9,7 +9,7 @@ const Dropdown = ({setDropDown}) => {
   return (
     <div className='drop'>
          <li onClick={()=> setDropDown(false)}> <NavLink to={'/'} style={({isActive}) =>({color: isActive? '#07b598': '#003B31'})} ><FaHome /> Home </NavLink> </li>
-            <li onClick={()=> setDropDown(false)}><NavLink to={'About'} style={({isActive})=>({color: isActive? '#07b598': '#003B31'})}> <MdFeaturedPlayList />Features</NavLink></li>
+            <li onClick={()=> setDropDown(false)}><NavLink to={'Features'} style={({isActive})=>({color: isActive? '#07b598': '#003B31'})}> <MdFeaturedPlayList />Features</NavLink></li>
             <li onClick={()=> setDropDown(false)}><NavLink to={'About'} style={({isActive})=>({color: isActive? '#07b598': '#003B31'})}> <IoIosPricetags />Pricing</NavLink></li>
             <li onClick={()=> setDropDown(false)}><NavLink to={'About'} style={({isActive})=>({color: isActive? '#07b598': '#003B31'})}> <MdOutlineRoundaboutRight />About us</NavLink></li>
             <li onClick={()=> setDropDown(false)}><NavLink to={'Contact'} style={({isActive})=>({color: isActive? '#07b598': '#003B31'})}> <IoMdContact />Contact us</NavLink></li>

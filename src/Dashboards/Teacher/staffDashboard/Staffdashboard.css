@@ -63,17 +63,20 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: grey;
+    background-image: url(../../../assets/Landing2.png);
+    background-size: cover;
+    background-position: center;   
+    background-repeat: no-repeat; 
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
 
-    img{
+    /* img{
         width: 100%;
         height: 100%;
         object-fit: cover;
         border-top-right-radius: 10px;
         border-bottom-right-radius: 10px;
-    }
+    } */
 }
 
 .Staffdashboard-Header .box{
@@ -138,7 +141,6 @@
             width: 50%;
             height: 100%;
             color: #003B31;
-            /* background-color: #ffffff; */
             border: none;
             font-size: 15px;
             border-radius: 2px;
@@ -156,13 +158,9 @@
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     margin-top: 30px;
-    /* border-collapse: collapse; */
+
   }
 
-  /* overflow-y: scroll;
-    -ms-overflow-style: none;  
-    scrollbar-width: none;  */
-  
   .Staffdashboard th, .StudentList td {
     padding: 10px;
     text-align: left;
@@ -272,29 +270,7 @@
 }
 
 @media (min-width: 1104px) and (max-width: 1440px) {
-    .Staffdashboard main .mainBody section{
-        /* gap: 220px; */
-        padding: 0%;
-        justify-content: space-around;
-    }
-
-    .Staffdashboard main .mainBody section .sectionInfoP p{
-        display: flex;
-    }
-
-    .Staffdashboard main .mainBody section .sectionInfoP .smallScreen{
-        display: none;
-    }
-
-    .Staffdashboard main .mainHeader{
-        h4 p{
-            display: flex;
-        }
-        .smallScreen{
-            display: none;
-        }
-    }
-
+ 
     .Staffdashboard .Staffdashboard-Header .staffArticle .textArea button{
         margin: 0%;
         border-radius: 5px;
@@ -303,58 +279,36 @@
 }
 
 @media (min-width: 768px)  and (max-width: 1024px){
+    .Staffdashboard .emptyModal{
+        width: 50%;
+        height: auto;
+        padding: 0%;
+        padding-top: 20px;
+        padding-bottom: 20px;
+
+        h2{
+            text-align: center;
+        }
+    }
+    .Staffdashboard .emptyModal button{
+        width: 45%;
+    }
+    .Staffdashboard .staffAside{
+        width: 100%;
+
+        section{
+            width: 100%;
+            padding: 0%;
+
+            button{
+                height: 100%;
+            }
+        }
+    }
 
     .Staffdashboard main .mainHeader{
         gap: 0%;
         justify-content: space-around;
-    }
-
-    .Staffdashboard main .mainHeader{
-        h4 p{
-            display: none;
-        }
-        .smallScreen{
-            display: flex;
-        }
-    }
-
-    .Staffdashboard main .mainBody section{
-        gap: 60px;
-        justify-content: space-between;
-        padding-left: 10px;
-    }
-
-    .Staffdashboard main .mainBody section .sectionInfo{
-        display: flex;
-    }
-
-    .Staffdashboard main .mainBody section .sectionInfoS{
-        padding-left: 0%;
-        margin-left: 0%;
-        gap: 5px;
-    }
-
-    .Staffdashboard main .mainBody section .sectionInfoP{
-        width: 20%;
-    }
-
-    .Staffdashboard main .mainBody section .sectionInfoP p{
-        display: none;
-    }
-
-    .Staffdashboard main .mainBody section .sectionInfoP .smallScreen{
-        display: flex;
-    }
-    
-
-    .Staffdashboard main{
-        height: 70%;
-    }
-
-    .Staffdashboard main .mainBody{
-        min-height: 70%;
-        max-height: 70%;
-        padding-bottom: 0%;
     }
 
     .Staffdashboard{
@@ -362,18 +316,11 @@
     }
     .Staffdashboard .Staffdashboard-Header .staffArticle{
         width: 70%;
-        height: 70%;
+        height: auto;
     }
 
     .Staffdashboard-Header .box{
-        height: 40%;
-    }
-
-    .Staffdashboard .staffAside{
-        section{
-            width: 100%;
-            padding: 20px;
-        }
+        height: 50%;
     }
 
 
@@ -388,10 +335,6 @@
         padding-bottom: 10px;
     }
 
-    .Staffdashboard main{
-        height: 90vh;
-    }
-
     .Staffdashboard .Staffdashboard-Header{
         height: auto;
         flex-direction: column;
@@ -402,13 +345,13 @@
 
     .Staffdashboard .Staffdashboard-Header .staffArticle{
         width: 100%;
-        height:  190px;
+        height:  auto;
     }
 
     .Staffdashboard .Staffdashboard-Header .staffArticle .textArea{
         gap: 10px;
-        padding: 0%;
-        height: 100%;
+        padding: 10px;
+        height: auto;
         justify-content: center;
         text-align: center;
         align-items: center;
@@ -447,7 +390,11 @@
 
         section{
             width: 100%;
-            padding: 20px;
+            padding: 0%;
+
+            button{
+                height: 100%;
+            }
         }
     }
 

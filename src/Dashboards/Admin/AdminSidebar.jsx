@@ -7,6 +7,7 @@ import { CiLogout } from "react-icons/ci";
 import { NavLink } from 'react-router-dom';
 import Aos from 'aos';
 import "aos/dist/aos.css"
+import Logo from '../../assets/react.svg'
 
 const AdminSidebar = ({setShowSidebar}) => {
 
@@ -15,9 +16,11 @@ const AdminSidebar = ({setShowSidebar}) => {
   },[])
   return (
     <div className='adminSideBar' data-aos="fade-right">
-      <div className="box"></div>
-      
-        <li onClick={()=>setShowSidebar(false)}>
+      <div className="box">
+        <img src={Logo}/>
+      </div>
+      <nav>
+      <li onClick={()=>setShowSidebar(false)}>
         <NavLink to='/admin' style={({isActive})=> ({color: isActive ? '#003B31' : '#ffffff',backgroundColor: isActive? '#ffffff': '#003B31'})}>
           <IoHomeOutline /> Dashboard
         </NavLink>
@@ -32,8 +35,7 @@ const AdminSidebar = ({setShowSidebar}) => {
           <PiStudent /> Students
         </NavLink>
         </li>
-      
-      
+      </nav>
       <li className='logout'><CiLogout /> Log Out</li>
     </div>
   );

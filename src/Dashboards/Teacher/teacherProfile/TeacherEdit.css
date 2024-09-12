@@ -143,6 +143,7 @@
         height: auto;
         min-height: 90vh;
         padding: 20px;
+        background-color: #F5F5F5;
     }
 
     .TeacherEdit .profileBody form{

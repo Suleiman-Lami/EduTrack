@@ -34,6 +34,12 @@
         width: 100%;
         display: flex;
         color: white;
+        align-items: center;
+
+       img{
+        width: 50px;
+        height: 80px;
+       }
     }
 
     span{
@@ -58,12 +64,15 @@
     }
   .footerTop{
     height: max-content;
+    padding: 0%;
     span{
         width: 70%;
     }
   }
   .footerBottom{
     height: max-content;
+    padding: 0%;
+
   }
 }
 

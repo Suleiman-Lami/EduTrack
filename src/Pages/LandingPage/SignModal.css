@@ -13,6 +13,8 @@
     display: flex;
     align-items: center;
     background-color: #006F5D14;
+    position: relative;
+    margin-bottom: 30px;
 }
 
 .signModal main .infoBox{
@@ -28,7 +30,7 @@
 
 .signModal main .infoBox h2{
     width: 70%;
-    font-size: 36px;
+    font-size: 30px;
     font-family: 700;
     color: #263238;
     font-family: Nunito Sans;
@@ -58,30 +60,33 @@
     height: 40vh;
     display: flex;
     flex-wrap: wrap;
-    align-items: center;
+    align-items: end;
+    justify-content: center;
     align-self: flex-end;
-    padding-left: 70px;
-    margin-top: -14%;
-    margin-bottom: 6%;
-    margin-left: 20%;
+    margin-top: 150px;
+    margin-right: 0%;
+    margin-left: 70%;
     gap: 20px;
+    position: absolute;
 
     .orange{
-        margin-top: 50%;
-        margin-left: -380px;
+        margin-top: 70%;
+        margin-left: -60px;
         background-color: #F4B400;
+        position: relative;
     }
 
     .green{
-        margin-left: -35%;
-        margin-top: 67px;
+        margin-left: 70px;
+        /* margin-top: 60%; */
+        position: absolute;
         background-color: #003B31;
     }
 }
 
 .signModal .boxHolder section{
-    width: 180px;
-    height: 170px;
+    width: 100px;
+    height: 100px;
     position: relative;
     bottom: 20px;
     border-radius: 5px;
@@ -111,26 +116,24 @@
     }
 
     .signModal .boxHolder{
-        margin-top: -10%;
-        width: 50%;
-        height: max-content;
+        height: auto;
         justify-content: center;
-        align-items: center;
-        margin-bottom: 0%;
+        align-items: flex-end;
 
         .orange{
-            margin-top: -120px;
-            margin-left: -80px;
+            height: 60px;
+            margin-top: 50px;
+            margin-left: -40px;
         }
         .green{
-            margin-top: -100px;
-            margin-left: 30px;
+            height: 60px;
+            margin-left: 50px;
+            margin-top: 20px;
         }
 
         section{
-            width: 90px;
-            height: 90px;
-            margin: 0%;
+            width: 60px;
+            height: 63px;
         }
     }
 }

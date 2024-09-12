@@ -1,6 +1,7 @@
 import React from 'react'
 import './Footer.css'
 import { useNavigate } from 'react-router-dom';
+import Logo from '../../assets/Frame 101424.svg'
 
 const Footer = () => {
   const Nav = useNavigate()
@@ -12,7 +13,9 @@ const Footer = () => {
       <div className="footerWrap">
         <div className="footerTop">
         <div className="footerHead">
-          <aside></aside>
+          
+            <img src={Logo}/>
+        
           <h2>EDUTRACK</h2>
         </div>
         <span>Keep track of your studies with EDUTRACK Easily manage your assignments, grades, and progress all in one place</span>

@@ -11,7 +11,7 @@ const Leadership = () => {
   return (
     <div className='Leadership-component'>
         <h2>Meet the team</h2>
-        <div className="text">
+        <div className="text" data-aos= "fade-left"  data-aos-duration="3000">
         Our success is rooted in building teams of outstanding individuals with diverse backgrounds and perspectives. 
 We believe we are a better company when all of us are able to bring our full authentic selves to work. 
 Together, we’re committed to building a team and culture that’s diverse, equitable and inclusive.

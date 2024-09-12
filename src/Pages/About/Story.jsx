@@ -11,9 +11,9 @@ useEffect(()=>{
 },[])
   return (
     <div className='storyComponent'>
-       <div className="storyHead" data-aos="fade-left">
+       <div className="storyHead">
         <h3>Our story</h3>
-        <span> We’ve seen firsthand the challenges schools face in getting students back into classrooms.
+        <span  data-aos="fade-left"  data-aos-duration="3000"> We’ve seen firsthand the challenges schools face in getting students back into classrooms.
  It’s a problem that many districts have struggled with, and it’s affecting the quality of education. 
 We  realized early on that every single school day matters in a student’s academic journey. 
 Research shows how vital a great teacher is to a student’s success, 
@@ -24,7 +24,7 @@ That’s why we created EduTrack, an app designed to tackle this issue head-on b
 more efficient solution to track attendance and keep students on the path to success.</span>
        </div>
        <div className="storyBody">
-        <article data-aos="fade-right">
+        <article data-aos="fade-right"  data-aos-duration="3000">
             <div className="Head">Our mission</div>
             <div className="body"></div>
             <div className="text">
@@ -33,9 +33,9 @@ of students and help them stay engaged. We use technology to make communication 
 for everyone.
             </div>
         </article>
-        <article data-aos="fade-left">
+        <article data-aos="fade-left"  data-aos-duration="3000">
             <div className="Head">Our vision</div>
-            <div className="body"></div>
+            <div className="Visionbody"></div>
             <div className="text">
             To be the leading platform in transforming school attendance management by ensuring that every student’s presence is accounted for, every parent is informed,and every school is equipped with the tools to maximize student success and well-being.
             </div>

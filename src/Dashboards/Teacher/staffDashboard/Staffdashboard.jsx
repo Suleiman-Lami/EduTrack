@@ -3,7 +3,7 @@ import './Staffdashboard.css';
 import Aos from 'aos';
 import "aos/dist/aos.css"
 import { useNavigate } from 'react-router-dom';
-import values from '../../../assets/WEPROVIDE.png'
+import values from '../../../assets/Landing2.png'
 
 const Staffdashboard = () => {
   const student = [];
@@ -37,7 +37,7 @@ const Staffdashboard = () => {
             <button onClick={()=>Nav('/profile')}>View Profile</button>
           </div>
           <div className="imageHolder">
-            <img src={values} />
+            {/* <img src={values} /> */}
           </div>
         </div>
         <div className="box" data-aos="fade-left" data-aos-duration="3000">
