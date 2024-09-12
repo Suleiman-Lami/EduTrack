@@ -1,6 +1,6 @@
 .StudentsideBar{
     width: 100%;
-    height: max-content;
+    height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -10,13 +10,29 @@
 
 .StudentsideBar .box{
     width: 100%;
-    height: 120px;
+    height: 100px;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: grey;
+    border-bottom: 1px solid lightgrey;
+
+   img{
+    width: 80%;
+    height: 80%;
+    object-fit: contain;
+   }
 }
 
+.StudentsideBar nav{
+    width: 100%;
+    height: 50%;
+    display: flex;
+    gap: 50px;
+    padding: 10px;
+    padding-top: 30px;
+    align-items: center;
+    flex-direction: column;
+}
 .StudentsideBar li{
     width: 70%;
     height: 30px;
@@ -31,6 +47,9 @@
     list-style-type: none;
 
     a{
+        width: 100%;
+        height: 100%;
+        border-radius: 2px;
         gap: 10px;
         text-decoration: none;
         display: flex;
@@ -42,7 +61,7 @@
 }
 
 .StudentsideBar .logout{
-    margin-top: 40px;
+    /* margin-top: 40px; */
 }
 
 @media (min-width: 320px)  and (max-width: 768px){

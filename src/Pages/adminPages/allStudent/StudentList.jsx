@@ -34,7 +34,7 @@ const StudentList = ({ student }) => {
               <td>{index + 1}</td>
               <td>
                 <div className="profile">
-                  <img src={values} onClick={() => Nav('/StudentProfile')} alt="profile"/>
+                  <img src={values} onClick={() => Nav('/childProfile')} alt="profile"/>
                 </div>
                 edu{35 + index}
               </td>

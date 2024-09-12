@@ -49,6 +49,7 @@ const Routes = createBrowserRouter([
       { path: 'staffs', element: <TeacherSignUp /> },
       { path: 'students', element: <Allstudent /> },
       { path: 'student-onboard', element: <StudentOnboard /> },
+      { path: 'childProfile', element: <Studentprofile /> },
       { path: 'notifications', element: <Notify /> }
     ]
   },
@@ -58,6 +59,7 @@ const Routes = createBrowserRouter([
     element: <Teacher />, 
     children: [
       { path: 'teacher', element: <Staffdashboard /> },
+      { path: 'childProfile', element: <Studentprofile /> },
       { path: 'profile', element: <Teacherprofile /> },
       { path: 'Editprofile', element: <TeacherEdit /> },
       { path: 'Allstudent', element: <Allstudent /> },
