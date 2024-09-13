@@ -2,6 +2,8 @@ import React, { useEffect } from 'react'
 import './Leadership.css'
 import Aos from 'aos';
 import "aos/dist/aos.css"
+import lami from '../../assets/Lami.jpg'
+import val from '../../assets/Valentine.jpeg'
 
 const Leadership = () => {
 
@@ -19,42 +21,46 @@ Together, we’re committed to building a team and culture that’s diverse, equ
         <div className="boxHolder">
             <section  data-aos="fade-up"
      data-aos-duration="3000">
-                <div className="imageHolder"></div>
+                <div className="imageHolder">
+                    <img src={lami}/>
+                </div>
                 <div className="textArea">
                     <h3>Sueliman R lami</h3>
-                    <span>Frontend</span>
+                    <span>Frontend Developer</span>
+                </div>
+            </section>
+            <section  data-aos="fade-up"
+     data-aos-duration="3000">
+                <div className="imageHolder">
+                <img src={val}/>
+                </div>
+                <div className="textArea">
+                    <h3>Valentine A peterson</h3>
+                    <span>Frontend Developer</span> 
                 </div>
             </section>
             <section  data-aos="fade-up"
      data-aos-duration="3000">
                 <div className="imageHolder"></div>
                 <div className="textArea">
-                    <h3>Sueliman R lami</h3>
-                    <span>Frontend</span>
+                    <h3>Ibrahim O Hammed</h3>
+                    <span>Backend Developer</span>
                 </div>
             </section>
             <section  data-aos="fade-up"
      data-aos-duration="3000">
                 <div className="imageHolder"></div>
                 <div className="textArea">
-                    <h3>Sueliman R lami</h3>
-                    <span>Frontend</span>
+                    <h3>Christian Ogwuche</h3>
+                    <span>Backend Developer</span>
                 </div>
             </section>
             <section  data-aos="fade-up"
      data-aos-duration="3000">
                 <div className="imageHolder"></div>
                 <div className="textArea">
-                    <h3>Sueliman R lami</h3>
-                    <span>Frontend</span>
-                </div>
-            </section>
-            <section  data-aos="fade-up"
-     data-aos-duration="3000">
-                <div className="imageHolder"></div>
-                <div className="textArea">
-                    <h3>Sueliman R lami</h3>
-                    <span>Frontend</span>
+                    <h3>Modesolaoluwa. A </h3>
+                    <span>Product Designer</span>
                 </div>
             </section>
         </div>

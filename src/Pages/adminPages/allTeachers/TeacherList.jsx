@@ -3,7 +3,7 @@ import './Allteachers.css'
 import { FaCheckCircle } from "react-icons/fa";
 import { MdCancel } from "react-icons/md";
 import { useNavigate } from 'react-router-dom';
-import values from '../../../assets/VALUES.png'
+import values from '../../../assets/Landing3.png'
 
 const TeacherList = ({teachers}) => {
     const [selectedAttendance, setSelectedAttendance] = useState({});

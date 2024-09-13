@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import './Value.css'
-import VALUES from '../../assets/VALUES.png'
+import VALUES from '../../assets/Landing3.png'
 import { CiCircleCheck } from "react-icons/ci";
 import Aos from 'aos';
 import "aos/dist/aos.css"
