@@ -155,6 +155,10 @@ form footer span p {
         justify-content: center;
     }
 
+    .teacherSignup main{
+        width: 90%;
+    }
+
     .teacherSignup main form {
         width: 100%; 
         gap: 15px;

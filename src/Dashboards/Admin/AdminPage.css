@@ -223,14 +223,15 @@
 @media (min-width: 320px) and (max-width: 768px) {
 
     .AdminPage{
-        padding: 20px;
-        padding-bottom: 40px;
+        padding: 15px;
+        overflow-x: hidden;
+        padding-bottom: 20px;
     }
     
     .AdminPage .boxHolder{
         height: auto;
         gap: 20px;
-        padding-top: 20px;
+        /* padding-top: 20px; */
         flex-direction: column;
 
         section{
@@ -256,7 +257,7 @@
     .AdminPage .AnnouncementBox .AnnounceArticle{
         width: 100%;
         height: 50vh;
-        gap: 0px;
+        gap: 20px;
 
         input{
             height: 50%;

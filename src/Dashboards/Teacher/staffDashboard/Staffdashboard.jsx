@@ -59,7 +59,7 @@ const Staffdashboard = () => {
       </div>
       {
         student.length === 0 ? 
-        <div className="emptyModal" data-aos="zoom-in" data-aos-duration="3000">
+        <div className="emptyModal" >
           <h2>No student added yet</h2>
           <span>Click to enroll your first student!</span>
           <button onClick={() => Nav('/onboard')}>Add a Student</button>

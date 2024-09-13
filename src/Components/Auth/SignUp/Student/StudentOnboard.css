@@ -168,6 +168,10 @@ form footer span p {
         padding: 10px;
     }
 
+    .studentSignup main{
+         width: 90%;
+    } 
+
     .studentSignup main form {
         width: 100%; 
         gap: 15px;

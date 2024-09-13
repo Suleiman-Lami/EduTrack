@@ -76,26 +76,26 @@ const Studentprofile = ({ role,}) => {
               </section> : null }
         </div>
         <hr />
-        <div className="Report" data-aos="fade-left" data-aos-duration="3000">
-            <div className="Header">
-                <h4>Week</h4>
-                <h4>Mon</h4>
-                <h4>Tue</h4>
-                <h4>Wed</h4>
-                <h4>Thur</h4>
-                <h4>Fri</h4>
-                <h4>Total</h4>
-            </div>
-            <div className="body">
-                <section>
-                      <h3>Wk1:</h3>
+        <table>
+            <thead >
+                <td>Week</td>
+                <td>Mon</td>
+                <td>Tue</td>
+                <td>Wed</td>
+                <td>Thur</td>
+                <td>Fri</td>
+                <td>Total</td>
+            </thead>
+            <tbody>
+                <tr>
+                      <td>Wk1:</td>
               {weeklyPercentages.map((percentage, index) => (
-                <h3 key={index}>{percentage}%</h3>
+                <td key={index}>{percentage}%</td>
               ))}
-              <h4>{totalPercentage}%</h4> 
-                </section>
-            </div>
-        </div>
+              <th>{totalPercentage}%</th> 
+                </tr>
+            </tbody>
+        </table>
       </div>
     </div>
   );

@@ -97,7 +97,7 @@
     }
 }
 
-.Studentprofile .profileBody .Report {
+.Studentprofile .profileBody table {
     width: 60%;
     background-color: #F2F8F7; 
     color: white; 
@@ -109,7 +109,7 @@
     border-top-right-radius: 10px;
 }
 
-.Studentprofile .profileBody .Report .Header{
+.Studentprofile .profileBody table thead{
     width: 100%;
     height: 30px;
     background-color: #003B31; 
@@ -120,7 +120,7 @@
     border-top-right-radius: 10px;
 }
 
-.Studentprofile .profileBody .Report .body{
+.Studentprofile .profileBody table tbody{
     width: 100%;
     height: auto;
     min-height: 70px;
@@ -133,7 +133,7 @@
 
 }
 
-.Studentprofile .profileBody .Report .body section{
+.Studentprofile .profileBody table tbody tr{
     width: 100%;
     height: 50px;
     display: flex;
@@ -141,12 +141,12 @@
     align-items: center;
     border-radius: 5px;
 
-    h3{
+    td{
         color: black;
         font-size: 20px;
         font-weight: 400;
     }
-    h4{
+    th{
         color: #003B31;
         font-size: 20px;
         font-weight: 700;  
@@ -155,7 +155,7 @@
 
 @media (min-width: 320px) and (max-width: 768px) {
     .Studentprofile{
-        padding: 0%;
+        padding: 20px;
         gap: 0%;
         h3{
             padding: 20px;
@@ -163,7 +163,7 @@
     }
 
     .Studentprofile .btnHolder {
-        padding: 20px;
+        padding-bottom: 20px;
     }
 
     .Studentprofile .profileBody {
@@ -171,7 +171,7 @@
         align-items: center;
         height: auto;
         min-height: 90vh;
-        padding: 20px;
+        padding: 10px;
 
         hr{
             width: 100%;
@@ -182,12 +182,12 @@
         width: 100%;
     }
 
-    .Studentprofile .profileBody .Report {
+    .Studentprofile .profileBody table {
         width: 100%;
         height: auto;
     }
 
-    .Studentprofile .profileBody .Report .body{
+    .Studentprofile .profileBody table tbody{
         padding: 0%;
     }
 }

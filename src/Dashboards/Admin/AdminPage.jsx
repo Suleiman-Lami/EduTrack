@@ -58,7 +58,7 @@ const AdminPage = () => {
 
   return (
     <div className='AdminPage'>
-      <div className="boxHolder" data-aos="fade-up" data-aos-duration="2000">
+      <div className="boxHolder" data-aos="fade-up" data-aos-duration="3000">
         <section>
           <div className="color"></div>
           <div className="textArea">
@@ -98,7 +98,7 @@ const AdminPage = () => {
           </div>
           <input type="text" placeholder='What would like to announce today?'/>
         </div>
-        <aside className='Adminaside' data-aos="fade-left" data-aos-duration="3000">
+        <aside className='Adminaside' >
       <span>  You're on the <h4> freemium</h4> plan! </span>
       <span>  add up to <h4> 3 teachers,</h4> </span>
          <span> and each can add</span>
@@ -106,7 +106,7 @@ const AdminPage = () => {
         </aside>
       </div>
       <div className="Chart">
-        <div className="Chartbox" data-aos="fade-up-right" data-aos-duration="3000">
+        <div className="Chartbox"  >
           <Bar
             data={attendanceData}
             options={{
@@ -138,7 +138,7 @@ const AdminPage = () => {
           />
         </div>
 
-        <div className="upGrade" data-aos="fade-left" data-aos-duration="3000">
+        <div className="upGrade" >
         <h3>Want unlimitted access?</h3>
         <span>
       Upgrade now to unlock all features 

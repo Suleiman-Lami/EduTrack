@@ -1,7 +1,6 @@
 .Teacherprofile{
     width: 100%;
     height: auto;
-    /* min-height: 90%; */
     display: flex;
     flex-direction: column;
     padding: 40px;
@@ -89,12 +88,16 @@
 }
 
 @media (min-width: 320px) and (max-width: 768px){
+
+    .Teacherprofile{
+        padding: 20px;
+    }
     .Teacherprofile .profileBody{
         flex-direction: column;
         align-items: center;
         height: auto;
         min-height: 90vh;
-        padding: 20px;
+        padding: 10px;
     }
 
     .Teacherprofile .profileBody form{
