@@ -35,7 +35,7 @@ const Header = () => {
           <article>
             <li> <NavLink to={'/'} style={({isActive}) =>({color: isActive? '#F4B400': '#003B31'})} > Home </NavLink> </li>
             <li><NavLink to={'/Features'} style={({isActive})=>({color: isActive? '#F4B400': '#003B31'})}>Features</NavLink></li>
-            <li><NavLink to={'/About'} style={({isActive})=>({color: isActive? '#F4B400': '#003B31'})}>Pricing</NavLink></li>
+            <li><NavLink to={'/Pricing'} style={({isActive})=>({color: isActive? '#F4B400': '#003B31'})}>Pricing</NavLink></li>
             <li><NavLink to={'/About'} style={({isActive})=>({color: isActive? '#F4B400': '#003B31'})}>About us</NavLink></li>
             <li><NavLink to={'/Contact'} style={({isActive})=>({color: isActive? '#F4B400': '#003B31'})}>Contact us</NavLink></li>
           </article>
@@ -46,7 +46,7 @@ const Header = () => {
         </div>
       <div className="menuHolder">
          { showMenu === 0 ?  <RiMenuUnfold2Fill size={35} onClick={handleMenu} />: showMenu == 1? <RiMenuUnfoldFill size={35} onClick={handleMenuOut}/>: null }
-         { dropDown ? <div className='dropDown' data-aos="fade-left" data-aos-duration="3000" > <Dropdown setDropDown={setDropDown}/> </div> : null }
+         { dropDown ? <div className='dropDown' data-aos="fade-left" data-aos-duration="2000" > <Dropdown setDropDown={setDropDown}/> </div> : null }
       </div>
       </div>
     </div>

@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import './Leadership.css'
 import Aos from 'aos';
 import "aos/dist/aos.css"
-import lami from '../../assets/Lami.jpg'
+// import lami from '../../assets/Lami.jpg'
 import val from '../../assets/Valentine.jpeg'
 
 const Leadership = () => {
@@ -22,7 +22,7 @@ Together, we’re committed to building a team and culture that’s diverse, equ
             <section  data-aos="fade-up"
      data-aos-duration="3000">
                 <div className="imageHolder">
-                    <img src={lami}/>
+                    {/* <img src={lami}/> */}
                 </div>
                 <div className="textArea">
                     <h3>Sueliman R lami</h3>
