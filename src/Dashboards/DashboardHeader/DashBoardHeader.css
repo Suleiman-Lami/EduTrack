@@ -68,6 +68,7 @@
     align-items: center;
     gap: 10px;
     justify-content: center;
+    /* position: relative; */
 
     .profileIcon{
         width: 50px;
@@ -75,7 +76,24 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        /* background-color: #F4B400; */
+        position: relative;
         
+    }
+
+    .NotifyBox{
+        width:20vw;
+        height: auto;
+        padding: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: white;
+        border-radius: 5px;
+        position: absolute;
+        top: 80%;
+        color: black;
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     }
 
     .icon{
@@ -145,6 +163,13 @@
         width: 15%;
         gap: 0%;
         padding-right: 10px;
+
+        .NotifyBox{
+            width: 80vw;
+            right: 0%;
+            top: 90%;
+          margin-left: 5px;
+        }
     }
 }
 

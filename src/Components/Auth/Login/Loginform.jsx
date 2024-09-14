@@ -8,6 +8,9 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import Aos from 'aos';
 import "aos/dist/aos.css"
 import {ClipLoader} from 'react-spinners'
+import axios from 'axios';
+import {toast, Toaster} from 'react-hot-toast';
+
 
 
 const Loginform = () => {
@@ -22,6 +25,8 @@ const Loginform = () => {
 
   const User = z.object({
     email: z.string().email({ message: 'Must be a valid email' }),
+    password: z.string({message: 'must be a string'}).min(8, {message: 'password must be more than 8 characters'}).regex(  /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*(),.?":{}|<>]).{8,}$/, {message: " password must contain a special character"})
+
   });
 
   const { register, handleSubmit, formState: { errors }, setError } = useForm({
@@ -29,9 +34,39 @@ const Loginform = () => {
   });
 
   const Onsubmit = async (data, e) => {
-    e.preventDefault();  
-    console.log("Success", data);
-    Nav('/admin');
+    e.preventDefault(); 
+    setLoading(true) 
+    const url = 'https://edutrack-jlln.onrender.com/api/v1/school/log-in'
+    const FormData ={
+      email: data.email,
+      password: data.password,
+    }
+    const response = await axios.post(url, FormData)
+    .then( res => {
+      console.log(res);
+      setLoading(false)
+      toast.success(res.data.message)
+     if (res.data.newData.isVerified === true) {
+      if (res.data.newData.role === "admin" ) {
+        Nav('/admin');
+      }
+      else if (res.data.newData.role === "teacher") {
+        Nav('/teacher')
+      }
+      else{
+        Nav('/StudentProfile')
+      }
+     }
+     else{
+      toast.error('Please Verify your email :)')
+     }
+    })
+    .catch( Error => {
+      console.log(Error);
+      setLoading(false)
+      toast.error(Error.data.message)
+    })
+  
   };
 
   useEffect(()=>{
@@ -65,6 +100,7 @@ const Loginform = () => {
       <footer>
         <span>Do not have an account? <h4 onClick={() => Nav('/signUp')}>Signup</h4></span>
       </footer>
+      <Toaster/>   
     </form>
   );
 };

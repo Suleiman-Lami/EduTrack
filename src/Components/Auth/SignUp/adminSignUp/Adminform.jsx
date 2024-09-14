@@ -27,7 +27,7 @@ const AdminForm = () => {
     schoolName: z.string(),
     schoolEmail: z.string().email({message: 'must be a valid email'}),
     schoolAddress: z.string(),
-    schoolProfile: z.custom((val) => {
+    schoolPicture: z.custom((val) => {
       if (val && val.length > 0 && val[0] instanceof File) {
         return true;
       }
@@ -44,7 +44,7 @@ const AdminForm = () => {
     Aos.init();
   },[])
 
-  const onSubmit = async(data, e) => {
+  const Onsubmit = async(data, e) => {
     e.preventDefault();
     const formData = new FormData();
     formData.append('schoolName', data.schoolName);
@@ -53,34 +53,39 @@ const AdminForm = () => {
     formData.append('schoolPicture', data.schoolPicture[0]); 
     formData.append('schoolPassword', data.schoolPassword);
     
-    dispatch(schoolSignUp(data))
+    dispatch(schoolSignUp(formData))
     console.log(data);
-    // console.log(formData);
+    console.log(formData);
     console.log('clicked');
     setLoading(true)
     const url = "https://edutrack-jlln.onrender.com/api/v1/school/sign_up"
     console.log(url);
-    const response = await axios.post(url, data)
+    const response = await axios.post(url, formData)
     .then (res => {
       console.log(res);
       setLoading(false)
-      toast.success('sign up successful please verify your email')
-      Nav('/login')
+      toast.success(res.data.message)
+      if (res.data.newData.isVerified === true) {
+        Nav('/login')
+      }
+      else{
+        Nav('/')
+      }
 
     })
     .catch( Error => {
       console.log(Error);
       setLoading(false)
-      toast.error('Verification failed')
+      toast.error(Error.response.data.message)
     })
   }
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} data-aos="fade-left" data-aos-duration="3000" >
+    <form onSubmit={handleSubmit(Onsubmit)} data-aos="fade-left" data-aos-duration="3000" >
     <h2>Sign up</h2>
     <section>
         <label>Institute name</label>
-        <input type="school" placeholder='Doblin High school' {...register ("schoolName")} required />
+        <input type="text" placeholder='Doblin High school' {...register ("schoolName")} required />
         {errors.schoolName && <span style={{color: 'red'}}>{errors.schoolName.message}</span>}
     </section>
     <section>
@@ -118,7 +123,7 @@ const AdminForm = () => {
     </div>
     
     <button type='submit'>
-      { loading ? <ClipLoader color='#ffffff'/> : 'SIgn up'}
+      { loading ? <ClipLoader color='#ffffff'/> : 'Sign up'}
       </button>
 
     <footer>

@@ -41,13 +41,13 @@ const Studentprofile = ({ role,}) => {
       <h3>Student  information</h3>
     <div className='btnHolder'> 
     <button onClick={handleGoBack}>Go back</button>
-         {role !== 'teacher' &&  role !== 'admin' ?
+         {/* {role !== 'teacher' &&  role !== 'admin' ?
             <>
               <button onClick={() => Nav('/studentEdit')}>
                 Edit Profile
               </button>
             </>: null
-          }</div> 
+          }</div>  */} </div>
       <div className="profileBody">
         <div className="imgHolder">
           <div className="imgBox">
