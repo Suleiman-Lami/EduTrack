@@ -1,44 +1,56 @@
 
 .Footer{
     width: 100%;
-    height: max-content;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     background-color: #003B31;
-    padding-bottom :20px;
-}
-
-.footerWrap{
-    width: 100%;
-    height: max-content;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    hr{
-        width: 100%;
-        border: 1px solid rgba(255, 255, 255, 0.772);
-    }
-}
-
-.footerTop{
-    width: 93%;
-    height: max-content;
-    gap: 10px;
     padding: 20px;
-    display: flex;
-    flex-direction: column;
+    color: white;
+}
 
-    .footerHead{
-        width: 100%;
+.footerExtras{
+    width: 100%;
+    display: flex;
+    /* flex-wrap: wrap; */
+    justify-content: space-between;
+    margin-block-end: 20px;
+
+    & .footerExtra{
+        /* max-width: 50%; */
+        & ul li:first-child{
+            font-weight: bold;
+
+        }
+        & ul li{
+            list-style-type: none;
+            margin-bottom: 7px;
+            cursor: pointer;
+           
+        }
+        & .logoWrapper{
+            display: flex;
+            align-items: center;
+        }
+    }
+    & .first-child{
+        width: 50%;
+        margin-top: -25px;
+        & p{
+            max-width: 340px;
+        }
+    }
+    & .second-child{
         display: flex;
-        color: white;
-        align-items: center;
+        gap: 60px;
+        justify-content: flex-end;
+        /* justify-content: space-between; */
+        width: 50%;
+        margin-inline-end: 40px;
+        /* margin-top: 40px; */
+    }
 
        img{
         width: 50px;
         height: 80px;
+        margin: 0;
        }
     }
 
@@ -47,45 +59,26 @@
         color: rgba(255, 255, 255, 0.772);
     }
 
-}
-
 .footerBottom{
-    width: 93%;
-    height: max-content;
-    padding: 20px;
+    /* width: 93%; */
+    /* height: max-content; */
+    padding: 10px 0px 20px 0px;
     color: #F4B400;
+    /* padding-bottom: 40px; */
 }
 
-@media (max-width: 768px) {
+@media (width <= 500px) {
 
-    .footerWrap{
-        height: max-content;
-        gap: 20px;
+    .footerExtras{
+       display: grid;
+       /* place-items: center; */
+       gap: 20px;
     }
-  .footerTop{
-    height: max-content;
-    padding: 0%;
-    span{
-        width: 70%;
+    .footerExtra{
+        width: 100%;
     }
-  }
-  .footerBottom{
-    height: max-content;
-    padding: 0%;
-
-  }
-}
-
-@media (max-width: 197px) {
-    .footerTop{
-        padding: 0%;
-        padding-top: 20px;
-        span{
-            width: 100%;
-        }
+    p{
+        min-width: 70%;
+        text-wrap: balance;
     }
-   .footerBottom{
-    width: 100%;
-    padding: 10px;
-   }
 }
