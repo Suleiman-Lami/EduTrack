@@ -10,7 +10,7 @@
 .Values article{
     width: 75%;
     height: 500px;
-    gap: 20px;
+    gap: 40px;
     margin-right: -10px;
     display: flex;
     flex-direction: column;
@@ -168,17 +168,21 @@
     .Values article .top{
         width: 100%;
 
+        h2{
+            font-size: 28px;
+        }
         span{
             width: 100%;
         }
     }
 
     .Values article .bottom{
-        gap: 70px;
+        gap: 80px;
     }
 
     .Values article .bottom .Sections{
         width: 100%;
+
     }
 
     .Values article .bottom .Sections section{

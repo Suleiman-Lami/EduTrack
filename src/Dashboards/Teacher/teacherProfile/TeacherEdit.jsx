@@ -49,11 +49,6 @@ const Teacherprofile = () => {
           {errors.Name && <span style={{color: 'red'}}>{errors.Name.message}</span>}
           </section> 
          <section>
-          <label>Teacher's Email</label>
-          <input type="email" placeholder='Example@gmail.com'/>
-          {errors.email && <span style={{color: 'red'}}>{errors.email.message}</span>}
-          </section> 
-         <section>
           <label>Teacher's address</label>
           <input type="text" />
           {errors.place && <span style={{color: 'red'}}>{errors.place.message}</span>}

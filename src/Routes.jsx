@@ -2,7 +2,7 @@ import React from 'react'
 import Layout from './Layout/Layout'
 import Landing from './Pages/LandingPage/Landing'
 import About from './Pages/About/About'
-import { createBrowserRouter } from 'react-router-dom'
+import { createHashRouter } from 'react-router-dom'
 import Contact from './Pages/Contact/Contact'
 import Login from './Components/Auth/Login/Login'
 import SignUp from './Components/Auth/SignUp/adminSignUp/AdminsignUp'
@@ -27,7 +27,7 @@ import AdmidEdit from './Dashboards/Admin/adminProfile/AdmidEdit'
 import Features from './Pages/Features/Features'
 import Pricing from './Pages/Pricing/Pricing'
 
-const Routes = createBrowserRouter([
+const Routes = createHashRouter([
   {
     path: '/',
     element: <Layout />,
