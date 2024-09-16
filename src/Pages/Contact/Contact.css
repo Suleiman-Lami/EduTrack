@@ -6,18 +6,18 @@
     flex-direction: column;
     align-items: center;
     background-color: white;
-    overflow-x: hidden;
+    overflow: hidden;
 
 }
 
 .Contact-Component .wrap {
-    width: 70%;
+    width: 90%;
     height: max-content;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 30px;
-    margin-top: 90px;
+    margin-top: 30px;
 }
 
 .Contact-Component .wrap .contactHead {
@@ -66,7 +66,7 @@
     border: none;
     padding: 20px;
     border-radius: 5px;
-    background-color: #ebebeb;
+    background-color: #F5F5F5;
 }
 
 .Contact-Component .wrap .contactBody form article {
@@ -79,7 +79,7 @@
 }
 
 .Contact-Component .wrap .contactBody form article label {
-    color:#003B31B2;
+    color:#003B31;
     font-size: 18px;
 }
 
@@ -119,39 +119,42 @@
     outline: none;
     border: none;
     border-radius: 5px;
-    background-color: #ebebeb;
+    background-color:#F5F5F5;
 }
 
 .Contact-Component .wrap .contactBody form button {
-    width: 50%;
+    width: 100%;
     height: 50px;
     border: none;
     color: white;
-    font-size: 18px;
+    font-size: 20px;
+    font-weight: 400;
     cursor: pointer;
     border-radius: 5px;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-color:#003B31B2;
 }
 
 .Contact-Component .wrap .contactBody form .formHead {
     width: 100%;
-    height: 30%;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
+    gap: 20px;
     display: flex;
     align-items: center;
+    justify-content: center;
 }
 
 .Contact-Component .wrap .contactBody form .formHead .iconHolder {
-    width: 30%;
     height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: yellow;
 }
 
 .Contact-Component .wrap .contactBody form .formHead .textArea {
-    width: 70%;
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -159,7 +162,7 @@
 }
 
 .Contact-Component .wrap .contactBody form .formHead .textArea h1 {
-    color: orange;
+    color:#F4B400;
 }
 
 .Contact-Component .wrap .contactBody form .formHead .textArea span {
@@ -193,7 +196,7 @@
 }
 
 .Contact-Component .wrap .contactBody .Dev .DevHeader span {
-    color: orange;
+    color: #F4B400;
     font-size: 18px;
 }
 
@@ -229,11 +232,17 @@
     width: 90px;
     height: 90px;
     border-radius: 100%;
-    background-color: grey;
+
+    img{
+        width: 100%;
+        height: 100%;
+        border-radius: 100%;
+        object-fit: cover;
+    }
 }
 
 .Contact-Component .wrap .contactBody .Dev .keyContact section span {
-    color: orange;
+    color: #F4B400;
     font-size: 20px;
 }
 

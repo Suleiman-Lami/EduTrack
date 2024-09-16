@@ -17,9 +17,9 @@ const SignModal = () => {
         <button>Sign up- it’s free!</button>
       </div>
       <div className="boxHolder">
-        <section data-aos="fade-down"  data-aos-duration="3000">
-        <section className='orange' data-aos="fade-right"  data-aos-duration="3000">
-        <section className='green'data-aos="fade-left"  data-aos-duration="3000"></section>
+        <section>
+        <section className='orange' >
+        <section className='green'></section>
         </section>
         </section>
       

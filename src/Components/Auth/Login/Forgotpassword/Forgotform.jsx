@@ -35,7 +35,7 @@ const Forgotform = () => {
                 <input type="email" placeholder='Example@gmail.com' />
             </section>
             <button type="submit">
-            { loading ? <ClipLoader color='#ffffff'/> : 'SIgn up'}
+            { loading ? <ClipLoader color='#ffffff'/> : 'Continue'}
             </button>
         </form>
         {

@@ -19,9 +19,6 @@ const Teacherprofile = () => {
      }      
   const User = z.object({
     Name: z.string(),
-    email: z.string().email({message: 'must be a valid email'}),
-    place: z.string(),
-    status: z.string(),
   });
 
   const {register, handleSubmit, formState: {errors}, setError} = useForm({
@@ -43,27 +40,7 @@ const Teacherprofile = () => {
       <div className="profileBody">
        <ImageUploader/>
         <form onSubmit={ handleSubmit(Onsubmit)} data-aos="fade-left" data-aos-duration="3000">
-         <section>
-          <label>Teacher's fullName</label>
-          <input type="name" />
-          {errors.Name && <span style={{color: 'red'}}>{errors.Name.message}</span>}
-          </section> 
-         <section>
-          <label>Teacher's Email</label>
-          <input type="email" placeholder='Example@gmail.com'/>
-          {errors.email && <span style={{color: 'red'}}>{errors.email.message}</span>}
-          </section> 
-         <section>
-          <label>Teacher's address</label>
-          <input type="text" />
-          {errors.place && <span style={{color: 'red'}}>{errors.place.message}</span>}
-          </section> 
-         <section>
-          <label>Marital status</label>
-          <input type="text" />
-          {errors.status && <span style={{color: 'red'}}>{errors.status.message}</span>}
-          </section> 
-         <section>
+          <section>
           <label>Change password</label>
           <div className='inputPasswordDiv'>
                 <input type={showPassword ? "password" : "text"} placeholder='********' {...register("password")}/>

@@ -2,7 +2,7 @@ import React from 'react'
 import Layout from './Layout/Layout'
 import Landing from './Pages/LandingPage/Landing'
 import About from './Pages/About/About'
-import { createBrowserRouter } from 'react-router-dom'
+import { createHashRouter } from 'react-router-dom'
 import Contact from './Pages/Contact/Contact'
 import Login from './Components/Auth/Login/Login'
 import SignUp from './Components/Auth/SignUp/adminSignUp/AdminsignUp'
@@ -27,7 +27,7 @@ import AdmidEdit from './Dashboards/Admin/adminProfile/AdmidEdit'
 import Features from './Pages/Features/Features'
 import Pricing from './Pages/Pricing/Pricing'
 
-const Routes = createBrowserRouter([
+const Routes = createHashRouter([
   {
     path: '/',
     element: <Layout />,
@@ -52,7 +52,6 @@ const Routes = createBrowserRouter([
       { path: 'students', element: <Allstudent /> },
       { path: 'student-onboard', element: <StudentOnboard /> },
       { path: 'childProfile', element: <Studentprofile /> },
-      { path: 'notifications', element: <Notify /> }
     ]
   },
   {
@@ -66,7 +65,6 @@ const Routes = createBrowserRouter([
       { path: 'Editprofile', element: <TeacherEdit /> },
       { path: 'Allstudent', element: <Allstudent /> },
       { path: 'onboard', element: <StudentOnboard /> },
-      { path: 'notifications', element: <Notify /> }
     ]
   },
   {
@@ -76,7 +74,6 @@ const Routes = createBrowserRouter([
       { path: 'StudentProfile', element: <Studentprofile /> },
       { path: 'studentEdit', element: <StudentEdit /> },
       { path: 'students', element: <Allstudent /> },
-      { path: 'notifications', element: <Notify /> }
     ]
   },
   {

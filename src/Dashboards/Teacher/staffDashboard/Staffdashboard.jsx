@@ -4,6 +4,7 @@ import Aos from 'aos';
 import "aos/dist/aos.css"
 import { useNavigate } from 'react-router-dom';
 import values from '../../../assets/Landing2.png'
+import { BsPersonRolodex } from "react-icons/bs";
 
 const Staffdashboard = () => {
   const student = [];
@@ -41,7 +42,7 @@ const Staffdashboard = () => {
           </div>
         </div>
         <div className="box" data-aos="fade-left" data-aos-duration="3000">
-          <div className="icon"></div>
+          <div className="icon"><BsPersonRolodex size={50} color = '#F4B400' /></div>
           <div className="calcStudent">
             <h4>Students</h4>
             <h4>{student.length}</h4> 

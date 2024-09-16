@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import './Contact.css'
 import Aos from 'aos';
 import "aos/dist/aos.css"
+import ola from '../../assets/ola.jpg'
 
 const Dev = () => {
 
@@ -19,12 +20,16 @@ const Dev = () => {
         <div className="keyContact">
             <h2>KEy contact</h2>
             <section>
-                <div className="profile"></div>
-                <span>Name</span>
+                <div className="profile">
+                    <img src={ola}/>
+                </div>
+                <span>Suleiman Rahmotu O.</span>
             </section>
             <section>
-                <div className="profile"></div>
-                <span>Name</span>
+                <div className="profile">
+                <img src={ola}/>
+                </div>
+                <span>Ibrahim Hammed O.</span>
             </section>
         </div>
         <hr />

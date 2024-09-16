@@ -71,8 +71,8 @@ a per student basis.</span>
             <div className="proBox">
             <h3>Pro Plan</h3>
                 <span>For large school systems.</span>
-                <h1>₦ 0</h1>
-                <button>Activate plan</button>
+                <h1>XXXX</h1>
+                <button>Contact us</button>
 
                 <div className="textArea">
                     <li>Teacher: Unlimited</li>
@@ -95,12 +95,11 @@ a per student basis.</span>
 
             <div className="secondInfo">
                 <h3>Note:</h3>
-
                 <div className='Sispan'> <span>Prices are subject to change.</span> Please contact us for the most up-to-date pricing information.</div>
             </div>
         </div>
-        <SignModal/>
-    </div>
+        <SignModal/>   
+        </div> 
   )
 }
 

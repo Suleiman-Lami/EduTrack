@@ -24,8 +24,8 @@
     background-color: #006F5D14;
 }
 .whatWeProvide aside {
-    width: 500px;
-    height: 400px;
+    width: 35%;
+    height: 550px;
     border-radius: 25px;
     background-image: url(../../assets/Landing2.png);
     background-size: cover;
@@ -35,22 +35,25 @@
 }
 
 .whatWeProvide article{
-    width: 400px;
+    width: 45%;
     height: max-content;
     display: flex;
     gap: 20px;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: flex-end;
 }
 
-.whatWeProvide article h2{
+.whatWeProvide article .articleH2{
     color: #003B31;
     font-weight: 700;
     font-size: 30px;
+    width: 80%;
+    display: flex;
+    /* align-self: flex-start; */
 }
 
 .whatWeProvide article .boxHolder{
-    width: 100%;
+    width: 80%;
     gap: 20px;
     height: max-content;
     display: flex;
@@ -138,13 +141,18 @@
     }
 
     .whatWeProvide main aside{
-        width: 95%;
+        width: 100%;
+        height: 450px;
     }
 
     .whatWeProvide article{
-        width: 98%;
+        width: 100%;
         padding: 0%;
         align-items: flex-start;
+    }
+
+    .whatWeProvide article .boxHolder{
+        width: 100%;
     }
     .whatWeProvide article .boxHolder section .sectionInfo{
         align-items: flex-start;

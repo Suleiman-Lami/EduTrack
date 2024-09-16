@@ -75,13 +75,29 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        position: relative;
         
     }
+.NotifyBox{
+    width: 20vw;
+    height: auto;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    background-color: white;
+    border-radius: 2px;
+    top: 80%;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
 
     .icon{
         width: 80%;
         height: 80%;
         cursor: pointer;
+        position: relative;
     }
 
     .user{
@@ -102,6 +118,13 @@
 }
 
 @media (min-width: 320px) and (max-width: 768px){
+
+    .admin-dashBoardHeader .profile .NotifyBox{
+        width: 60vw;
+        margin-left: 0%;
+        margin-right: 150px;
+        padding: 10px;
+    }
 
     .admin-dashBoardHeader{
         padding-left: 0%;

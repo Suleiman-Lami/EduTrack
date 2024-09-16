@@ -5,10 +5,12 @@ import { IoIosNotifications } from "react-icons/io";
 import { FaUserCircle } from "react-icons/fa";
 import { AiOutlineMenuUnfold } from "react-icons/ai";
 import AdminSidebar from '../Admin/AdminSidebar';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom'
+import Notify from '../Notifications/Notify';
 
 const DashBoardHeader = () => {
   const [showSidebar, setShowSidebar] = useState(false);
+  const [showNotify, setShowNotify] = useState(false)
   const [path, setPath] = useState('');
   const { pathname } = useLocation(); 
   const Nav = useNavigate();
@@ -37,7 +39,13 @@ const DashBoardHeader = () => {
         </div>
       </div>
       <div className="profile">
-        <div className="profileIcon"><IoIosNotifications className='icon' onClick={()=>Nav('/notifications')}/></div>
+        <div className="profileIcon"><IoIosNotifications className='icon' onClick={()=>setShowNotify(!showNotify)}/>
+          {
+            showNotify ? <div className="NotifyBox">
+              <Notify/>
+            </div> : null
+          }
+        </div>
         <div className="user"><FaUserCircle size={50} className='icon' onClick={()=>Nav('/AdminProfile')}/></div>
       </div>
     </div>

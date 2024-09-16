@@ -83,6 +83,7 @@
 .Staffdashboard-Header .box{
     width: 25%;
     height: 60%;
+    gap: 20px;
     display: flex;
     justify-content: space-around;
     align-items: center;

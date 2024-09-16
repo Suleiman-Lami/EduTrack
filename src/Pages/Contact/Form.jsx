@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import './Contact.css'
 import { useNavigate } from 'react-router-dom'
+import { AiOutlineLoading3Quarters } from "react-icons/ai";
 
 const Form = () => {
   const [show, setShow]=useState(false)
@@ -36,7 +37,8 @@ const Form = () => {
     </form>:
         <form>
           <div className="formHead">
-            <div className="iconHolder"></div>
+            <div className="iconHolder"><AiOutlineLoading3Quarters color='#F4B400' size={70}/>
+            </div>
             <div className="textArea">
               <h1> You're almost done </h1>
               <span>Kindly,fill in the below details </span>
