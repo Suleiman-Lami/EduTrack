@@ -16,7 +16,7 @@ const Provide = () => {
         <main>
             <aside data-aos="fade-right" data-aos-duration="3000"></aside>
             <article>
-                <h2>We provide: </h2>
+                <h2 className='articleH2'>We provide: </h2>
                 <div className="boxHolder">
                     <section  data-aos="fade-left" data-aos-duration="3000">
                         <div className="icon"><MdCircleNotifications size={40} color='white'/></div>

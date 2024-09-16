@@ -6,12 +6,12 @@
     flex-direction: column;
     gap: 40px;
     align-items: center;
-    overflow-x: hidden;
+    overflow: hidden;
 }
 
 .Pricing .intro{
     width: 100%;
-    height: 65vh;
+    height: 50vh;
     background-color: #003B31;
     display: flex;
     justify-content: center;
@@ -32,7 +32,7 @@
     .h1div{
         width: 100%;
         display: flex;
-        gap: 10px;
+        gap: 20px;
         justify-content: center;
         align-items: center;
 
@@ -307,11 +307,26 @@
 .Pricing .PricingInfo{
     width: 90%;
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
     gap: 30px;
 }
 
 .Pricing .PricingInfo .fistInfo{
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+
+    .text{
+        display: flex;
+        flex-direction: column;
+
+        span{
+            display: flex;
+        }
+    }
+}
+.Pricing .PricingInfo .secondInfo {
     display: flex;
     gap: 10px;
     flex-direction: column;

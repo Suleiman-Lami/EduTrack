@@ -1,11 +1,12 @@
 .storyComponent{
-    width: 90%;
+    width: 100%;
     height: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 30px;
     margin-top: 30px;
+    padding: 20px;
     overflow-x: hidden;
 }
 
@@ -58,8 +59,8 @@
 }
 
 .storyComponent .storyBody article .body{
-    width: 60%;
-    height: 40vh;
+    width: 85%;
+    height: 50vh;
     background-image: url(../../assets/mission.jpeg);
     background-size: cover;
     background-position: center;   
@@ -67,8 +68,8 @@
     border-radius: 10px;
 }
 .storyComponent .storyBody article .Visionbody{
-    width: 60%;
-    height: 40vh;
+    width: 85%;
+    height: 50vh;
     background-image: url(../../assets/Vision.png);
     background-size: cover;
     background-position: center;   
@@ -77,7 +78,7 @@
 }
 
 .storyComponent .storyBody article .text{
-    width: 90%;
+    width: 95%;
     line-height: 34.1px;
     text-align: center;
     font-size: 25px;

@@ -14,7 +14,8 @@
 .landing-Component .Intro{
     width: 100%;
     height: max-content;
-    min-height:75vh; 
+    min-height:75vh;
+    padding-left: 50px; 
     display: flex;
     align-items: center;
     background-size: cover;
@@ -41,7 +42,7 @@
   }
 
 .landing-Component .Intro .textArea{
-    width: 50%;
+    width: 70%;
     height: max-content;
     min-height: 50vh;
     padding: 40px;
@@ -78,6 +79,10 @@
     font-size: 20px;
     cursor: pointer;
     margin-top: 20px;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: #F4B400;
 
     a{

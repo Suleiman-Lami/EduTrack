@@ -2,16 +2,17 @@
     width: 100%;
     height: max-content;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     padding: 20px;
-    padding-left: 100px;
+    gap: 20px;
+    padding-left: 60px;
 }
 
 .Values article{
     width: 75%;
     height: 500px;
     gap: 40px;
-    margin-right: -10px;
+    /* margin-right: -10px; */
     display: flex;
     flex-direction: column;
 }
@@ -62,7 +63,7 @@
 }
 
 .Values article .bottom .Sections{
-    width: 60%;
+    width: 55%;
     height: 120px;
     display: flex;
     gap: 20px;
@@ -100,8 +101,8 @@
 }
 
 .Values aside{
-    width: 500px;
-    height: 400px;
+    width: 45%;
+    height: 450px;
     border-radius: 25px;
     margin-left: -30%;
     padding: 20px;

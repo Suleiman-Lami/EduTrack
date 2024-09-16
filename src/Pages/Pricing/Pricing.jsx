@@ -71,8 +71,8 @@ a per student basis.</span>
             <div className="proBox">
             <h3>Pro Plan</h3>
                 <span>For large school systems.</span>
-                <h1>₦ 0</h1>
-                <button>Activate plan</button>
+                <h1>XXX </h1>
+                <button>Contact us</button>
 
                 <div className="textArea">
                     <li>Teacher: Unlimited</li>
@@ -84,7 +84,7 @@ a per student basis.</span>
 
         <div className="PricingInfo">
             <div className="fistInfo">
-                <h3>Needmore information?</h3>
+                <h3>Need more information?</h3>
                 <h4>Contact Us:</h4>
                 <div className="text">
                 <span><h5>Email:</h5>asemudarglory@gmail.com</span>

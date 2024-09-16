@@ -3,6 +3,8 @@ import './AdminPage.css';
 import { Bar } from 'react-chartjs-2';
 import Aos from 'aos';
 import "aos/dist/aos.css"
+import { PiStudentDuotone } from "react-icons/pi";
+import { BsPersonRolodex } from "react-icons/bs";
 import { Chart as ChartJS, BarElement, CategoryScale, LinearScale, Tooltip, Legend } from 'chart.js';
 
 ChartJS.register(BarElement, CategoryScale, LinearScale, Tooltip, Legend);
@@ -62,7 +64,7 @@ const AdminPage = () => {
         <section>
           <div className="color"></div>
           <div className="textArea">
-            <div className="iconHolder"></div>
+            <div className="iconHolder"><PiStudentDuotone size={50} color='#003B31'/></div>
             <div className="calc">
               <span>students</span>
               <h3>0</h3>
@@ -72,7 +74,8 @@ const AdminPage = () => {
         <section className='TeacherResult'>
         <div className="color"></div>
           <div className="textArea">
-            <div className="iconHolder"></div>
+            <div className="iconHolder"><BsPersonRolodex color=' #F4B400' size={50} />
+            </div>
             <div className="calc">
               <span>Teachers</span>
               <h3>0</h3>
@@ -82,7 +85,7 @@ const AdminPage = () => {
         <section>
         <div className="color"></div>
           <div className="textArea">
-            <div className="iconHolder"></div>
+            <div className="iconHolder"><PiStudentDuotone size={50} color='#003B31'/></div>
             <div className="calc">
               <span>Classes</span>
               <h3>0</h3>
@@ -96,7 +99,7 @@ const AdminPage = () => {
             <h3>Announcement</h3>
             <button>Send</button>
           </div>
-          <input type="text" placeholder='What would like to announce today?'/>
+            <textarea placeholder='What would like to announce today?'></textarea>
         </div>
         <aside className='Adminaside' >
       <span>  You're on the <h4> freemium</h4> plan! </span>

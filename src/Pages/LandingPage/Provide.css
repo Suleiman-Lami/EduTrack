@@ -19,13 +19,14 @@
     height: max-content;
     display: flex;
     padding: 20px;
+    /* gap: 20px; */
     align-items: center;
     justify-content: space-around;
     background-color: #006F5D14;
 }
 .whatWeProvide aside {
-    width: 500px;
-    height: 400px;
+    width: 40%;
+    height: 550px;
     border-radius: 25px;
     background-image: url(../../assets/Landing2.png);
     background-size: cover;
@@ -35,26 +36,29 @@
 }
 
 .whatWeProvide article{
-    width: 400px;
+    width: 45%;
     height: max-content;
     display: flex;
     gap: 20px;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: flex-end;
 }
 
-.whatWeProvide article h2{
+.whatWeProvide article .articleH2{
     color: #003B31;
     font-weight: 700;
     font-size: 30px;
+    width: 80%;
+    display: flex;
 }
 
 .whatWeProvide article .boxHolder{
-    width: 100%;
+    width: 80%;
     gap: 20px;
     height: max-content;
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 
 .whatWeProvide article .boxHolder section{
@@ -67,6 +71,12 @@
     background-color: white;
     display: flex;
     justify-content: space-around;
+
+    h2{
+        color: #003B31;
+        font-weight: 700;
+        font-size: 30px;
+    }
 }
 
 .whatWeProvide article .boxHolder section .icon{

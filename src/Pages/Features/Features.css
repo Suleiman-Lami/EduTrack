@@ -20,7 +20,7 @@
 }
 
 .Features .intro .textArea{
-    width: 60%;
+    width: 70%;
     display: flex;
     color: white;
     flex-direction: column;
@@ -31,24 +31,28 @@
 
     h2{
         font-weight: 700;
-        font-size: 40px;
+        font-size: 50px;
     }
 
     span{
-        width: 70%;
+        width: 90%;
         font-weight: 400;
         font-size: 25px;
     }
 }
 
 .Features .intro .textArea button{
-    width: 170px;
+    width: 200px;
     height: 50px;
     border-radius: 5px;
     color: white;
     font-size: 20px;
     background-color: #F4B400;
     border: none;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .Features .intro .ImageHolder{
@@ -67,7 +71,7 @@
 }
 
 .Features .Textarea{
-    width: 70%;
+    width: 90%;
     height: 60px;
     display: flex;
     flex-direction: column;
@@ -85,22 +89,23 @@
         width: 90%;
         text-align: center;
         font-size: 25px;
-        line-height: 20px;
+        line-height: 34.9px;
     }
 }
 
 .Features .firstSlide{
     width: 100%;
-    height: 50vh;
+    height: auto;
     display: flex;
-    gap: 20px;
+    gap: 30px;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
     margin-top: 60px;
+    padding: 20px;
 
     .imgHolder{
         width: 45%;
-        height: 100%;
+        height: 450px;
         border-radius: 10px;
         display: flex;
         justify-content: start;
@@ -109,14 +114,14 @@
         img{
             width: 100%;
             height: 100%;
-            object-fit: contain;
+            object-fit: cover;
             background-position: center;
             border-radius: 10px;
         }
     }
 
     .textArea{
-        width: 40%;
+        width: 50%;
         display: flex;
         flex-direction: column;
         gap: 10px;
@@ -136,24 +141,26 @@
 }
 .Features .secondSlide{
     width: 100%;
-    height: 50vh;
+    height: auto;
     display: flex;
-    gap: 20px;
+    gap: 30px;
     align-items: center;
-    justify-content: center;
-    margin-top: 40px;
+    justify-content: space-around;
+    margin-top: 60px;
+    padding: 20px;
 
     .imgHolder{
         width: 45%;
-        height: 100%;
+        height: 450px;
         border-radius: 10px;
         display: flex;
-        justify-content: end;
+        justify-content: start;
+        padding-left: 20px;
 
         img{
-            width: 100%; 
+            width: 100%;
             height: 100%;
-            object-fit: contain;
+            object-fit: cover;
             background-position: center;
             border-radius: 10px;
         }

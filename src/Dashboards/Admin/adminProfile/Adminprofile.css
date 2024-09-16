@@ -103,6 +103,7 @@
 
     .Adminprofile .profileBody form{
         width: 100%;
+        padding-top: 0%;
     }
 
     .Adminprofile .profileBody form section{
