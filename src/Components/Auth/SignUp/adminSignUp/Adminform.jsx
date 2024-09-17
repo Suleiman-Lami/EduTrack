@@ -53,22 +53,21 @@ const AdminForm = () => {
       schoolProfile: data.schoolProfile[0],
       schoolPassword: data.schoolPassword,
     }
-    
-    dispatch(schoolSignUp(FormData));    
+ 
     try {
       const url = "https://edutrack-jlln.onrender.com/api/v1/school/sign_up";
       const res = await axios.post(url, FormData);
       setLoading(false);
-      toast.success(res.data.newData.message);
-
-      if (res.data.newData.isVerified === true) {
-        Nav('/login');
-      } else {
-        Nav('/');
-      }
+      toast.success('success');
+      dispatch(schoolSignUp(FormData));    
+      // if (res.data.newData.isVerified === true) {
+      //   Nav('/login');
+      // } else {
+      //   Nav('/');
+      // }
     } catch (error) {
       setLoading(false);
-      toast.error(error.data.newData.message || "Signup failed");
+      toast.error("Signup failed");
     }
   };
 

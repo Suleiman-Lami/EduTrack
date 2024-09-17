@@ -27,11 +27,6 @@ a per student basis.</span>
                 <span>For small schools or classes.</span>
                 <h1>₦95,000</h1>
                 <button>Activate plan</button>
-                schoolName: data.schoolName,
-      schoolEmail: data.schoolEmail,
-      schoolAddress: data.schoolAddress,
-      schoolProfile: data.schoolProfile[0],
-      schoolPassword: data.schoolPassword,
                 <div className="textArea">
                     <li>Teacher: Up to 5</li>
                     <li>Student:Up to 100</li>
@@ -88,7 +83,7 @@ a per student basis.</span>
 
         <div className="PricingInfo">
             <div className="fistInfo">
-                <h3>Needmore information?</h3>
+                <h3>Need more information?</h3>
                 <h4>Contact Us:</h4>
                 <div className="text">
                 <span><h5>Email:</h5>asemudarglory@gmail.com</span>

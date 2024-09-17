@@ -69,13 +69,15 @@
     border-radius: 15px;
     background-color: white;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
 
     h2{
         color: #003B31;
         font-weight: 700;
         font-size: 30px;
         width: 100%;
+        display: flex;
+        align-self: start;
     }
 }
 
@@ -139,7 +141,9 @@
     }
 }
 
-@media (min-width: 320px) and (max-width: 932px){
+
+
+@media (min-width: 320px) and (max-width: 768px){
 
     .whatWeProvide{
         align-items: flex-start;
@@ -166,8 +170,27 @@
         width: 100%;
         height: auto;
     }
+
+    .whatWeProvide article .boxHolder section{
+        border-radius: 5px;
+        padding-right: 10px;
+        gap: 10px;
+    }
+
+    .whatWeProvide article .boxHolder section .icon{
+        width: 50px;
+    }
+
     .whatWeProvide article .boxHolder section .sectionInfo{
-        align-items: flex-start;
-        width: max-content;
+        align-items: center;
+        width: 350px;  
+
+        h2{
+            font-size: 19px;
+        }
+
+        span{
+            line-height: 30px;
+        }
     }
 } 

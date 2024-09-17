@@ -60,7 +60,6 @@
     width: 30%;
     height: auto;
     display: flex;
-    /* flex-wrap: wrap; */
     align-items: flex-end;
     justify-content: center;
     align-self: flex-end;
@@ -68,7 +67,6 @@
     margin-right: 0%;
     margin-left: 70%;
     margin-bottom: 30px;
-    /* gap: 20px; */
     position: absolute;
 
     .orange{
@@ -122,13 +120,16 @@
     }
 
     .signModal .boxHolder{
-        height: auto;
+        height: 40vh;
         justify-content: center;
         align-items: flex-end;
+        margin-top: 0px;
+        margin-right: 0%;
+        margin-left: 70%;
+        margin-bottom: 0px;
 
         .orange{
             height: 60px;
-            /* margin-top: 50px; */
             margin-left: -40px;
         }
         .green{
@@ -140,6 +141,8 @@
         section{
             width: 60px;
             height: 63px;
+            margin: 0%;
+            /* margin-top: 30px; */
         }
     }
 }

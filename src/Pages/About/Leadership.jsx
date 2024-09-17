@@ -50,7 +50,7 @@ Together, we’re committed to building a team and culture that’s diverse, equ
             <section  data-aos="fade-up"
      data-aos-duration="3000">
                 <div className="imageHolder">
-                    <img src={''} />
+                    <img src={'https://res.cloudinary.com/djhuirix9/image/upload/v1726591308/christian_p7sncx.jpg'} />
                 </div>
                 <div className="textArea">
                     <h3>Christian Ogwuche</h3>

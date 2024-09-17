@@ -277,8 +277,13 @@
         padding: 10px;
     }
 
+    .Contact-Component .wrap .contactBody form .formHead {
+        align-items: flex-start;
+    }
+
     .Contact-Component .wrap .contactBody form .formHead .iconHolder {
         width: 20%;
+     
     }
 
     .Contact-Component .wrap .contactBody form .formHead .textArea {

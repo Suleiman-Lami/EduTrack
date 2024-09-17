@@ -15,7 +15,7 @@
         align-items: center;
         background-size: cover;
         background-position: center;
-        background-image: url(../../assets/About22.png);
+        background-image: url('https://res.cloudinary.com/djhuirix9/image/upload/v1726590874/about_mvj0xo.jpg');
 
         .textArea{
             width: 60%;
