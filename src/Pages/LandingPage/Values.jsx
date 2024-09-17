@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react'
 import './Value.css'
-import VALUES from '../../assets/Landing3.png'
 import { CiCircleCheck } from "react-icons/ci";
 import Aos from 'aos';
 import "aos/dist/aos.css"
@@ -42,7 +41,7 @@ const Values = () => {
             </div>
         </article>
         <aside data-aos="fade-left" data-aos-duration="3000">
-            <img src={VALUES} alt="" />
+            <img src={'https://res.cloudinary.com/djhuirix9/image/upload/v1726553546/student_qdema4.jpg'} alt="" />
         </aside>
     </div>
   )

@@ -2,8 +2,6 @@ import React, { useEffect } from 'react'
 import './Leadership.css'
 import Aos from 'aos';
 import "aos/dist/aos.css"
-// import lami from '../../assets/Lami.jpg'
-import val from '../../assets/Valentine.jpeg'
 
 const Leadership = () => {
 
@@ -22,7 +20,7 @@ Together, we’re committed to building a team and culture that’s diverse, equ
             <section  data-aos="fade-up"
      data-aos-duration="3000">
                 <div className="imageHolder">
-                    {/* <img src={lami}/> */}
+                    <img src={'https://res.cloudinary.com/djhuirix9/image/upload/v1726554215/lami_l39zov.jpg'}/>
                 </div>
                 <div className="textArea">
                     <h3>Sueliman R lami</h3>
@@ -32,7 +30,7 @@ Together, we’re committed to building a team and culture that’s diverse, equ
             <section  data-aos="fade-up"
      data-aos-duration="3000">
                 <div className="imageHolder">
-                <img src={val}/>
+                <img src={'https://res.cloudinary.com/djhuirix9/image/upload/v1726554282/valentine_i8rzst.jpg'}/>
                 </div>
                 <div className="textArea">
                     <h3>Valentine A peterson</h3>
@@ -41,7 +39,9 @@ Together, we’re committed to building a team and culture that’s diverse, equ
             </section>
             <section  data-aos="fade-up"
      data-aos-duration="3000">
-                <div className="imageHolder"></div>
+                <div className="imageHolder">
+                    <img src={'https://res.cloudinary.com/djhuirix9/image/upload/v1726554256/lanray_paizhp.jpg'}/>
+                </div>
                 <div className="textArea">
                     <h3>Ibrahim O Hammed</h3>
                     <span>Backend Developer</span>
@@ -49,7 +49,9 @@ Together, we’re committed to building a team and culture that’s diverse, equ
             </section>
             <section  data-aos="fade-up"
      data-aos-duration="3000">
-                <div className="imageHolder"></div>
+                <div className="imageHolder">
+                    <img src={''} />
+                </div>
                 <div className="textArea">
                     <h3>Christian Ogwuche</h3>
                     <span>Backend Developer</span>
@@ -57,7 +59,9 @@ Together, we’re committed to building a team and culture that’s diverse, equ
             </section>
             <section  data-aos="fade-up"
      data-aos-duration="3000">
-                <div className="imageHolder"></div>
+                <div className="imageHolder">
+                    <img src={'https://res.cloudinary.com/djhuirix9/image/upload/v1726554267/mode_ugj9pg.jpg'}/>
+                </div>
                 <div className="textArea">
                     <h3>Modesolaoluwa. A </h3>
                     <span>Product Designer</span>

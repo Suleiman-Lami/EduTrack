@@ -3,36 +3,40 @@
     width: 100%;
     height: max-content;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    /* justify-content: center; */
     align-items: center;
     background-color: #003B31;
     padding-bottom :20px;
-}
 
-.footerWrap{
-    width: 100%;
-    height: max-content;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    hr{
-        width: 100%;
-        border: 1px solid rgba(255, 255, 255, 0.772);
-    }
-}
 
 .footerTop{
-    width: 93%;
+    width: 100%;
     height: max-content;
     gap: 10px;
     padding: 20px;
     display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    span{
+        width: 25%;
+        color: rgba(255, 255, 255, 0.772);
+    }
+
+}
+
+.footerTop1{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    padding-left: 40px;
     flex-direction: column;
 
-    .footerHead{
+    .logoWrapper{
         width: 100%;
         display: flex;
+        gap: 10px;
         color: white;
         align-items: center;
 
@@ -43,11 +47,51 @@
     }
 
     span{
-        width: 25%;
-        color: rgba(255, 255, 255, 0.772);
+        width : 80%;
     }
-
+    
+   
 }
+
+.footerTop2{
+    width: 25%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+
+    ul{
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        color: white;
+
+        .head{
+            font-size: 20px;
+            font-weight: 700;
+        }
+
+
+        li{
+            font-weight: 400;
+            list-style-type: none;
+        
+        }
+        li:hover{
+            cursor: pointer;
+            color: grey;
+        }
+        .head:hover{
+            color: white;
+        }
+    }
+}
+
+    hr{
+    width: 100%;
+    border: 1px solid lightgrey;
+    }
 
 .footerBottom{
     width: 93%;
@@ -55,19 +99,43 @@
     padding: 20px;
     color: #F4B400;
 }
+}
 
-@media (max-width: 768px) {
+@media (min-width: 320px) and (max-width: 768px) {
 
     .footerWrap{
         height: max-content;
         gap: 20px;
     }
+
+
   .footerTop{
+    width: 100%;
     height: max-content;
     padding: 0%;
-    span{
-        width: 70%;
+    gap: 20px;
+    flex-direction: column;
+
+    .footerTop1{
+        width: 90%;
+        padding-left: 0%;
+
+        span{
+            width: 100%;
+        }
     }
+    .footerTop2{
+        width: 90%;
+        padding-left: 0%;
+        margin-top: 20px;
+        justify-content: space-around;
+
+        ul{
+            align-items: flex-start;
+        }
+       
+    }
+   
   }
   .footerBottom{
     height: max-content;

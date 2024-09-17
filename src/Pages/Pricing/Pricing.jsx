@@ -19,7 +19,7 @@ a per student basis.</span>
         </div>
         <div className="TextArea">
             <h2>Pick Your Ideal Plan!</h2>
-            <span>  Choose from our best options to fit your needs. Want to change it? You can easily adjust your plan for the perfect experience.</span>
+            <span> Choose from our best options to fit your needs. Want to change it? You can easily adjust your plan for the perfect experience.</span>
         </div>
         <div className="firstOptionbox">
             <div className="starterBox">
@@ -27,7 +27,11 @@ a per student basis.</span>
                 <span>For small schools or classes.</span>
                 <h1>₦95,000</h1>
                 <button>Activate plan</button>
-
+                schoolName: data.schoolName,
+      schoolEmail: data.schoolEmail,
+      schoolAddress: data.schoolAddress,
+      schoolProfile: data.schoolProfile[0],
+      schoolPassword: data.schoolPassword,
                 <div className="textArea">
                     <li>Teacher: Up to 5</li>
                     <li>Student:Up to 100</li>

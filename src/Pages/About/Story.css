@@ -60,7 +60,7 @@
 .storyComponent .storyBody article .body{
     width: 80%;
     height: 50vh;
-    background-image: url(../../assets/mission.jpeg);
+    background-image: url('https://res.cloudinary.com/djhuirix9/image/upload/v1726554119/pple_xfhuj0.jpg');
     background-size: cover;
     background-position: center;   
     background-repeat: no-repeat;
@@ -69,7 +69,7 @@
 .storyComponent .storyBody article .Visionbody{
     width: 80%;
     height: 50vh;
-    background-image: url(../../assets/Vision.png);
+    background-image: url('https://res.cloudinary.com/djhuirix9/image/upload/v1726554137/united_jp3ibc.jpg');
     background-size: cover;
     background-position: center;   
     background-repeat: no-repeat;

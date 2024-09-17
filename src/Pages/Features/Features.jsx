@@ -35,7 +35,7 @@ const Features = () => {
         </div>
         <div className="firstSlide">
             <div className="imgHolder" data-aos="fade-right" data-aos-duration="3000">
-                <img src={features2}/>
+                <img src={'https://res.cloudinary.com/djhuirix9/image/upload/v1726554033/bby_zarlqx.jpg'} alt='feature2'/>
             </div>
         <div className="textArea"  data-aos="fade-left" data-aos-duration="3000">
             <h2>Attendance Feature:</h2>

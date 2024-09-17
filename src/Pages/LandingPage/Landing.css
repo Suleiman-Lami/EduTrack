@@ -24,19 +24,19 @@
   
   @keyframes changeImages {
     0% {
-      background-image: url(../../assets/WOMAN_TEACHING.png);
+      background-image: url('https://res.cloudinary.com/djhuirix9/image/upload/v1726552945/landing_nj1ijr.jpg');
     }
     25% {
-      background-image: url(../../assets/WOMAN_WRITING.png);
+      background-image: url('https://res.cloudinary.com/djhuirix9/image/upload/v1726553331/secondlandingpage_lss3oe.jpg');
     }
     50% {
-      background-image: url(../../assets/WOMAN_TEACHING.png);
+      background-image: url('https://res.cloudinary.com/djhuirix9/image/upload/v1726552945/landing_nj1ijr.jpg');
     }
     75% {
-      background-image: url(../../assets/WEPROVIDE.png);
+      background-image: url('https://res.cloudinary.com/djhuirix9/image/upload/v1726553436/thirdlandingpage_y7uj1q.jpg');
     }
     100% {
-      background-image: url(../../assets/WOMAN_TEACHING.png); 
+      background-image: url('https://res.cloudinary.com/djhuirix9/image/upload/v1726553331/secondlandingpage_lss3oe.jpg'); 
     }
   }
 

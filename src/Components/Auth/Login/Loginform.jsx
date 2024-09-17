@@ -29,9 +29,39 @@ const Loginform = () => {
   });
 
   const Onsubmit = async (data, e) => {
-    e.preventDefault();  
-    console.log("Success", data);
-    Nav('/admin');
+    e.preventDefault(); 
+    setLoading(true) 
+    const url = 'https://edutrack-jlln.onrender.com/api/v1/school/log-in'
+    const FormData ={
+      email: data.email,
+      password: data.password,
+    }
+    const response = await axios.post(url, FormData)
+    .then( res => {
+      console.log(res);
+      setLoading(false)
+      toast.success(res.data.message)
+     if (res.data.newData.isVerified === true) {
+      if (res.data.newData.role === "admin" ) {
+        Nav('/admin');
+      }
+      else if (res.data.newData.role === "teacher") {
+        Nav('/teacher')
+      }
+      else{
+        Nav('/StudentProfile')
+      }
+     }
+     else{
+      toast.error('Please Verify your email :)')
+     }
+    })
+    .catch( Error => {
+      console.log(Error);
+      setLoading(false)
+      toast.error(Error.data.message)
+    })
+  
   };
 
   useEffect(()=>{

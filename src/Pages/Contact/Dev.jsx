@@ -21,13 +21,13 @@ const Dev = () => {
             <h2>KEy contact</h2>
             <section>
                 <div className="profile">
-                    <img src={ola}/>
+                    <img src={'https://res.cloudinary.com/djhuirix9/image/upload/v1726554215/lami_l39zov.jpg'}/>
                 </div>
                 <span>Suleiman Rahmotu O.</span>
             </section>
             <section>
                 <div className="profile">
-                <img src={ola}/>
+                <img src={'https://res.cloudinary.com/djhuirix9/image/upload/v1726554256/lanray_paizhp.jpg'}/>
                 </div>
                 <span>Ibrahim Hammed O.</span>
             </section>
