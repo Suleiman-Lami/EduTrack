@@ -41,7 +41,6 @@ const Routes = createHashRouter([
     ]
   },
   {
-    // path: '/admin',
     element: <Admin />, 
     children: [
       { path: 'admin', element: <AdminPage /> },
@@ -56,7 +55,6 @@ const Routes = createHashRouter([
   },
   {
 
-    // path: '/teacher',
     element: <Teacher />, 
     children: [
       { path: 'teacher', element: <Staffdashboard /> },

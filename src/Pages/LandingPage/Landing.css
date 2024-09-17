@@ -131,6 +131,8 @@
 
     .landing-Component .Intro .textArea {
         width: 90%;
+        padding-left: 20px;
+        
     }
     .landing-Component .Intro .textArea h1{
         font-size: 26px;

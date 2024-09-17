@@ -24,7 +24,7 @@
     background-color: #006F5D14;
 }
 .whatWeProvide aside {
-    width: 35%;
+    width: 40%;
     height: 550px;
     border-radius: 25px;
     background-image: url(../../assets/Landing2.png);
@@ -49,7 +49,6 @@
     font-size: 30px;
     width: 80%;
     display: flex;
-    /* align-self: flex-start; */
 }
 
 .whatWeProvide article .boxHolder{
@@ -58,6 +57,7 @@
     height: max-content;
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 
 .whatWeProvide article .boxHolder section{
@@ -70,6 +70,13 @@
     background-color: white;
     display: flex;
     justify-content: space-around;
+
+    h2{
+        color: #003B31;
+        font-weight: 700;
+        font-size: 30px;
+        width: 100%;
+    }
 }
 
 .whatWeProvide article .boxHolder section .icon{
@@ -98,6 +105,8 @@
         color: #003B31;
         font-weight: 700;
         font-size: 25px;
+        display: flex;
+        align-items: flex-start;
     }
 
     span{
@@ -138,26 +147,27 @@
     .whatWeProvide main{
         flex-direction: column;
         gap: 20px;
+        padding: 10px;
     }
 
     .whatWeProvide main aside{
-        width: 100%;
-        height: 450px;
+        width: 95%;
+        height: 350px;
     }
 
     .whatWeProvide article{
         width: 100%;
         padding: 0%;
         align-items: flex-start;
+
     }
 
     .whatWeProvide article .boxHolder{
         width: 100%;
+        height: auto;
     }
     .whatWeProvide article .boxHolder section .sectionInfo{
         align-items: flex-start;
-        h2{
-            font-size: 18px;
-        }
+        width: max-content;
     }
 } 

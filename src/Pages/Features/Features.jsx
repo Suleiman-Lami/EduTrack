@@ -7,8 +7,10 @@ import features3 from '../../assets/Features3.png'
 import SignModal from '../LandingPage/SignModal'
 import Aos from 'aos';
 import "aos/dist/aos.css"
+import { useNavigate } from 'react-router-dom'
 
 const Features = () => {
+    const Nav = useNavigate();
 
     useEffect(()=>{
         Aos.init();
@@ -20,7 +22,7 @@ const Features = () => {
                 <h2>Welcome to Edutrack!</h2>
                 <span>We build school administration software 
                 to make life easier for educators and families.</span>
-                <button>Sign up- it’s free!</button>
+                <button onClick={()=>Nav('/signup')}>Sign up- it’s free!</button>
             </div>
             <div className="ImageHolder"  data-aos="fade-left" data-aos-duration="3000">
                 <img src={features1}/>

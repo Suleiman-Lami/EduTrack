@@ -12,6 +12,7 @@ import {toast, Toaster} from 'react-hot-toast';
 import {useDispatch} from 'react-redux'
 import { schoolSignUp } from '../../../../Global/Slice';
 import {ClipLoader} from 'react-spinners'
+import ScrollToTop from '../../../../Layout/ScrollToTop';
 
 
 const AdminForm = () => {
@@ -77,6 +78,7 @@ const AdminForm = () => {
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} data-aos="fade-left" data-aos-duration="3000" >
+      <ScrollToTop/>
     <h2>Sign up</h2>
     <section>
         <label>Institute name</label>
