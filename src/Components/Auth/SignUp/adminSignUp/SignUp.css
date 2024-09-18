@@ -57,6 +57,15 @@
     height: 80vh; 
     border-top-left-radius: 80px;
     background-color: #003B31B2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img{
+        width: 80%;
+        height: 80%;
+        object-fit: cover;
+    }
 }
 
 .SignUp main form {
@@ -245,6 +254,13 @@ form .footer span h4:hover{
 
     .SignUp main form {
         width: 100%; 
+    }
+
+    .SignUp main form .terms{
+        width: 100%;
+        span{
+            font-size: 16px;
+        }
     }
 
     .SignUp main article{

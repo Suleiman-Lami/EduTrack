@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import './Allteachers.css'
 import { FaCheckCircle } from "react-icons/fa";
 import { MdCancel } from "react-icons/md";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import values from '../../../assets/Landing3.png'
 
 const TeacherList = ({teachers}) => {
@@ -10,11 +10,16 @@ const TeacherList = ({teachers}) => {
     const [showDropdown, setShowDropdown] = useState(null);
     
     const Nav = useNavigate();
+    const {teacherID} = useParams()
+    console.log(teacherID);
+    
   
     const handleAttendance = (index, status) => {
       setSelectedAttendance((prev) => ({ ...prev, [index]: status })); 
       setShowDropdown(null); 
     };
+    console.log(teachers);
+    
 
   return (
     <div className='TeacherList'>
@@ -22,24 +27,25 @@ const TeacherList = ({teachers}) => {
         <thead>
           {/* <tr> */}
             <th>S/N</th>
-            <th>Student ID</th>
+            <th>Profile</th>
             <th>Full Name</th>
+            <th>Class</th>
             <th>Gender</th>
             <th>Attendance</th>
           {/* </tr> */}
         </thead>
         <tbody>
-          {teachers.map((e, index) => (
+          {teachers?.map((e, index) => (
             <tr key={index}>
               <td>{index + 1}</td>
               <td>
                 <div className="profile">
-                  <img src={values} onClick={() => Nav('/StudentProfile')} alt="profile"/>
+                  <img src={e?.teacherProfile} onClick={() => Nav(`/staffProfile/${e?.teacherID}`)} alt="profile"/>
                 </div>
-                edu{35 + index}
               </td>
-              <td>{e.fullName || 'Full Name'}</td>
-              <td>{e.gender || 'Unknown'}</td>
+              <td>{e?.fullName}</td>
+              <td>{e?.teacherClass}</td>
+              <td>{e?.gender}</td>
               <td>
                 <button onClick={() => setShowDropdown(showDropdown === index ? null : index)}>
                   Action

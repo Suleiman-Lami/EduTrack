@@ -8,6 +8,11 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import Aos from 'aos';
 import "aos/dist/aos.css"
 import {ClipLoader} from 'react-spinners'
+import axios from 'axios';
+import { toast, Toaster } from 'react-hot-toast';
+import { useDispatch } from 'react-redux';
+import { loginInfo } from '../../../Global/Slice';
+
 
 
 const Loginform = () => {
@@ -15,6 +20,7 @@ const Loginform = () => {
   const [loading , setLoading] = useState(false)
 
   const Nav = useNavigate();
+  const dispatch = useDispatch();
 
   const MyshowPassword = () => {
     setShowPassword(false);
@@ -22,6 +28,9 @@ const Loginform = () => {
 
   const User = z.object({
     email: z.string().email({ message: 'Must be a valid email' }),
+    password: z.string()
+    .min(8, { message: 'Password must be more than 8 characters' })
+    .regex(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*(),.?":{}|<>]).{8,}$/, { message: "Password must contain a special character" })
   });
 
   const { register, handleSubmit, formState: { errors }, setError } = useForm({
@@ -33,24 +42,21 @@ const Loginform = () => {
     setLoading(true) 
     const url = 'https://edutrack-jlln.onrender.com/api/v1/school/log-in'
     const FormData ={
-      email: data.email,
-      password: data.password,
+      schoolEmail: data.email,
+      schoolPassword: data.password,
     }
-    const response = await axios.post(url, FormData)
+    console.log(FormData);
+    
+     await axios.post(url, FormData)
     .then( res => {
-      console.log(res);
+      console.log(res.data.data);
+      localStorage.setItem('userToken', res.data.userToken)
+      dispatch(loginInfo(res.data.data))
+      
       setLoading(false)
       toast.success(res.data.message)
-     if (res.data.newData.isVerified === true) {
-      if (res.data.newData.role === "admin" ) {
-        Nav('/admin');
-      }
-      else if (res.data.newData.role === "teacher") {
-        Nav('/teacher')
-      }
-      else{
-        Nav('/StudentProfile')
-      }
+     if (res.data.data.isVerified === true) {
+        Nav('/admin')
      }
      else{
       toast.error('Please Verify your email :)')
@@ -66,15 +72,16 @@ const Loginform = () => {
 
   useEffect(()=>{
     Aos.init();
-  },[])
+  },[]);
 
   return (
+
     <form onSubmit={handleSubmit(Onsubmit)} data-aos="fade-left" data-aos-duration="3000">
       <h2>Log in</h2>
       <section>
         <label>Email Address</label>
         <input type="email" placeholder='Example@gmail.com' {...register("email")} />
-        {errors.email && <span style={{ color: 'red' }}>{errors.email.message}</span>}
+        {errors?.email && <span style={{ color: 'red' }}>{errors?.email?.message}</span>}
       </section>
       <section>
         <label>Password</label>
@@ -86,7 +93,7 @@ const Loginform = () => {
               <FaRegEyeSlash onClick={() => setShowPassword(true)} style={{ fontSize: "15px", cursor: "pointer" }} />
           }
         </div>
-        {errors.password && <span style={{ color: 'red' }}>{errors.password.message}</span>}
+        {errors?.password && <span style={{ color: 'red' }}>{errors?.password?.message}</span>}
         <label className='Forgot' onClick={() => Nav('/Forgottenpassword')}>Forgot password ?</label>
       </section>
       <button type='submit'>
@@ -95,6 +102,7 @@ const Loginform = () => {
       <footer>
         <span>Do not have an account? <h4 onClick={() => Nav('/signUp')}>Signup</h4></span>
       </footer>
+      <Toaster position="top-center" />
     </form>
   );
 };

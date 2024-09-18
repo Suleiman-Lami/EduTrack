@@ -19,7 +19,9 @@ const SignUp = () => {
         </div>
       </aside>
       <main>
-        <article></article>
+        <article>
+          <img src={'https://res.cloudinary.com/djhuirix9/image/upload/v1726591105/jpg_c2pgv8.jpg'}/>
+        </article>
         <Adminform />
       </main>
     </div>

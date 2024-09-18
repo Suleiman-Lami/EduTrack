@@ -23,13 +23,13 @@ const Form = () => {
         <input type="place" placeholder='City Name' />
        </div>
 
-       <article>
+       {/* <article>
         <label>Kindly, select your interest</label>
         <div className="Options">
             <div className="box"> I want to use Edutrack Manage my Institution</div>
             <div className="box">I want to resell Edutrack Become a Partner </div>
         </div>
-       </article>
+       </article> */}
 
        <label>Message</label>
        <input type="text" placeholder='if you have a specific message about Edutrack'/>

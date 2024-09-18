@@ -3,6 +3,19 @@ import './Pricing.css'
 import SignModal from '../LandingPage/SignModal'
 
 const Pricing = () => {
+    
+  function payKorapay() {
+    window.Korapay.initialize({
+      key: import.meta.env.VITE_Public_Key,
+        reference: `S & R_${Date.now()}`,
+        amount: 160.000, 
+        currency: "NGN",
+        customer: {
+          name: loggedInUser.name,
+          email: loggedInUser.email
+        },
+    });}
+
   return (
     <div className='Pricing'>
         <div className="intro">
@@ -14,7 +27,7 @@ const Pricing = () => {
                 </div>
                 <span>You decide what modules and features you need most at your school, 
 so you only pay for what you need. Modules are tiered and priced on 
-a per student basis.</span>
+a per student basis per Term.</span>
             </div>
         </div>
         <div className="TextArea">
@@ -26,7 +39,7 @@ a per student basis.</span>
                 <h3>Starter Plan</h3>
                 <span>For small schools or classes.</span>
                 <h1>₦95,000</h1>
-                <button>Activate plan</button>
+                <button onClick={payKorapay}>Activate plan</button>
                 <div className="textArea">
                     <li>Teacher: Up to 5</li>
                     <li>Student:Up to 100</li>
@@ -36,7 +49,7 @@ a per student basis.</span>
             <h3>Basic Plan</h3>
                 <span>For schools with growing needs.</span>
                 <h1>₦ 240,000</h1>
-                <button>Activate plan</button>
+                <button onClick={payKorapay}>Activate plan</button>
 
                 <div className="textArea">
                     <li>Teacher: Up to 10</li>
@@ -47,7 +60,7 @@ a per student basis.</span>
             <h3>Pro Plan</h3>
                 <span>For medium-sized schools.</span>
                 <h1>₦ 480,000</h1>
-                <button>Activate plan</button>
+                <button onClick={payKorapay}>Activate plan</button>
 
                 <div className="textArea">
                     <li>Teacher: Up to 25</li>

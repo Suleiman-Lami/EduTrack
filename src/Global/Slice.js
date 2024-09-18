@@ -1,7 +1,11 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
-  user: null,
+  user: {
+    schoolInfo: {},
+    teacherInfo: {}, 
+    studentInfo: {}
+  },
   isLoggedIn: false,
   schoolInfo: {},
   loading: false,
@@ -14,33 +18,24 @@ const authSlice = createSlice({
   name: 'eduTrack',
   initialState,
   reducers: {
-    loginRequest: (state) => {
-      state.loading = true;
+    loginInfo: (state, action) => {
+      const { role, ...userInfo } = action.payload; 
+
+      if (role === "admin") {
+        state.user.schoolInfo = userInfo;
+      } else if (role === 'teacher') {
+        state.user.teacherInfo = userInfo;
+      } else {
+        state.user.studentInfo = userInfo;
+      }
     },
-    loginSuccess: (state, action) => {
-      state.loading = false;
-      state.isLoggedIn = true;
-      state.user = action.payload;
-    },
-    loginFailure: (state, action) => {
-      state.loading = false;
-      state.error = action.payload;
-    },
-    schoolSignUp: (state, action) => {
-      state.schoolInfo = action.payload;
-    },
-    staffSignUp: (state, action) => {
-      state.staffInfo = action.payload;
-    },
-    studentSignUp: (state, action) => {
-      state.studentInfo = action.payload;
-    },
+
     logout: (state) => {
       state.isLoggedIn = false;
-      state.user = null;
+      state.user = {};
     },
   },
 });
 
-export const { loginRequest,staffSignUp,studentSignUp, loginSuccess, loginFailure, schoolSignUp, logout } = authSlice.actions;
+export const { loginInfo, logout } = authSlice.actions;
 export default authSlice.reducer;

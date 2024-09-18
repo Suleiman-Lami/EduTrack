@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import './Header.css'
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import { RiMenuUnfold2Fill, RiMenuUnfoldFill } from "react-icons/ri";
 import Dropdown from './Dropdown';
 import AOS from 'aos'
@@ -10,6 +10,9 @@ import Logo from '../../assets/Frame 101424.svg'
 const Header = () => {
   const [showMenu, setShowMenu] = useState(0)
   const [dropDown, setDropDown] = useState(false)
+  const [showLog, setShowLog] = useState(false)
+
+  const Nav = useNavigate()
 
   const handleMenu =()=>{
     setShowMenu(1)
@@ -41,7 +44,17 @@ const Header = () => {
           </article>
         </div>
         <div className="auth">
-          <button><NavLink to={'Login'}>Log In</NavLink></button>
+        <div className="LoginBtn"  onClick={()=> setShowLog(!showLog)}>
+            Log in
+            {
+              showLog ? 
+              <div className="logDrop">
+              <button onClick={()=>Nav('/login')}>Admin logIn</button>
+              <button onClick={()=>Nav('/teacherlogin')}> Teacher logIn</button>
+              <button onClick={()=>Nav('/studentLogin')}>Student Login</button>
+              </div>: null
+            }
+          </div>
           <button className='signUpBtn'><NavLink to={'signUp'}>Register</NavLink></button>
         </div>
       <div className="menuHolder">

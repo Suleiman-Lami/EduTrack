@@ -3,18 +3,52 @@ import './Forgot.css';
 import Reset from './Reset';
 import Aos from 'aos';
 import "aos/dist/aos.css"
+import { z } from 'zod';
+import { useForm } from 'react-hook-form';
+import { zodResolver } from '@hookform/resolvers/zod';
 import { useNavigate } from 'react-router-dom';
 import {ClipLoader} from 'react-spinners'
+import axios from 'axios';
+import { toast, Toaster } from 'react-hot-toast';
+
 
 const Forgotform = () => {
     const [showReset, setShowReset] = useState(false);
     const [loading , setLoading] = useState(false)
     const Nav = useNavigate();
 
-    const handleContinue = (e) => {
+    const User = z.object({
+        email: z.string().email({ message: 'Must be a valid email' }),
+    })
+
+      const { register, handleSubmit, formState: { errors }, setError } = useForm({
+        resolver: zodResolver(User),
+      });
+    
+      const Onsubmit = async (data, e) => {
         e.preventDefault(); 
-        setShowReset(true); 
-    };
+        setLoading(true)
+        const url = 'https://edutrack-jlln.onrender.com/api/v1/school/forget-password'
+        const FormData ={
+            schoolEmail: data.email
+        }
+        console.log(FormData);
+        
+        await axios.post(url, FormData)
+        .then( res =>{
+            console.log(res);
+            setLoading(false)
+            // toast.success(res.data.message) 
+            setShowReset(showReset)
+        })
+        .catch( Error => {
+            console.log(Error);
+            setLoading(false)
+            // toast.error(Error.data.message)
+        })
+      
+        
+      }
 
     useEffect(()=>{
         Aos.init();
@@ -22,7 +56,7 @@ const Forgotform = () => {
 
     return (
         <>
-        <form onSubmit={handleContinue} data-aos="fade-left" data-aos-duration="3000" >
+        <form onSubmit={handleSubmit(Onsubmit)} data-aos="fade-left" data-aos-duration="3000" >
             <header>
                 <div className="Icon"></div>
                 <h2>Forgot Password?</h2>
@@ -32,11 +66,13 @@ const Forgotform = () => {
             </header>
             <section>
                 <label>Email Address</label>
-                <input type="email" placeholder='Example@gmail.com' />
+                <input type="email" placeholder='Example@gmail.com' {...register('email')}/>
+                { errors?.email && <span style={{ color: 'red' }}>{errors?.email?.message}</span>}
             </section>
             <button type="submit">
             { loading ? <ClipLoader color='#ffffff'/> : 'Continue'}
             </button>
+            <Toaster position="top-center" />
         </form>
         {
                 showReset && (

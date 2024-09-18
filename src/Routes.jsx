@@ -26,6 +26,8 @@ import Student from './Dashboards/Student/Student'
 import AdmidEdit from './Dashboards/Admin/adminProfile/AdmidEdit'
 import Features from './Pages/Features/Features'
 import Pricing from './Pages/Pricing/Pricing'
+import StudentLogin from './Components/Auth/Login/StudentLogin'
+import Teacherlog from './Components/Auth/Login/Teacherlog'
 
 const Routes = createHashRouter([
   {
@@ -51,6 +53,7 @@ const Routes = createHashRouter([
       { path: 'students', element: <Allstudent /> },
       { path: 'student-onboard', element: <StudentOnboard /> },
       { path: 'childProfile', element: <Studentprofile /> },
+      { path: 'staffProfile/:teacherID', element: <Teacherprofile /> },
     ]
   },
   {
@@ -77,6 +80,14 @@ const Routes = createHashRouter([
   {
     path: '/login',
     element: <Login />
+  },
+  {
+    path: '/teacherlogin',
+    element: <Teacherlog />
+  },
+  {
+    path: '/studentLogin',
+    element: <StudentLogin/>
   },
   {
     path: '/forgottenpassword',

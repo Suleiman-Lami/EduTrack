@@ -15,7 +15,7 @@
 }
 
 .teacherSignup main form {
-    width: 40%;
+    width: 60%;
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -34,7 +34,7 @@
 .teacherSignup main form section {
     width: 100%;
     gap: 5px;
-    height: 60px;
+    height: auto;
     display: flex;
     flex-direction: column;
 }
@@ -54,6 +54,15 @@
     border: 1px solid #2E2E2E;
     background-color: white;
 }
+.teacherSignup main form section select{
+    width: 100%;
+    height: 90%; 
+    border-radius: 5px;
+    padding: 10px; 
+    outline: none;
+    border: 1px solid #2E2E2E;
+    background-color: white;
+}
 
 .teacherSignup main form .terms {
     width: 100%;
@@ -63,6 +72,7 @@
 }
 
 .teacherSignup main form .terms span {
+    width: 80%;
     color: #003B31;
 }
 
@@ -90,6 +100,11 @@
     border: none;
     color: white;
     cursor: pointer;
+    padding: 20px;
+    display: flex;
+    font-size:20px;
+    justify-content: center;
+    align-items: center;
     border-radius: 5px;
     background-color: #003B31;
 }
@@ -161,7 +176,18 @@ form footer span p {
 
     .teacherSignup main form {
         width: 100%; 
-        gap: 15px;
+        gap: 20px;
+    }
+
+    .teacherSignup main form section{
+        height: auto;
+    }
+
+    
+    .teacherSignup main form .terms{
+        span{
+            font-size: 17px;
+        }
     }
 
     .teacherSignup main form button {

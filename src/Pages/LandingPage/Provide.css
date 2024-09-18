@@ -52,7 +52,7 @@
 }
 
 .whatWeProvide article .boxHolder{
-    width: 80%;
+    width: 90%;
     gap: 20px;
     height: max-content;
     display: flex;
@@ -142,6 +142,16 @@
 }
 
 
+@media (min-width: 768px)  and (max-width: 1px){
+    
+    .whatWeProvide main aside{
+        width: 30%;
+        height: 300px;
+    }
+    
+   
+
+}
 
 @media (min-width: 320px) and (max-width: 768px){
 

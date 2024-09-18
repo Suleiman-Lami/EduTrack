@@ -11,7 +11,7 @@ ChartJS.register(BarElement, CategoryScale, LinearScale, Tooltip, Legend);
 
 const AdminPage = () => {
   const [attendanceData, setAttendanceData] = useState({
-    labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec'],
+    labels: ['wk1', 'wk2', 'wk3', 'wk4', 'wk5', 'wk6', 'wk7', 'wk8', 'wk9', 'wk10', 'wk11', 'wk12'],
     datasets: [
       {
         label: 'Checkout Attendance Monthly update'
@@ -98,12 +98,12 @@ const AdminPage = () => {
             <h3>Announcement</h3>
             <button>Send</button>
           </div>
-          <input type="text" placeholder='What would like to announce today?'/>
+          <textarea type="text" placeholder='What would like to announce today?'/>
         </div>
         <aside className='Adminaside' >
       <span>  You're on the <h4> freemium</h4> plan! </span>
-      <span>  add up to <h4> 3 teachers,</h4> </span>
-         <span> and each can add</span>
+      <span>  add up to <h4> 3 teachers</h4> </span>
+         <span> and </span>
           <h5> 5 students.</h5>
         </aside>
       </div>
@@ -132,7 +132,7 @@ const AdminPage = () => {
                 x: {
                   title: {
                     display: true,
-                    text: 'Months',
+                    text: 'Weeks',
                   },
                 },
               },

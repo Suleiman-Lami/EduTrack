@@ -104,6 +104,10 @@
     border: none;
     color: white;
     cursor: pointer;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     border-radius: 5px;
     background-color: #003B31;
 }
@@ -175,6 +179,16 @@ form footer span p {
     .studentSignup main form {
         width: 100%; 
         gap: 15px;
+    }
+
+    .studentSignup main form section{
+        height: auto;
+    }
+
+    .studentSignup main form .terms {
+        span{
+            font-size: 17px;
+        }
     }
 
     .studentSignup main form button {

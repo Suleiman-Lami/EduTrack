@@ -30,8 +30,8 @@ const Footer = () => {
             <li className='head'> Support & Log In</li>
             <li>Contact Us</li>
             <li onClick={()=>Nav('/login')}>Admin Login</li>
-            <li onClick={()=>Nav('/login')}>Teachers Login</li>
-            <li onClick={()=>Nav('/login')}>Parents/Students Login</li>
+            <li onClick={()=>Nav('/teacherlogin')}>Teachers Login</li>
+            <li onClick={()=>Nav('/studentLogin')}>Parents/Students Login</li>
           </ul>
         </div>
         </div>

@@ -6,8 +6,28 @@ import { useNavigate } from 'react-router-dom';
 import StudentList from './StudentList';
 
 const Allstudent = () => {
-  const Nav = useNavigate();
-  const student = [1,2];
+  const [student, setTeachers] = useState([])
+  const [Loading, setLoading] = useState(false)
+    const Nav = useNavigate();
+
+  const getAllTeachers = async() =>{
+    setLoading(true)
+    const userToekn = localStorage.getItem('userToken')
+    try{
+      const res = await axios.get('https://edutrack-jlln.onrender.com/api/v1/school/get-teachers', {
+        headers: {
+          "Authorization": `Bearer ${userToekn}`
+        }
+      })
+      const teachersData = res?.data?.data?.teachers ; 
+      setTeachers(teachersData);
+      setLoading(false)
+    }
+    catch (error){
+      console.log(error);
+      setLoading(false)
+    }
+  }
 
   useEffect(()=>{
     Aos.init();

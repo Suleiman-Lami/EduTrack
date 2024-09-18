@@ -10,7 +10,6 @@ import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { toast, Toaster } from 'react-hot-toast';
 import { useDispatch } from 'react-redux';
-import { schoolSignUp } from '../../../../Global/Slice';
 import { ClipLoader } from 'react-spinners';
 import ScrollToTop from '../../../../Layout/ScrollToTop';
 
@@ -24,7 +23,7 @@ const AdminForm = () => {
     schoolName: z.string().min(1, { message: "School name is required" }),
     schoolEmail: z.string().email({ message: 'Must be a valid email' }),
     schoolAddress: z.string().min(1, { message: "School address is required" }),
-    schoolProfile: z.custom((val) => {
+    schoolPicture: z.custom((val) => {
       if (val && val.length > 0 && val[0] instanceof File) {
         return true;
       }
@@ -50,24 +49,30 @@ const AdminForm = () => {
       schoolName: data.schoolName,
       schoolEmail: data.schoolEmail,
       schoolAddress: data.schoolAddress,
-      schoolProfile: data.schoolProfile[0],
+      schoolPicture: data.schoolPicture[0],
       schoolPassword: data.schoolPassword,
     }
- 
+
+    console.log(FormData);
+    
     try {
       const url = "https://edutrack-jlln.onrender.com/api/v1/school/sign_up";
-      const res = await axios.post(url, FormData);
+      
+      const res = await axios.post(url, FormData, {
+        headers: {
+          "Content-Type": "multipart/form-data"
+        }
+      });
       setLoading(false);
-      toast.success('success');
-      dispatch(schoolSignUp(FormData));    
-      // if (res.data.newData.isVerified === true) {
-      //   Nav('/login');
-      // } else {
-      //   Nav('/');
-      // }
+      toast.success(res.data.message);
+      if (res.data.newData.isVerified === true) {
+        Nav('/login');
+      } else {
+        Nav('/');
+      }
     } catch (error) {
       setLoading(false);
-      toast.error("Signup failed");
+      toast.error(error.data.message);
     }
   };
 
@@ -101,9 +106,9 @@ const AdminForm = () => {
       <section>
         <label>Institute Logo</label>
         <div className="inputDiv">
-          <input type="file" {...register("schoolProfile")} />
+          <input type="file" {...register("schoolPicture")} />
         </div>
-        {errors.schoolProfile && <span style={{ color: 'red' }}>{errors.schoolProfile.message}</span>}
+        {errors.schoolPicture && <span style={{ color: 'red' }}>{errors.schoolPicture.message}</span>}
       </section>
 
       <section>

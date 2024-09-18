@@ -23,13 +23,19 @@ const Dev = () => {
                 <div className="profile">
                     <img src={'https://res.cloudinary.com/djhuirix9/image/upload/v1726554215/lami_l39zov.jpg'}/>
                 </div>
-                <span>Suleiman Rahmotu O.</span>
+               <div className="DevInfo">
+               <span>Suleiman Rahmotu O.</span>
+               <span>Dreallami@gmail.com</span>
+               </div>
             </section>
             <section>
                 <div className="profile">
                 <img src={'https://res.cloudinary.com/djhuirix9/image/upload/v1726554256/lanray_paizhp.jpg'}/>
                 </div>
-                <span>Ibrahim Hammed O.</span>
+                <div className="DevInfo">
+               <span>Ibrahim Hammed O.</span>
+               <span>hammedlanre71@gmail.com</span>
+               </div>
             </section>
         </div>
         <hr />
