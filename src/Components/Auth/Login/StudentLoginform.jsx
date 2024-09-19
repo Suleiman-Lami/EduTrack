@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import './Login.css';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { FaRegEye, FaRegEyeSlash } from "react-icons/fa6";
 import { z } from 'zod';
 import { useForm } from 'react-hook-form';
@@ -10,13 +10,17 @@ import "aos/dist/aos.css"
 import {ClipLoader} from 'react-spinners'
 import axios from 'axios';
 import {toast, Toaster} from 'react-hot-toast';
+import { useDispatch } from 'react-redux';
+import { loginInfo } from '../../../Global/Slice';
 
 const StudentLoginform = () => {
 
     const [showPassword, setShowPassword] = useState(true);
     const [loading , setLoading] = useState(false)
   
-    const Nav = useNavigate();
+    const navigate = useNavigate();
+    const dispatch = useDispatch();
+    const {studentID }= useParams()
   
     const MyshowPassword = () => {
       setShowPassword(false);
@@ -24,7 +28,7 @@ const StudentLoginform = () => {
   
     const User = z.object({
       email: z.string().email({ message: 'Must be a valid email' }),
-      password: z.string({message: 'must be a string'}).min(8, {message: 'password must be more than 8 characters'}).regex(  /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*(),.?":{}|<>]).{8,}$/, {message: " password must contain a special character"})
+      password: z.string().min(1, { message: 'Password is required' }),
   
     });
   
@@ -35,22 +39,23 @@ const StudentLoginform = () => {
     const Onsubmit = async (data, e) => {
       e.preventDefault(); 
       setLoading(true) 
-      const url = 'https://edutrack-jlln.onrender.com/api/v1/school/log-in'
+      const url = 'https://edutrack-jlln.onrender.com/api/v1/student/sign-in'
       const FormData ={
         email: data.email,
-        password: data.password,
+        studentID: data.password, 
       }
-      const response = await axios.post(url, FormData)
+      await axios.post(url, FormData)
       .then( res => {
         console.log(res);
         setLoading(false)
         toast.success(res.data.message)
         dispatch(loginInfo(res.data.data))
-    //    if (res.data.newData.isVerified === true) {
-        
-    //   })
-
-      })
+       if (res.data.data.isVerified === true) {
+        navigate(`/StudentProfile/${res?.data?.data?.studentID}`);
+      }else{
+        toast.error('Please Verify your email')
+      }
+     })
       .catch( Error => {
         console.log(Error);
         setLoading(false)
@@ -82,14 +87,12 @@ const StudentLoginform = () => {
             }
           </div>
           {errors.password && <span style={{ color: 'red' }}>{errors.password.message}</span>}
-          <label className='Forgot' onClick={() => Nav('/Forgottenpassword')}>Forgot password ?</label>
+          <label className='Forgot' onClick={() => navigate('/Forgottenpassword')}>Forgot password ?</label>
         </section>
         <button type='submit'>
         { loading ? <ClipLoader color='#ffffff'/> : 'SIgn in'}
         </button>
-        <footer>
-          <span>Do not have an account? <h4 onClick={() => Nav('/signUp')}>Signup</h4></span>
-        </footer>
+       
         <Toaster/>   
       </form>
     

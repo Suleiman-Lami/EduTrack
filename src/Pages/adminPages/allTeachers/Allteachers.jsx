@@ -23,6 +23,8 @@ const Allteachers = () => {
         }
       })
       const teachersData = res?.data?.data?.teachers ; 
+      console.log( res?.data?.data?.teachers);
+      
       setTeachers(teachersData);
       setLoading(false)
     }
@@ -39,7 +41,7 @@ const Allteachers = () => {
     return (
       <div className='allTeachers'>
         {
-          Loading ? <ClipLoader color=' #003B31' /> :
+          Loading ? <ClipLoader color=' #003B31' size={40}  /> :
           teachers?.length === 0 ? 
           <div className="emptyModal" data-aos="zoom-in" data-aos-duration="3000">
             <h2>No staff added yet </h2>

@@ -1,13 +1,17 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import './Staffdashboard.css';
 import Aos from 'aos';
 import "aos/dist/aos.css"
 import { useNavigate } from 'react-router-dom';
 import values from '../../../assets/Landing2.png'
 import { BsPersonRolodex } from "react-icons/bs";
+import { ClipLoader } from 'react-spinners';
+import axios from 'axios';
+
 
 const Staffdashboard = () => {
-  const student = [];
+  const [student, setStudent] = useState([]);
+  const [Loading, setLoading] = useState(false);
   const Nav = useNavigate();
 
   const getCurrentDateTime = () => {
@@ -22,9 +26,31 @@ const Staffdashboard = () => {
     const date = now.toLocaleDateString(); 
     return `${date}`;
   };
+
+  const getAllStudents = async () => {
+    setLoading(true);
+    const userToken = localStorage.getItem('userToken');
+
+    try {
+      const res = await axios.get('https://edutrack-jlln.onrender.com/api/v1/school/get-students', {
+        headers: {
+          "Authorization": `Bearer ${userToken}`
+        },
+      });
+
+      const teachersData = res?.data?.data?.students;
+      console.log('Students Data:', teachersData);
+      setStudent(teachersData);
+      setLoading(false);
+    } catch (error) {
+      console.error('Error fetching students:', error);
+      setLoading(false);
+    }
+  };
   
   useEffect(()=>{
     Aos.init();
+    getAllStudents();
   },[])
 
   return (
@@ -38,7 +64,6 @@ const Staffdashboard = () => {
             <button onClick={()=>Nav('/profile')}>View Profile</button>
           </div>
           <div className="imageHolder">
-            {/* <img src={values} /> */}
           </div>
         </div>
         <div className="box" data-aos="fade-left" data-aos-duration="3000">
@@ -59,6 +84,7 @@ const Staffdashboard = () => {
         </section>
       </div>
       {
+        Loading ? <ClipLoader color='#003B31' size={40} /> :
         student.length === 0 ? 
         <div className="emptyModal" >
           <h2>No student added yet</h2>
@@ -74,17 +100,18 @@ const Staffdashboard = () => {
             <th>Date & Time</th>
         </thead>
         <tbody>
-          {student.map((e, index) => (
+          {
+          student.map((e, index) => (
             <tr key={index}>
               <td>{index + 1}</td>
               <td>
                 <div className="profile">
-                  <img src={values} onClick={() => Nav('/StudentProfile')} alt="profile"/>
+                  <img src={e?.studentProfile} onClick={() => Nav(`/childProfile/${e?.studentID}`)} alt="profile"/>
                 </div>
-                edu{35 + index}
+                {e?.studentID}
               </td>
-              <td>{e.fullName || 'Full Name'}</td>
-              <td>{e.gender || 'Unknown'}</td>
+              <td>{e?.fullName}</td>
+              <td>{e?.gender}</td>
               <td>{getCurrentDateTime()} </td>
             </tr>
           ))}

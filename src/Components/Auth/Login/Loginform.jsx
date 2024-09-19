@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import './Login.css';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { FaRegEye, FaRegEyeSlash } from "react-icons/fa6";
 import { z } from 'zod';
 import { useForm } from 'react-hook-form';
@@ -21,6 +21,7 @@ const Loginform = () => {
 
   const Nav = useNavigate();
   const dispatch = useDispatch();
+  const  schoolID = useParams()
 
   const MyshowPassword = () => {
     setShowPassword(false);
@@ -50,13 +51,15 @@ const Loginform = () => {
      await axios.post(url, FormData)
     .then( res => {
       console.log(res.data.data);
-      localStorage.setItem('userToken', res.data.userToken)
-      dispatch(loginInfo(res.data.data))
+      localStorage.setItem('userToken', res.data.userToken);
+      localStorage.setItem('schoolID', res.data.data.schoolID);
+            dispatch(loginInfo(res.data.data))
       
       setLoading(false)
       toast.success(res.data.message)
+      console.log(res.data.data.schoolID);
      if (res.data.data.isVerified === true) {
-        Nav('/admin')
+        Nav(`/admin/${res?.data?.data?.schoolID}`)
      }
      else{
       toast.error('Please Verify your email :)')

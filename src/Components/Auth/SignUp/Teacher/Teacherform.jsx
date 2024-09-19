@@ -67,11 +67,11 @@ const Teacherform = () => {
       if ( res.data.isVerified === true) {
         Nav('/teachers')
       } else {
-        Nav('/admin')
+        Nav(-1)
       }
     } catch (error) {
       setLoading(false);
-      toast.error(error.data.message);
+      toast.error(error.res.data.message);
     }
   };
 

@@ -31,11 +31,19 @@ const authSlice = createSlice({
     },
 
     logout: (state) => {
-      state.isLoggedIn = false;
-      state.user = {};
+      state.user.schoolInfo.isLoggedIn = false;
+      state.user.schoolInfo = {};
+    },
+    teacherlogout: (state) => {
+      state.user.teacherInfo.isLoggedIn = false;
+      state.user.teacherInfo = {};
+    },
+    studentlogout: (state) => {
+      state.user.studentInfo.isLoggedIn = false;
+      state.user.studentInfo = {};
     },
   },
 });
 
-export const { loginInfo, logout } = authSlice.actions;
+export const { loginInfo, logout,teacherlogout, studentlogout} = authSlice.actions;
 export default authSlice.reducer;

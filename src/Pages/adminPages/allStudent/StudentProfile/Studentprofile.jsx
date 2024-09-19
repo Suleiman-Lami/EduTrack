@@ -4,9 +4,12 @@ import Aos from 'aos';
 import "aos/dist/aos.css"
 import { useNavigate } from 'react-router-dom'
 import values from '../../../../assets/WOMAN_WRITING.png'
+import { useSelector } from 'react-redux';
+import { loginInfo } from '../../../../Global/Slice';
 
 
-const Studentprofile = ({ role,}) => {
+const Studentprofile = () => {
+  const loginfo = useSelector((state)=>state.eduTrack.user)
     const [totalPercentage, setTotalPercentage] = useState(0);
   const weeklyPercentages =[ 20, 5,6,35, 10 ]
     const calculateTotalPercentage = (percentages) => {
@@ -23,15 +26,6 @@ const Studentprofile = ({ role,}) => {
 
   const Nav = useNavigate();
 
-  const handleGoBack = () => {
-    if (role === 'admin') {
-      Nav('/admin-dashboard'); 
-    } else if (role === 'teacher') {
-      Nav('/teacher-dashboard'); 
-    } else {
-      Nav(-1); 
-    }
-  };
   useEffect(()=>{
     Aos.init();
   },[])
@@ -40,40 +34,35 @@ const Studentprofile = ({ role,}) => {
     <div className='Studentprofile'>
       <h3>Student  information</h3>
     <div className='btnHolder'> 
-    <button onClick={handleGoBack}>Go back</button>
-         {role !== 'teacher' &&  role !== 'admin' ?
-            <>
-              <button onClick={() => Nav('/studentEdit')}>
-                Edit Profile
-              </button>
-            </>: null
-          }</div> 
+    <button onClick={()=>Nav(-1)}>Go back</button>
+          </div> 
       <div className="profileBody">
         <div className="imgHolder">
           <div className="imgBox">
-            <img src={values} alt="Profile" />
+            <img src={loginfo.studentInfo.studentProfile} alt="Profile" />
           </div>
           <section>
             <label>Full Name:</label>
-            <span>Suleiman Ramotu Lami Omoroh</span>
+            <span>{loginfo.studentInfo.fullName}</span>
           </section>
           <section>
             <label>Email:</label>
-            <span>Example@gmail.com</span>
+            <span>{loginfo.studentInfo.email}</span>
           </section>
           <section>
             <label>Address:</label>
-            <span>22 Wowo street</span>
+            <span>{loginfo.studentInfo.address}</span>
           </section>
           <section>
             <label>Class:</label>
-            <span>SSS 2</span>
+            <span>{loginfo.studentInfo.class}</span>
             </section>
-            {role !== 'teacher' &&  role !== 'admin' ?
-              <section>
+            {loginfo.schoolInfo.role  === 'admin' &&  loginfo.teacherInfo.role === 'teacher' ?
+               hhhh :
+             <section>
                 <label>Password:</label>
-                <h4>EDUs123</h4>
-              </section> : null }
+                <h4>{loginfo.studentInfo.password}</h4>
+              </section> }
         </div>
         <hr />
         <table>
@@ -92,7 +81,7 @@ const Studentprofile = ({ role,}) => {
               {weeklyPercentages.map((percentage, index) => (
                 <td key={index}>{percentage}%</td>
               ))}
-              <th>{totalPercentage}%</th> 
+              <th>{totalPercentage}</th> 
                 </tr>
             </tbody>
         </table>

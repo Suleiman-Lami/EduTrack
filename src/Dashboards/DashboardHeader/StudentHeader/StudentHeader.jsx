@@ -6,9 +6,10 @@ import { AiOutlineMenuUnfold } from "react-icons/ai";
 import { useLocation, useNavigate } from 'react-router-dom';
 import StudentsideBar from '../../Student/StudentsideBar/StudentsideBar';
 import Notify from '../../Notifications/Notify';
+import { useSelector } from 'react-redux';
 
 const StudentHeader = () => {
-  
+    const loginfo = useSelector((state)=> state.eduTrack.user)
     const [showSidebar, setShowSidebar] = useState(false);
     const [showNotify, setShowNotify] = useState(false)
     const [path, setPath] = useState('');
@@ -40,7 +41,9 @@ const StudentHeader = () => {
             </div> : null
           }
         </div>
-          <div className="user"><FaUserCircle size={50} className='icon' onClick={()=>Nav('/profile')}/></div>
+          <div className="user">
+            <img src={loginfo.studentInfo.studentProfile}/>
+          </div>
         </div>
       </div>
   )

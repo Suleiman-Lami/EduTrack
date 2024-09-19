@@ -7,8 +7,11 @@ import { AiOutlineMenuUnfold } from "react-icons/ai";
 import AdminSidebar from '../Admin/AdminSidebar';
 import { useLocation, useNavigate } from 'react-router-dom'
 import Notify from '../Notifications/Notify';
+import { loginInfo } from '../../Global/Slice';
+import { useSelector } from 'react-redux';
 
 const DashBoardHeader = () => {
+  const loginfo = useSelector((state)=> state.eduTrack.user)
   const [showSidebar, setShowSidebar] = useState(false);
   const [showNotify, setShowNotify] = useState(false)
   const [path, setPath] = useState('');
@@ -46,7 +49,9 @@ const DashBoardHeader = () => {
             </div> : null
           }
         </div>
-        <div className="user"><FaUserCircle size={50} className='icon' onClick={()=>Nav('/AdminProfile')}/></div>
+        <div className="user">
+        <img src={loginfo.schoolInfo.schoolPicture} onClick={()=>Nav(`/AdminProfile/${loginInfo.schoolInfo.schoolID}`)}/>            
+          </div>
       </div>
     </div>
   );

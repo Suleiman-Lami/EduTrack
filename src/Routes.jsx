@@ -45,12 +45,12 @@ const Routes = createHashRouter([
   {
     element: <Admin />, 
     children: [
-      { path: 'admin', element: <AdminPage /> },
+      { path: 'admin/:schoolID', element: <AdminPage /> },
       { path: 'teachers', element: <Allteachers /> },
       { path: 'adminEdit', element: <AdmidEdit /> },
-      { path: 'AdminProfile', element: <Adminprofile /> },
+      { path: 'AdminProfile/:schoolID', element: <Adminprofile /> },
       { path: 'staffs', element: <TeacherSignUp /> },
-      { path: 'students', element: <Allstudent /> },
+      { path: 'student', element: <Allstudent /> },
       { path: 'student-onboard', element: <StudentOnboard /> },
       { path: 'childProfile', element: <Studentprofile /> },
       { path: 'staffProfile/:teacherID', element: <Teacherprofile /> },
@@ -60,8 +60,8 @@ const Routes = createHashRouter([
 
     element: <Teacher />, 
     children: [
-      { path: 'teacher', element: <Staffdashboard /> },
-      { path: 'childProfile', element: <Studentprofile /> },
+      { path: 'teacher/:teacherID', element: <Staffdashboard /> },
+      { path: 'childProfile/:studentID', element: <Studentprofile /> },
       { path: 'profile', element: <Teacherprofile /> },
       { path: 'Editprofile', element: <TeacherEdit /> },
       { path: 'Allstudent', element: <Allstudent /> },
@@ -72,9 +72,8 @@ const Routes = createHashRouter([
     // path: '/student',
     element: <Student />,
     children: [
-      { path: 'StudentProfile', element: <Studentprofile /> },
+      { path: 'StudentProfile/:studentID', element: <Studentprofile /> },
       { path: 'studentEdit', element: <StudentEdit /> },
-      { path: 'students', element: <Allstudent /> },
     ]
   },
   {
