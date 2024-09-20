@@ -59,7 +59,7 @@ const Loginform = () => {
       dispatch(loginInfo(res?.data?.data))
       dispatch(loginSuccess(res?.data?.data))
       setLoading(false)
-      console.log(res.data.data.isVerified);
+      console.log(res.data.data.schoolID);
      if (res.data.data.isVerified === true) {
         Nav(`/admin/${res.data.data.schoolID}`)
         toast.success('login successfull')
@@ -68,10 +68,10 @@ const Loginform = () => {
       toast.error('Please Verify your email :)')
      }
     })
-    .catch( Error => {
-      console.log(Error);
+    .catch( error => {
+      console.log(error);
       setLoading(false)
-      toast.error(Error.response.data.message )
+      toast.error(error.response.data.message )
     })
   
   };

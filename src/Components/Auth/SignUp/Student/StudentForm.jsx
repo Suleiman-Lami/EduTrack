@@ -60,8 +60,8 @@ const StudentForm = () => {
       });
       setLoading(false);
       console.log(res);
-      
       toast.success('you have successfully added a student');
+      Nav(-1)
     } catch (error) {
       setLoading(false);
       console.log(error.response.data.message);
