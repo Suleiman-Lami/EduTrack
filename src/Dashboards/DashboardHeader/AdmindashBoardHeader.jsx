@@ -5,7 +5,7 @@ import { IoIosNotifications } from "react-icons/io";
 import { FaUserCircle } from "react-icons/fa";
 import { AiOutlineMenuUnfold } from "react-icons/ai";
 import AdminSidebar from '../Admin/AdminSidebar';
-import { useLocation, useNavigate } from 'react-router-dom'
+import { useLocation, useNavigate, useParams } from 'react-router-dom'
 import Notify from '../Notifications/Notify';
 import { loginInfo } from '../../Global/Slice';
 import { useSelector } from 'react-redux';
@@ -17,6 +17,7 @@ const DashBoardHeader = () => {
   const [path, setPath] = useState('');
   const { pathname } = useLocation(); 
   const Nav = useNavigate();
+  const schoolID = useParams();
 
   useEffect(() => {
     const title = pathname.slice(1); 
@@ -50,7 +51,7 @@ const DashBoardHeader = () => {
           }
         </div>
         <div className="user">
-        <img src={loginfo.schoolInfo.schoolPicture} onClick={()=>Nav(`/AdminProfile/${loginInfo.schoolInfo.schoolID}`)}/>            
+        <img src={loginfo.schoolInfo.schoolPicture} onClick={()=>Nav(`/AdminProfile/${schoolID}`)}/>            
           </div>
       </div>
     </div>

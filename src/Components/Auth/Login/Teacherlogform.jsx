@@ -62,7 +62,7 @@ const Teacherlogform = () => {
     } catch (error) {
       setLoading(false);
       console.error('Login error:', error);
-      toast.error(error.res?.data?.message);
+      toast.error(error.response?.data?.message);
     }
   };
 

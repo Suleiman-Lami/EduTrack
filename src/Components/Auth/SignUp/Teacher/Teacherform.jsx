@@ -55,20 +55,22 @@ const Teacherform = () => {
     const userToekn = localStorage.getItem('userToken')
     try {
       const url = "https://edutrack-jlln.onrender.com/api/v1/teacher/sign-up";
-      
       const res = await axios.post(url, FormData, {
         headers: {
           "Content-Type": "multipart/form-data",
            "Authorization": `Bearer ${userToekn}`
         }
       });
+      console.log(res);
+      
       setLoading(false);
       toast.success('you have successfully added a staff');
-        Nav(-1)
-      
+        Nav(-1) 
     } catch (error) {
+      console.log(error);
+      
       setLoading(false);
-      toast.error('failed to add teacher check your credentials or network');
+      toast.error(error?.response.data.message);
     }
   };
 

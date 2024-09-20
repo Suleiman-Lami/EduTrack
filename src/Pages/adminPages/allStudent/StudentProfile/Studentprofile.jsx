@@ -9,7 +9,7 @@ import { loginInfo } from '../../../../Global/Slice';
 
 
 const Studentprofile = () => {
-  const loginfo = useSelector((state)=>state.eduTrack)
+  const loginfo = useSelector((state)=>state.eduTrack.user)
     const [totalPercentage, setTotalPercentage] = useState(0);
   const weeklyPercentages =[ 20, 5,6,35, 10 ]
     const calculateTotalPercentage = (percentages) => {
@@ -61,7 +61,7 @@ const Studentprofile = () => {
               null :
              <section>
                 <label>Password:</label>
-                <h4>{loginfo.studentInfo.password}</h4>
+                <h4>{loginfo.studentInfo.studentID}</h4>
               </section> }
         </div>
         <hr />

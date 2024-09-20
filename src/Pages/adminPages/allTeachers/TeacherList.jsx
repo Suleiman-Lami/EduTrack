@@ -7,37 +7,37 @@ import axios from 'axios';
 import { toast, Toaster } from 'react-hot-toast';
 import {ClipLoader} from 'react-spinners'
 
-const TeacherList = ({ teachers }) => {
+const TeacherList = ({ teachers,getAllTeachers }) => {
   const [selectedAttendance, setSelectedAttendance] = useState({});
   const [showDropdown, setShowDropdown] = useState(null);
   const [loading, setLoading] = useState(false);
 
   const Nav = useNavigate();
-  const { teacherID } = useParams();
-  console.log(teacherID);
 
   const handleAttendance = (index, status) => {
     setSelectedAttendance((prev) => ({ ...prev, [index]: status }));
     setShowDropdown(null);
   };
-
+  const userToken = localStorage.getItem('userToken'); 
+  console.log(userToken);
+  
   const deleteTeacher = async (teacherID) => {
     setShowDropdown(null);
-    const userToken = localStorage.getItem('userToken'); 
+    
     try {
       setLoading(true); 
-      const response = await axios.delete('https://edutrack-jlln.onrender.com/api/v1/school/delete-teacher', {
+      const response = await axios.delete(`https://edutrack-jlln.onrender.com/api/v1/school/delete-teacher/${teacherID}`, {
         headers: {
           'Authorization': `Bearer ${userToken}`,
         },
       });
       if (response.status === 200) {
         toast.success('Teacher deleted successfully');
-        window.location.reload(); 
+        await getAllTeachers(); 
       }
     } catch (error) {
       console.error('Error deleting teacher:', error);
-      toast.error('Error deleting teacher. Please try again later.');
+      toast.error(error.response.data.message);
     } finally {
       setLoading(false); 
     }
@@ -60,7 +60,7 @@ const TeacherList = ({ teachers }) => {
             <th>Full Name</th>
             <th>Class</th>
             <th>Gender</th>
-            <th>Attendance</th>
+            <th>Actions</th>
         </thead>
         <tbody>
           {teachers?.map((e, index) => (
@@ -85,10 +85,10 @@ const TeacherList = ({ teachers }) => {
 
                 {showDropdown === index && (
                   <div className="dropdown">
-                    <div onClick={() => handleActionClick(index, 'Suspend', e?._id)}>
+                    {/* <div onClick={() => handleActionClick(index, 'Suspend', e?._id)}>
                       <FaCheckCircle color='#003B31' /> Suspend
-                    </div>
-                    <div onClick={() => handleActionClick(index, 'Delete', e?._id)}>
+                    </div> */}
+                    <div onClick={() => handleActionClick(index, 'Delete', e?.teacherID)}>
                       <MdCancel color='#F4B400' /> Delete
                     </div>
                   </div>

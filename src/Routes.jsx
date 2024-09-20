@@ -28,6 +28,7 @@ import Features from './Pages/Features/Features'
 import Pricing from './Pages/Pricing/Pricing'
 import StudentLogin from './Components/Auth/Login/StudentLogin'
 import Teacherlog from './Components/Auth/Login/Teacherlog'
+import Verify from './Components/Auth/SignUp/Verify'
 
 const Routes = createHashRouter([
   {
@@ -47,12 +48,12 @@ const Routes = createHashRouter([
     children: [
       { path: 'admin/:schoolID', element: <AdminPage /> },
       { path: 'teachers', element: <Allteachers /> },
-      { path: 'adminEdit', element: <AdmidEdit /> },
+      { path: 'adminEdit/:schoolID', element: <AdmidEdit /> },
       { path: 'AdminProfile/:schoolID', element: <Adminprofile /> },
       { path: 'staffs', element: <TeacherSignUp /> },
       { path: 'student', element: <Allstudent /> },
       { path: 'student-onboard', element: <StudentOnboard /> },
-      { path: 'childProfile', element: <Studentprofile /> },
+      { path: 'childProfile/:studentID', element: <Studentprofile /> },
       { path: 'staffProfile/:teacherID', element: <Teacherprofile /> },
     ]
   },
@@ -95,7 +96,11 @@ const Routes = createHashRouter([
   {
     path: '/signup',
     element: <SignUp />
-  }
+  },
+  {
+    path: '/verify/:token',
+    element: <Verify />
+  },
 ])
 
 export default Routes

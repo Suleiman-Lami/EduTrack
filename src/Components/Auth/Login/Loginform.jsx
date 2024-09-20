@@ -30,8 +30,11 @@ const Loginform = () => {
   const User = z.object({
     email: z.string().email({ message: 'Must be a valid email' }),
     password: z.string()
-    .min(8, { message: 'Password must be more than 8 characters' })
-    .regex( /^(?=.[a-z])(?=.[A-Z])(?=.[^a-zA-Z0-9])(?!.\s).{6,}$/,{ message: "Password must contain a special character" })
+    .min(1,{message: "Password is required"})
+   .regex(
+      /[!@#$%^&*()_+{}\[\]:;<>,.?~\\/-]/,
+      {message: "Password must be 8 characters long, uppercase and special character (!@#$%^&*)."}
+   ),
   });
 
   const { register, handleSubmit, formState: { errors }, setError } = useForm({

@@ -30,10 +30,10 @@ const AdminForm = () => {
       return false;
     }, { message: "Please upload a valid file" }), 
     schoolPassword: z.string()
-    .required("Password is required")
-    .matches(
-        /^(?=.[a-z])(?=.[A-Z])(?=.[^a-zA-Z0-9])(?!.\s).{8,}$/,
-        "Password must be 8 characters long, uppercase and special character (!@#$%^&*)."
+     .min(1,{message: "Password is required"})
+    .regex(
+       /[!@#$%^&*()_+{}\[\]:;<>,.?~\\/-]/,
+       {message: "Password must be 8 characters long, uppercase and special character (!@#$%^&*)."}
     ),
   });
 

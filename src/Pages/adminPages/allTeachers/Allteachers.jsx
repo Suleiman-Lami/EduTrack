@@ -50,7 +50,7 @@ const Allteachers = () => {
           </div> : 
           <div className="teachersBox">
            <div className="teachersBox-Header"><button onClick={()=>Nav('/staffs')} >Add new teacher</button></div>
-            <TeacherList teachers={teachers}/>
+            <TeacherList teachers={teachers} getAllTeachers={getAllTeachers}/>
           </div>
         }
       </div>

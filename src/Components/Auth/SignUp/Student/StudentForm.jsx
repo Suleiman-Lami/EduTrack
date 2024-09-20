@@ -59,17 +59,15 @@ const StudentForm = () => {
         }
       });
       setLoading(false);
+      console.log(res);
+      
       toast.success('you have successfully added a student');
-      dispatch(loginInfo(res.data.data));
-      if (res.data.isVerified === true) {
-        Nav('/teachers');
-      } else {
-        Nav(-1);
-      }
     } catch (error) {
       setLoading(false);
+      console.log(error.response.data.message);
+      
       if (error.response && error.response.data) {
-        toast.error('failed to add student check the credentials or network');
+        toast.error(error.response.data.message);
       } else {
         toast.error('An unexpected error occurred.');
       }

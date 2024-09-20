@@ -21,12 +21,12 @@ const AdminPage = () => {
       datasets: [
         {
           label: 'Present',
-          data: [],
+          data: Array(12).fill(0), 
           backgroundColor: '#003B31',
         },
         {
           label: 'Absent',
-          data: [],
+          data: Array(12).fill(0), 
           backgroundColor: '#F4B400',
         },
       ],
@@ -77,30 +77,33 @@ const AdminPage = () => {
             "Authorization": `Bearer ${userToken}`
           },
         });
-        const attendance = res.data;
+        const attendance = res.data.data;
+        console.log(attendance);
+        
         const presentPercentages = [];
         const absentPercentages = [];
 
         attendance.forEach((record) => {
-          const presentPercentage = record.present;
-          const absentPercentage = record.absent;
+          const presentPercentage = parseFloat(record.presentPercentage.replace('%', '')); 
+          const absentPercentage = parseFloat(record.absentPercentage.replace('%', '')); 
+    
           presentPercentages.push(presentPercentage);
           absentPercentages.push(absentPercentage);
         });
-
-        setAttendanceData({
-          ...attendanceData,
+        setAttendanceData(prevData => ({
+          ...prevData,
           datasets: [
             {
-              ...attendanceData.datasets[0],
+              ...prevData.datasets[0],
               data: presentPercentages,
             },
             {
-              ...attendanceData.datasets[1],
+              ...prevData.datasets[1],
               data: absentPercentages,
             },
           ],
-        });
+        }));
+        
         setLoading(false);
       } catch (error) {
         setLoading(false);
@@ -168,7 +171,6 @@ const AdminPage = () => {
             </section>
             <section className='TeacherResult'>
               <div className="color"></div>               
-  
               <div className="textArea">
                 <div className="iconHolder"><BsPersonRolodex size={70} color='F4B400'/> </ div>
                 <div className="calc">
@@ -177,7 +179,8 @@ const AdminPage = () => {
                       Loading ? 
                       <ClipLoader color='#003B31' />
                       :
-                      <h3>{teachers.length}</h3>                  }
+                      <h3>{teachers.length}</h3>
+                    }
                 </div>
               </div>
             </section>

@@ -57,11 +57,12 @@ const StudentLoginform = () => {
         toast.error('Please Verify your email')
       }
      })
-      .catch( Error => {
-        console.log(Error);
+      .catch( error => {
+        console.log(error);
+        console.log(error.response.data.message);
         setLoading(false)
-        toast.error(Error.data.message)
-      })
+        toast.error(error.response.data.message);  
+          })
     
     };
   
