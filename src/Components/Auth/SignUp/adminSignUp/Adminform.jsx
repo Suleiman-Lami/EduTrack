@@ -30,10 +30,10 @@ const AdminForm = () => {
       return false;
     }, { message: "Please upload a valid file" }), 
     schoolPassword: z.string()
-     .min(1,{message: "Password is required"})
+     .min(8,{message: "Password must be 8 characters long"})
     .regex(
        /[!@#$%^&*()_+{}\[\]:;<>,.?~\\/-]/,
-       {message: "Password must be 8 characters long, uppercase and special character (!@#$%^&*)."}
+       {message: "uppercase and special character (!@#$%^&*)."}
     ),
   });
 
@@ -69,7 +69,7 @@ const AdminForm = () => {
       setLoading(false);
       if (res.data.newData.isVerified === true) {
         Nav('/login');
-        toast.success('Sign up successful');
+        toast.success(res.data.message);
       } else {
         Nav('/');
         toast.success('Sign up successful please verify');
@@ -77,7 +77,7 @@ const AdminForm = () => {
       }
     } catch (error) {
       setLoading(false);
-      toast.error(error.data.message);
+      toast.error(error.response.data.message);
     }
   };
 
