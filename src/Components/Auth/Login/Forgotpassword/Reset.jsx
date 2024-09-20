@@ -39,7 +39,7 @@ const Reset = () => {
         setLoading(true)
         const url = `https://edutrack-jlln.onrender.com/api/v1/school/reset-password/${token}`
         const FormData ={
-            password: data.password
+            schoolPassword: data.password
         }
         console.log(FormData);
         await axios.post(url, FormData)
@@ -47,8 +47,8 @@ const Reset = () => {
             console.log(res);
             setLoading(false)
             toast.success(res.data.message) 
-            Nav('/login')
-        })
+            Nav('/')
+        }) 
         .catch( Error => {
             console.log(Error);
             setLoading(false)
