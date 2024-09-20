@@ -8,6 +8,7 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { useNavigate, useParams } from 'react-router-dom';
 import { FaRegEye, FaRegEyeSlash } from "react-icons/fa6";
 import {ClipLoader} from 'react-spinners'
+import { toast, Toaster } from 'react-hot-toast';
 import axios from 'axios';
 
 
@@ -84,6 +85,7 @@ const Reset = () => {
             { loading ? <ClipLoader color='#ffffff'/> : 'Submit'}
                 </button>
         </form>
+        <Toaster position="top-center" />
         </div>
     );
 };
