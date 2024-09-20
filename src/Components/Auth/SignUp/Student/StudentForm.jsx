@@ -67,7 +67,7 @@ const StudentForm = () => {
       console.log(error.response.data.message);
       
       if (error.response && error.response.data) {
-        toast.error(error.response.data.message);
+        toast.error(error.response.message);
       } else {
         toast.error('An unexpected error occurred.');
       }

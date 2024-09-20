@@ -16,7 +16,7 @@ const Reset = () => {
     const [loading , setLoading] = useState(false)
 
     const Nav = useNavigate();
-    const token = useParams();
+    const{ token} = useParams();
 
     const MyshowPassword = () => {
         setShowPassword(false);
