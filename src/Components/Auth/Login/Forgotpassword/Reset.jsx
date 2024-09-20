@@ -2,9 +2,13 @@ import React, { useEffect, useState } from 'react';
 import './Forgot.css';
 import Aos from 'aos';
 import "aos/dist/aos.css"
-import { useNavigate } from 'react-router-dom';
+import { z } from 'zod';
+import { useForm } from 'react-hook-form';
+import { zodResolver } from '@hookform/resolvers/zod';
+import { useNavigate, useParams } from 'react-router-dom';
 import { FaRegEye, FaRegEyeSlash } from "react-icons/fa6";
 import {ClipLoader} from 'react-spinners'
+import axios from 'axios';
 
 
 const Reset = () => {
@@ -12,17 +16,45 @@ const Reset = () => {
     const [loading , setLoading] = useState(false)
 
     const Nav = useNavigate();
+    const token = useParams();
 
-    const handleContinue = (e) => {
+    const MyshowPassword = () => {
+        setShowPassword(false);
+      };
+
+    const User = z.object({
+        password: z.string()
+        .min(1,{message: "Password is required"})
+       .regex(
+          /[!@#$%^&*()_+{}\[\]:;<>,.?~\\/-]/,
+          {message: "Password must be 8 characters long, uppercase and special character (!@#$%^&*)."}
+       ),    })
+
+      const { register, handleSubmit, formState: { errors }, setError } = useForm({
+        resolver: zodResolver(User),
+      });
+    
+      const Onsubmit = async (data, e) => {
         e.preventDefault(); 
-        setTimeout(() => {
-            Nav('/Login');
-        }, 1000);
-    };
-
-    const MyshowPassword = ()=> {
-        setShowPassword(false)
-     }
+        setLoading(true)
+        const url = `https://edutrack-jlln.onrender.com/api/v1/school/reset-password/${token}`
+        const FormData ={
+            password: data.password
+        }
+        console.log(FormData);
+        await axios.post(url, FormData)
+        .then( res =>{
+            console.log(res);
+            setLoading(false)
+            toast.success(res.data.message) 
+            Nav('/login')
+        })
+        .catch( Error => {
+            console.log(Error);
+            setLoading(false)
+            toast.error(Error.response.message)
+        })
+      }
 
      useEffect(()=>{
         Aos.init();
@@ -30,7 +62,7 @@ const Reset = () => {
 
     return (
         <div className='Reset-Component'>
-        <form onSubmit={handleContinue} className='form' data-aos="zoom-in-down">
+        <form onSubmit={handleSubmit(Onsubmit)} className='form' data-aos="zoom-in-down">
             <header>
                 <h2>Reset Password</h2>
                 <span> 
@@ -40,7 +72,7 @@ const Reset = () => {
             <section className='resetSection'>
                 <label>New password</label>
                 <div className='inputPasswordDiv'>
-                <input type={showPassword ? "password" : "text"} placeholder='********'/>
+                <input type={showPassword ? "password" : "text"} placeholder='********'{...register('password')}/>
                   {
                     showPassword ?
                     <FaRegEye onClick={MyshowPassword} style={{fontSize: "15px",cursor: "pointer", marginRight: "5px" }}/>:

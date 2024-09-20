@@ -101,7 +101,7 @@ const Routes = createHashRouter([
     element: <SignUp />
   },
   {
-    path: '/restpassword',
+    path: '/restpassword/:token',
     element: < Reset />
   },
   {
