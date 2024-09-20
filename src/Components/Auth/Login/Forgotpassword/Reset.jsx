@@ -47,13 +47,13 @@ const Reset = () => {
         .then( res =>{
             console.log(res);
             setLoading(false)
-            toast.success(res.data.message) 
+            toast.success(res.data.data.message) 
             Nav('/')
         }) 
         .catch( Error => {
             console.log(Error);
             setLoading(false)
-            toast.error(Error.response.message)
+            toast.error(Error.response.data.message)
         })
       }
 
