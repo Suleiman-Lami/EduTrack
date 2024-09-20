@@ -11,7 +11,7 @@ import {ClipLoader} from 'react-spinners'
 import axios from 'axios';
 import { toast, Toaster } from 'react-hot-toast';
 import { useDispatch } from 'react-redux';
-import { loginInfo } from '../../../Global/Slice';
+import { loginInfo, loginSuccess } from '../../../Global/Slice';
 
 
 
@@ -53,8 +53,8 @@ const Loginform = () => {
       console.log(res.data.data);
       localStorage.setItem('userToken', res.data.userToken);
       localStorage.setItem('schoolID', res.data.data.schoolID);
-            dispatch(loginInfo(res.data.data))
-      
+      dispatch(loginInfo(res?.data?.data))
+      dispatch(loginSuccess(res?.data?.data))
       setLoading(false)
       toast.success(res.data.message)
       console.log(res.data.data.schoolID);

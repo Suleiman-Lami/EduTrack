@@ -21,7 +21,7 @@ const StudentsideBar = () => {
   return (
     <div className='StudentsideBar'>
           <div className="box">
-            <img src={loginfo.schoolInfo.schoolProfile} />
+            <img src={loginfo.schoolInfo.schoolPicture} />
           </div>
             <nav>
             <li><NavLink   to='/StudentProfile' style={({isActive})=> ({color: isActive ? ' #003B31' : '#ffffff', backgroundColor: isActive ? '#ffffff': ' #003B31'})}><PiStudent/>Dashboard</NavLink></li>

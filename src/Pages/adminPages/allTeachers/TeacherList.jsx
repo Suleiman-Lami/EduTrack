@@ -1,38 +1,66 @@
-import React, { useState } from 'react'
-import './Allteachers.css'
+import React, { useState } from 'react';
+import './Allteachers.css';
 import { FaCheckCircle } from "react-icons/fa";
 import { MdCancel } from "react-icons/md";
 import { useNavigate, useParams } from 'react-router-dom';
-import values from '../../../assets/Landing3.png'
+import axios from 'axios';
+import { toast, Toaster } from 'react-hot-toast';
+import {ClipLoader} from 'react-spinners'
 
-const TeacherList = ({teachers}) => {
-    const [selectedAttendance, setSelectedAttendance] = useState({});
-    const [showDropdown, setShowDropdown] = useState(null);
-    
-    const Nav = useNavigate();
-    const {teacherID} = useParams()
-    console.log(teacherID);
-    
-  
-    const handleAttendance = (index, status) => {
-      setSelectedAttendance((prev) => ({ ...prev, [index]: status })); 
-      setShowDropdown(null); 
-    };
-    console.log(teachers);
-    
+const TeacherList = ({ teachers }) => {
+  const [selectedAttendance, setSelectedAttendance] = useState({});
+  const [showDropdown, setShowDropdown] = useState(null);
+  const [loading, setLoading] = useState(false);
+
+  const Nav = useNavigate();
+  const { teacherID } = useParams();
+  console.log(teacherID);
+
+  const handleAttendance = (index, status) => {
+    setSelectedAttendance((prev) => ({ ...prev, [index]: status }));
+    setShowDropdown(null);
+  };
+
+  const deleteTeacher = async (teacherID) => {
+    setShowDropdown(null);
+    const userToken = localStorage.getItem('userToken'); 
+    try {
+      setLoading(true); 
+      const response = await axios.delete('https://edutrack-jlln.onrender.com/api/v1/school/delete-teacher', {
+        headers: {
+          'Authorization': `Bearer ${userToken}`,
+        },
+      });
+      if (response.status === 200) {
+        toast.success('Teacher deleted successfully');
+        window.location.reload(); 
+      }
+    } catch (error) {
+      console.error('Error deleting teacher:', error);
+      toast.error('Error deleting teacher. Please try again later.');
+    } finally {
+      setLoading(false); 
+    }
+  };
+
+  const handleActionClick = (index, action, teacherID) => {
+    if (action === 'Delete') {
+      deleteTeacher(teacherID);
+    } else {
+      handleAttendance(index, action); 
+    }
+  };
 
   return (
     <div className='TeacherList'>
       <table>
         <thead>
-          {/* <tr> */}
             <th>S/N</th>
             <th>Profile</th>
             <th>Full Name</th>
             <th>Class</th>
             <th>Gender</th>
             <th>Attendance</th>
-          {/* </tr> */}
         </thead>
         <tbody>
           {teachers?.map((e, index) => (
@@ -40,7 +68,7 @@ const TeacherList = ({teachers}) => {
               <td>{index + 1}</td>
               <td>
                 <div className="profile">
-                  <img src={e?.teacherProfile} onClick={() => Nav(`/staffProfile/${e?.teacherID}`)} alt="profile"/>
+                  <img src={e?.teacherProfile} onClick={() => Nav(`/staffProfile/${e?.teacherID}`)} alt="profile" />
                 </div>
               </td>
               <td>{e?.fullName}</td>
@@ -48,16 +76,20 @@ const TeacherList = ({teachers}) => {
               <td>{e?.gender}</td>
               <td>
                 <button onClick={() => setShowDropdown(showDropdown === index ? null : index)}>
-                  Action
+                 {
+                  loading ? 
+                  <ClipLoader color='#ffffff'/>
+                  :' Action'
+                 }
                 </button>
 
                 {showDropdown === index && (
                   <div className="dropdown">
-                    <div onClick={() => handleAttendance(index, 'Suspend')}>
-                      <FaCheckCircle color='#003B31'/> Suspend
+                    <div onClick={() => handleActionClick(index, 'Suspend', e?._id)}>
+                      <FaCheckCircle color='#003B31' /> Suspend
                     </div>
-                    <div onClick={() => handleAttendance(index, 'Delete')}>
-                      <MdCancel color='#F4B400'/> Delete
+                    <div onClick={() => handleActionClick(index, 'Delete', e?._id)}>
+                      <MdCancel color='#F4B400' /> Delete
                     </div>
                   </div>
                 )}
@@ -66,9 +98,9 @@ const TeacherList = ({teachers}) => {
           ))}
         </tbody>
       </table>
-</div>
+      <Toaster position="top-center" />
+    </div>
+  );
+};
 
-  )
-}
-
-export default TeacherList
+export default TeacherList;

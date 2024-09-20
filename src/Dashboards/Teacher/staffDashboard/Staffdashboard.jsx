@@ -70,7 +70,12 @@ const Staffdashboard = () => {
           <div className="icon"><BsPersonRolodex size={50} color = '#F4B400' /></div>
           <div className="calcStudent">
             <h4>Students</h4>
-            <h4>{student.length}</h4> 
+            {
+              Loading ? 
+              <ClipLoader color='white' />
+              :
+              <h4>{student.length}</h4> 
+            }
           </div>
         </div>
       </div>

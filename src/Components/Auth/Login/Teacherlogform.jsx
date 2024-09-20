@@ -11,7 +11,7 @@ import { ClipLoader } from 'react-spinners';
 import axios from 'axios';
 import { toast, Toaster } from 'react-hot-toast';
 import { useDispatch } from 'react-redux';
-import { loginInfo } from '../../../Global/Slice';
+import { loginInfo, loginSuccess } from '../../../Global/Slice';
 
 const Teacherlogform = () => {
   const [showPassword, setShowPassword] = useState(true);
@@ -51,6 +51,7 @@ const Teacherlogform = () => {
       localStorage.setItem('teacherID', res.data.data.teacherID);
       
       dispatch(loginInfo(res.data.data));
+      dispatch(loginSuccess(res?.data?.data))
       console.log(res.data.data.teacherID);
       
       if (res.data.data.isVerified === true) {

@@ -4,14 +4,24 @@ import { IoHomeOutline } from "react-icons/io5";
 import { BsPersonRolodex } from "react-icons/bs";
 import { PiStudent } from "react-icons/pi";
 import { CiLogout } from "react-icons/ci";
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import Aos from 'aos';
 import "aos/dist/aos.css";
 import Logo from '../../assets/react.svg';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { logout } from '../../Global/Slice';
 
 const AdminSidebar = ({ setShowSidebar }) => {
   const loginfo = useSelector((state)=> state.eduTrack.user)
+  const dispatch = useDispatch()
+  const Nav = useNavigate()
+
+  const handleLogout =() =>{
+    Nav('/')
+    dispatch(logout())
+    console.log('clicked');
+    
+  }
 
   useEffect(() => {
     Aos.init();
@@ -51,7 +61,7 @@ const AdminSidebar = ({ setShowSidebar }) => {
           </NavLink>
         </li>
       </nav>
-      <li className='logout'><CiLogout /> Log Out</li>
+      <li className='logout' onClick={handleLogout}><CiLogout /> Log Out</li>
     </div>
   );
 }

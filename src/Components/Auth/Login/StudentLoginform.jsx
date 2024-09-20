@@ -11,7 +11,7 @@ import {ClipLoader} from 'react-spinners'
 import axios from 'axios';
 import {toast, Toaster} from 'react-hot-toast';
 import { useDispatch } from 'react-redux';
-import { loginInfo } from '../../../Global/Slice';
+import { loginInfo, loginSuccess } from '../../../Global/Slice';
 
 const StudentLoginform = () => {
 
@@ -50,6 +50,7 @@ const StudentLoginform = () => {
         setLoading(false)
         toast.success(res.data.message)
         dispatch(loginInfo(res.data.data))
+        dispatch(loginSuccess(res?.data?.data))
        if (res.data.data.isVerified === true) {
         navigate(`/StudentProfile/${res?.data?.data?.studentID}`);
       }else{

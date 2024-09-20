@@ -24,7 +24,7 @@ const TeacherSideBar = () => {
   return (
     <div className='teacherSideBar'>
     <div className="box">
-      <img src={loginfo.schoolInfo.schoolProfile}/>
+      <img src={loginfo.schoolInfo.schoolPicture}/>
     </div>
        <nav>
        <li>

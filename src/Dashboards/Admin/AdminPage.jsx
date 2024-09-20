@@ -8,6 +8,7 @@ import { BsPersonRolodex } from "react-icons/bs";
 import { PiStudentDuotone } from "react-icons/pi"
 import { ClipLoader } from 'react-spinners';
 import { Chart as ChartJS, BarElement, CategoryScale, LinearScale, Tooltip, Legend } from 'chart.js';
+import { useNavigate } from 'react-router-dom';
 
 ChartJS.register(BarElement, CategoryScale, LinearScale, Tooltip, Legend);
 
@@ -30,6 +31,8 @@ const AdminPage = () => {
         },
       ],
     });
+
+    const Nav = useNavigate();
   
     const fetchStudents = async () => {
       setLoading(true);
@@ -222,7 +225,7 @@ const AdminPage = () => {
                 Upgrade now to unlock all features and enjoy a better experience.
                 Tap the button to upgrade!
               </span>
-              <button>Upgrade</button>
+              <button onClick={()=>Nav('/Pricing')}>Upgrade</button>
             </div>
           </div>
         </div>

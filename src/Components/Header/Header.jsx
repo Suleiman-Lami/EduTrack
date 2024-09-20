@@ -8,6 +8,7 @@ import "aos/dist/aos.css"
 import Logo from '../../assets/Frame 101424.svg'
 
 const Header = () => {
+  
   const [showMenu, setShowMenu] = useState(0)
   const [dropDown, setDropDown] = useState(false)
   const [showLog, setShowLog] = useState(false)
