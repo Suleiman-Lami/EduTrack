@@ -29,6 +29,8 @@ import Pricing from './Pages/Pricing/Pricing'
 import StudentLogin from './Components/Auth/Login/StudentLogin'
 import Teacherlog from './Components/Auth/Login/Teacherlog'
 import Verify from './Components/Auth/SignUp/Verify'
+import Verifyteacher from './Components/Auth/SignUp/Verifyteacher'
+import Verifystudent from './Components/Auth/SignUp/Verifystudent'
 
 const Routes = createHashRouter([
   {
@@ -100,6 +102,14 @@ const Routes = createHashRouter([
   {
     path: '/verify/:token',
     element: <Verify />
+  },
+  {
+    path: '/verifyteacher/:token',
+    element: <Verifyteacher />
+  },
+  {
+    path: '/verifystudent/:token',
+    element: <Verifystudent/>
   },
 ])
 

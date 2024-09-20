@@ -11,7 +11,7 @@ const Login = () => {
   return (
     <div className='Login'>
       <ScrollToTop/>
-    <aside> <div className="icon"><MdOutlineKeyboardBackspace size={30} onClick={() => Nav(-1)}/></div> <div className="logo"> <img src={Logo}/></div> </aside>
+    <aside> <div className="icon"><MdOutlineKeyboardBackspace size={30} onClick={() => Nav('/')}/></div> <div className="logo"> <img src={Logo}/></div> </aside>
     <main>
       <article></article>
       <Loginform/>

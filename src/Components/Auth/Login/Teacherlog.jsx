@@ -8,7 +8,7 @@ const Teacherlog = () => {
     const Nav = useNavigate()
   return (
     <div className='Login'>
-    <aside> <div className="icon"><MdOutlineKeyboardBackspace size={30} onClick={() => Nav(-1)}/></div> <div className="logo"> <img src={Logo}/></div> </aside>
+    <aside> <div className="icon"><MdOutlineKeyboardBackspace size={30} onClick={() => Nav('/')}/></div> <div className="logo"> <img src={Logo}/></div> </aside>
     <main>
       <article></article>
       <Teacherlogform/>

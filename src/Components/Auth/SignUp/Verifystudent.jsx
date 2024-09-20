@@ -2,18 +2,18 @@ import React,{useState, useEffect } from 'react'
 import axios from 'axios';
 import { useParams, useNavigate } from 'react-router-dom';
 import { BeatLoader } from 'react-spinners';
-const Verify = () => {
+const Verifystudent = () => {
   const { token } = useParams()
   // console.log(token)
   const navigate = useNavigate()
   const [loading, setLoading] = useState(false)
 
     const handleSubmit = async () => {
-        const response = await axios.post(`https://edutrack-jlln.onrender.com/api/v1/school/verify/${token}`)
+        const response = await axios.post(`https://edutrack-jlln.onrender.com/api/v1/student/verify/${token}`)
         // console.log(response)
         setLoading(true)
         setTimeout(() => {
-        response.status === 200 ?  navigate('/login') : null
+        response.status === 200 ?  navigate('/studentLogin') : null
         }, 3000);
     }
     useEffect(() => {
@@ -29,6 +29,7 @@ const Verify = () => {
       alignItems: 'center',
       justifyContent: 'center',
       backgroundColor: '#003B31',
+
     }
   return (
     <div style={style} className='verify'>
@@ -38,4 +39,4 @@ const Verify = () => {
   )
 }
 
-export default Verify
+export default Verifystudent
