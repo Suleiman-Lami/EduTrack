@@ -29,6 +29,7 @@ const Reset = () => {
       },[])
 
     return (
+        <div className='Reset-Component'>
         <form onSubmit={handleContinue} className='form' data-aos="zoom-in-down">
             <header>
                 <h2>Reset Password</h2>
@@ -51,6 +52,7 @@ const Reset = () => {
             { loading ? <ClipLoader color='#ffffff'/> : 'Submit'}
                 </button>
         </form>
+        </div>
     );
 };
 

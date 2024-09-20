@@ -38,13 +38,13 @@ const Forgotform = () => {
         .then( res =>{
             console.log(res);
             setLoading(false)
-            // toast.success(res.data.message) 
+            toast.success(res.data.message) 
             setShowReset(showReset)
         })
         .catch( Error => {
             console.log(Error);
             setLoading(false)
-            // toast.error(Error.data.message)
+            toast.error(Error.response.data.message)
         })
       
         
@@ -74,13 +74,13 @@ const Forgotform = () => {
             </button>
             <Toaster position="top-center" />
         </form>
-        {
+        {/* {
                 showReset && (
                     <div className="Reset-Component">
                         <Reset />
                     </div>
                 )
-            }
+            } */}
         </>
     );
 };

@@ -31,6 +31,7 @@ import Teacherlog from './Components/Auth/Login/Teacherlog'
 import Verify from './Components/Auth/SignUp/Verify'
 import Verifyteacher from './Components/Auth/SignUp/Verifyteacher'
 import Verifystudent from './Components/Auth/SignUp/Verifystudent'
+import Reset from './Components/Auth/Login/Forgotpassword/Reset'
 
 const Routes = createHashRouter([
   {
@@ -98,6 +99,10 @@ const Routes = createHashRouter([
   {
     path: '/signup',
     element: <SignUp />
+  },
+  {
+    path: '/restpassword',
+    element: < Reset />
   },
   {
     path: '/verify/:token',
