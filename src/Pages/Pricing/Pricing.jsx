@@ -28,8 +28,8 @@ const Pricing = () => {
       };
       const userToken = localStorage.getItem('userToken');
       
-      axios.get(
-        'https://edutrack-jlln.onrender.com/api/v1/school/my-subscription',
+      axios.post(
+        'https://edutrack-jlln.onrender.com/api/v1/school/upgrade-plan',
         paymentData,
         {
           headers: {
