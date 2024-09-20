@@ -31,7 +31,7 @@ const Loginform = () => {
     email: z.string().email({ message: 'Must be a valid email' }),
     password: z.string()
     .min(8, { message: 'Password must be more than 8 characters' })
-    .regex(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*(),.?":{}|<>]).{8,}$/, { message: "Password must contain a special character" })
+    .regex( /^(?=.[a-z])(?=.[A-Z])(?=.[^a-zA-Z0-9])(?!.\s).{6,}$/,{ message: "Password must contain a special character" })
   });
 
   const { register, handleSubmit, formState: { errors }, setError } = useForm({
@@ -56,7 +56,7 @@ const Loginform = () => {
       dispatch(loginInfo(res?.data?.data))
       dispatch(loginSuccess(res?.data?.data))
       setLoading(false)
-      toast.success(res.data.message)
+      toast.success('login successfull')
       console.log(res.data.data.schoolID);
      if (res.data.data.isVerified === true) {
         Nav(`/admin/${res?.data?.data?.schoolID}`)

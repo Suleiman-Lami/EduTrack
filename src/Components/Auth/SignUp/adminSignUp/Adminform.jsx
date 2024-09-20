@@ -30,8 +30,11 @@ const AdminForm = () => {
       return false;
     }, { message: "Please upload a valid file" }), 
     schoolPassword: z.string()
-      .min(8, { message: 'Password must be more than 8 characters' })
-      .regex(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*(),.?":{}|<>]).{8,}$/, { message: "Password must contain a special character" })
+    .required("Password is required")
+    .matches(
+        /^(?=.[a-z])(?=.[A-Z])(?=.[^a-zA-Z0-9])(?!.\s).{8,}$/,
+        "Password must be 8 characters long, uppercase and special character (!@#$%^&*)."
+    ),
   });
 
   const { register, handleSubmit, formState: { errors } } = useForm({
@@ -64,11 +67,13 @@ const AdminForm = () => {
         }
       });
       setLoading(false);
-      toast.success(res.data.message);
       if (res.data.newData.isVerified === true) {
         Nav('/login');
+        toast.success('Sign up successful');
       } else {
         Nav('/');
+        toast.success('Sign up successful please verify');
+
       }
     } catch (error) {
       setLoading(false);
@@ -137,7 +142,7 @@ const AdminForm = () => {
         <span>Already on Edutrack? <h4 onClick={() => Nav('/login')}>Login</h4></span>
       </footer>
 
-      <Toaster position="top-center" />
+      <Toaster/>
     </form>
   );
 };

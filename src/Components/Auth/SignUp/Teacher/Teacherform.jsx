@@ -63,15 +63,12 @@ const Teacherform = () => {
         }
       });
       setLoading(false);
-      toast.success(res.data.message);
-      if ( res.data.isVerified === true) {
-        Nav('/teachers')
-      } else {
+      toast.success('you have successfully added a staff');
         Nav(-1)
-      }
+      
     } catch (error) {
       setLoading(false);
-      toast.error(error.res.data.message);
+      toast.error('failed to add teacher check your credentials or network');
     }
   };
 

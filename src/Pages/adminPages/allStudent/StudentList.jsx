@@ -56,7 +56,7 @@ const StudentList = ({ student }) => {
         }
       });
       setLoading(false)
-      toast.success(`Attendance marked as ${status} for student name: ${fullName}`);
+      toast.success('attendance taken successfully')
     } catch (error) {
       setLoading(false)
       toast.error(`Failed to update attendance for student name: ${fullName}`);
@@ -116,7 +116,6 @@ const StudentList = ({ student }) => {
           ))}
         </tbody>
       </table>
-      <div className="studentList-Footer"></div>
       <Toaster position="top-center" />
     </div>
   );

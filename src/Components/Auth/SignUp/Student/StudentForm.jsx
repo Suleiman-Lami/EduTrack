@@ -59,7 +59,7 @@ const StudentForm = () => {
         }
       });
       setLoading(false);
-      toast.success(res.data.message);
+      toast.success('you have successfully added a student');
       dispatch(loginInfo(res.data.data));
       if (res.data.isVerified === true) {
         Nav('/teachers');
@@ -69,7 +69,7 @@ const StudentForm = () => {
     } catch (error) {
       setLoading(false);
       if (error.response && error.response.data) {
-        toast.error(error.response.data.message);
+        toast.error('failed to add student check the credentials or network');
       } else {
         toast.error('An unexpected error occurred.');
       }
@@ -137,7 +137,7 @@ const StudentForm = () => {
       <button type='submit'>
         {loading ? <ClipLoader color='#ffffff' /> : 'Onboard'}
       </button>
-      <Toaster position="top-right" reverseOrder={false} />
+      <Toaster position="top-right" />
     </form>
   )
 };
