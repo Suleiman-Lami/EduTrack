@@ -59,10 +59,10 @@ const Loginform = () => {
       dispatch(loginInfo(res?.data?.data))
       dispatch(loginSuccess(res?.data?.data))
       setLoading(false)
-      toast.success('login successfull')
       console.log(res.data.data.schoolID);
      if (res.data.data.isVerified === true) {
         Nav(`/admin/${res?.data?.data?.schoolID}`)
+        toast.success('login successfull')
      }
      else{
       toast.error('Please Verify your email :)')

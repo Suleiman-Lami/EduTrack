@@ -48,11 +48,11 @@ const StudentLoginform = () => {
       .then( res => {
         console.log(res);
         setLoading(false)
-        toast.success(res.data.message)
         dispatch(loginInfo(res.data.data))
         dispatch(loginSuccess(res?.data?.data))
        if (res.data.data.isVerified === true) {
         navigate(`/StudentProfile/${res?.data?.data?.studentID}`);
+        toast.success(res.data.message)
       }else{
         toast.error('Please Verify your email')
       }

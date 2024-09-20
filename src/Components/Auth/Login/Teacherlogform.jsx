@@ -47,7 +47,6 @@ const Teacherlogform = () => {
     try {
       const res = await axios.post(url, FormData);
       setLoading(false);
-      toast.success(res.data.message);
       localStorage.setItem('teacherID', res.data.data.teacherID);
       
       dispatch(loginInfo(res.data.data));
@@ -56,6 +55,7 @@ const Teacherlogform = () => {
       
       if (res.data.data.isVerified === true) {
         navigate(`/teacher/${res.data.data.teacherID}`);
+        toast.success('login successfull');
       } else {
         toast.error('Please Verify your email :)');
       }
