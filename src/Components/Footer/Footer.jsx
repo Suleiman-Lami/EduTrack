@@ -27,7 +27,7 @@ const Footer = () => {
           <li onClick={()=>Nav('/Pricing')}>Pricing</li>
           </ul>
           <ul>
-            <li className='head'> Support & Log In</li>
+            <li className='head'> Support & LogIn</li>
             <li>Contact Us</li>
             <li onClick={()=>Nav('/login')}>Admin Login</li>
             <li onClick={()=>Nav('/teacherlogin')}>Teachers Login</li>
