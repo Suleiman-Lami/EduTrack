@@ -12,7 +12,7 @@ const Verify = () => {
         // console.log(response)
         setLoading(true)
         setTimeout(() => {
-        response.status === 200 ?  navigate('loginuser/login') : null
+        response.status === 200 ?  navigate('/login') : null
         }, 3000);
     }
     useEffect(() => {
