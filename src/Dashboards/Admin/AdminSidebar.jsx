@@ -51,6 +51,14 @@ const AdminSidebar = ({ setShowSidebar }) => {
             <BsPersonRolodex className='staffColor' /> Staffs
           </NavLink>
         </li>
+        <li onClick={() => setShowSidebar(false)}>
+          <NavLink 
+            to='/Suspend' 
+            style={({ isActive }) => ({ color: isActive ? '#003B31' : '#ffffff', backgroundColor: isActive ? '#ffffff' : '#003B31' })}
+          >
+            Suspended 
+          </NavLink>
+        </li>
         <li>
         <NavLink 
             to='/student' 

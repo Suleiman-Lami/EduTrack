@@ -32,6 +32,7 @@ import Verify from './Components/Auth/SignUp/Verify'
 import Verifyteacher from './Components/Auth/SignUp/Verifyteacher'
 import Verifystudent from './Components/Auth/SignUp/Verifystudent'
 import Reset from './Components/Auth/Login/Forgotpassword/Reset'
+import Suspend from './Pages/adminPages/allTeachers/Suspend'
 
 const Routes = createHashRouter([
   {
@@ -55,6 +56,7 @@ const Routes = createHashRouter([
       { path: 'AdminProfile/:schoolID', element: <Adminprofile /> },
       { path: 'staffs', element: <TeacherSignUp /> },
       { path: 'student', element: <Allstudent /> },
+      { path: 'Suspend', element: <Suspend/> },
       { path: 'student-onboard', element: <StudentOnboard /> },
       { path: 'childProfile/:studentID', element: <Studentprofile /> },
       { path: 'staffProfile/:teacherID', element: <Teacherprofile /> },
