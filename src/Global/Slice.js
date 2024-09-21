@@ -17,13 +17,17 @@ const authSlice = createSlice({
     loginInfo: (state, action) => {
       const { role, ...userInfo } = action.payload;
       state.isLoggedIn = true;
-
+    
+      // Include role in each info object along with user information
+      const userDataWithRole = { ...userInfo, role, isLoggedIn: true };
+    
+      // Store user info based on role type
       if (role === 'admin') {
-        state.user.schoolInfo = { ...userInfo, isLoggedIn: true }; // Set admin info and logged in
+        state.user.schoolInfo = userDataWithRole; // Store admin info with role
       } else if (role === 'teacher') {
-        state.user.teacherInfo = { ...userInfo, isLoggedIn: true }; // Set teacher info and logged in
+        state.user.teacherInfo = userDataWithRole; // Store teacher info with role
       } else if (role === 'student') {
-        state.user.studentInfo = { ...userInfo, isLoggedIn: true }; // Set student info and logged in
+        state.user.studentInfo = userDataWithRole; // Store student info with role
       }
     },
 

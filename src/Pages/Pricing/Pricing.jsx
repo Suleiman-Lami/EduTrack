@@ -8,22 +8,21 @@ import { ClipLoader } from 'react-spinners';
 import { useNavigate } from 'react-router-dom';
 
 const Pricing = () => {
-  const [Loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(false); // Change 'Loading' to 'loading'
   const [selectedPlan, setSelectedPlan] = useState(null);
 
-  const  user = useSelector((state) => state.eduTrack.user);
-  console.log(user);
-  
-  console.log(user.schoolInfo.isLoggedIn);
+  const user = useSelector((state) => state.eduTrack.user);
+
+  console.log(user.schoolInfo.role);
   
   const Nav = useNavigate();
   const schoolID = localStorage.getItem('schoolID');
+
   const payKorapay = (amount, planName) => {
     console.log('clicked');
     setLoading(true);
     setSelectedPlan(planName);
-
-    if (user.schoolInfo.isLoggedIn && user.schoolInfo.role === 'admin') {
+    if (user.schoolInfo.isLoggedIn === true && user.schoolInfo.role === 'admin') {
       const paymentData = {
         amount: amount * 100,
         currency: 'NGN',
@@ -34,23 +33,28 @@ const Pricing = () => {
         },
       };
 
-      window.Korapay.initialize({
-        key: import.meta.env.VITE_Public_Key,
-        reference: paymentData.reference,
-        amount: paymentData.amount,
-        currency: paymentData.currency,
-        customer: paymentData.customer,
-        onSuccess: (response) => {
-          setLoading(false);
-          console.log('Payment successful:', response);
-          sendToBackend(paymentData, planName);
-        },
-        onError: (error) => {
-          setLoading(false);
-          console.error('Payment error:', error);
-          toast.error('Payment failed. Please try again.');
-        },
-      });
+      if (window.Korapay) {
+        window.Korapay.initialize({
+          key: import.meta.env.VITE_Public_Key,
+          reference: paymentData.reference,
+          amount: paymentData.amount,
+          currency: paymentData.currency,
+          customer: paymentData.customer,
+          onSuccess: (response) => {
+            setLoading(false);
+            console.log('Payment successful:', response);
+            sendToBackend(paymentData, planName); // Send payment data to backend
+          },
+          onError: (error) => {
+            setLoading(false);
+            console.error('Payment error:', error);
+            toast.error('Payment failed. Please try again.');
+          },
+        });
+      } else {
+        setLoading(false);
+        toast.error('Payment gateway not loaded. Please try again.');
+      }
     } else {
       setLoading(false);
       toast.error('You must be logged in as an admin to activate a plan.');
@@ -80,7 +84,7 @@ const Pricing = () => {
         setLoading(false);
         if (data.success) {
           toast.success('Plan upgraded successfully!');
-          Nav(`/admin/${schoolID}`)
+          Nav(`/admin/${schoolID}`); // Navigate to the admin page
         } else {
           toast.error('Failed to upgrade plan. Please try again later.');
         }
@@ -89,7 +93,7 @@ const Pricing = () => {
         setLoading(false);
         console.error('Error upgrading plan:', error);
         toast.error(
-          error.response.message || 'Error upgrading plan. Please try again.'
+          error.response?.message || 'Error upgrading plan. Please try again.'
         );
       });
   };
@@ -123,7 +127,7 @@ const Pricing = () => {
           <span>For small schools or classes.</span>
           <h1>₦95,000</h1>
           <button onClick={() => payKorapay(95000, 'starter')}>
-            {Loading && selectedPlan === 'starter' ? (
+            {loading && selectedPlan === 'starter' ? (
               <ClipLoader color='white' />
             ) : (
               'Activate plan'
@@ -131,15 +135,15 @@ const Pricing = () => {
           </button>
           <div className='textArea'>
             <li>Teacher: Up to 5</li>
-            <li>Student:Up to 100</li>
+            <li>Student: Up to 100</li>
           </div>
         </div>
         <div className='Basicbox'>
           <h3>Basic Plan</h3>
           <span>For schools with growing needs.</span>
-          <h1>₦ 240,000</h1>
+          <h1>₦240,000</h1>
           <button onClick={() => payKorapay(240000, 'basic')}>
-            {Loading && selectedPlan === 'basic' ? (
+            {loading && selectedPlan === 'basic' ? (
               <ClipLoader color='white' />
             ) : (
               'Activate plan'
@@ -147,15 +151,15 @@ const Pricing = () => {
           </button>
           <div className='textArea'>
             <li>Teacher: Up to 10</li>
-            <li>Student:Up to 250</li>
+            <li>Student: Up to 250</li>
           </div>
         </div>
         <div className='proBox'>
           <h3>Pro Plan</h3>
           <span>For medium-sized schools.</span>
-          <h1>₦ 480,000</h1>
+          <h1>₦480,000</h1>
           <button onClick={() => payKorapay(480000, 'pro')}>
-            {Loading && selectedPlan === 'pro' ? (
+            {loading && selectedPlan === 'pro' ? (
               <ClipLoader color='white' />
             ) : (
               'Activate plan'
@@ -163,7 +167,7 @@ const Pricing = () => {
           </button>
           <div className='textArea'>
             <li>Teacher: Up to 25</li>
-            <li>Student:Up to 500</li>
+            <li>Student: Up to 500</li>
           </div>
         </div>
       </div>
@@ -171,9 +175,9 @@ const Pricing = () => {
         <div className='PremiumBox'>
           <h3>Premium Plan</h3>
           <span>For larger schools.</span>
-          <h1>₦ 970,000</h1>
+          <h1>₦970,000</h1>
           <button onClick={() => payKorapay(970000, 'premium')}>
-            {Loading && selectedPlan === 'premium' ? (
+            {loading && selectedPlan === 'premium' ? (
               <ClipLoader color='white' />
             ) : (
               'Activate plan'
@@ -181,7 +185,7 @@ const Pricing = () => {
           </button>
           <div className='textArea'>
             <li>Teacher: Up to 25</li>
-            <li>Student:Up to 500</li>
+            <li>Student: Up to 500</li>
           </div>
         </div>
         <div className='proBox'>
