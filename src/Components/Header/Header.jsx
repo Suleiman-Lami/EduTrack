@@ -53,9 +53,7 @@ const Header = () => {
           </article>
         </div>
         <div className="auth">
-          {
-            loginInfo === false ? 
-              <>
+         
             <div className="LoginBtn"  onClick={()=> setShowLog(!showLog)}>
             Log in
             {
@@ -68,10 +66,7 @@ const Header = () => {
             }
           </div>
           <button className='signUpBtn'><NavLink to={'signUp'}>Register</NavLink></button>
-              </>
-          : 
-          <button className='logout' onClick={handlelogout}>logout</button>
-          }
+            
         </div>
       <div className="menuHolder">
          { showMenu === 0 ?  <RiMenuUnfold2Fill size={35} onClick={handleMenu} />: showMenu == 1? <RiMenuUnfoldFill size={35} onClick={handleMenuOut}/>: null }

@@ -36,11 +36,7 @@ const StudentList = ({ student }) => {
     setDropdownIndex(null); 
     setLoading(true)
     const schoolID = localStorage.getItem('schoolID');
-    const teacherID = localStorage.getItem('teacherID');
-    console.log(teacherID);
-    console.log(schoolID);
-    console.log('clicked');
-    
+    const teacherID = localStorage.getItem('teacherID');    
 
     try {
       const response = await axios.post(`https://edutrack-jlln.onrender.com/api/v1/attendance/mark-attendance/${studentID}`, {
@@ -57,10 +53,14 @@ const StudentList = ({ student }) => {
       });
       setLoading(false)
       toast.success('attendance taken successfully')
+    
     } catch (error) {
+      console.log(error);
+      toast.error(error.response.data.message)
       setLoading(false)
-      toast.error(`Failed to update attendance for student name: ${fullName}`);
+      // toast.error(`Failed to update attendance for student name: ${fullName}`);
       console.error('Error updating attendance:', error);
+      
     }
   };
 
