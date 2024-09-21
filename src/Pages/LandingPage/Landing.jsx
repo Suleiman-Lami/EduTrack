@@ -6,6 +6,7 @@ import SignModal from './SignModal'
 import './Landing.css'
 import Aos from 'aos';
 import "aos/dist/aos.css"
+import { useSelector } from 'react-redux'
 const Landing = () => {
   const loginInfo = useSelector((state)=>state.eduTrack.isLoggedIn)
 
