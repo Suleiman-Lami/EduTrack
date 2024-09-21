@@ -59,7 +59,7 @@ const AdminSidebar = ({ setShowSidebar }) => {
             Suspended 
           </NavLink>
         </li>
-        <li>
+        <li onClick={() => setShowSidebar(false)}>
         <NavLink 
             to='/student' 
             state={{ schoolID }} 

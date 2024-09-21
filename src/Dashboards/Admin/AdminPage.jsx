@@ -9,10 +9,14 @@ import { PiStudentDuotone } from "react-icons/pi"
 import { ClipLoader } from 'react-spinners';
 import { Chart as ChartJS, BarElement, CategoryScale, LinearScale, Tooltip, Legend } from 'chart.js';
 import { useNavigate } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 ChartJS.register(BarElement, CategoryScale, LinearScale, Tooltip, Legend);
 
 const AdminPage = () => {
+ const  loginInfo = useSelector((state)=> state.eduTrack.user.schoolInfo)
+  console.log(loginInfo);
+  
     const [students, setStudents] = useState([]);
     const [teachers, setTeachers] = useState([]);
     const [Loading, setLoading] = useState(false);
@@ -190,24 +194,29 @@ const AdminPage = () => {
                 <div className="iconHolder"><PiStudentDuotone size={70} color='#003B31'/></div>
                 <div className="calc">
                   <span>Classes</span>
-                  <h3>10</h3> 
+                  {
+                      Loading ? 
+                      <ClipLoader color='#003B31' />
+                      :
+                     <h3>{students.length}</h3>
+                    }
                 </div>
               </div>
             </section>
           </div>
           <div className="AnnouncementBox">
             <div className='AnnounceArticle'>
+              <textarea type="text" placeholder='What would like to announce today?'/>
               <div className="articleHeading">
                 <h3>Announcement</h3>
                 <button>Send</button>
               </div>
-              <textarea type="text" placeholder='What would like to announce today?'/>
             </div>
             <aside className='Adminaside'>
-              <span>You're on the <h4>freemium</h4> plan!</span>
-              <span>Add up to <h4>3 teachers</h4></span>
+              <span>You're on the <h4>{loginInfo.subscriptionPlan}</h4> plan!</span>
+              <span>Add up to <h4>{loginInfo.maxTeachers} teachers</h4></span>
               <span>and</span>
-              <h5>5 students.</h5>
+              <h5>{loginInfo.maxStudents} students.</h5>
             </aside>
           </div>
           <div className="Chart">

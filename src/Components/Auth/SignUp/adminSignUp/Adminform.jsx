@@ -68,11 +68,15 @@ const AdminForm = () => {
       });
       setLoading(false);
       if (res.data.newData.isVerified === true) {
-        Nav('/login');
-        toast.success(res.data.message);
+        setTimeout(() => {
+          toast.success(res.data.message);
+          Nav('/login');
+          }, 3000);
       } else {
-        Nav('/');
-        toast.success('Sign up successful please verify');
+        setTimeout(() => {
+          toast.success('Sign up successful please check your email');
+          Nav('/');
+        }, 3000);
 
       }
     } catch (error) {

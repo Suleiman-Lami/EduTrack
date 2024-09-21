@@ -65,27 +65,53 @@ const SuspendedTeacherList = () => {
   const deleteTeacherPermanently = async (teacherID) => {
     if (window.confirm('Are you sure you want to permanently delete this teacher?')) {
       setShowDropdown(null);
-      try {
-        setActionLoading(true);
-        const response = await axios.delete(
-        `https://edutrack-jlln.onrender.com/api/v1/school/delete-teacher/${teacherID}`, {
-            headers: {
-              'Authorization': `Bearer ${userToken}`,
-            },
-          }
-        );
-        if (response.status === 200) {
-          toast.success('Teacher deleted permanently');
-          await getSuspendedTeachers(); 
+
+    try {
+      setLoading(true);
+      const response = await axios.delete(
+        `https://edutrack-jlln.onrender.com/api/v1/school/delete-teacher/${teacherID}`,
+        {
+          headers: {
+            'Authorization': `Bearer ${userToken}`,
+          },
         }
-      } catch (error) {
-        console.error('Error deleting teacher:', error);
-        toast.error(error.response?.data?.message || 'Error deleting teacher');
-      } finally {
-        setActionLoading(false);
+      );
+      if (response.status === 200) {
+        toast.success('Teacher deleted permanently');
+        await getSuspendedTeachers(); 
       }
+    } catch (error) {
+      console.error('Error deleting teacher:', error);
+      toast.error(error.response?.data?.message || 'Error deleting teacher');
+    } finally {
+      setActionLoading(false);
     }
-  };
+  }};
+
+  // const deleteTeacherPermanently = async (teacherID) => {
+  //   if (window.confirm('Are you sure you want to permanently delete this teacher?')) {
+  //     setShowDropdown(null);
+  //     try {
+  //       setActionLoading(true);
+  //       const response = await axios.delete(
+  //       `https://edutrack-jlln.onrender.com/api/v1/school/delete-teacher/${teacherID}`, {
+  //           headers: {
+  //             'Authorization': `Bearer ${userToken}`,
+  //           },
+  //         }
+  //       );
+  //       if (response.status === 200) {
+  //         toast.success('Teacher deleted permanently');
+  //         await getSuspendedTeachers(); 
+  //       }
+  //     } catch (error) {
+  //       console.error('Error deleting teacher:', error);
+  //       toast.error(error.response?.data?.message || 'Error deleting teacher');
+  //     } finally {
+  //       setActionLoading(false);
+  //     }
+  //   }
+  // };
 
   
   useEffect(() => {
