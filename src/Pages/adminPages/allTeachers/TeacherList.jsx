@@ -51,7 +51,7 @@ const TeacherList = ({ teachers, getAllTeachers }) => {
     try {
       setLoading(true);
       const response = await axios.post(
-        `https://edutrack-jlln.onrender.com/api/v1/school/suspend-teacher/${teacherID}`,
+        `https://edutrack-jlln.onrender.com/api/v1/school/suspend-teacher/${teacherID}`,{},
         {
           headers: {
             'Authorization': `Bearer ${userToken}`,

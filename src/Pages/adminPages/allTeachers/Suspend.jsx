@@ -20,12 +20,14 @@ const SuspendedTeacherList = () => {
   const getSuspendedTeachers = async () => {
     try {
       setLoading(true);
-      const res = await axios.get(`https://edutrack-jlln.onrender.com/api/v1/school/the-suspended/${teacherID}`, {
+      const res = await axios.get('https://edutrack-jlln.onrender.com/api/v1/school/the-suspended', {
         headers: {
           'Authorization': `Bearer ${userToken}`,
         },
       });
-      setSuspendedTeachers(res?.data?.data.teachers );
+      console.log(res?.data.teachers);
+      
+      setSuspendedTeachers(res?.data.teachers );
       setLoading(false);
     } catch (error) {
       console.error('Error fetching suspended teachers:', error);
@@ -39,9 +41,9 @@ const SuspendedTeacherList = () => {
 
     try {
       setActionLoading(true);
-      const response = await axios.put(
+      const response = await axios.post(
         `https://edutrack-jlln.onrender.com/api/v1/school/unsuspend-teacher/${teacherID}`,
-        
+        {},
         {
           headers: {
             'Authorization': `Bearer ${userToken}`,
@@ -66,8 +68,7 @@ const SuspendedTeacherList = () => {
       try {
         setActionLoading(true);
         const response = await axios.delete(
-          `https://edutrack-jlln.onrender.com/api/v1/school/permanent-delete-teacher/${teacherID}`,
-          {
+        `https://edutrack-jlln.onrender.com/api/v1/school/delete-teacher/${teacherID}`, {
             headers: {
               'Authorization': `Bearer ${userToken}`,
             },
@@ -89,7 +90,6 @@ const SuspendedTeacherList = () => {
   
   useEffect(() => {
     getSuspendedTeachers();
-    // console.log(res?.data?.data.teachers);
     
   }, []);
 
@@ -99,7 +99,7 @@ const SuspendedTeacherList = () => {
         <ClipLoader color='#003B31' />
       ) : (
         <>
-          {suspendedTeachers.length === 0 ? (
+          {suspendedTeachers?.length === 0 ? (
             <div className="emptyModal">
               <h2>No Suspended Teachers </h2>
             </div>
@@ -128,7 +128,7 @@ const SuspendedTeacherList = () => {
                     </td>
                     <td>{e?.fullName}</td>
                     <td>{e?.teacherClass}</td>
-                    <td>{e?.gender}</td>
+                    <td>{e?.id}</td>
                     <td>
                       <button onClick={() => setShowDropdown(showDropdown === index ? null : index)}>
                         {actionLoading && showDropdown === index ? (
@@ -144,7 +144,7 @@ const SuspendedTeacherList = () => {
                             <FaCheckCircle color='#003B31' /> Unsuspend
                           </div>
                           <div onClick={() => deleteTeacherPermanently(e?.teacherID)}>
-                            <MdCancel color='#F4B400' /> Delete Permanently
+                            <MdCancel color='#F4B400' /> Delete
                           </div>
                         </div>
                       )}
