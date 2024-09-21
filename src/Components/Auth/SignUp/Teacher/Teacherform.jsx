@@ -139,11 +139,11 @@ const Teacherform = () => {
         </select>
         {errors.gender && <span style={{ color: 'red' }}>{errors.gender.message}</span>}
       </section>
-
+{/* 
       <div className="terms">
         <input type="checkbox" />
         <span>I agree to terms and conditions</span>
-      </div>
+      </div> */}
 
       <button type='submit'>
         {loading ? <ClipLoader color='#ffffff' /> : 'Onboard'}

@@ -2,6 +2,7 @@ import React,{useState, useEffect } from 'react'
 import axios from 'axios';
 import { useParams, useNavigate } from 'react-router-dom';
 import { BeatLoader } from 'react-spinners';
+import './Verify.css'
 const Verify = () => {
   const { token } = useParams()
   // console.log(token)
@@ -21,17 +22,17 @@ const Verify = () => {
     }, [])
 
 
-    const style = {
-      width: '100%',
-      height: '100vh',
-      display: 'flex',
-      color: '#ffffff',
-      alignItems: 'center',
-      justifyContent: 'center',
-      backgroundColor: '#003B31',
-    }
+    // const style = {
+    //   width: '100%',
+    //   height: '100vh',
+    //   display: 'flex',
+    //   color: '#ffffff',
+    //   alignItems: 'center',
+    //   justifyContent: 'center',
+    //   backgroundColor: '#003B31',
+    // }
   return (
-    <div style={style} className='verify'>
+    <div className='verify'>
     {!loading ? <h1>Please Wait<BeatLoader color='white' /></h1> :
       <h1>Your verification was sucessful</h1>}
   </div >

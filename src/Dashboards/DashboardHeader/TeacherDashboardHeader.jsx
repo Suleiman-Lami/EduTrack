@@ -5,16 +5,19 @@ import { IoIosNotifications } from "react-icons/io";
 import { FaUserCircle } from "react-icons/fa";
 import { AiOutlineMenuUnfold } from "react-icons/ai";
 import AdminSidebar from '../Admin/AdminSidebar';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate, useParams } from 'react-router-dom';
 import Notify from '../Notifications/Notify';
+import { useSelector } from 'react-redux';
 
 
 const TeacherDashboardHeader = () => {
+  const loginfo = useSelector((state)=> state.eduTrack.user)
     const [showSidebar, setShowSidebar] = useState(false);
     const [showNotify, setShowNotify] = useState(false)
     const [path, setPath] = useState('');
     const { pathname } = useLocation(); 
     const Nav = useNavigate();
+    const teacherID = useParams()
   
     useEffect(() => {
       const title = pathname.slice(1); 
@@ -47,7 +50,9 @@ const TeacherDashboardHeader = () => {
             </div> : null
           }
         </div>
-          <div className="user"><FaUserCircle size={50} className='icon' onClick={()=>Nav('/profile')}/></div>
+          <div className="user">
+            <img src={loginfo.teacherInfo.teacherProfile} onClick={()=>Nav(`/profile/${teacherID}`)}/>
+          </div>
         </div>
       </div>
     );

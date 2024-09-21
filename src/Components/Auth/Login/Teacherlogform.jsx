@@ -51,7 +51,7 @@ const Teacherlogform = () => {
       
       dispatch(loginInfo(res.data.data));
       dispatch(loginSuccess(res?.data?.data))
-      console.log(res.data.data.teacherID);
+      console.log(res.data.data.isVerified);
       
       if (res.data.data.isVerified === true) {
         navigate(`/teacher/${res.data.data.teacherID}`);

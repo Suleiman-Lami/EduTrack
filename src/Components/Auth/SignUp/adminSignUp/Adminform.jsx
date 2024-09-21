@@ -129,10 +129,10 @@ const AdminForm = () => {
         {errors.schoolPassword && <span style={{ color: 'red' }}>{errors.schoolPassword.message}</span>}
       </section>
 
-      <div className="terms">
+      {/* <div className="terms">
         <input type="checkbox" />
         <span>I agree to terms and conditions</span>
-      </div>
+      </div> */}
 
       <button type="submit">
         {loading ? <ClipLoader color="#ffffff" /> : 'Sign up'}

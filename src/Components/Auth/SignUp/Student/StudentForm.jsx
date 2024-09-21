@@ -29,7 +29,6 @@ const StudentForm = () => {
     }, { message: "Please upload a valid file" }),
     gender: z.enum(['male', 'female'], { message: 'Please select a valid gender' }),
     class: z.enum(['JSS 1', 'JSS 2', 'JSS 3','SS 1','SS 2','SS 3'], { message: 'Please select a valid class' }),
-    terms: z.boolean().refine(val => val === true, { message: 'You must agree to the terms and conditions' })
   });
 
   const { register, handleSubmit, formState: { errors } } = useForm({
@@ -126,11 +125,11 @@ const StudentForm = () => {
         {errors.gender && <span style={{ color: 'red' }}>{errors.gender.message}</span>}
       </section>
 
-      <div className="terms">
+      {/* <div className="terms">
         <input type="checkbox" {...register('terms')} />
         <span>I agree to terms and conditions</span>
         {errors.terms && <span style={{ color: 'red' }}>{errors.terms.message}</span>}
-      </div>
+      </div> */}
 
       <button type='submit'>
         {loading ? <ClipLoader color='#ffffff' /> : 'Onboard'}

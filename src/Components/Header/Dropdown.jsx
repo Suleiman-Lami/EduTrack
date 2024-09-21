@@ -15,8 +15,10 @@ const Dropdown = ({setDropDown}) => {
             <li onClick={()=> setDropDown(false)}><NavLink to={'Contact'} style={({isActive})=>({color: isActive? '#07b598': '#003B31'})}> <IoMdContact />Contact us</NavLink></li>
 
             <div className="auth">
-          <button><NavLink to={'Login'}>Log In</NavLink></button>
-          <button><NavLink to={'signUp'}>Register</NavLink></button>
+            <button><NavLink to={'login'}>Admin logIn</NavLink></button>
+              <button><NavLink to={'teacherlogin'}> Teacher logIn</NavLink></button>
+              <button><NavLink to={'studentLogin'}>Student Login</NavLink></button>     
+              <button><NavLink to={'signUp'}>Register</NavLink></button>
         </div>
     </div>
   )

@@ -23,7 +23,7 @@ const Teacherprofile = () => {
       <div className="profileBody">
         <div className="imgHolder">
           <div className="imgBox">
-            <img src={values} alt="Profile" />
+            <img src={loginInfo.teacherInfo.teacherProfile} alt="Profile" />
           </div>
         </div>
         <form data-aos="fade-left" data-aos-duration="3000">
@@ -51,7 +51,7 @@ const Teacherprofile = () => {
         </section>: null
          }
           {loginInfo?.role !== 'admin' ?
-            <button type="button" onClick={() => Nav('/Editprofile')}>
+            <button type="button" onClick={() => Nav(`/Editprofile/${loginInfo.teacherInfo.teacherID}`)}>
               Edit Profile
             </button>
            : null}

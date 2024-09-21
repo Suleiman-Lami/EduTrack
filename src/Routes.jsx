@@ -68,8 +68,8 @@ const Routes = createHashRouter([
     children: [
       { path: 'teacher/:teacherID', element: <Staffdashboard /> },
       { path: 'childProfile/:studentID', element: <Studentprofile /> },
-      { path: 'profile', element: <Teacherprofile /> },
-      { path: 'Editprofile', element: <TeacherEdit /> },
+      { path: 'profile/:teacherID', element: <Teacherprofile /> },
+      { path: 'Editprofile/:teacherID', element: <TeacherEdit /> },
       { path: 'Allstudent', element: <Allstudent /> },
       { path: 'onboard', element: <StudentOnboard /> },
     ]
