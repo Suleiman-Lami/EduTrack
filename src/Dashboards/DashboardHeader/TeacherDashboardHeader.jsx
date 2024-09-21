@@ -31,7 +31,7 @@ const TeacherDashboardHeader = () => {
           <AiOutlineMenuUnfold className='icon' onClick={() => setShowSidebar(!showSidebar)} />
           {showSidebar && (
             <div className="sideBar">
-              <AdminSidebar />
+              <AdminSidebar setShowSidebar={setShowSidebar} />
             </div>
           )}
         </div>

@@ -28,7 +28,7 @@ const StudentHeader = () => {
           <AiOutlineMenuUnfold className='icon' onClick={() => setShowSidebar(!showSidebar)} />
           {showSidebar && (
             <div className="sideBar">
-              <StudentsideBar />
+              <StudentsideBar setShowSidebar={setShowSidebar}/>
             </div>
           )}
         </div>

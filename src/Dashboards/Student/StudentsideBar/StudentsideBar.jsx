@@ -7,7 +7,7 @@ import logo from '../../../assets/react.svg'
 import { useDispatch, useSelector } from 'react-redux';
 import { studentlogout } from '../../../Global/Slice';
 
-const StudentsideBar = () => {
+const StudentsideBar = ({setShowSidebar}) => {
   const loginfo = useSelector((state)=> state.eduTrack.user)
   const Nav = useNavigate();
   const dispatch = useDispatch();
@@ -24,7 +24,7 @@ const StudentsideBar = () => {
             <img src={loginfo.schoolInfo.schoolPicture} />
           </div>
             <nav>
-            <li><NavLink   to='/StudentProfile' style={({isActive})=> ({color: isActive ? ' #003B31' : '#ffffff', backgroundColor: isActive ? '#ffffff': ' #003B31'})}><PiStudent/>Dashboard</NavLink></li>
+            <li onClick={()=>setShowSidebar(false)}><NavLink   to='/StudentProfile' style={({isActive})=> ({color: isActive ? ' #003B31' : '#ffffff', backgroundColor: isActive ? '#ffffff': ' #003B31'})}><PiStudent/>Dashboard</NavLink></li>
             </nav>
         <li className='logout' onClick={studentLogout}><CiLogout /> Log Out</li>
     </div>
