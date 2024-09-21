@@ -6,8 +6,10 @@ import { useNavigate, useLocation } from 'react-router-dom';
 import StudentList from './StudentList';
 import axios from 'axios';
 import { ClipLoader } from 'react-spinners';
+import { useSelector } from 'react-redux';
 
 const Allstudent = () => {
+  const loginInfo = useSelector((state)=>state.eduTrack.user)
   const [student, setStudent] = useState([]);
   const [Loading, setLoading] = useState(false);
 
@@ -56,13 +58,23 @@ const Allstudent = () => {
       ) : student.length === 0 ? (
         <div className="emptyModal" data-aos="zoom-in" data-aos-duration="3000">
           <h2>No student added yet</h2>
-          <span>Click to enroll your first student!</span>
-          <button onClick={() => Nav('/student-onboard')}>Add a Student</button>
+          {
+            loginInfo.teacherInfo.isLoggedIn === true ?
+            <span>Ask your school admin to add a student</span>:
+           <>
+ <span>Click to enroll your first student!</span>
+ <button onClick={() => Nav('/student-onboard')}>Add a Student</button>
+           </>
+          }
         </div>
       ) : (
         <div className="studentsBox">
           <div className="studentBox-Header">
-            <button onClick={() => Nav('/student-onboard')}>Add new student</button>
+            {
+              loginInfo.teacherInfo.isLoggedIn === true ?
+              null :
+              <button onClick={() =>  Nav('/student-onboard', { state: { teacherID, schoolID } }) }>Add new student</button>
+            }
           </div>
           <StudentList student={student} />
         </div>

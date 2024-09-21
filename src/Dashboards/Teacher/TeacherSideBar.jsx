@@ -7,7 +7,7 @@ import { CiLogout } from "react-icons/ci";
 import { NavLink, useNavigate, useParams } from 'react-router-dom';
 import logo from '../../assets/react.svg'
 import { useDispatch, useSelector } from 'react-redux';
-import { teacherlogout } from '../../Global/Slice';
+import { teacherLogout} from '../../Global/Slice';
 
 const TeacherSideBar = () => {
   const loginfo = useSelector((state)=> state.eduTrack.user)
@@ -17,7 +17,7 @@ const TeacherSideBar = () => {
   const { teacherID} = useParams();
 
   const logout =()=>{
-    dispatch(teacherlogout())
+    dispatch(teacherLogout())
     Nav('/')
   }
 

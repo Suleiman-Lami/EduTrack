@@ -11,7 +11,11 @@ const Pricing = () => {
   const [Loading, setLoading] = useState(false);
   const [selectedPlan, setSelectedPlan] = useState(null);
 
-  const { user, isLoggedIn } = useSelector((state) => state.eduTrack);
+  const  user = useSelector((state) => state.eduTrack.user);
+  console.log(user);
+  
+  console.log(user.schoolInfo.isLoggedIn);
+  
   const Nav = useNavigate();
   const schoolID = localStorage.getItem('schoolID');
   const payKorapay = (amount, planName) => {
@@ -19,7 +23,7 @@ const Pricing = () => {
     setLoading(true);
     setSelectedPlan(planName);
 
-    if (isLoggedIn && user.schoolInfo.role === 'admin') {
+    if (user.schoolInfo.isLoggedIn && user.schoolInfo.role === 'admin') {
       const paymentData = {
         amount: amount * 100,
         currency: 'NGN',

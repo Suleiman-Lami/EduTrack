@@ -9,7 +9,7 @@ import Aos from 'aos';
 import "aos/dist/aos.css";
 import Logo from '../../assets/react.svg';
 import { useDispatch, useSelector } from 'react-redux';
-import { logout } from '../../Global/Slice';
+import { adminLogout, logout } from '../../Global/Slice';
 
 const AdminSidebar = ({ setShowSidebar }) => {
   const loginfo = useSelector((state)=> state.eduTrack.user)
@@ -18,7 +18,7 @@ const AdminSidebar = ({ setShowSidebar }) => {
 
   const handleLogout =() =>{
     Nav('/')
-    dispatch(logout())
+    dispatch(adminLogout())
     console.log('clicked');
     
   }

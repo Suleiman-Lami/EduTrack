@@ -48,13 +48,12 @@ const Teacherlogform = () => {
       const res = await axios.post(url, FormData);
       setLoading(false);
       localStorage.setItem('teacherID', res.data.data.teacherID);
-      
+      console.log( res?.data.data.userToken);
+      // localStorage.setItem('userToken',  res.data.data.userToken);
       dispatch(loginInfo(res.data.data));
-      dispatch(loginSuccess(res?.data?.data))
-      console.log(res.data.data.isVerified);
-      
-      if (res.data.data.isVerified === true) {
-        navigate(`/teacher/${res.data.data.teacherID}`);
+      dispatch(loginSuccess(res?.data?.data))      
+      if (res?.data.data.isVerified === true) {
+        navigate(`/teacher/${res?.data?.data.teacherID}`);
         toast.success('login successfull');
       } else {
         toast.error('Please Verify your email :)');

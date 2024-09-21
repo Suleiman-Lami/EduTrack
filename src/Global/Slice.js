@@ -2,16 +2,12 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
   user: {
-    schoolInfo: {},
-    teacherInfo: {},
-    studentInfo: {},
+    schoolInfo: { isLoggedIn: false }, // Track the admin login status here
+    teacherInfo: { isLoggedIn: false }, // Track the teacher login status here
+    studentInfo: { isLoggedIn: false }, // Track the student login status here
   },
-  isLoggedIn: false,
-  schoolInfo: {},
   loading: false,
   error: null,
-  studentInfo: {},
-  staffInfo: {},
 };
 
 const authSlice = createSlice({
@@ -20,33 +16,35 @@ const authSlice = createSlice({
   reducers: {
     loginInfo: (state, action) => {
       const { role, ...userInfo } = action.payload;
-  state.isLoggedIn = true;
+      state.isLoggedIn = true;
 
-  if (role === 'admin') {
-    state.user.schoolInfo = action.payload;
-  } else if (role === 'teacher') {
-    state.user.teacherInfo = action.payload;
-  } else {
-    state.user.studentInfo = action.payload;
-  }
+      if (role === 'admin') {
+        state.user.schoolInfo = { ...userInfo, isLoggedIn: true }; // Set admin info and logged in
+      } else if (role === 'teacher') {
+        state.user.teacherInfo = { ...userInfo, isLoggedIn: true }; // Set teacher info and logged in
+      } else if (role === 'student') {
+        state.user.studentInfo = { ...userInfo, isLoggedIn: true }; // Set student info and logged in
+      }
     },
 
+    // General logout function that only toggles the main isLoggedIn status
     logout: (state) => {
-      state.user.schoolInfo.isLoggedIn = false;
-      state.user.schoolInfo = {};
-      state.isLoggedIn = false;
+      state.isLoggedIn = false; // Main login status
     },
-    teacherlogout: (state) => {
-      state.user.teacherInfo.isLoggedIn = false;
-      state.user.teacherInfo = {};
-      state.isLoggedIn = false;
+
+    // Specific logout reducers for each role to manage specific states
+    adminLogout: (state) => {
+      state.user.schoolInfo.isLoggedIn = false; 
     },
-    studentlogout: (state) => {
-      state.user.studentInfo.isLoggedIn = false;
-      state.user.studentInfo = {};
-      state.isLoggedIn = false;
+
+    teacherLogout: (state) => {
+      state.user.teacherInfo.isLoggedIn = false; // Set teacher logged out
     },
-    
+
+    studentLogout: (state) => {
+      state.user.studentInfo.isLoggedIn = false; // Set student logged out
+    },
+
     loginSuccess: (state, action) => {
       const { role } = action.payload;
       if (role === 'admin') {
@@ -56,11 +54,10 @@ const authSlice = createSlice({
       } else if (role === 'student') {
         state.user.studentInfo.isLoggedIn = true;
       }
-      
       state.isLoggedIn = true; 
     },
   },
 });
 
-export const { loginInfo, logout, teacherlogout, studentlogout, loginSuccess } = authSlice.actions;
+export const { loginInfo, logout, adminLogout, teacherLogout, studentlogout, loginSuccess } = authSlice.actions;
 export default authSlice.reducer;

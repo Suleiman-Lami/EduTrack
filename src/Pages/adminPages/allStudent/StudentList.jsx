@@ -7,8 +7,10 @@ import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { toast, Toaster } from 'react-hot-toast';
 import { ClipLoader } from 'react-spinners';
+import { useSelector } from 'react-redux';
 
 const StudentList = ({ student }) => {
+  const isLoggedIn = useSelector((state)=>state.eduTrack.user.teacherInfo.isLoggedIn)
   const [selectedAttendance, setSelectedAttendance] = useState({});
   const [dropdownIndex, setDropdownIndex] = useState(null);
   const [Loading, setLoading] = useState(false);
@@ -64,6 +66,14 @@ const StudentList = ({ student }) => {
     }
   };
 
+  const handleProfile = () =>{
+    if (isLoggedIn) {
+      Nav(`/studentInfo/${student.studentID}`)
+    } else {
+      Nav(`/childProfile/${student?.studentID}`)
+    }
+  }
+
 
 
   return (
@@ -84,7 +94,7 @@ const StudentList = ({ student }) => {
                 <div className="profile">
                   <img 
                     src={e?.studentProfile} 
-                    onClick={() => Nav(`/childProfile/${e?.studentID}`)} 
+                    onClick={handleProfile} 
                     alt="profile" 
                   />
                 </div>
