@@ -130,6 +130,8 @@
 
     .admin-dashBoardHeader{
         padding-left: 0%;
+
+        
     }
 
     .admin-dashBoardHeader .Menu{
@@ -152,6 +154,7 @@
 
     .admin-dashBoardHeader span{
         width: 10%;
+        display: none;
     }
 
     .admin-dashBoardHeader .searchBar{

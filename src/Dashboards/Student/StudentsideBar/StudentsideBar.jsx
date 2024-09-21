@@ -5,7 +5,7 @@ import { CiLogout } from "react-icons/ci";
 import { NavLink, useNavigate } from 'react-router-dom';
 import logo from '../../../assets/react.svg'
 import { useDispatch, useSelector } from 'react-redux';
-import { studentlogout } from '../../../Global/Slice';
+import { logout} from '../../../Global/Slice';
 
 const StudentsideBar = ({setShowSidebar}) => {
   const loginfo = useSelector((state)=> state.eduTrack.user)
@@ -14,14 +14,15 @@ const StudentsideBar = ({setShowSidebar}) => {
 
 
   const studentLogout = ()=>{
-  dispatch(studentlogout ());
+  dispatch(logout ());
     Nav('/')
   }
+  
 
   return (
     <div className='StudentsideBar'>
           <div className="box">
-            <img src={loginfo.schoolInfo.schoolPicture} />
+            <img src={loginfo.studentInfo.schoolPicture} />
           </div>
             <nav>
             <li onClick={()=>setShowSidebar(false)}><NavLink   to='/StudentProfile' style={({isActive})=> ({color: isActive ? ' #003B31' : '#ffffff', backgroundColor: isActive ? '#ffffff': ' #003B31'})}><PiStudent/>Dashboard</NavLink></li>

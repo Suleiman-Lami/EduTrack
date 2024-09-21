@@ -48,7 +48,7 @@ const Teacherlogform = () => {
       const res = await axios.post(url, FormData);
       setLoading(false);
       localStorage.setItem('teacherID', res.data.data.teacherID);
-      console.log( res?.data.data.userToken);
+      console.log( res?.data.data);
       // localStorage.setItem('userToken',  res.data.data.userToken);
       dispatch(loginInfo(res.data.data));
       dispatch(loginSuccess(res?.data?.data))      

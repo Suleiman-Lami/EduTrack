@@ -53,20 +53,24 @@ const Header = () => {
           </article>
         </div>
         <div className="auth">
-         
-            <div className="LoginBtn"  onClick={()=> setShowLog(!showLog)}>
-            Log in
-            {
-              showLog ? 
-              <div className="logDrop">
-              <button onClick={()=>Nav('/login')}>Admin logIn</button>
-              <button onClick={()=>Nav('/teacherlogin')}> Teacher logIn</button>
-              <button onClick={()=>Nav('/studentLogin')}>Student Login</button>
-              </div>: null
-            }
-          </div>
-          <button className='signUpBtn'><NavLink to={'signUp'}>Register</NavLink></button>
-            
+         {
+          loginInfo === false ? 
+          <>
+          <div className="LoginBtn"  onClick={()=> setShowLog(!showLog)}>
+          Log in
+          {
+            showLog ? 
+            <div className="logDrop">
+            <button onClick={()=>Nav('/login')}>Admin logIn</button>
+            <button onClick={()=>Nav('/teacherlogin')}> Teacher logIn</button>
+            <button onClick={()=>Nav('/studentLogin')}>Student Login</button>
+            </div>: null
+          }
+        </div>
+        <button className='signUpBtn'><NavLink to={'signUp'}>Register</NavLink></button>
+        </>:
+        <button className='logout'>Logout</button>
+         }
         </div>
       <div className="menuHolder">
          { showMenu === 0 ?  <RiMenuUnfold2Fill size={35} onClick={handleMenu} />: showMenu == 1? <RiMenuUnfoldFill size={35} onClick={handleMenuOut}/>: null }

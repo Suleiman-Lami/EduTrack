@@ -9,6 +9,8 @@ import "aos/dist/aos.css"
 import { useSelector } from 'react-redux'
 const Landing = () => {
   const loginInfo = useSelector((state)=>state.eduTrack.isLoggedIn)
+  console.log(loginInfo);
+  
 
   useEffect(()=>{
     Aos.init();

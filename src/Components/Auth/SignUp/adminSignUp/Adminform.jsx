@@ -69,24 +69,23 @@ const AdminForm = () => {
       });
       setLoading(false);
       if (res.data.newData.isVerified === true) {
-        // Show SweetAlert and then navigate
         Swal.fire({
           title: 'Success!',
           text: res.data.message,
           icon: 'success',
           confirmButtonText: 'OK'
         }).then(() => {
-          Nav('/login'); // Navigate to login after alert
+          Nav('/login'); 
         });
       } else {
-        // Show SweetAlert and then navigate
+    
         Swal.fire({
           title: 'Sign up successful!',
           text: 'Please verify your email.',
           icon: 'success',
           confirmButtonText: 'OK'
         }).then(() => {
-          Nav('/'); // Navigate to homepage after alert
+          Nav('/'); 
         });
       }
     } catch (error) {

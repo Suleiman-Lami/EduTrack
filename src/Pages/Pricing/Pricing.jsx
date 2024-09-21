@@ -43,7 +43,7 @@ const Pricing = () => {
           onSuccess: (response) => {
             setLoading(false);
             console.log('Payment successful:', response);
-            sendToBackend(paymentData, planName); // Send payment data to backend
+            sendToBackend(paymentData, planName); 
           },
           onError: (error) => {
             setLoading(false);
@@ -62,6 +62,7 @@ const Pricing = () => {
   };
 
   const sendToBackend = (paymentData, planName) => {
+    setLoading(false)
     const userToken = localStorage.getItem('userToken');
 
     const backendData = {
@@ -84,7 +85,7 @@ const Pricing = () => {
         setLoading(false);
         if (data.success) {
           toast.success('Plan upgraded successfully!');
-          Nav(`/admin/${schoolID}`); // Navigate to the admin page
+          Nav(`/admin/${schoolID}`); 
         } else {
           toast.error('Failed to upgrade plan. Please try again later.');
         }

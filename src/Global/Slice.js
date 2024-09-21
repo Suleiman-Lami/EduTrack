@@ -6,6 +6,7 @@ const initialState = {
     teacherInfo: { isLoggedIn: false }, // Track the teacher login status here
     studentInfo: { isLoggedIn: false }, // Track the student login status here
   },
+  isLoggedIn: false,
   loading: false,
   error: null,
 };
@@ -33,30 +34,52 @@ const authSlice = createSlice({
 
     // General logout function that only toggles the main isLoggedIn status
     logout: (state) => {
-      state.isLoggedIn = false; // Main login status
+      if (state.user.schoolInfo.role === 'admin') {
+        state.user.schoolInfo.isLoggedIn = false; 
+        state.isLoggedIn = false;
+
+      }
+      else if (state.user.teacherInfo.role === 'teacher') {
+        state.user.teacherInfo.isLoggedIn = false;
+        state.isLoggedIn = false;
+      }
+      else if (state.user.studentInfo.role === 'student') { 
+        state.user.studentInfo.isLoggedIn = false;
+        state.isLoggedIn = false;
+
+      }
+      else{
+        state.isLoggedIn = false;
+      }
     },
 
     // Specific logout reducers for each role to manage specific states
-    adminLogout: (state) => {
-      state.user.schoolInfo.isLoggedIn = false; 
-    },
+    // adminLogout: (state) => {
+    //   state.user.schoolInfo.isLoggedIn = false; 
+    // },
 
-    teacherLogout: (state) => {
-      state.user.teacherInfo.isLoggedIn = false; // Set teacher logged out
-    },
+    // teacherLogout: (state) => {
+    //   state.user.teacherInfo.isLoggedIn = false; // Set teacher logged out
+    // },
 
-    studentLogout: (state) => {
-      state.user.studentInfo.isLoggedIn = false; // Set student logged out
-    },
+    // studentLogout: (state) => {
+    //   state.user.studentInfo.isLoggedIn = false; // Set student logged out
+    // },
 
     loginSuccess: (state, action) => {
       const { role } = action.payload;
       if (role === 'admin') {
         state.user.schoolInfo.isLoggedIn = true;
+        state.isLoggedIn = true;
+
       } else if (role === 'teacher') {
         state.user.teacherInfo.isLoggedIn = true;
+        state.isLoggedIn = true;
+
       } else if (role === 'student') {
         state.user.studentInfo.isLoggedIn = true;
+        state.isLoggedIn = true;
+
       }
       state.isLoggedIn = true; 
     },
