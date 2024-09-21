@@ -4,7 +4,7 @@ import Aos from 'aos';
 import "aos/dist/aos.css"
 import { useNavigate } from 'react-router-dom';
 
-const SignModal = () => {
+const SignModal = ({loginInfo}) => {
   const Nav = useNavigate();
 
 
@@ -17,7 +17,12 @@ const SignModal = () => {
      <div className="infoBox">
         <h2>Transform your school with Edutrack.</h2>
         <span>Empower your school with smarter attendance tracking, improved student safety, and seamless communication, all in one easy-to-use platform.</span>
-        <button onClick={()=>Nav('/signup')}>Sign up- it’s free!</button>
+        { 
+          loginInfo === false ?
+          <button onClick={()=>Nav('/signup')}>Sign up- it’s free!</button>
+            :
+            null
+        }
       </div>
       <div className="boxHolder">
         <section>

@@ -79,6 +79,7 @@
     gap: 10px;
     display: flex;
     align-items: center;
+    justify-content: center;
 }
 
 .headerWrap .auth .LoginBtn {
@@ -141,6 +142,21 @@
     text-decoration: none;
     color: #003B31;
 
+}
+
+.headerWrap .auth .logout{
+    width: 50%;
+    height: 50px;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    padding: 20px;
+    font-size: 20px;
+    text-transform: capitalize;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #003B;
 }
 
 .headerWrap .auth .signUpBtn {

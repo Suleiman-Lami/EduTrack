@@ -6,15 +6,19 @@ import Dropdown from './Dropdown';
 import AOS from 'aos'
 import "aos/dist/aos.css"
 import Logo from '../../assets/Frame 101424.svg'
+import { useDispatch, useSelector } from 'react-redux';
+import { logout } from '../../Global/Slice';
 
 const Header = () => {
+  const loginInfo = useSelector((state)=>state.eduTrack.isLoggedIn)
+  console.log(loginInfo);
   
   const [showMenu, setShowMenu] = useState(0)
   const [dropDown, setDropDown] = useState(false)
   const [showLog, setShowLog] = useState(false)
 
   const Nav = useNavigate()
-
+  const dispatch = useDispatch()
   const handleMenu =()=>{
     setShowMenu(1)
     setDropDown(true)
@@ -23,6 +27,10 @@ const Header = () => {
   const handleMenuOut = () => {
     setShowMenu(0)
     setDropDown(false)
+  }
+
+  const handlelogout = ()=>{
+    dispatch(logout)
   }
 
   useEffect(() => {
@@ -45,7 +53,10 @@ const Header = () => {
           </article>
         </div>
         <div className="auth">
-        <div className="LoginBtn"  onClick={()=> setShowLog(!showLog)}>
+          {
+            loginInfo === false ? 
+              <>
+            <div className="LoginBtn"  onClick={()=> setShowLog(!showLog)}>
             Log in
             {
               showLog ? 
@@ -57,6 +68,10 @@ const Header = () => {
             }
           </div>
           <button className='signUpBtn'><NavLink to={'signUp'}>Register</NavLink></button>
+              </>
+          : 
+          <button className='logout' onClick={handlelogout}>logout</button>
+          }
         </div>
       <div className="menuHolder">
          { showMenu === 0 ?  <RiMenuUnfold2Fill size={35} onClick={handleMenu} />: showMenu == 1? <RiMenuUnfoldFill size={35} onClick={handleMenuOut}/>: null }

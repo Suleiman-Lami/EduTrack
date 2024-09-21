@@ -20,14 +20,15 @@ const authSlice = createSlice({
   reducers: {
     loginInfo: (state, action) => {
       const { role, ...userInfo } = action.payload;
+  state.isLoggedIn = true;
 
-      if (role === 'admin') {
-        state.user.schoolInfo = action.payload;
-      } else if (role === 'teacher') {
-        state.user.teacherInfo = action.payload;
-      } else {
-        state.user.studentInfo = action.payload;
-      }
+  if (role === 'admin') {
+    state.user.schoolInfo = action.payload;
+  } else if (role === 'teacher') {
+    state.user.teacherInfo = action.payload;
+  } else {
+    state.user.studentInfo = action.payload;
+  }
     },
 
     logout: (state) => {

@@ -37,6 +37,7 @@ const Forgotform = () => {
             console.log(res);
             setLoading(false)
             toast.success(res.data.message) 
+            Nav('/')
         })
         .catch( Error => {
             console.log(Error);

@@ -7,6 +7,7 @@ import './Landing.css'
 import Aos from 'aos';
 import "aos/dist/aos.css"
 const Landing = () => {
+  const loginInfo = useSelector((state)=>state.eduTrack.isLoggedIn)
 
   useEffect(()=>{
     Aos.init();
@@ -18,7 +19,12 @@ const Landing = () => {
         <p>Attendance Management</p>
         <h1>Quickly & Accurately Account For Students</h1>
         <span>Dynamic attendance software enhancing school efforts against chronic absenteeism and promoting student achievement.</span>
-        <button><NavLink to={'signUp'}>Sign up- it’s free!</NavLink></button>
+        {
+          loginInfo === false ?
+          <button><NavLink to={'signUp'}>Sign up- it’s free!</NavLink></button>
+          :
+          null
+        }
       </div>
       </div>
       <div className="whyEdutrack">
@@ -27,7 +33,7 @@ const Landing = () => {
       </div>
       <Provide/>
       <Values/>
-      <SignModal/>
+      <SignModal loginInfo={loginInfo}/>
     </div>
   )
 }
