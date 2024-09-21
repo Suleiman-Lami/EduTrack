@@ -11,6 +11,7 @@ import { useDispatch } from 'react-redux';
 import axios from 'axios';
 import { loginInfo } from '../../../../Global/Slice';
 import { toast, Toaster } from 'react-hot-toast';
+import Swal from 'sweetalert2'; 
 
 const StudentForm = () => {
   const [loading, setLoading] = useState(false);
@@ -59,8 +60,14 @@ const StudentForm = () => {
       });
       setLoading(false);
       console.log(res);
-      toast.success('you have successfully added a student');
-      Nav(-1)
+      Swal.fire({
+        title: 'Success!',
+        text: res.data.message,
+        icon: 'success',
+        confirmButtonText: 'OK'
+      }).then(() => {
+        Nav(-1); // Navigate to login after alert
+      });
     } catch (error) {
       setLoading(false);
       console.log(error.response.data.message);

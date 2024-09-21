@@ -10,6 +10,7 @@ import { ClipLoader } from 'react-spinners';
 import axios from 'axios';
 import { useDispatch } from 'react-redux';
 import { toast, Toaster } from 'react-hot-toast';
+import Swal from 'sweetalert2'; 
 
 const Teacherform = () => {
   const [loading, setLoading] = useState(false);
@@ -64,8 +65,14 @@ const Teacherform = () => {
       console.log(res);
       
       setLoading(false);
-      toast.success('you have successfully added a staff');
-        Nav(-1) 
+      Swal.fire({
+        title: 'Success!',
+        text: res.data.message,
+        icon: 'success',
+        confirmButtonText: 'OK'
+      }).then(() => {
+        Nav(-1); // Navigate to login after alert
+      });
     } catch (error) {
       console.log(error);
       

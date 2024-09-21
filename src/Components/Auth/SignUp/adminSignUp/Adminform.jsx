@@ -12,6 +12,7 @@ import { toast, Toaster } from 'react-hot-toast';
 import { useDispatch } from 'react-redux';
 import { ClipLoader } from 'react-spinners';
 import ScrollToTop from '../../../../Layout/ScrollToTop';
+import Swal from 'sweetalert2'; 
 
 const AdminForm = () => {
   const [showPassword, setShowPassword] = useState(true);
@@ -68,16 +69,25 @@ const AdminForm = () => {
       });
       setLoading(false);
       if (res.data.newData.isVerified === true) {
-        setTimeout(() => {
-          toast.success(res.data.message);
-          Nav('/login');
-          }, 3000);
+        // Show SweetAlert and then navigate
+        Swal.fire({
+          title: 'Success!',
+          text: res.data.message,
+          icon: 'success',
+          confirmButtonText: 'OK'
+        }).then(() => {
+          Nav('/login'); // Navigate to login after alert
+        });
       } else {
-        setTimeout(() => {
-          toast.success('Sign up successful please check your email');
-          Nav('/');
-        }, 3000);
-
+        // Show SweetAlert and then navigate
+        Swal.fire({
+          title: 'Sign up successful!',
+          text: 'Please verify your email.',
+          icon: 'success',
+          confirmButtonText: 'OK'
+        }).then(() => {
+          Nav('/'); // Navigate to homepage after alert
+        });
       }
     } catch (error) {
       setLoading(false);
