@@ -30,7 +30,7 @@ const Header = () => {
   }
 
   const handlelogout = ()=>{
-    dispatch(logout)
+    dispatch(logout())
   }
 
   useEffect(() => {
@@ -69,7 +69,7 @@ const Header = () => {
         </div>
         <button className='signUpBtn'><NavLink to={'signUp'}>Register</NavLink></button>
         </>:
-        <button className='logout'>Logout</button>
+        <button className='logout' onClick={handlelogout}>Logout</button>
          }
         </div>
       <div className="menuHolder">
