@@ -70,15 +70,15 @@ const authSlice = createSlice({
       const { role } = action.payload;
       if (role === 'admin') {
         state.user.schoolInfo.isLoggedIn = true;
-        state.isLoggedIn = true;
+        // state.isLoggedIn = true;
 
       } else if (role === 'teacher') {
         state.user.teacherInfo.isLoggedIn = true;
-        state.isLoggedIn = true;
+        // state.isLoggedIn = true;
 
       } else if (role === 'student') {
         state.user.studentInfo.isLoggedIn = true;
-        state.isLoggedIn = true;
+        // state.isLoggedIn = true;
 
       }
       state.isLoggedIn = true; 
