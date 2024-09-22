@@ -33,6 +33,8 @@ import Verifyteacher from './Components/Auth/SignUp/Verifyteacher'
 import Verifystudent from './Components/Auth/SignUp/Verifystudent'
 import Reset from './Components/Auth/Login/Forgotpassword/Reset'
 import Suspend from './Pages/adminPages/allTeachers/Suspend'
+import TeacherReset from './Components/Auth/Login/Forgotpassword/TeacherReset'
+import Teacherforgot from './Components/Auth/Login/Forgotpassword/Teacherforgot'
 
 const Routes = createHashRouter([
   {
@@ -98,12 +100,20 @@ const Routes = createHashRouter([
     element: <Forgot />
   },
   {
+    path: '/teacherForgottenpassword',
+    element: <Teacherforgot/>
+  },
+  {
     path: '/signup',
     element: <SignUp />
   },
   {
     path: '/restpassword/:token',
     element: < Reset />
+  },
+  {
+    path: '/teacherReset/:token',
+    element: < TeacherReset/>
   },
   {
     path: '/verify/:token',

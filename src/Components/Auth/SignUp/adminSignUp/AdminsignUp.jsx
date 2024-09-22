@@ -20,7 +20,7 @@ const SignUp = () => {
       </aside>
       <main>
         <article>
-          <img src={'https://res.cloudinary.com/djhuirix9/image/upload/v1726591105/jpg_c2pgv8.jpg'}/>
+          <img src={'https://res.cloudinary.com/djhuirix9/image/upload/v1726967936/one_rroe4w.jpg'}/>
         </article>
         <Adminform />
       </main>

@@ -91,7 +91,7 @@ const Teacherlogform = () => {
             <FaRegEyeSlash onClick={() => setShowPassword(true)} style={{ fontSize: "15px", cursor: "pointer" }} />}
         </div>
         {errors.password && <span style={{ color: 'red' }}>{errors.password.message}</span>}
-        <label className='Forgot' onClick={() => navigate('/Forgottenpassword')}>Forgot password?</label>
+        <label className='Forgot' onClick={() => navigate('/teacherForgottenpassword')}>Forgot password?</label>
       </section>
       <button type='submit'>
         {loading ? <ClipLoader color='#ffffff' size={20}/> : 'Sign in'}

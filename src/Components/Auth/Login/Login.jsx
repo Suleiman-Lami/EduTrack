@@ -13,7 +13,9 @@ const Login = () => {
       <ScrollToTop/>
     <aside> <div className="icon"><MdOutlineKeyboardBackspace size={30} onClick={() => Nav('/')}/></div> <div className="logo"> <img src={Logo}/></div> </aside>
     <main>
-      <article></article>
+      <article>
+        <img src="https://res.cloudinary.com/djhuirix9/image/upload/v1726968292/three_c99b9u.jpg"/>
+      </article>
       <Loginform/>
     </main>
   </div>

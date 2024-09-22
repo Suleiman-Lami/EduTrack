@@ -2,11 +2,11 @@ import React from 'react'
 import './Forgot.css'
 import { useNavigate } from 'react-router-dom'
 import { MdOutlineKeyboardBackspace } from "react-icons/md";
-import Forgotform from './Forgotform';
 import Logo from '../../../../assets/Frame 101424.svg'
 import ScrollToTop from '../../../../Layout/ScrollToTop';
+import TFform from './TFform';
 
-const Forgot = () => {
+const Teacherforgot = () => {
     const Nav = useNavigate()
     return (
       <div className='forgot-component'>
@@ -18,12 +18,11 @@ const Forgot = () => {
         </aside>
       <main>
         <article>
-          <img src="https://res.cloudinary.com/djhuirix9/image/upload/v1726968444/five_icrucx.jpg"/>
+            <img src="https://res.cloudinary.com/djhuirix9/image/upload/v1726968444/five_icrucx.jpg"/>
         </article>
-        <Forgotform/>
+        <TFform/>
       </main>
     </div>
-    )
-}
+    )}
 
-export default Forgot
+export default Teacherforgot
