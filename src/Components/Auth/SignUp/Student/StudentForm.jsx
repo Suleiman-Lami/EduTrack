@@ -62,11 +62,11 @@ const StudentForm = () => {
       console.log(res);
       Swal.fire({
         title: 'Success!',
-        text: res.data.message,
+        text: res.data.message ,
         icon: 'success',
         confirmButtonText: 'OK'
       }).then(() => {
-        Nav(-1); // Navigate to login after alert
+        Nav(-1); 
       });
     } catch (error) {
       setLoading(false);

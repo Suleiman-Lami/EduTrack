@@ -2,29 +2,39 @@ import React, { useEffect, useState } from 'react';
 import './Studentprofile.css';
 import Aos from 'aos';
 import "aos/dist/aos.css";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import axios from 'axios'; 
-import { toast, Toaster } from 'react-hot-toast';
-import { FaCheck, FaTimes } from 'react-icons/fa'; 
+import { toast, Toaster } from 'react-hot-toast'; 
+import { FaCheck, FaTimes } from 'react-icons/fa'; // Import check and X icons
 
 const Studentprofile = () => {
   const loginfo = useSelector((state) => state.eduTrack.user);
-  console.log(loginfo);
-  
   const [attendanceData, setAttendanceData] = useState([]);
   const Nav = useNavigate();
+  const { studentID } = useParams();
+
+  const student = () => {
+    if (loginfo.schoolInfo.isLoggedIn) {
+      return loginfo.schoolInfo.students.find(s => String(s.studentID)=== studentID);
+    } else if (loginfo.teacherInfo.isLoggedIn) {
+      return loginfo.teacherInfo.students.find(s => String(s.studentID)=== studentID);
+    }
+    return null;
+  };
+
+  const foundStudent = student();
 
   const fetchStudentAttendance = async () => {
     try {
       const userToken = localStorage.getItem('userToken');
       const response = await axios.get(
-        `https://edutrack-jlln.onrender.com/api/v1/attendance/student-attendance/${loginfo.studentInfo._id}`
+        `https://edutrack-jlln.onrender.com/api/v1/attendance/student-attendance/${foundStudent._id}`
       );
       console.log(response);
       
       const studentAttendanceData = response.data.data.find(
-        (record) => record.studentName === loginfo.studentInfo.fullName
+        (record) => record.studentName === foundStudent.fullName
       );
 
       if (studentAttendanceData && studentAttendanceData.attendanceRecords.length > 0) {
@@ -37,11 +47,17 @@ const Studentprofile = () => {
       toast.error(error.response.data.message);
     }
   };
-
+  
   useEffect(() => {
     Aos.init(); 
-    fetchStudentAttendance(); 
-  }, []);
+    if (foundStudent) {
+      fetchStudentAttendance(); 
+    }
+  }, [foundStudent]);
+
+  if (!foundStudent) {
+    return <div>Student not found</div>;
+  }
 
   return (
     <div className='Studentprofile'>
@@ -52,29 +68,28 @@ const Studentprofile = () => {
       <div className="profileBody">
         <div className="imgHolder">
           <div className="imgBox">
-            <img src={loginfo.studentInfo.studentProfile} />
+            <img src={foundStudent.studentProfile} alt="Student Profile" />
           </div>
           <section>
             <label>Full Name:</label>
-            <span>{loginfo.studentInfo.fullName}</span>
+            <span>{foundStudent.fullName}</span>
           </section>
           <section>
             <label>Email:</label>
-            <span>{loginfo.studentInfo.email}</span>
+            <span>{foundStudent.email}</span>
           </section>
           <section>
             <label>Address:</label>
-            <span>{loginfo.studentInfo.address}</span>
+            <span>{foundStudent.address}</span>
           </section>
           <section>
             <label>Class:</label>
-            <span>{loginfo.studentInfo.class}</span>
+            <span>{foundStudent.class}</span>
           </section>
-            <section>
-              <label>student ID:</label>
-              <h4>{loginfo.studentInfo.studentID}</h4>
-            </section>
-          
+          <section>
+            <label>Student ID:</label>
+            <h4>{foundStudent.studentID}</h4>
+          </section>
         </div>
         <hr />
         <table>
@@ -107,6 +122,8 @@ const Studentprofile = () => {
     ))}
   </tbody>
 </table>
+
+
       </div>
       <Toaster position="top-center" />
     </div>

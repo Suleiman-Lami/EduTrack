@@ -8,8 +8,9 @@ import { ClipLoader } from 'react-spinners';
 import { useNavigate } from 'react-router-dom';
 
 const Pricing = () => {
-  const [loading, setLoading] = useState(false); // Change 'Loading' to 'loading'
+  const [loading, setLoading] = useState(false); 
   const [selectedPlan, setSelectedPlan] = useState(null);
+  const [isSuccess, setIsSuccess] = useState(false)
 
   const user = useSelector((state) => state.eduTrack.user);
 
@@ -17,6 +18,44 @@ const Pricing = () => {
   
   const Nav = useNavigate();
   const schoolID = localStorage.getItem('schoolID');
+
+
+  const sendToBackend = (paymentData, planName) => {
+    const userToken = localStorage.getItem('userToken');
+
+    const backendData = {
+      ...paymentData,
+      newPlan: planName,
+    };
+
+    axios
+      .post(
+        'https://edutrack-jlln.onrender.com/api/v1/school/upgrade-plan',
+        backendData,
+        {
+          headers: {
+            Authorization: `Bearer ${userToken}`,
+          },
+        }
+      )
+      .then((response) => {
+        const { data } = response;
+        if (data.success) {
+          toast.success('Plan upgraded successfully!');
+          Nav(`/admin/${schoolID}`); 
+        } else {
+          toast.error('Failed to upgrade plan. Please try again later.');
+        }
+      })
+      .catch((error) => {
+        console.error('Error upgrading plan:', error);
+        toast.error(
+          error.response?.message || 'Error upgrading plan. Please try again.'
+        );
+      });
+  };
+
+
 
   const payKorapay = (amount, planName) => {
     console.log('clicked');
@@ -43,7 +82,12 @@ const Pricing = () => {
           onSuccess: (response) => {
             setLoading(false);
             console.log('Payment successful:', response);
-            sendToBackend(paymentData, planName); 
+            toast.success('Payment successful')
+            if (isSuccess === false) {
+              setIsSuccess(true)
+              sendToBackend(paymentData, planName); 
+            } 
+           
           },
           onError: (error) => {
             setLoading(false);
@@ -61,43 +105,7 @@ const Pricing = () => {
     }
   };
 
-  const sendToBackend = (paymentData, planName) => {
-    setLoading(false)
-    const userToken = localStorage.getItem('userToken');
 
-    const backendData = {
-      ...paymentData,
-      newPlan: planName,
-    };
-
-    axios
-      .post(
-        'https://edutrack-jlln.onrender.com/api/v1/school/upgrade-plan',
-        backendData,
-        {
-          headers: {
-            Authorization: `Bearer ${userToken}`,
-          },
-        }
-      )
-      .then((response) => {
-        const { data } = response;
-        setLoading(false);
-        if (data.success) {
-          toast.success('Plan upgraded successfully!');
-          Nav(`/admin/${schoolID}`); 
-        } else {
-          toast.error('Failed to upgrade plan. Please try again later.');
-        }
-      })
-      .catch((error) => {
-        setLoading(false);
-        console.error('Error upgrading plan:', error);
-        toast.error(
-          error.response?.message || 'Error upgrading plan. Please try again.'
-        );
-      });
-  };
 
   return (
     <div className='Pricing'>

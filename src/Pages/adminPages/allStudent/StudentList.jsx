@@ -10,7 +10,7 @@ import { ClipLoader } from 'react-spinners';
 import { useSelector } from 'react-redux';
 
 const StudentList = ({ student }) => {
-  const isLoggedIn = useSelector((state)=>state.eduTrack.user.teacherInfo.isLoggedIn)
+  const isLoggedIn = useSelector((state)=>state.eduTrack.user)
   const [selectedAttendance, setSelectedAttendance] = useState({});
   const [dropdownIndex, setDropdownIndex] = useState(null);
   const [Loading, setLoading] = useState(false);
@@ -66,15 +66,16 @@ const StudentList = ({ student }) => {
     }
   };
 
-  const handleProfile = () =>{
-    if (isLoggedIn) {
-      Nav(`/studentInfo/${student.studentID}`)
+  const handleProfile = (studentID) => {
+    if (isLoggedIn.schoolInfo.isLoggedIn) {
+      Nav(`/childProfile/${studentID}`);
     } else {
-      Nav(`/childProfile/${student?.studentID}`)
+      Nav(`/studentInfo/${studentID}`);
     }
-  }
+  };
 
 
+console.log(student);
 
   return (
     <div className='StudentList'>
@@ -94,7 +95,7 @@ const StudentList = ({ student }) => {
                 <div className="profile">
                   <img 
                     src={e?.studentProfile} 
-                    onClick={handleProfile} 
+                    onClick={() => handleProfile(e?.studentID)} 
                     alt="profile" 
                   />
                 </div>

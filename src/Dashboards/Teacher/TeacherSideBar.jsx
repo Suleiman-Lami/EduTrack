@@ -11,6 +11,8 @@ import { logout} from '../../Global/Slice';
 
 const TeacherSideBar = () => {
   const loginfo = useSelector((state)=> state.eduTrack.user)
+  console.log(loginfo);
+  
   const TeacherID = localStorage.getItem('teacherID');
   const dispatch = useDispatch();
   const Nav = useNavigate();
@@ -24,7 +26,7 @@ const TeacherSideBar = () => {
   return (
     <div className='teacherSideBar'>
     <div className="box">
-      <img src={loginfo.teacherInfo.schoolPicture}/>
+      <img src={loginfo.teacherInfo.school.schoolPicture}/>
     </div>
        <nav>
        <li>

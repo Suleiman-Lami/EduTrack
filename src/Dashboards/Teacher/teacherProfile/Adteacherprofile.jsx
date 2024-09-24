@@ -2,21 +2,23 @@ import React, { useEffect } from 'react';
 import './Teacherprofile.css';
 import Aos from 'aos';
 import 'aos/dist/aos.css';
-import { useNavigate } from 'react-router-dom';
-import values from '../../../assets/WOMAN_WRITING.png';
+import { useNavigate, useParams } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
 const Teacherprofile = () => {
   const loginInfo = useSelector((state) => state.eduTrack.user);
-  console.log(loginInfo);
-  
+  const { teacherId } = useParams(); 
   const Nav = useNavigate();
 
   useEffect(() => {
     Aos.init();
-    console.log(loginInfo);
-    
   }, []);
+
+  const teacher = loginInfo.schoolInfo.teachers.find(t => t.id === teacherId);
+
+  if (!teacher) {
+    return <div>Teacher not found</div>;
+  }
 
   return (
     <div className="Teacherprofile">
@@ -24,38 +26,26 @@ const Teacherprofile = () => {
       <div className="profileBody">
         <div className="imgHolder">
           <div className="imgBox">
-            <img src={loginInfo.teacherInfo.teacherProfile} alt="Profile" />
+            <img src={teacher.teacherProfile} alt="Profile" />
           </div>
         </div>
         <form data-aos="fade-left" data-aos-duration="3000">
           <section>
             <label>Full Name:</label>
-            <span>{loginInfo.teacherInfo?.fullName }</span>
+            <span>{teacher.fullName}</span>
           </section>
           <section>
             <label>Email:</label>
-            <span>{loginInfo.teacherInfo?.email}</span>
+            <span>{teacher.email}</span>
           </section>
           <section>
             <label>Address:</label>
-            <span>{loginInfo.teacherInfo?.address }</span>
+            <span>{teacher.address}</span>
           </section>
           <section>
             <label>Marital Status:</label>
-            <span>{loginInfo.teacherInfo?.maritalStatus }</span>
+            <span>{teacher.maritalStatus}</span>
           </section>
-         {
-          loginInfo?.teacherInfo?.school?.role !== 'admin' ? 
-          <section>
-          <label>Password:</label>
-          <h4>{loginInfo.teacherInfo?.teacherID}</h4>
-        </section>: null
-         }
-          {loginInfo?.role !== 'admin' ?
-            <button type="button" onClick={() => Nav(`/Editprofile/${loginInfo.teacherInfo.teacherID}`)}>
-              Edit Profile
-            </button>
-           : null}
         </form>
       </div>
     </div>

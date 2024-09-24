@@ -221,11 +221,15 @@
   }
   
   .allStudent .emptyModal button {
-    width: 40%;
-    height: 35px;
+    width: 50%;
+    height: 50px;
     border-radius: 5px;
     margin-top: 20px;
     border: none;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     color: white;
     cursor: pointer;
     background-color: #003B31;

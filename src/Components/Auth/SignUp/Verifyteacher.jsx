@@ -15,6 +15,7 @@ const Verifyteacher = () => {
         setLoading(true)
         setTimeout(() => {
         response.status === 200 ?  navigate('/teacherlogin') : null
+        response.status === 400 ? navigate('/teacherlogin') : null
         }, 3000);
     }
     useEffect(() => {

@@ -36,6 +36,8 @@ const Allstudent = () => {
       });
 
       const teachersData = res?.data?.data?.students;
+      console.log(teachersData);
+      
       console.log('Students Data:', teachersData);
       setStudent(teachersData);
       setLoading(false);

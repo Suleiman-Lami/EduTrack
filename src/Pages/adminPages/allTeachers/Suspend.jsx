@@ -31,7 +31,7 @@ const SuspendedTeacherList = () => {
       setLoading(false);
     } catch (error) {
       console.error('Error fetching suspended teachers:', error);
-      toast.error('Error fetching suspended teachers');
+      toast.error(error.response.data.message);
       setLoading(false);
     }
   };

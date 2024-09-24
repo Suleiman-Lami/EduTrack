@@ -33,6 +33,8 @@ import Verifyteacher from './Components/Auth/SignUp/Verifyteacher'
 import Verifystudent from './Components/Auth/SignUp/Verifystudent'
 import Reset from './Components/Auth/Login/Forgotpassword/Reset'
 import Suspend from './Pages/adminPages/allTeachers/Suspend'
+import Adstudentprofile from './Pages/adminPages/allStudent/StudentProfile/Adstudentprofile'
+import Adteacherprofile from './Dashboards/Teacher/teacherProfile/Adteacherprofile'
 import TeacherReset from './Components/Auth/Login/Forgotpassword/TeacherReset'
 import Teacherforgot from './Components/Auth/Login/Forgotpassword/Teacherforgot'
 
@@ -60,8 +62,8 @@ const Routes = createHashRouter([
       { path: 'student', element: <Allstudent /> },
       { path: 'Suspend', element: <Suspend/> },
       { path: 'student-onboard', element: <StudentOnboard /> },
-      { path: 'childProfile/:studentID', element: <Studentprofile /> },
-      { path: 'staffProfile/:teacherID', element: <Teacherprofile /> },
+      { path: 'childProfile/:studentID', element: <Adstudentprofile /> },
+      { path: 'staffProfile/:teacherID', element: <Adteacherprofile /> },
     ]
   },
   {
@@ -69,7 +71,7 @@ const Routes = createHashRouter([
     element: <Teacher />,
     children: [
       { path: 'teacher/:teacherID', element: <Staffdashboard /> },
-      { path: 'studentInfo/:studentID', element: <Studentprofile /> },
+      { path: 'studentInfo/:studentID', element: <Adstudentprofile /> },
       { path: 'profile/:teacherID', element: <Teacherprofile /> },
       { path: 'Editprofile/:teacherID', element: <TeacherEdit /> },
       { path: 'Allstudent', element: <Allstudent /> },

@@ -158,6 +158,9 @@ form footer span p {
     .teacherSignup main form section input {
         height: 40px; 
     }
+    .teacherSignup main form section select {
+        height: 40px; 
+    }
 
     .teacherSignup main form button {
         height: 60px; 

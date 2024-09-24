@@ -3,6 +3,7 @@ import axios from 'axios';
 import { useParams, useNavigate } from 'react-router-dom';
 import { BeatLoader } from 'react-spinners';
 import './Verify.css'
+import toast from 'react-hot-toast';
 const Verify = () => {
   const { token } = useParams()
   // console.log(token)
@@ -15,7 +16,9 @@ const Verify = () => {
         setLoading(true)
         setTimeout(() => {
         response.status === 200 ?  navigate('/login') : null
+        response.status === 400 ? navigate('/login') : null
         }, 3000);
+        
     }
     useEffect(() => {
       handleSubmit()
