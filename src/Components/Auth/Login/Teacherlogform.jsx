@@ -11,6 +11,7 @@ import { ClipLoader } from 'react-spinners';
 import axios from 'axios';
 import { toast, Toaster } from 'react-hot-toast';
 import { useDispatch } from 'react-redux';
+import { teacherLogin } from '../../../Global/Slice';
 
 const Teacherlogform = () => {
   const [showPassword, setShowPassword] = useState(true);

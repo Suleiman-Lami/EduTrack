@@ -6,19 +6,22 @@ import { useNavigate, useParams } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import axios from 'axios'; 
 import { toast, Toaster } from 'react-hot-toast'; 
-import { FaCheck, FaTimes } from 'react-icons/fa'; // Import check and X icons
+import { FaCheck, FaTimes } from 'react-icons/fa'; 
 
 const Studentprofile = () => {
   const loginfo = useSelector((state) => state.eduTrack.user);
   const [attendanceData, setAttendanceData] = useState([]);
   const Nav = useNavigate();
   const { studentID } = useParams();
+  console.log('loginfo',loginfo);
+  console.log('teacherInfo',loginfo.teacherInfo);
+  
 
   const student = () => {
     if (loginfo.schoolInfo.isLoggedIn) {
       return loginfo.schoolInfo.students.find(s => String(s.studentID)=== studentID);
     } else if (loginfo.teacherInfo.isLoggedIn) {
-      return loginfo.teacherInfo.students.find(s => String(s.studentID)=== studentID);
+      return loginfo.teacherInfo.school.students.find(s => String(s.studentID)=== studentID);
     }
     return null;
   };
