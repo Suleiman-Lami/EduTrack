@@ -7,7 +7,6 @@ import { AiOutlineMenuUnfold } from "react-icons/ai";
 import AdminSidebar from '../Admin/AdminSidebar';
 import { useLocation, useNavigate, useParams } from 'react-router-dom'
 import Notify from '../Notifications/Notify';
-import { loginInfo } from '../../Global/Slice';
 import { useSelector } from 'react-redux';
 
 const DashBoardHeader = () => {

@@ -8,7 +8,7 @@ import { useSelector } from 'react-redux'
 
 const Student = () => {
   const {user, isLoggedIn} = useSelector((state)=> state.eduTrack)
-  if (!isLoggedIn && user?.schoolInfo?.role !== 'admin') {
+  if (!isLoggedIn && (user?.studentInfo?.role !== 'student')) {
     return <Navigate to="/studentLogin" replace />;
   }
   return (

@@ -9,8 +9,9 @@ import { toast, Toaster } from 'react-hot-toast';
 import { FaCheck, FaTimes } from 'react-icons/fa'; 
 
 const Studentprofile = () => {
-  const loginfo = useSelector((state) => state.eduTrack.user);
-  console.log(loginfo);
+  const [info, setInfo] = useState(useSelector((state) => state.eduTrack.user.studentInfo))
+  console.log('login',info);
+
   
   const [attendanceData, setAttendanceData] = useState([]);
   const Nav = useNavigate();
@@ -19,12 +20,12 @@ const Studentprofile = () => {
     try {
       const userToken = localStorage.getItem('userToken');
       const response = await axios.get(
-        `https://edutrack-jlln.onrender.com/api/v1/attendance/student-attendance/${loginfo.studentInfo._id}`
+        `https://edutrack-jlln.onrender.com/api/v1/attendance/student-attendance/${info._id}`
       );
       console.log(response);
       
       const studentAttendanceData = response.data.data.find(
-        (record) => record.studentName === loginfo.studentInfo.fullName
+        (record) => record.studentName === info.fullName
       );
 
       if (studentAttendanceData && studentAttendanceData.attendanceRecords.length > 0) {
@@ -52,27 +53,27 @@ const Studentprofile = () => {
       <div className="profileBody">
         <div className="imgHolder">
           <div className="imgBox">
-            <img src={loginfo.studentInfo.studentProfile} />
+            <img src={info.studentProfile} />
           </div>
           <section>
             <label>Full Name:</label>
-            <span>{loginfo.studentInfo.fullName}</span>
+            <span>{info.fullName}</span>
           </section>
           <section>
             <label>Email:</label>
-            <span>{loginfo.studentInfo.email}</span>
+            <span>{info.email}</span>
           </section>
           <section>
             <label>Address:</label>
-            <span>{loginfo.studentInfo.address}</span>
+            <span>{info.address}</span>
           </section>
           <section>
             <label>Class:</label>
-            <span>{loginfo.studentInfo.class}</span>
+            <span>{info.class}</span>
           </section>
             <section>
               <label>student ID:</label>
-              <h4>{loginfo.studentInfo.studentID}</h4>
+              <h4>{info.studentID}</h4>
             </section>
           
         </div>

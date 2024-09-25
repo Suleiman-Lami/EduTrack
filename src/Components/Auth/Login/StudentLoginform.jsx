@@ -11,7 +11,7 @@ import {ClipLoader} from 'react-spinners'
 import axios from 'axios';
 import {toast, Toaster} from 'react-hot-toast';
 import { useDispatch } from 'react-redux';
-import { loginInfo, loginSuccess } from '../../../Global/Slice';
+import {  studentLogin } from '../../../Global/Slice';
 
 const StudentLoginform = () => {
 
@@ -21,6 +21,7 @@ const StudentLoginform = () => {
     const navigate = useNavigate();
     const dispatch = useDispatch();
     const {studentID }= useParams()
+    
   
     const MyshowPassword = () => {
       setShowPassword(false);
@@ -46,11 +47,12 @@ const StudentLoginform = () => {
       }
       await axios.post(url, FormData)
       .then( res => {
-        console.log(res);
         setLoading(false)
-        dispatch(loginInfo(res.data.data))
-        dispatch(loginSuccess(res?.data?.data))
-       if (res.data.data.isVerified === true) {
+        console.log('the response',res);
+        dispatch(studentLogin(res.data.data))
+        console.log('verified', res.data.data.isVerified);
+
+       if (res.data.data.isVerified == true) {
         navigate(`/StudentProfile/${res?.data?.data?.studentID}`);
         toast.success(res.data.message)
       }else{
@@ -58,9 +60,9 @@ const StudentLoginform = () => {
       }
      })
       .catch( error => {
+        setLoading(false)
         console.log(error);
         console.log(error.response.data.message);
-        setLoading(false)
         toast.error(error.response.data.message);  
           })
     

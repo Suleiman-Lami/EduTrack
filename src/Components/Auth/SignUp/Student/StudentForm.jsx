@@ -9,7 +9,6 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import { ClipLoader } from 'react-spinners';
 import { useDispatch } from 'react-redux';
 import axios from 'axios';
-import { loginInfo } from '../../../../Global/Slice';
 import { toast, Toaster } from 'react-hot-toast';
 import Swal from 'sweetalert2'; 
 
