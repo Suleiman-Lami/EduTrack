@@ -103,7 +103,7 @@ const Loginform = () => {
         <label className='Forgot' onClick={() => Nav('/Forgottenpassword')}>Forgot password ?</label>
       </section>
       <button type='submit'>
-      { loading ? <ClipLoader color='#ffffff'/> : 'SIgn in'}
+      { loading ? <ClipLoader color='#ffffff'/> : 'Sign In'}
       </button>
       <footer>
         <span>Do not have an account? <h4 onClick={() => Nav('/signUp')}>Signup</h4></span>

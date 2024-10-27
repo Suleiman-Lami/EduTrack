@@ -14,6 +14,7 @@ const StudentList = ({ student }) => {
   const [selectedAttendance, setSelectedAttendance] = useState({});
   const [dropdownIndex, setDropdownIndex] = useState(null);
   const [Loading, setLoading] = useState(false);
+  const [studentId, setStudentId] = useState(null)
 
   console.log(student);
   
@@ -34,9 +35,11 @@ const StudentList = ({ student }) => {
   };
 
   const handleAttendance = async (index, status, studentID) => {
+    
     setSelectedAttendance((prev) => ({ ...prev, [index]: status }));
     setDropdownIndex(null); 
     setLoading(true)
+    setStudentId(studentID)
     const schoolID = localStorage.getItem('schoolID');
     const teacherID = localStorage.getItem('teacherID');    
 
@@ -54,12 +57,14 @@ const StudentList = ({ student }) => {
         }
       });
       setLoading(false)
+      setStudentId(null)
       toast.success('attendance taken successfully')
     
     } catch (error) {
       console.log(error);
       toast.error(error.response.data.message)
       setLoading(false)
+      setStudentId(null)
       // toast.error(`Failed to update attendance for student name: ${fullName}`);
       console.error('Error updating attendance:', error);
       
@@ -100,13 +105,14 @@ console.log(student);
                   />
                 </div>
                 {e?.studentID}
+                
               </td>
               <td>{e?.fullName}</td>
               <td>{e?.gender}</td>
               <td>
                 <button onClick={() => setDropdownIndex(dropdownIndex === index ? null : index)}>
                  {
-                  Loading ? 
+                  Loading && studentId === e?._id? 
                   <ClipLoader color='white'  /> :
                  ' Action'
                  }

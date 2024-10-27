@@ -94,7 +94,7 @@ const Teacherlogform = () => {
         <label className='Forgot' onClick={() => navigate('/teacherForgottenpassword')}>Forgot password?</label>
       </section>
       <button type='submit'>
-        {loading ? <ClipLoader color='#ffffff' size={20}/> : 'Sign in'}
+        {loading ? <ClipLoader color='#ffffff' size={20}/> : 'Sign In'}
       </button>
       <Toaster />
     </form>

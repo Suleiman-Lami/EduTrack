@@ -11,6 +11,7 @@ const TeacherList = ({ teachers, getAllTeachers }) => {
   const [selectedAttendance, setSelectedAttendance] = useState({});
   const [showDropdown, setShowDropdown] = useState(null);
   const [loading, setLoading] = useState(false);
+  const [teacherId, setTeacherId] = useState(null)
 
   const Nav = useNavigate();
   const userToken = localStorage.getItem('userToken');
@@ -25,6 +26,7 @@ const TeacherList = ({ teachers, getAllTeachers }) => {
 
     try {
       setLoading(true);
+      setTeacherId(teacherID)
       const response = await axios.delete(
         `https://edutrack-jlln.onrender.com/api/v1/school/delete-teacher/${teacherID}`,
         {
@@ -110,7 +112,7 @@ const TeacherList = ({ teachers, getAllTeachers }) => {
               <td>{e?.gender}</td>
               <td>
                 <button onClick={() => setShowDropdown(showDropdown === index ? null : index)}>
-                  {loading && showDropdown === index ? (
+                  {loading && teacherId === e?._id ? (
                     <ClipLoader color='#ffffff' size={15} />
                   ) : (
                     'Action'

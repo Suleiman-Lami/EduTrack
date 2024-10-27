@@ -10,8 +10,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { logout } from '../../Global/Slice';
 
 const Header = () => {
-  const loginInfo = useSelector((state)=>state.eduTrack.isLoggedIn)
-  console.log(loginInfo);
+  const loginInfo = useSelector((state)=>state.eduTrack)
+  console.log('info',loginInfo);
   
   const [showMenu, setShowMenu] = useState(0)
   const [dropDown, setDropDown] = useState(false)
@@ -31,6 +31,22 @@ const Header = () => {
 
   const handlelogout = ()=>{
     dispatch(logout())
+  }
+
+  const schoolID = localStorage.getItem('schoolID')
+  const teacherID = localStorage.getItem('teacherID')
+  const studentID = loginInfo.user.studentInfo.studentID
+
+  const route =()=>{
+    if (loginInfo.user.schoolInfo.isLoggedIn) {
+      Nav(`/admin/${schoolID}`)
+    }
+    else if (loginInfo.user.teacherInfo.isLoggedIn) {
+      Nav(`/teacher/${teacherID}`)
+    }
+    else{
+      Nav(`/studentProfile/${studentID}`)
+    }
   }
 
   useEffect(() => {
@@ -54,7 +70,7 @@ const Header = () => {
         </div>
         <div className="auth">
          {
-          loginInfo === false ? 
+          loginInfo.isLoggedIn === false ? 
           <>
           <div className="LoginBtn"  onClick={()=> setShowLog(!showLog)}>
           Log in
@@ -69,7 +85,12 @@ const Header = () => {
         </div>
         <button className='signUpBtn'><NavLink to={'signUp'}>Register</NavLink></button>
         </>:
+        <>
         <button className='logout' onClick={handlelogout}>Logout</button>
+          <div className="userProfile">
+            <img onClick={route} src={loginInfo.user.schoolInfo.isLoggedIn ? loginInfo.user.schoolInfo.schoolPicture : loginInfo.user.teacherInfo.isLoggedIn ? loginInfo.user.teacherInfo.teacherProfile : loginInfo.user.studentInfo.isLoggedIn ? loginInfo.user.studentInfo.studentProfile : null}/>
+          </div>
+          </>
          }
         </div>
       <div className="menuHolder">

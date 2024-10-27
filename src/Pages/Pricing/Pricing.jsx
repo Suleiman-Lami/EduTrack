@@ -135,7 +135,7 @@ const Pricing = () => {
           <h3>Starter Plan</h3>
           <span>For small schools or classes.</span>
           <h1>₦95,000</h1>
-          <button onClick={() => payKorapay(95000, 'starter')}>
+          <button onClick={() => payKorapay(95, 'starter')}>
             {loading && selectedPlan === 'starter' ? (
               <ClipLoader color='white' />
             ) : (
@@ -151,7 +151,7 @@ const Pricing = () => {
           <h3>Basic Plan</h3>
           <span>For schools with growing needs.</span>
           <h1>₦240,000</h1>
-          <button onClick={() => payKorapay(240000, 'basic')}>
+          <button onClick={() => payKorapay(240, 'basic')}>
             {loading && selectedPlan === 'basic' ? (
               <ClipLoader color='white' />
             ) : (
@@ -167,7 +167,7 @@ const Pricing = () => {
           <h3>Pro Plan</h3>
           <span>For medium-sized schools.</span>
           <h1>₦480,000</h1>
-          <button onClick={() => payKorapay(480000, 'pro')}>
+          <button onClick={() => payKorapay(480, 'pro')}>
             {loading && selectedPlan === 'pro' ? (
               <ClipLoader color='white' />
             ) : (
@@ -185,7 +185,7 @@ const Pricing = () => {
           <h3>Premium Plan</h3>
           <span>For larger schools.</span>
           <h1>₦970,000</h1>
-          <button onClick={() => payKorapay(970000, 'premium')}>
+          <button onClick={() => payKorapay(970, 'premium')}>
             {loading && selectedPlan === 'premium' ? (
               <ClipLoader color='white' />
             ) : (

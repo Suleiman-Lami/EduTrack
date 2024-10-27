@@ -93,7 +93,7 @@ const StudentLoginform = () => {
           {errors.password && <span style={{ color: 'red' }}>{errors.password.message}</span>}
         </section>
         <button type='submit'>
-        { loading ? <ClipLoader color='#ffffff'/> : 'SIgn in'}
+        { loading ? <ClipLoader color='#ffffff'/> : 'Sign In'}
         </button>
        
         <Toaster/>   
